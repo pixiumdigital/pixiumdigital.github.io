@@ -1,0 +1,243 @@
+.btn {
+  /*margin-left: 10px;
+  margin-right: 10px;*/
+  letter-spacing: 1px;
+  line-height: 15px;
+  font-size: 13px;
+  color: white;
+  border-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important; }
+  .btn:hover {
+    color: black;
+    background: white; }
+
+/* Boostrap Buttons Styling */
+.btn-margin {
+  margin: 0px 10px 10px 0px; }
+
+.btn-default {
+  color: white;
+  border: 1px solid #0E4C92;
+  border-radius: 40px;
+  background: #0E4C92;
+  transition: all 0.3s ease 0s; }
+
+.btn-primary {
+  font-size: 13px;
+  border: 1px solid #0E4C92;
+  border-radius: 40px;
+  background: #0E4C92;
+  transition: all 0.3s ease 0s; }
+  .btn-primary:hover {
+    border-color: #0E4C92;
+    color: #0E4C92; }
+
+.btn-success {
+  font-size: 13px;
+  border: 1px solid #0E4C92;
+  border-radius: 40px;
+  background: #0E4C92;
+  transition: all 0.3s ease 0s; }
+  .btn-success:hover, .btn-success:active, .btn-success:focus, .btn-success:visited {
+    background: white;
+    border-color: #0E4C92;
+    color: #0E4C92; }
+
+.btn-info {
+  border-radius: 40px;
+  background: #01fdce;
+  transition: all 0.3s ease 0s; }
+
+.btn-warning {
+  background-color: #fbce01;
+  color: white;
+  border-radius: 40px;
+  border-color: #fbce01;
+  transition: all 0.3s ease 0s; }
+  .btn-warning:hover {
+    border-color: #fbce01;
+    color: #fbce01; }
+
+.btn-danger {
+  border-radius: 40px;
+  background: #d73925;
+  color: #fff;
+  transition: all 0.3s ease 0s; }
+  .btn-danger:hover {
+    color: #d73925; }
+
+li .btn {
+  width: -webkit-fill-available; }
+
+.btn-list-job {
+  text-align: right;
+  margin-top: 20px; }
+  .btn-list-job .btn {
+    margin-left: 30px;
+    margin-bottom: 5px; }
+
+.btn-icon, .btn-icon:hover, .btn-icon:focus, .btn-icon:active {
+  color: white;
+  margin: 10px 10px 10px 10px; }
+
+.form-container {
+  margin-bottom: 40px;
+  width: 100%; }
+
+.pixium-box {
+  margin: 5px;
+  margin-bottom: 20px;
+  padding: 20px;
+  margin-bottom: 20px; }
+  .pixium-box label {
+    min-width: 100px;
+    font-size: 14px;
+    font-style: italic; }
+  .pixium-box .pixium-row-block {
+    margin-bottom: 10px; }
+    .pixium-box .pixium-row-block.block-choices {
+      display: flex;
+      justify-content: space-around;
+      align-items: baseline;
+      flex-wrap: wrap; }
+      .pixium-box .pixium-row-block.block-choices label {
+        min-width: auto; }
+      .pixium-box .pixium-row-block.block-choices input {
+        width: auto;
+        min-width: auto; }
+  .pixium-box .pixium-textbox {
+    width: 100%;
+    max-width: 300px; }
+  .pixium-box hr {
+    padding: 0px !important; }
+  .pixium-box .pixium-block-build {
+    padding: 20px 10px;
+    margin: 6px 0px;
+    background: #f2f2f2;
+    border-left: 3px solid #4c5baf;
+    border-radius: 3px; }
+  .pixium-box .pixium-block-build-header {
+    background: #f2f2f2;
+    width: 100%;
+    border-left: 3px solid #4CAF50;
+    border-radius: 3px; }
+
+.pixium-btn {
+  margin: 4px 4px 4px 0px; }
+
+.element-form-container {
+  width: 50%;
+  /* Width of the outside container */ }
+  .element-form-container .pixium-block-slider {
+    padding-bottom: 20px; }
+    .element-form-container .pixium-block-slider .pixium-slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 15px;
+      border-radius: 5px;
+      background: #d3d3d3;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s; }
+    .element-form-container .pixium-block-slider .pixium-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: #4CAF50;
+      cursor: pointer; }
+    .element-form-container .pixium-block-slider .pixium-slider::-moz-range-thumb {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: #4CAF50;
+      cursor: pointer; }
+    .element-form-container .pixium-block-slider span {
+      text-align: center; }
+      .element-form-container .pixium-block-slider span._left {
+        float: left; }
+      .element-form-container .pixium-block-slider span._right {
+        float: right; }
+    .element-form-container .pixium-block-slider output {
+      text-align: center; }
+  .element-form-container form {
+    text-align: center; }
+    .element-form-container form div {
+      overflow: hidden; }
+
+.form-container {
+  margin-bottom: 40px;
+  width: 100%;
+  max-width: 800px !important; }
+
+.pixium-box {
+  margin: 5px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background: #fcfcfc;
+  margin-bottom: 20px; }
+  .pixium-box label {
+    min-width: 100px; }
+  .pixium-box .pixium-row-block {
+    margin-bottom: 10px; }
+  .pixium-box .pixium-textbox {
+    width: 100%;
+    max-width: 300px; }
+  .pixium-box hr {
+    padding: 0px !important; }
+  .pixium-box .pixium-block-build {
+    padding: 20px 10px;
+    margin: 6px 0px;
+    background: #f2f2f2; }
+  .pixium-box .pixium-block-build-header {
+    background: #adb5bd;
+    width: 100%; }
+
+.pixium-btn {
+  margin: 4px 4px 4px 0px; }
+
+.element-form-container {
+  width: 50%;
+  /* Width of the outside container */ }
+  .element-form-container .pixium-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s; }
+  .element-form-container .pixium-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer; }
+  .element-form-container .pixium-slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer; }
+  .element-form-container form {
+    text-align: center; }
+    .element-form-container form span {
+      text-align: center; }
+      .element-form-container form span._left {
+        float: left; }
+      .element-form-container form span._right {
+        float: right; }
+    .element-form-container form output {
+      text-align: center; }
+    .element-form-container form div {
+      overflow: hidden; }
+
+/*# sourceMappingURL=main.css.map */
