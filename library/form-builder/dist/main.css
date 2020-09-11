@@ -4,21 +4,18 @@
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/btn\.scss}line{font-family:\000036}}
 .form-builder-btn.btn {
-  /*margin-left: 10px;
-  margin-right: 10px;*/
+  display: inline-block;
   letter-spacing: 1px;
   line-height: 15px;
   font-size: 13px;
-  color: white;
   border-radius: 0px !important;
   border-bottom-left-radius: 0px !important;
   border-bottom-right-radius: 0px !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/btn\.scss}line{font-family:\0000315}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/btn\.scss}line{font-family:\0000311}}
   .form-builder-btn.btn:hover {
     color: black;
     background: white; }
 
-/* Boostrap Buttons Styling */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/form\.scss}line{font-family:\000031}}
 .form-container {
   margin-bottom: 40px;
