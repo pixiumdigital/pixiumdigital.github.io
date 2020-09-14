@@ -122,6 +122,16 @@
     .element-form-container form div {
       overflow: hidden; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/form\.scss}line{font-family:\00003124}}
+div.tags span {
+  border: 1px solid #ccc;
+  background: #ccc;
+  padding: 3px 3px 3px 0px;
+  margin-right: 3px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/form\.scss}line{font-family:\00003129}}
+  div.tags span button {
+    margin-right: 3px; }
+
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/main\.scss}line{font-family:\000036}}
 .form-container {
   margin-bottom: 40px;
