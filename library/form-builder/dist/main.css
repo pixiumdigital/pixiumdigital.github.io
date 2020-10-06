@@ -125,12 +125,15 @@
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/form\.scss}line{font-family:\00003124}}
 div.tags {
   display: flex;
-  flex-wrap: wrap; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/form\.scss}line{font-family:\00003128}}
+  flex-wrap: wrap;
+  background-color: white;
+  padding: 5px;
+  border: 1px solid #ccc; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/form\.scss}line{font-family:\00003131}}
   div.tags div {
     display: flex;
     flex-wrap: wrap; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/form\.scss}line{font-family:\00003131}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/form\.scss}line{font-family:\00003134}}
     div.tags div span {
       display: flex;
       background: #ccc;
@@ -138,7 +141,7 @@ div.tags {
       margin: 0px 3px 3px 0px;
       color: black;
       white-space: nowrap; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/form\.scss}line{font-family:\00003140}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/form\.scss}line{font-family:\00003143}}
       div.tags div span button {
         border-radius: 0px;
         padding: 0px 2px 0px 2px;
@@ -146,6 +149,14 @@ div.tags {
         color: #fff;
         background-color: #dc3545;
         border-color: #dc3545; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/form\.scss}line{font-family:\00003155}}
+  div.tags input {
+    border: none;
+    margin: 5px 0px 0px 5px;
+    flex-grow: 1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/form\.scss}line{font-family:\00003160}}
+  div.tags input:focus {
+    border: none; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/main\.scss}line{font-family:\000036}}
 .form-container {
@@ -178,17 +189,18 @@ div.tags {
   .pixium-box .pixium-block-build {
     padding: 20px 10px;
     margin: 6px 0px;
-    background: #f2f2f2; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/main\.scss}line{font-family:\0000343}}
+    background: #f2f2f2;
+    width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/main\.scss}line{font-family:\0000344}}
   .pixium-box .pixium-block-build-header {
     background: #adb5bd;
     width: 100%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/main\.scss}line{font-family:\0000349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/main\.scss}line{font-family:\0000350}}
 .element-form-container {
   width: 50%;
   /* Width of the outside container */ }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/main\.scss}line{font-family:\0000352}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/main\.scss}line{font-family:\0000353}}
   .element-form-container .pixium-slider {
     -webkit-appearance: none;
     width: 100%;
@@ -199,7 +211,7 @@ div.tags {
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/main\.scss}line{font-family:\0000364}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/main\.scss}line{font-family:\0000365}}
   .element-form-container .pixium-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -208,29 +220,29 @@ div.tags {
     border-radius: 50%;
     background: #4CAF50;
     cursor: pointer; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/main\.scss}line{font-family:\0000374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/main\.scss}line{font-family:\0000375}}
   .element-form-container .pixium-slider::-moz-range-thumb {
     width: 25px;
     height: 25px;
     border-radius: 50%;
     background: #4CAF50;
     cursor: pointer; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/main\.scss}line{font-family:\0000382}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/main\.scss}line{font-family:\0000383}}
   .element-form-container form {
     text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/main\.scss}line{font-family:\0000384}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/main\.scss}line{font-family:\0000385}}
     .element-form-container form span {
       text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/main\.scss}line{font-family:\0000387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/main\.scss}line{font-family:\0000388}}
       .element-form-container form span._left {
         float: left; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/main\.scss}line{font-family:\0000390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/main\.scss}line{font-family:\0000391}}
       .element-form-container form span._right {
         float: right; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/main\.scss}line{font-family:\0000394}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/main\.scss}line{font-family:\0000395}}
     .element-form-container form output {
       text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/main\.scss}line{font-family:\0000398}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/pixiumdigital\/Workspace\/form-builder\/scss\/main\.scss}line{font-family:\0000399}}
     .element-form-container form div {
       overflow: hidden; }
 
