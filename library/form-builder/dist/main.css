@@ -119,7 +119,7 @@ div.tags {
       display: flex;
       background: #ccc;
       padding: 0px 0px 0px 3px;
-      margin: 0px 3px 3px 0px;
+      margin: 3px 3px 3px 0px;
       color: black;
       white-space: nowrap; }
       div.tags div span button {
@@ -132,7 +132,7 @@ div.tags {
   div.tags input {
     border: none;
     outline: none;
-    margin: 5px 0px 0px 5px;
+    margin: 0px;
     flex-grow: 1; }
     div.tags input:focus {
       border: none;
