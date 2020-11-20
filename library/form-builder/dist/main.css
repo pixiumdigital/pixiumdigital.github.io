@@ -57,7 +57,7 @@
       min-width: auto; }
   .pixium-box .pixium-textbox {
     width: 100%;
-    max-width: 300px; }
+    max-width: 100%; }
   .pixium-box hr {
     padding: 0px !important; }
   .pixium-box .pixium-block-build {
