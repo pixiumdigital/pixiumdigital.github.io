@@ -26,14 +26,21 @@
     border-bottom: 1px solid #ccc;
     margin-bottom: 20px;
     background: #ccc;
-    padding: 10px;
-    cursor: pointer; }
+    padding: 10px; }
     .pixium-box .block-header .float-right {
       margin-top: 5px;
       float: right;
-      font-size: 20px; }
+      font-size: 20px;
+      cursor: pointer; }
     .pixium-box .block-header .hidden {
       display: none; }
+    .pixium-box .block-header .button-delete {
+      padding: 0px;
+      margin: 0px;
+      margin-left: 20px;
+      border: none;
+      background: none;
+      color: #f00; }
   .pixium-box label {
     min-width: 100px;
     font-size: 14px;
@@ -55,7 +62,7 @@
     padding: 0px !important; }
   .pixium-box .pixium-block-build {
     width: 100%;
-    padding: 20px 10px;
+    padding: 0px 0px 20px 0px;
     margin: 6px 0px;
     background: #f2f2f2;
     border-left: 3px solid #4c5baf;
@@ -63,6 +70,7 @@
   .pixium-box .pixium-block-build-header {
     background: #4CAF50;
     width: 100%;
+    padding: 20px 10px;
     border-left: 3px solid #4CAF50;
     border-radius: 3px; }
 
@@ -127,18 +135,21 @@ div.tags {
     flex-wrap: wrap; }
     div.tags div span {
       display: flex;
-      background: #ccc;
-      padding: 0px 0px 0px 3px;
+      background: #EC008C;
+      padding: 2px 6px;
       margin: 3px 3px 3px 0px;
-      color: black;
+      color: #fff;
+      border-radius: 8px;
       white-space: nowrap; }
       div.tags div span button {
         border-radius: 0px;
         padding: 0px 2px 0px 2px;
         margin: 0px 0px 0px 5px;
         color: #fff;
-        background-color: #dc3545;
-        border-color: #dc3545; }
+        background-color: none;
+        border-color: none; }
+        div.tags div span button:hover {
+          color: #fff; }
   div.tags input {
     border: none;
     outline: none;
