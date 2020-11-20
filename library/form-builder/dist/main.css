@@ -22,22 +22,32 @@
   margin-bottom: 20px;
   border: 1px solid #ccc;
   background: #fcfcfc; }
+  .pixium-box .block-header {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    background: #ccc;
+    padding: 10px;
+    cursor: pointer; }
+    .pixium-box .block-header .float-right {
+      margin-top: 5px;
+      float: right;
+      font-size: 20px; }
+    .pixium-box .block-header .hidden {
+      display: none; }
   .pixium-box label {
     min-width: 100px;
     font-size: 14px;
     font-style: italic; }
-  .pixium-box .pixium-row-block {
-    margin-bottom: 10px; }
-    .pixium-box .pixium-row-block.block-choices {
-      display: flex;
-      justify-content: space-around;
-      align-items: baseline;
-      flex-wrap: wrap; }
-      .pixium-box .pixium-row-block.block-choices label {
-        min-width: auto; }
-      .pixium-box .pixium-row-block.block-choices input {
-        width: auto;
-        min-width: auto; }
+  .pixium-box .pixium-row-block.block-choices {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    flex-wrap: wrap; }
+    .pixium-box .pixium-row-block.block-choices label {
+      min-width: auto; }
+    .pixium-box .pixium-row-block.block-choices input {
+      width: auto;
+      min-width: auto; }
   .pixium-box .pixium-textbox {
     width: 100%;
     max-width: 300px; }
@@ -51,7 +61,7 @@
     border-left: 3px solid #4c5baf;
     border-radius: 3px; }
   .pixium-box .pixium-block-build-header {
-    background: #adb5bd;
+    background: #4CAF50;
     width: 100%;
     border-left: 3px solid #4CAF50;
     border-radius: 3px; }
