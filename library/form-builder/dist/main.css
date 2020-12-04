@@ -25,16 +25,17 @@
   margin: 5px;
   margin-bottom: 20px;
   padding: 20px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  background: #fcfcfc;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  border: 1px solid #999;
+  background: #f2f2f2;
   cursor: grab; }
   .pixium-box .pixium-box-content {
     width: 100%; }
   .pixium-box .block-header {
     border-bottom: 1px solid #ccc;
     margin-bottom: 20px;
-    background: #ccc;
+    background: #fff;
     padding: 10px; }
     .pixium-box .block-header .float-right {
       margin-top: 5px;
@@ -71,14 +72,21 @@
     width: 100%;
     padding: 0px 0px 20px 0px;
     margin: 6px 0px;
-    background: #f2f2f2;
-    border-left: 3px solid #4c5baf;
-    border-radius: 3px; }
+    background: #fff;
+    border: 1px solid #3363cb;
+    border-radius: 1px; }
+    .pixium-box .pixium-block-build .custom_block_type {
+      border-top: 1px dashed #ccc;
+      padding: 10px 0px;
+      margin: 10px;
+      width: auto; }
+      .pixium-box .pixium-block-build .custom_block_type > div {
+        margin: 4px 0px; }
   .pixium-box .pixium-block-build-header {
-    background: #4CAF50;
+    background: #ccc;
     width: 100%;
     padding: 20px 10px;
-    border-left: 3px solid #4CAF50;
+    border: 1px solid #999;
     border-radius: 3px; }
 
 .element-form-container {
