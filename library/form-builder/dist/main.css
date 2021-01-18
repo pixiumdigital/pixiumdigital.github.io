@@ -11,6 +11,45 @@
     color: black;
     background: white; }
 
+.button-delete {
+  padding: 0px;
+  margin: 0px;
+  margin-left: 20px;
+  margin-top: 0px !important;
+  border: none;
+  background: none;
+  color: #dc3545; }
+
+.btn {
+  border-radius: 3px !important; }
+
+.btn-danger {
+  background-color: #dc3545 !important;
+  border-color: #dc3545 !important;
+  color: #fff !important; }
+  .btn-danger:hover {
+    background: #fff !important;
+    border-color: #dc3545 !important;
+    color: #dc3545 !important; }
+
+.btn-success {
+  background-color: #218838 !important;
+  border-color: #218838 !important;
+  color: #fff !important; }
+  .btn-success:hover {
+    background: #fff !important;
+    border-color: #218838 !important;
+    color: #218838 !important; }
+
+.btn-primary {
+  background-color: #49549a !important;
+  border-color: #49549a !important;
+  color: #fff !important; }
+  .btn-primary:hover {
+    background: #fff !important;
+    border-color: #49549a !important;
+    color: #49549a !important; }
+
 .form-container {
   margin-bottom: 40px;
   width: 100%; }
@@ -18,8 +57,15 @@
 .hidden {
   display: none !important; }
 
+.drag-cursor {
+  float: left;
+  padding: 6px; }
+  .drag-cursor:hover {
+    cursor: grab; }
+
 .drag-over {
-  border: dashed 3px red !important; }
+  border: dashed 2px #eee !important;
+  opacity: 0.2; }
 
 .pixium-box {
   margin: 5px;
@@ -27,28 +73,25 @@
   padding: 20px;
   margin-bottom: 30px;
   margin-top: 30px;
-  border: 1px solid #999;
-  background: #f2f2f2;
-  cursor: grab; }
+  border: 1px solid #eee;
+  background: #fff;
+  color: #49549a; }
   .pixium-box .pixium-box-content {
     width: 100%; }
+  .pixium-box .pixium-block-run-question {
+    padding: 20px;
+    background: #f4f6ff;
+    margin-bottom: 20px; }
   .pixium-box .block-header {
-    border-bottom: 1px solid #ccc;
+    border-bottom: none;
     margin-bottom: 20px;
-    background: #fff;
+    background: #f4f6ff;
     padding: 10px; }
     .pixium-box .block-header .float-right {
       margin-top: 5px;
       float: right;
       font-size: 20px;
       cursor: pointer; }
-    .pixium-box .block-header .button-delete {
-      padding: 0px;
-      margin: 0px;
-      margin-left: 20px;
-      border: none;
-      background: none;
-      color: #f00; }
   .pixium-box label {
     min-width: 100px;
     font-size: 14px;
@@ -64,16 +107,16 @@
       width: auto;
       min-width: auto; }
   .pixium-box .pixium-textbox {
-    width: 100%;
-    max-width: 100%; }
+    width: 80%;
+    max-width: 80%; }
   .pixium-box hr {
     padding: 0px !important; }
   .pixium-box .pixium-block-build {
     width: 100%;
     padding: 0px 0px 20px 0px;
     margin: 6px 0px;
-    background: #fff;
-    border: 1px solid #3363cb;
+    background: #f4f6ff;
+    border: none;
     border-radius: 1px; }
     .pixium-box .pixium-block-build .custom_block_type {
       border-top: 1px dashed #ccc;
@@ -83,15 +126,17 @@
       .pixium-box .pixium-block-build .custom_block_type > div {
         margin: 4px 0px; }
   .pixium-box .pixium-block-build-header {
-    background: #ccc;
+    background: #eee;
     width: 100%;
     padding: 20px 10px;
-    border: 1px solid #999;
+    border: none;
     border-radius: 3px; }
 
 .element-form-container {
   width: 50%;
   /* Width of the outside container */ }
+  .element-form-container label {
+    margin-left: 8px; }
   .element-form-container .pixium-block-slider {
     padding-bottom: 20px; }
     .element-form-container .pixium-block-slider .pixium-slider {
@@ -125,7 +170,13 @@
       .element-form-container .pixium-block-slider span._right {
         float: right; }
     .element-form-container .pixium-block-slider output {
-      padding-left: 50%; }
+      margin-left: 50%;
+      color: #fff;
+      background: #aaa;
+      font-style: inherit;
+      font-size: 1;
+      border-radius: 3px;
+      padding: 0px 5px; }
   .element-form-container form {
     text-align: center; }
     .element-form-container form div {
