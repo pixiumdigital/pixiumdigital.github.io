@@ -1,6 +1,8 @@
 .form-container {
   margin-bottom: 40px;
   width: 100%; }
+  .form-container h1 {
+    font-size: 2rem; }
   .form-container input[type=text] {
     width: 100%;
     padding: 6px 10px;
@@ -191,7 +193,6 @@
     padding: 20px;
     margin-bottom: 30px;
     margin-top: 30px;
-    border: 1px solid #eee;
     background: #fff;
     color: #49549a; }
     .form-container .pixium-box .pixium-box-content {
@@ -256,6 +257,9 @@
   .form-container .element-form-container {
     width: 50%;
     /* Width of the outside container */ }
+    @media (max-width: 992px) {
+      .form-container .element-form-container {
+        width: 100%; } }
     .form-container .element-form-container label {
       margin-left: 8px; }
     .form-container .element-form-container .pixium-block-slider {
@@ -332,7 +336,7 @@
           padding: 0px 2px 0px 2px;
           margin: 0px 0px 0px 5px;
           color: #fff;
-          background-color: none;
+          background-color: none !important;
           border-color: none; }
           .form-container div.tags div span button:hover {
             color: #fff; }
