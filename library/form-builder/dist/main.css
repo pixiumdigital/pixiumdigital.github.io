@@ -203,7 +203,6 @@
       margin-bottom: 20px; }
     .form-container .pixium-box .block-header {
       border-bottom: none;
-      margin-bottom: 20px;
       background: #f4f6ff;
       padding: 10px; }
       .form-container .pixium-box .block-header .float-right {
@@ -236,7 +235,7 @@
       padding: 0px !important; }
     .form-container .pixium-box .pixium-block-build {
       width: 100%;
-      padding: 0px 0px 20px 0px;
+      padding: 0px 0px 10px 0px;
       margin: 6px 0px;
       background: #f4f6ff;
       border: none;
