@@ -2,30 +2,162 @@ import Container from "@/app/_components/container";
 import { EXAMPLE_PATH } from "@/lib/constants";
 
 export function Footer() {
-  return (
-    <footer className="bg-neutral-50 border-t border-neutral-200">
-      <Container>
-        <div className="py-28 flex flex-col lg:flex-row items-center">
-          <h3 className="text-4xl lg:text-[2.5rem] font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Statically Generated with Next.js.
-          </h3>
-          <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
-            <a
-              href="https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts"
-              className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
-            >
-              Read Documentation
+  return (<footer className="footer">
+  <div className="container">
+
+    <div className="footer-top section">
+
+      <div className="footer-brand">
+
+        <p className="footer-list-title">About Pixium Digital</p>
+
+        <p className="footer-text">
+        Pixium Digital is an agile software development company with their 
+        headquarters located in Singapore. We focus on shaping 
+        our clients project from ideas to successful project launch.
+        </p>
+
+        <ul className="social-list">
+
+          <li>
+            <a href="#" className="social-link">
+              {/* <LogoLinkedin style={{height:"50", width:"50"}} /> */}
             </a>
-            <a
-              href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-              className="mx-3 font-bold hover:underline"
-            >
-              View on GitHub
+          </li>
+
+          <li>
+            <a href="#" className="social-link">
+              {/* <ion-icon name="logo-twitter"></ion-icon> */}
             </a>
-          </div>
-        </div>
-      </Container>
-    </footer>
+          </li>
+
+          <li>
+            <a href="#" className="social-link">
+              {/* <ion-icon name="logo-facebook"></ion-icon> */}
+            </a>
+          </li>
+
+          <li>
+            <a href="#" className="social-link">
+              {/* <ion-icon name="logo-skype"></ion-icon> */}
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <ul className="footer-list">
+
+        <li>
+          <p className="footer-list-title">Usefull Links</p>
+        </li>
+
+        <li>
+          <a href="#" className="footer-link">Contact us</a>
+        </li>
+
+        <li>
+          <a href="#" className="footer-link">How it Works</a>
+        </li>
+
+        <li>
+          <a href="#" className="footer-link">Create</a>
+        </li>
+
+        <li>
+          <a href="#" className="footer-link">Explore</a>
+        </li>
+
+        <li>
+          <a href="#" className="footer-link">Terms & Services</a>
+        </li>
+
+      </ul>
+
+      <ul className="footer-list">
+
+        <li>
+          <p className="footer-list-title">Community</p>
+        </li>
+
+        <li>
+          <a href="#" className="footer-link">Help Center</a>
+        </li>
+
+        <li>
+          <a href="#" className="footer-link">Partners</a>
+        </li>
+
+        <li>
+          <a href="#" className="footer-link">Suggestions</a>
+        </li>
+
+        <li>
+          <a href="#" className="footer-link">Blog</a>
+        </li>
+
+        <li>
+          <a href="#" className="footer-link">Newsletters</a>
+        </li>
+
+      </ul>
+
+      <ul className="footer-list">
+
+        <li>
+          <p className="footer-list-title">Find Us</p>
+
+          <p className="footer-text">
+            Singapore
+            #15-02 Peninsula Plaza,
+            111 North Bridge Road,
+            179098 Singapore
+            Email: contactus@pixiumdigital.com
+          </p>
+
+          <p className="footer-text">
+            Beausoleil, France - Monaco
+            33 boulevard du Général Leclerc, 06240 Beausoleil
+            Email: contactus@pixiumdigital.com
+          </p>
+
+          <p className="footer-text">
+            Málaga, Spain
+            Email: contactus@pixiumdigital.com
+          </p>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <div className="footer-bottom">
+
+      <p className="copyright">
+        &copy; {new Date().getFullYear()} Pixium Digital. All Rights Reserved
+      </p>
+
+      <ul className="footer-bottom-list">
+
+        <li>
+          <a href="#" className="footer-bottom-link">Terms and conditions</a>
+        </li>
+
+        <li>
+          <a href="#" className="footer-bottom-link">Privacy policy</a>
+        </li>
+
+        <li>
+          <a href="#" className="footer-bottom-link">Login / Signup</a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+</footer>
   );
 }
 
