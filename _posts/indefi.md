@@ -1,0 +1,34 @@
+---
+title: "INDEFI"
+excerpt: "The right tool for Benchmarking and Performance Evaluations"
+coverImage: "/assets/blog/indefi/preview.png"
+date: "2023-03-16T05:35:07.322Z"
+author:
+  name: Remi Tache
+ogImage:
+  url: "/assets/blog/indefi/preview.png"
+---
+
+## Project
+
+INDEFI – Sofia Web Application facilitates the whole evaluation, benchmarking and performance rating of funds and/or companies via a Sustainable stand points.
+
+## Challenge
+
+### Background
+
+The team behind the INDEFI - Sofia project reached out to Pixium in October 2021 in order to develop a complete solution allowing their consultant to optimise their portfolio evaluation process. 
+
+### Mission
+
+The team worked with INDEFI to investigate and finalize the scope of work. The platform was developed over 7 months. It has now been used across multiple fund evaluation to established ESG strategies across all asset classes, in both public and private markets.
+
+## Solution
+
+Functional specification document
+
+Design and User experience
+
+Implement and deployment
+
+Maintenance
