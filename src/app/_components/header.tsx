@@ -53,7 +53,7 @@ const Header = () => {
           </li>
 
           <li className="navbar-item">
-            <a href="/our-work" className="navbar-link" data-nav-link>Our Work</a>
+            <a href="/use-case" className="navbar-link" data-nav-link>Use case</a>
           </li>
 
           <li className="navbar-item">

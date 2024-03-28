@@ -12,10 +12,13 @@ const Index = () => {
             </h2>
         
             <div>
-                <h2>Our Activity</h2>
                 <p>
-                Pixium Digital is an IT development company based in Singapore. We are a friendly team of developers specialized in multiple kinds of IT Solutions. We have decades of experience in mobile and web application development as well as other areas such as Augmented Reality, the Internet of Things and Machine Learning.
-With our technical expertise in cutting edge engineering solutions and business development experience, we can help you shape you ideas and needs into a final product. We aim to become your most trustworthy and reliable IT solution partner.
+                Pixium Digital, headquartered in Singapore, is an innovative IT development company fueled by a 
+                friendly team of developers specializing in diverse IT solutions. With decades of collective experience in mobile 
+                and web application development, augmented reality, the Internet of Things, and machine learning, 
+                we offer comprehensive expertise to bring your ideas to life. Backed by cutting-edge engineering solutions and 
+                robust business development experience, we are dedicated to transforming your needs into exceptional products. 
+                Count on us as your steadfast and reliable IT solution partner, committed to your success.
                 </p>
             </div>
 

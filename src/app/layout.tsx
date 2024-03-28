@@ -19,6 +19,8 @@ export const metadata: Metadata = {
   },
 };
 
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -59,11 +61,11 @@ export default function RootLayout({
         <meta name="theme-color" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
-      <body className={inter.className+" App"}>
-        <Header />
-          <div className="min-h-screen">{children}</div>
-        <Footer />
-      </body>
+        <body className={inter.className+" App"}>
+          <Header />
+            <div className="min-h-screen">{children}</div>
+          <Footer />
+        </body>
     </html>
   );
 }

@@ -19,7 +19,7 @@ export default async function Post({ params }: Params) {
   const content = await markdownToHtml(post.content || "");
 
   return (
-    <main>
+    <section className="section service" id="service" aria-label="service">
       <Alert preview={post.preview} />
       <Container>
         <article className="mb-32">
@@ -32,7 +32,7 @@ export default async function Post({ params }: Params) {
           <PostBody content={content} />
         </article>
       </Container>
-    </main>
+    </section>
   );
 }
 
@@ -49,7 +49,7 @@ export function generateMetadata({ params }: Params): Metadata {
     return notFound();
   }
 
-  const title = `${post.title} | Next.js Blog Example with ${CMS_NAME}`;
+  const title = `${post.title} | Pixium Digital`;
 
   return {
     title,

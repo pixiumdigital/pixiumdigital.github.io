@@ -48,31 +48,21 @@ export function Footer() {
       </div>
 
       <ul className="footer-list">
-
         <li>
           <p className="footer-list-title">Usefull Links</p>
         </li>
-
+        <li>
+          <a href="services" className="footer-link">Services</a>
+        </li>
+        <li>
+          <a href="/about-us" className="footer-link">About us</a>
+        </li>
+        <li>
+          <a href="use-case" className="footer-link">Use case</a>
+        </li>
         <li>
           <a href="/contact-us" className="footer-link">Contact us</a>
         </li>
-
-        <li>
-          <a href="#" className="footer-link">How it Works</a>
-        </li>
-
-        <li>
-          <a href="#" className="footer-link">Create</a>
-        </li>
-
-        <li>
-          <a href="#" className="footer-link">Explore</a>
-        </li>
-
-        <li>
-          <a href="#" className="footer-link">Terms & Services</a>
-        </li>
-
       </ul>
 
       <ul className="footer-list">
@@ -138,7 +128,7 @@ export function Footer() {
         &copy; {new Date().getFullYear()} Pixium Digital. All Rights Reserved
       </p>
 
-      <ul className="footer-bottom-list">
+      {/* <ul className="footer-bottom-list">
 
         <li>
           <a href="#" className="footer-bottom-link">Terms and conditions</a>
@@ -152,7 +142,7 @@ export function Footer() {
           <a href="#" className="footer-bottom-link">Login / Signup</a>
         </li>
 
-      </ul>
+      </ul> */}
 
     </div>
 
