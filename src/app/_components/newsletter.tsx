@@ -20,7 +20,7 @@ const Newsletter = () => {
                 </h2>
 
                 <p className="has-before centered">
-                    <a href="#" className="btn btn-secondary has-before has-after">
+                    <a href="mailto:contactus@pixiumdigital.com" className="btn btn-secondary has-before has-after">
                         <span className="span">Contact Us</span>
                     </a>
                 </p>

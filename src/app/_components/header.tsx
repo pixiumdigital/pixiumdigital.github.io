@@ -45,24 +45,24 @@ const Header = () => {
         <ul className="navbar-list">
 
           <li className="navbar-item">
-            <a href="/about-us" className="navbar-link" data-nav-link>About Us</a>
-          </li>
-
-          <li className="navbar-item">
             <a href="/services" className="navbar-link" data-nav-link>Services</a>
           </li>
 
           <li className="navbar-item">
-            <a href="#feature" className="navbar-link" data-nav-link>Features</a>
+            <a href="/about-us" className="navbar-link" data-nav-link>About Us</a>
+          </li>
+
+          <li className="navbar-item">
+            <a href="/our-work" className="navbar-link" data-nav-link>Our Work</a>
           </li>
 
           <li className="navbar-item">
             <a href="/contact-us" className="navbar-link" data-nav-link>Contact Us</a>
           </li>
 
-          <li className="navbar-item">
+          {/* <li className="navbar-item">
             <a href="#blog" className="navbar-link" data-nav-link>Blog</a>
-          </li>
+          </li> */}
 
         </ul>
 
@@ -73,7 +73,7 @@ const Header = () => {
         {/* <MenuOutline /> */}
       </button>
 
-      <a href="#" className="btn btn-primary has-before has-after">Let’s Talk 👋</a>
+      <a href="mailto:contactus@pixiumdigital.com" className="btn btn-primary has-before has-after">Let’s Talk 👋</a>
 
       <div className="overlay" data-nav-toggler data-overlay></div>
 

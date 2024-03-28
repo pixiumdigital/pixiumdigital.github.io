@@ -12,9 +12,9 @@ export function Footer() {
         <p className="footer-list-title">About Pixium Digital</p>
 
         <p className="footer-text">
-        Pixium Digital is an agile software development company with their 
-        headquarters located in Singapore. We focus on shaping 
-        our clients project from ideas to successful project launch.
+        Pixium Digital is an agile software development company headquartered in Singapore. 
+        Our dedicated focus lies in meticulously shaping our clients' 
+        projects from inception to a successful launch, ensuring transformative outcomes.
         </p>
 
         <ul className="social-list">
@@ -54,7 +54,7 @@ export function Footer() {
         </li>
 
         <li>
-          <a href="#" className="footer-link">Contact us</a>
+          <a href="/contact-us" className="footer-link">Contact us</a>
         </li>
 
         <li>

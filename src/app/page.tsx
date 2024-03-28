@@ -18,10 +18,9 @@ export default function Index() {
             </h1>
 
             <p className="hero-text">
-            Pixium Digital is an agile software development company with its 
-            headquarters located in Singapore. 
-            Our focus is on shaping our clients projects from its concept 
-            to a successful launch.
+            Pixium Digital is an agile software development company headquartered in Singapore.
+             Our dedicated focus lies in meticulously shaping our clients' projects from 
+             inception to a successful launch, ensuring transformative outcomes.
             </p>
 
             <div className="centered">

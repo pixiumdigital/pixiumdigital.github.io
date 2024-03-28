@@ -16,7 +16,7 @@ const Whyworkwithus = () => {
             {/* <p className="section-subtitle has-before">Why Choose us</p> */}
 
             <h2 className="h2 section-title">
-              Why <span className="has-before">choose</span> us
+              Why <span className="has-before">choose</span> us?
             </h2>
 
             <ul className="feature-list">

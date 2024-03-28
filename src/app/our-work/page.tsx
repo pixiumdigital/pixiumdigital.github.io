@@ -8,7 +8,7 @@ const Index = () => {
         <div className="container">
 
             <h2 className="h2 section-title text-center">
-                <span className="has-before">About us</span>
+                <span className="has-before">Our Work</span>
             </h2>
         
             <div>
@@ -18,8 +18,6 @@ const Index = () => {
 With our technical expertise in cutting edge engineering solutions and business development experience, we can help you shape you ideas and needs into a final product. We aim to become your most trustworthy and reliable IT solution partner.
                 </p>
             </div>
-
-            <Whyworkwithus />
         </div>
     </section>;
 };
