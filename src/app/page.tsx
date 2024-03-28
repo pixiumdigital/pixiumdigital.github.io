@@ -4,6 +4,7 @@ import { Intro } from "@/app/_components/intro";
 import { MoreStories } from "@/app/_components/more-stories";
 import { getAllPosts } from "@/lib/api";
 import Newsletter from "./_components/newsletter";
+import Whyworkwithus from "./_components/whyworkwithus";
 
 export default function Index() {
   return (<div> 
@@ -23,13 +24,13 @@ export default function Index() {
             to a successful launch.
             </p>
 
-            <div className="wrapper">
+            <div className="centered">
               <a href="/contact-us" className="btn btn-primary has-before has-after">Contact Us</a>
 
               <button className="hero-btn" aria-label="pixology promo">
                 {/* <ion-icon name="play-outline" aria-hidden="true"></ion-icon> */}
 
-                <span className="span">Behind the scenes</span>
+                {/* <span className="span">Behind the scenes</span> */}
               </button>
             </div>
 
@@ -42,6 +43,8 @@ export default function Index() {
 
         </div>
       </section>
+
+      <Whyworkwithus />
 
       <Newsletter />
     </div>

@@ -19,7 +19,7 @@ const Newsletter = () => {
                     Let’s have a chat!
                 </h2>
 
-                <p className="has-before" style={{textAlign:"center"}}>
+                <p className="has-before centered">
                     <a href="#" className="btn btn-secondary has-before has-after">
                         <span className="span">Contact Us</span>
                     </a>
