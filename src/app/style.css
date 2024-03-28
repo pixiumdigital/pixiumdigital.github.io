@@ -1435,7 +1435,7 @@
   
     .hero-banner {
       margin-inline-end: -250px;
-      min-width: max-content;
+      /* min-width: max-content; */
     }
   
   

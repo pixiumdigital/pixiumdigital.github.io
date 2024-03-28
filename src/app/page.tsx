@@ -37,7 +37,7 @@ export default function Index() {
 
           <figure className="hero-banner">
             {/* hero-banner.png */}
-            <img src="/assets/images/dotmap.png" height="237" style={{width:"700px"}} alt="hero banner" />
+            <img src="/assets/images/dotmap.png" style={{width:"100%"}} alt="hero banner" />
           </figure>
 
         </div>

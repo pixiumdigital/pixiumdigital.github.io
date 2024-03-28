@@ -3,13 +3,15 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { useState } from "react";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars, faClose } from '@fortawesome/free-solid-svg-icons'
+
 const Header = () => {
-  const [scrollingClass, setScrollingClass] = useState("");
+    const [scrollingClass, setScrollingClass] = useState("");
+    const [navBarClass, setNavBarClass] = useState("");
 
     useEffect(() => {
-        
         const handleScroll = () => {
-          console.log(window.scrollY);
           if (window.scrollY > 80) 
           {
               if(!scrollingClass){
@@ -22,6 +24,13 @@ const Header = () => {
         window.addEventListener('scroll', handleScroll);
           
     }, []);
+
+    function toggleNavbar(event:any){
+        setNavBarClass("active");
+    };
+    function closeNavbar(event:any){
+        setNavBarClass("");
+    };
     
   return (<header className={"header "+scrollingClass} data-header>
     <div className="container">
@@ -30,16 +39,13 @@ const Header = () => {
         <img src="/assets/images/pixium-logo.png" style={{height:"60px"}} />
       </a>
 
-      <nav className="navbar" data-navbar>
+      <nav className={"navbar "+navBarClass} data-navbar>
 
         <div className="wrapper">
-          <a href="#" className="logo">
-            
-          </a>
-
-          <button className="nav-close-btn" aria-label="close menu" data-nav-toggler>
+          <a className="nav-close-btn" aria-label="close menu" data-nav-toggler onClick={closeNavbar}>
              {/* <ion-icon name="close-outline" aria-hidden="true"></ion-icon> */}
-          </button>
+             <FontAwesomeIcon icon={faClose} />
+          </a>
         </div>
 
         <ul className="navbar-list">
@@ -68,14 +74,15 @@ const Header = () => {
 
       </nav>
 
-      <button className="nav-open-btn" aria-label="open menu" data-nav-toggler>
+      <button className="nav-open-btn" aria-label="open menu" data-nav-toggler onClick={toggleNavbar}>
+        <FontAwesomeIcon icon={faBars} />
         {/* <ion-icon name="menu-outline" aria-hidden="true"></ion-icon> */}
         {/* <MenuOutline /> */}
       </button>
 
       <a href="mailto:contactus@pixiumdigital.com" className="btn btn-primary has-before has-after">Let’s Talk 👋</a>
 
-      <div className="overlay" data-nav-toggler data-overlay></div>
+      <div className={"overlay "+navBarClass} data-nav-toggler data-overlay></div>
 
     </div>
   </header>
