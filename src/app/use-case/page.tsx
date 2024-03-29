@@ -4,6 +4,7 @@ import Container from '../_components/container';
 import { getAllUseCase } from '@/lib/api';
 import { MoreStories } from '../_components/more-stories';
 import Newsletter from '../_components/newsletter';
+import { Metadata } from 'next';
 
 // import { SEO } from "../components/seo"
 
@@ -40,6 +41,14 @@ const Index = () => {
 
 export default Index;
 
-// export const Head = () => (
-//     <SEO title="About us" />
-//   )
+
+export function generateMetadata(): Metadata {
+    const title = `Use Case | Pixium Digital`;
+    return {
+      title,
+      openGraph: {
+        title,
+        // images: [post.ogImage.url],
+      },
+    };
+}

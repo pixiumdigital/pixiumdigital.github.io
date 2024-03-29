@@ -4,6 +4,7 @@ import Newsletter from '../_components/newsletter';
 import { getAllServices } from '@/lib/api';
 import { MoreServices } from '../_components/more-stories';
 import Container from '../_components/container';
+import { Metadata } from 'next';
 
 // import { SEO } from "../components/seo"
 
@@ -32,6 +33,18 @@ const Index = () => {
 };
 
 export default Index;
+
+
+export function generateMetadata(): Metadata {
+    const title = `Services | Pixium Digital`;
+    return {
+      title,
+      openGraph: {
+        title,
+        // images: [post.ogImage.url],
+      },
+    };
+}
 
 // export const Head = () => (
 //     <SEO title="About us" />

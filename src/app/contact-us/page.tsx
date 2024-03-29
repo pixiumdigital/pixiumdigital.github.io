@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import React, { Component }  from 'react';
 
 const Index = () => {
@@ -72,3 +73,14 @@ const Index = () => {
 };
 
 export default Index;
+
+export function generateMetadata(): Metadata {
+    const title = `Contact us | Pixium Digital`;
+    return {
+      title,
+      openGraph: {
+        title,
+        // images: [post.ogImage.url],
+      },
+    };
+}

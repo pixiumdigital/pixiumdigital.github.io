@@ -1,5 +1,6 @@
 import React, { Component }  from 'react';
 import Whyworkwithus from '../_components/whyworkwithus';
+import { Metadata } from 'next';
 
 // import { SEO } from "../components/seo"
 
@@ -29,6 +30,13 @@ const Index = () => {
 
 export default Index;
 
-// export const Head = () => (
-//     <SEO title="About us" />
-//   )
+export function generateMetadata(): Metadata {
+    const title = `About us | Pixium Digital`;
+    return {
+      title,
+      openGraph: {
+        title,
+        // images: [post.ogImage.url],
+      },
+    };
+}

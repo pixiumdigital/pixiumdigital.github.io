@@ -32,7 +32,7 @@ const Whyworkwithus = () => {
         intelligence (AI) to drive impactful results for our clients. With a commitment to staying
          at the forefront of technological advancements, we deliver tailored solutions that empower 
          businesses to thrive in today's dynamic digital landscape. Partner with us to unlock the full 
-         potential of your digital journey/
+         potential of your digital journey.
                     </p>
                   </div>
 
