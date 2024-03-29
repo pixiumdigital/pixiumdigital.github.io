@@ -1,10 +1,17 @@
 import React, { Component }  from 'react';
 import Whyworkwithus from '../_components/whyworkwithus';
 import Newsletter from '../_components/newsletter';
+import { getAllServices } from '@/lib/api';
+import { MoreServices } from '../_components/more-stories';
+import Container from '../_components/container';
 
 // import { SEO } from "../components/seo"
 
 const Index = () => {
+
+    const allPosts = getAllServices();
+    const morePosts = allPosts;
+
     return (<>
         <section className="section service" id="service" aria-label="service">
             <div className="container">
@@ -12,17 +19,13 @@ const Index = () => {
                 <h2 className="h2 section-title text-center">
                     <span className="has-before">Services</span>
                 </h2>
-            
-                <div>
-                    <p>
-                    PiXXXss.
-                    </p>
-                </div>
-
-                <Whyworkwithus />
-                
             </div>
-            
+            <main>
+                <Container>
+                    {morePosts.length > 0 && <MoreServices posts={morePosts} />}
+                </Container>
+            </main>
+            <Whyworkwithus />
         </section>
         <Newsletter />
     </>);

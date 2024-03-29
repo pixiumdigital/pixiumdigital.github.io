@@ -23,19 +23,19 @@ export function Footer() {
         <ul className="social-list">
 
           <li>
-            <a href="https://www.linkedin.com/company/pixium-digital-pte-ltd" className="social-link">
+            <a target="_blank" href="https://www.linkedin.com/company/pixium-digital-pte-ltd" className="social-link">
               <FontAwesomeIcon icon={faLinkedin}/>
             </a>
           </li>
 
           <li>
-            <a href="http://facebook.com/pixiumdigital" className="social-link">
+            <a target="_blank" href="http://facebook.com/pixiumdigital" className="social-link">
               <FontAwesomeIcon icon={faFacebook}/>
             </a>
           </li>
 
           <li>
-            <a href="https://dev.to/pixiumdigital" className="social-link">
+            <a target="_blank" href="https://dev.to/pixiumdigital" className="social-link">
               <FontAwesomeIcon icon={faDev}/>
             </a>
           </li>
@@ -92,14 +92,15 @@ export function Footer() {
             <p className="footer-text">
               Singapore
               #15-02 Peninsula Plaza,
-              111 North Bridge Road,
+              111 North Bridge Road,<br></br>
               179098 Singapore<br></br>
               Email: contactus@pixiumdigital.com
             </p>
 
             <p className="footer-text">
               France - Monaco, Beausoleil
-              33 boulevard du Général Leclerc, 06240 Beausoleil<br></br>
+              33 boulevard du Général Leclerc, <br></br>
+              06240 Beausoleil<br></br>
               Email: contactus@pixiumdigital.com
             </p>
 

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getAllPosts, getPostBySlug } from "@/lib/api";
+import { getUseCaseBySlug, getAllUseCase } from "@/lib/api";
 import { CMS_NAME } from "@/lib/constants";
 import markdownToHtml from "@/lib/markdownToHtml";
 import Alert from "@/app/_components/alert";
@@ -8,9 +8,12 @@ import Container from "@/app/_components/container";
 import Header from "@/app/_components/header";
 import { PostBody } from "@/app/_components/post-body";
 import { PostHeader } from "@/app/_components/post-header";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 export default async function Post({ params }: Params) {
-  const post = getPostBySlug(params.slug);
+  const post = getUseCaseBySlug(params.slug);
 
   if (!post) {
     return notFound();
@@ -21,6 +24,7 @@ export default async function Post({ params }: Params) {
   return (
     <section className="section service" id="service" aria-label="service">
       <Alert preview={post.preview} />
+      <Link href="/use-case/"><FontAwesomeIcon icon={faArrowLeft}/> Back</Link>
       <Container>
         <h2 className="h2 section-title text-center">
               <span className="has-before">{post.title}</span>
@@ -50,7 +54,7 @@ type Params = {
 };
 
 export function generateMetadata({ params }: Params): Metadata {
-  const post = getPostBySlug(params.slug);
+  const post = getUseCaseBySlug(params.slug);
 
   if (!post) {
     return notFound();
@@ -68,7 +72,7 @@ export function generateMetadata({ params }: Params): Metadata {
 }
 
 export async function generateStaticParams() {
-  const posts = getAllPosts();
+  const posts = getAllUseCase();
 
   return posts.map((post) => ({
     slug: post.slug,
