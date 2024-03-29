@@ -22,14 +22,21 @@ export default async function Post({ params }: Params) {
     <section className="section service" id="service" aria-label="service">
       <Alert preview={post.preview} />
       <Container>
-        <article className="mb-32">
-          <PostHeader
-            title={post.title}
-            coverImage={post.coverImage}
-            date={post.date}
-            author={post.author}
-          />
-          <PostBody content={content} />
+        <h2 className="h2 section-title text-center">
+              <span className="has-before">{post.title}</span>
+          </h2>
+        <article className="mb-32 grid grid-cols-2">
+          <div>
+            <PostHeader
+              title={post.title}
+              coverImage={post.coverImage}
+              date={post.date}
+              author={post.author}
+            />
+          </div>
+          <div>
+            <PostBody content={content} />
+          </div>
         </article>
       </Container>
     </section>

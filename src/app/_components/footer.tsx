@@ -1,6 +1,9 @@
 import Container from "@/app/_components/container";
 import { EXAMPLE_PATH } from "@/lib/constants";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebook, faLinkedin, faDev } from "@fortawesome/free-brands-svg-icons"
+
 export function Footer() {
   return (<footer className="footer">
   <div className="container">
@@ -20,26 +23,20 @@ export function Footer() {
         <ul className="social-list">
 
           <li>
-            <a href="#" className="social-link">
-              {/* <LogoLinkedin style={{height:"50", width:"50"}} /> */}
+            <a href="https://www.linkedin.com/company/pixium-digital-pte-ltd" className="social-link">
+              <FontAwesomeIcon icon={faLinkedin}/>
             </a>
           </li>
 
           <li>
-            <a href="#" className="social-link">
-              {/* <ion-icon name="logo-twitter"></ion-icon> */}
+            <a href="http://facebook.com/pixiumdigital" className="social-link">
+              <FontAwesomeIcon icon={faFacebook}/>
             </a>
           </li>
 
           <li>
-            <a href="#" className="social-link">
-              {/* <ion-icon name="logo-facebook"></ion-icon> */}
-            </a>
-          </li>
-
-          <li>
-            <a href="#" className="social-link">
-              {/* <ion-icon name="logo-skype"></ion-icon> */}
+            <a href="https://dev.to/pixiumdigital" className="social-link">
+              <FontAwesomeIcon icon={faDev}/>
             </a>
           </li>
 

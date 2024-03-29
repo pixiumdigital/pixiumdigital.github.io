@@ -285,6 +285,10 @@
   .btn-secondary:is(:hover, :focus) { color: var(--white); }
   
   .social-list { display: flex; }
+  .social-list li { 
+      width:60px;
+      height:60px;
+   }
   
   .w-100 { width: 100%; }
   .w-80 { width: 80%; }  
@@ -857,7 +861,7 @@
   .footer .social-link {
     background-color: var(--onyx);
     padding: 14px;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     transition: var(--transition-1);
   }
   
