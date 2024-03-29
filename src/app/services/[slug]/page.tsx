@@ -30,7 +30,7 @@ export default async function Post({ params }: Params) {
         <h2 className="h2 section-title text-center">
               <span className="has-before">{post.title}</span>
           </h2>
-        <article className="mb-32 grid grid-cols-1">
+        <article className="mb-32">
           {/* <div>
             <PostHeader
               title={post.title}
