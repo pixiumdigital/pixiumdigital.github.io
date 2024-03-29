@@ -14,7 +14,7 @@ export function Footer() {
 
         <p className="footer-list-title">About Pixium Digital</p>
 
-        <p className="footer-text">
+        <p className="footer-text text-left">
         Pixium Digital is an agile software development company headquartered in Singapore. 
         Our dedicated focus lies in meticulously shaping our clients' 
         projects from inception to a successful launch, ensuring transformative outcomes.
@@ -46,7 +46,7 @@ export function Footer() {
 
       <ul className="footer-list">
         <li>
-          <p className="footer-list-title">Usefull Links</p>
+          <p className="footer-list-title">Quick Links</p>
         </li>
         <li>
           <a href="services" className="footer-link">Services</a>
@@ -62,57 +62,52 @@ export function Footer() {
         </li>
       </ul>
 
-      <ul className="footer-list">
-
+      {/* <ul className="footer-list">
         <li>
           <p className="footer-list-title">Community</p>
         </li>
-
         <li>
           <a href="#" className="footer-link">Help Center</a>
         </li>
-
         <li>
           <a href="#" className="footer-link">Partners</a>
         </li>
-
         <li>
           <a href="#" className="footer-link">Suggestions</a>
         </li>
-
         <li>
           <a href="#" className="footer-link">Blog</a>
         </li>
-
         <li>
           <a href="#" className="footer-link">Newsletters</a>
         </li>
-
-      </ul>
+      </ul> */}
 
       <ul className="footer-list">
 
         <li>
           <p className="footer-list-title">Find Us</p>
+          <div className="text-right">
 
-          <p className="footer-text">
-            Singapore
-            #15-02 Peninsula Plaza,
-            111 North Bridge Road,
-            179098 Singapore
-            Email: contactus@pixiumdigital.com
-          </p>
+            <p className="footer-text">
+              Singapore
+              #15-02 Peninsula Plaza,
+              111 North Bridge Road,
+              179098 Singapore<br></br>
+              Email: contactus@pixiumdigital.com
+            </p>
 
-          <p className="footer-text">
-            Beausoleil, France - Monaco
-            33 boulevard du Général Leclerc, 06240 Beausoleil
-            Email: contactus@pixiumdigital.com
-          </p>
+            <p className="footer-text">
+              France - Monaco, Beausoleil
+              33 boulevard du Général Leclerc, 06240 Beausoleil<br></br>
+              Email: contactus@pixiumdigital.com
+            </p>
 
-          <p className="footer-text">
-            Málaga, Spain
-            Email: contactus@pixiumdigital.com
-          </p>
+            <p className="footer-text">
+              Málaga, Spain<br></br>
+              Email: contactus@pixiumdigital.com
+            </p>
+          </div>
         </li>
 
       </ul>
