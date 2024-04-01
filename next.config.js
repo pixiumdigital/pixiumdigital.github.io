@@ -16,9 +16,9 @@ if(!isProd){
        
         // Optional: Change the output directory `out` -> `dist`
         distDir: 'dist',
-        // images:{
-        //     unoptimized:true
-        // }
+        images:{
+            unoptimized:true
+        }
     }
        
     module.exports = nextConfig
