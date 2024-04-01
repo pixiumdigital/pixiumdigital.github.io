@@ -22,7 +22,7 @@ export function PostHeader({ title, coverImage, date, author }: Props) {
         <Image
           src={coverImage}
           alt={`Cover Image for ${title}`}
-          style={{width:"100%"}}
+          style={{width:"100%", padding:"40px"}}
           width={900}
           height={900}
         />
