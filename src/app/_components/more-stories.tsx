@@ -9,7 +9,7 @@ type Props = {
 export function MoreStories({ posts }: Props) {
   return (
     <section>
-      <div className="grid grid-cols-2 gap-y-16">
+      <div className="grid gap-y-16 grid-cols-1 lg:grid-cols-2">
         {posts.map((post) => (
           <PostPreview
             key={post.slug}
@@ -29,7 +29,7 @@ export function MoreStories({ posts }: Props) {
 export function MoreServices({ posts }: Props) {
   return (
     <section>
-      <div className="grid grid-cols-3 gap-y-16">
+      <div className="grid gap-y-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {posts.map((post) => (
           <ServicePreview
             key={post.slug}

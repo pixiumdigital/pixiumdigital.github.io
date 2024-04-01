@@ -22,7 +22,7 @@ export function PostPreview({
   slug,
 }: Props) {
   return (
-      <div className="service-card columns-2 gap-x-8" style={{margin:"20px", padding:"40px"}}>
+      <div className="service-card columns-1 md:columns-2 gap-x-8" style={{margin:"20px", padding:"40px"}}>
         <div className="gap-x-8">
             <h3 className="text-3xl mb-3 leading-snug">
               <Link

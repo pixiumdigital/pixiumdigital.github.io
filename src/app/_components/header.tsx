@@ -42,7 +42,7 @@ const Header = () => {
       <nav className={"navbar "+navBarClass} data-navbar>
 
         <div className="wrapper">
-          <a className="nav-close-btn" aria-label="close menu" data-nav-toggler onClick={closeNavbar}>
+          <a className="nav-close-btn" aria-label="close menu" data-nav-toggler onClick={closeNavbar} style={{width:"80px"}}>
              {/* <ion-icon name="close-outline" aria-hidden="true"></ion-icon> */}
              <FontAwesomeIcon icon={faClose} />
           </a>
