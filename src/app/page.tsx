@@ -5,48 +5,49 @@ import { MoreStories } from "@/app/_components/more-stories";
 import { getAllUseCase } from "@/lib/api";
 import Newsletter from "./_components/newsletter";
 import Whyworkwithus from "./_components/whyworkwithus";
+import { Industry } from "./_components/industry";
+import { PixStats } from "./_components/pix_stats";
 
 export default function Index() {
-  return (<div> 
-    <section className="section hero" id="home" aria-label="hero">
-        <div className="container">
+  return (
+      <div> 
+          <section className="section hero" id="home" aria-label="hero">
+              <div className="container">
 
-          <div className="hero-content">
+                  <div className="hero-content">
 
-            <h1 className="h1 hero-title">
-              Shaping your project with <span className="has-before">technology</span> and innovation
-            </h1>
+                      <h1 className="h1 hero-title">
+                          Shaping your project with <span className="has-before">technology</span> and innovation
+                      </h1>
 
-            <p className="hero-text">
-            Pixium Digital is an agile software development company headquartered in Singapore.
-             Our dedicated focus lies in meticulously shaping our clients' projects from 
-             inception to a successful launch, ensuring transformative outcomes.
-            </p>
+                      <p className="hero-text">
+                          Pixium Digital is an agile software development company headquartered in Singapore.
+                          Our dedicated focus lies in meticulously shaping our clients' projects from 
+                          inception to a successful launch, ensuring transformative outcomes.
+                      </p>
 
-            <div className="centered">
-              <a href="/contact-us" className="btn btn-primary has-before has-after">Contact Us</a>
+                      <div className="centered">
+                          <a href="/contact-us" className="btn btn-primary has-before has-after">Contact Us</a>
+                      </div>
 
-              <button className="hero-btn" aria-label="pixology promo">
-                {/* <ion-icon name="play-outline" aria-hidden="true"></ion-icon> */}
+                  </div>
 
-                {/* <span className="span">Behind the scenes</span> */}
-              </button>
-            </div>
+                  <figure className="hero-banner">
+                      {/* hero-banner.png */}
+                      <img src="/assets/images/dotmap.png" style={{width:"100%"}} alt="pixium digital location map" />
+                  </figure>
 
-          </div>
+              </div>
+          </section>
 
-          <figure className="hero-banner">
-            {/* hero-banner.png */}
-            <img src="/assets/images/dotmap.png" style={{width:"100%"}} alt="hero banner" />
-          </figure>
+          <PixStats />
 
-        </div>
-      </section>
+          <Industry />
 
-      <Whyworkwithus />
+          <Whyworkwithus />
 
-      <Newsletter />
-    </div>
+          <Newsletter />
+      </div>
   );
   // const allPosts = getAllPosts();
 

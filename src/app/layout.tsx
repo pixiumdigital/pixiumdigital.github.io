@@ -12,8 +12,10 @@ import Footer from "./_components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: `Pixium Digital`,
-  description: `Digital Agency`,
+  title: `Pixium Digital Group`,
+  description: `Pixium Digital is an agile software development company located in Singapore and France.
+  Our dedicated focus lies in meticulously shaping our clients' projects from 
+  inception to a successful launch, ensuring transformative outcomes.`,
   openGraph: {
     images: [HOME_OG_IMAGE_URL],
   },
