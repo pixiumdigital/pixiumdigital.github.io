@@ -32,10 +32,6 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link
-          rel="stylesheet"
-          href="node_modules/keen-slider/keen-slider.min.css"
-        />
-        <link
           rel="apple-touch-icon"
           sizes="180x180"
           href="/favicon/apple-touch-icon.png"
@@ -68,7 +64,6 @@ export default function RootLayout({
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
         <body className={inter.className+" App"}>
-          <script src="node_modules/keen-slider/keen-slider.js"></script>
           <Header />
             <div className="min-h-screen">{children}</div>
           <Footer />

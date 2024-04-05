@@ -42,3 +42,10 @@ Decentralised Web Application (DApp)
 3rd party integration (crypto wallet integrator)
 
 Real time price card algorithm
+
+## Output
+
+![output_image](/assets/blog/zilbingo/img1.png)
+![output_image](/assets/blog/zilbingo/img2.png) 
+![output_image](/assets/blog/zilbingo/img3.png) 
+![output_image](/assets/blog/zilbingo/img4.png)

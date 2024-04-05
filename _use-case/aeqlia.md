@@ -34,3 +34,9 @@ Responsive Web Application
 Highly customisable learning activities
 
 Secured system architecture
+
+## Output
+
+![output_image](/assets/blog/aeqlia/img1.jpg)
+![output_image](/assets/blog/aeqlia/img2.png) 
+![output_image](/assets/blog/aeqlia/img3.png)

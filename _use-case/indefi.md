@@ -32,3 +32,10 @@ Design and User experience
 Implement and deployment
 
 Maintenance
+
+## Output
+
+![output_image](/assets/blog/indefi/img1.jpg)
+![output_image](/assets/blog/indefi/img2.jpg) 
+![output_image](/assets/blog/indefi/img3.jpg) 
+![output_image](/assets/blog/indefi/img4.jpg)

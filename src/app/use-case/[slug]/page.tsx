@@ -11,6 +11,8 @@ import { PostHeader } from "@/app/_components/post-header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import Whyworkwithus from "@/app/_components/whyworkwithus";
+import Newsletter from "@/app/_components/newsletter";
 
 export default async function Post({ params }: Params) {
   const post = getUseCaseBySlug(params.slug);
@@ -22,28 +24,32 @@ export default async function Post({ params }: Params) {
   const content = await markdownToHtml(post.content || "");
 
   return (
-    <section className="section service" id="service" aria-label="service">
-      <Alert preview={post.preview} />
-      <Link href="/use-case/"><FontAwesomeIcon icon={faArrowLeft}/> Back</Link>
-      <Container>
-        <h2 className="h2 section-title text-center">
-              <span className="has-before">{post.title}</span>
-          </h2>
-        <article className="mb-32 grid grid-cols-1 md:grid-cols-2">
-          <div>
-            <PostHeader
-              title={post.title}
-              coverImage={post.coverImage}
-              date={post.date}
-              author={post.author}
-            />
-          </div>
-          <div>
-            <PostBody content={content} />
-          </div>
-        </article>
-      </Container>
-    </section>
+    <>
+      <section className="section service" id="service" aria-label="service">
+        <Alert preview={post.preview} />
+        <Link href="/use-case/"><FontAwesomeIcon icon={faArrowLeft}/> Back</Link>
+        <Container>
+          <h2 className="h2 section-title text-center">
+                <span className="has-before">{post.title}</span>
+            </h2>
+          <article className="mb-32 grid grid-cols-1 md:grid-cols-2">
+            <div>
+              <PostHeader
+                title={post.title}
+                coverImage={post.coverImage}
+                date={post.date}
+                author={post.author}
+              />
+            </div>
+            <div>
+              <PostBody content={content} />
+            </div>
+          </article>
+        </Container>
+      </section>
+
+      <Newsletter />
+    </>
   );
 }
 

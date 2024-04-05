@@ -26,3 +26,10 @@ Development of both iOS and Android AR mobile applications allowing architect an
 ## Solution
 
 The app provides a heightened experience of the ArtAF Art Exhibition at Conrad Centennial, revealing 15 Art pieces through AR only. It also allows the users to preview the 85 pieces presented via AR, in the comfort of their own homes.
+
+## Output
+
+![output_image_mobile](/assets/blog/artaf/img1.jpg)
+![output_image_mobile](/assets/blog/artaf/img2.jpg) 
+![output_image_mobile](/assets/blog/artaf/img3.jpg) 
+![output_image_mobile](/assets/blog/artaf/img4.jpg)

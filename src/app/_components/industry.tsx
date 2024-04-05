@@ -7,8 +7,15 @@ export function Industry() {
             <div className="container">
 
                 <h1 className="h2 section-title text-center">
-                    <span className="has-before">Industries</span>
+                    <span className="has-before">Industry agnostic</span>
                 </h1>
+                <p>
+                    With a rich history of serving clients across diverse industries including Fintech, Healthtech, 
+                    Agri-tech, Entertainment, and beyond, we pride ourselves on delivering tailored 
+                    solutions that transcend boundaries. Our expertise extends beyond mere coding; 
+                    we specialize in understanding the unique needs of each sector we serve, 
+                    harnessing technology to drive impactful results.
+                </p>
             </div>
             <main>
                 <Container>
