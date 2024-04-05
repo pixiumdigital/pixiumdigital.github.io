@@ -1,5 +1,4 @@
-import React, { Component }  from 'react';
-import Whyworkwithus from '../_components/whyworkwithus';
+import Whyworkwithus from '../../_components/whyworkwithus';
 import { Metadata } from 'next';
 
 // import { SEO } from "../components/seo"

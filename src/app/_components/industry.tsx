@@ -3,7 +3,7 @@ import Container from "./container";
 
 export function Industry() {
     return (
-        <section className="section service" id="industries" aria-label="industry" style={{paddingTop:"40px;"}}>
+        <section className="section service" id="industries" aria-label="industry" style={{paddingTop:"40px"}}>
             <div className="container">
 
                 <h1 className="h2 section-title text-center">

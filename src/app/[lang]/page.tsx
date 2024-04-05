@@ -1,14 +1,16 @@
-import Container from "@/app/_components/container";
-import { HeroPost } from "@/app/_components/hero-post";
-import { Intro } from "@/app/_components/intro";
-import { MoreStories } from "@/app/_components/more-stories";
-import { getAllUseCase } from "@/lib/api";
-import Newsletter from "./_components/newsletter";
-import Whyworkwithus from "./_components/whyworkwithus";
-import { Industry } from "./_components/industry";
-import { PixStats } from "./_components/pix_stats";
+import Newsletter from "../_components/newsletter";
+import Whyworkwithus from "../_components/whyworkwithus";
+import { Industry } from "../_components/industry";
+import { PixStats } from "../_components/pix_stats";
 
-export default function Index() {
+// import { Trans } from '@lingui/macro'
+import { Trans } from '@lingui/react'
+
+import { getDictionary } from './dictionaries'
+
+export default async function Index({ params: { lang } } : {params:any}) {
+    const dict = await getDictionary(lang) // en
+
   return (
       <div> 
           <section className="section hero" id="home" aria-label="hero">
@@ -17,7 +19,9 @@ export default function Index() {
                   <div className="hero-content">
 
                       <h1 className="h1 hero-title">
-                          Shaping your project with <span className="has-before">technology</span> and innovation
+                      {dict.page.homeTagline}
+                      {/* Shaping your project with <span className="has-before">technology</span> and innovation */}
+                            {/* <Trans id="home-tagline" /> */}
                       </h1>
 
                       <p className="hero-text">
@@ -49,6 +53,7 @@ export default function Index() {
           <Newsletter />
       </div>
   );
+
   // const allPosts = getAllPosts();
 
   // const heroPost = allPosts[0];

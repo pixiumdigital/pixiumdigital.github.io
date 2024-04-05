@@ -1,10 +1,11 @@
-import Container from "@/app/_components/container";
-import { EXAMPLE_PATH } from "@/lib/constants";
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faLinkedin, faDev } from "@fortawesome/free-brands-svg-icons"
+import { setLocale } from '@/middleware';
+import LangSelector from './langSelector';
 
-export function Footer() {
+const Footer = () => {
+// export function Footer() {
+
   return (<footer className="footer">
   <div className="container">
 
@@ -13,6 +14,8 @@ export function Footer() {
       <div className="footer-brand">
 
         <p className="footer-list-title">About Pixium Digital</p>
+
+        {/* <LangSelector /> */}
 
         <p className="footer-text text-left">
         Pixium Digital is an agile software development company headquartered in Singapore. 
