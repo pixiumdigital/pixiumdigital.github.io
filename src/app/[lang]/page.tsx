@@ -2,22 +2,11 @@ import Newsletter from "./_components/newsletter";
 import Whyworkwithus from "./_components/whyworkwithus";
 import { Industry } from "./_components/industry";
 import { PixStats } from "./_components/pix_stats";
-
-import {unstable_setRequestLocale} from 'next-intl/server';
-
-// import { useTranslations } from 'next-intl';
-
-import { locales } from '@/navigation';
-export function generateStaticParams() {
-    return locales.map((locale) => ({locale}));
-}
-
-
+import { useTranslations } from "next-intl";
 
 export default function Index( { params: { locale } } : { params:{locale:any } } ) {
-    unstable_setRequestLocale(locale);
-    // const dict = await getDictionary(lang) // en
-    // const t = useTranslations();
+    
+    const t = useTranslations();
 
   return (
       <div> 
@@ -27,7 +16,7 @@ export default function Index( { params: { locale } } : { params:{locale:any } }
                   <div className="hero-content">
 
                       <h1 className="h1 hero-title">
-                        {/* {t('tagline')} */}
+                        {t('tagline')}
                         {/* {t('header', { name: userName })} */}
                       {/* {dict.page.homeTagline} */}
                       {/* Shaping your project with <span className="has-before">technology</span> and innovation */}
@@ -35,7 +24,7 @@ export default function Index( { params: { locale } } : { params:{locale:any } }
                       </h1>
 
                       <p className="hero-text">
-                          {/* {t('description')} */}
+                          {t('description')}
                       </p>
 
                       <div className="centered">

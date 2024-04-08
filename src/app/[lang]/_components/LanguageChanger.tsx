@@ -2,17 +2,17 @@
 
 import { useRouter, usePathname } from '@/navigation';
 import { useEffect, useState } from 'react';
-// import Cookies from "universal-cookie";
+import Cookies from "universal-cookie";
 
 export default function LanguageChanger() {
   const router = useRouter();
   const pathname = usePathname();
 
-  // const _cookies = new Cookies();
+  const _cookies = new Cookies();
   const [lang, setLang] = useState("");
 
   useEffect(() => {
-        // setLang(_cookies.get('NEXT_LOCALE'));
+        setLang(_cookies.get('NEXT_LOCALE'));
   }, []);
 
   const handleChange = (e:any) => {

@@ -11,17 +11,7 @@ import '../style.css';
 import Header from "./_components/header";
 import Footer from "./_components/footer";
 
-import {unstable_setRequestLocale} from 'next-intl/server';
-
 const inter = Inter({ subsets: ["latin"] });
-
-import { locales } from '@/navigation';
-
-
-export function generateStaticParams() {
-  return locales.map((locale) => ({locale}));
-}
-
 
 // export const metadata: Metadata = {
 //   title: `Pixium Digital Group`,
@@ -40,7 +30,6 @@ export function generateStaticParams() {
 // { params: { lang } } : {params:any}
 export default function RootLayout({children, params}: {children: React.ReactNode, params :{locale:string}}) {
     const {locale} = params;
-    unstable_setRequestLocale(locale);
 
     // if (!locales.includes(locale)) {
     //   // notFound();
