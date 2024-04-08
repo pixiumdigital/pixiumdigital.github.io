@@ -9,10 +9,6 @@ if(isProd){
     
     const nextConfig = {
         output: 'export',
-        i18n: {
-            locales: linguiConfig.locales,
-            defaultLocale: linguiConfig.sourceLocale,
-        },
         distDir: 'dist',
         images:{
             unoptimized:true
