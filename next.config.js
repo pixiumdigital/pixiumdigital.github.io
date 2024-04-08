@@ -9,7 +9,6 @@ if(isProd){
     
     const nextConfig = {
         output: 'export',
-        dynamic: 'force-static',
         distDir: 'dist',
         images:{
             unoptimized:true

@@ -46,7 +46,7 @@ export default function RootLayout({children, params}: {children: React.ReactNod
     //   // notFound();
     // }
 
-    // const messages = useMessages();
+    const messages = useMessages();
 
 
     return (
@@ -85,13 +85,13 @@ export default function RootLayout({children, params}: {children: React.ReactNod
                 <meta name="theme-color" content="#000" />
                 <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
             </head>
-                {/* <NextIntlClientProvider locale={locale} messages={messages}> */}
+                <NextIntlClientProvider locale={locale} messages={messages}>
                     <body className={inter.className+" App"}>
                         <Header />
                         <div className="min-h-screen">{children}</div>
                         <Footer />
                     </body>
-                {/* </NextIntlClientProvider> */}
+                </NextIntlClientProvider>
         </html>
     );
 }
