@@ -1,10 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faLinkedin, faDev } from "@fortawesome/free-brands-svg-icons"
-import { setLocale } from '@/middleware';
-import LangSelector from './langSelector';
+import LanguageChanger from './LanguageChanger';
+import { useTranslations } from 'next-intl';
 
 const Footer = () => {
 // export function Footer() {
+
+const t = useTranslations();
 
   return (<footer className="footer">
   <div className="container">
@@ -15,12 +17,8 @@ const Footer = () => {
 
         <p className="footer-list-title">About Pixium Digital</p>
 
-        {/* <LangSelector /> */}
-
         <p className="footer-text text-left">
-        Pixium Digital is an agile software development company headquartered in Singapore. 
-        Our dedicated focus lies in meticulously shaping our clients' 
-        projects from inception to a successful launch, ensuring transformative outcomes.
+        {t('description')}
         </p>
 
         <ul className="social-list">
@@ -123,6 +121,11 @@ const Footer = () => {
       <p className="copyright">
         &copy; {new Date().getFullYear()} Pixium Digital. All Rights Reserved
       </p>
+
+      <div>
+        <LanguageChanger />
+      </div>
+      
 
       {/* <ul className="footer-bottom-list">
 

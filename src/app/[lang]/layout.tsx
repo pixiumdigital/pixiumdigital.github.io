@@ -2,27 +2,20 @@ import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
+import { NextIntlClientProvider, useMessages } from 'next-intl';
+
 import "../globals.css";
 import '../App.css';
 import '../style.css';
 
-import Header from "../_components/header";
-import Footer from "../_components/footer";
-// import LanguageSelect from "../LanguageSelector";
-// import { useLinguiInit } from "../../../utils";
+import Header from "./_components/header";
+import Footer from "./_components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
+import { locales } from '@/navigation';
 
-// import { i18n } from '@lingui/core'
-// import { initTranslation } from '../../utils'
-// import { useRouter } from "next/router";
-// import { useRef } from "react";
 
-// import LanguageSelector from './LanguageSelector';
-
-//initialization function
-// initTranslation(i18n)
 
 export async function generateStaticParams() {
     return [{ lang: 'en' }, { lang: 'fr' }]
@@ -38,30 +31,20 @@ export const metadata: Metadata = {
     images: [HOME_OG_IMAGE_URL],
   },
 };
+// { params: { lang } } : {params:any}
+export default function RootLayout({children, params}: {children: React.ReactNode, params :{locale:string}}) {
+    const {locale} = params;
 
+    if (!locales.includes(locale)) {
+      // notFound();
+    }
 
-
-export default function RootLayout({children, params}: Readonly<{children: React.ReactNode, params :any}>) {
-
-    // const initializedI18n = useLinguiInit(pageProps.i18n);
-    
-    // const router = useRouter()
-    // const locale = router.locale || router.defaultLocale
-    // const firstRender = useRef(true)
-
-    // pageProps.translation && 
-    // if (firstRender.current) {
-    //     //load the translations for the locale
-    //     i18n.load(locale, pageProps.translation)
-    //     i18n.activate(locale)
-    //     // render only once
-    //     firstRender.current = false
-    // }
+    const messages = useMessages();
 
 
     return (
       //  lang="en"
-        <html lang={params.lang}>
+        <html lang={locale}>
             <head>
                 <link
                   rel="apple-touch-icon"
@@ -95,16 +78,13 @@ export default function RootLayout({children, params}: Readonly<{children: React
                 <meta name="theme-color" content="#000" />
                 <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
             </head>
-            <body className={inter.className+" App"}>
-                {/* <LanguageSelector
-                  language={language}
-                  onChangeLangage={onLanguageChange}
-                /> */}
-                <Header />
-                {/* <LanguageSelect /> */}
-                <div className="min-h-screen">{children}</div>
-                <Footer />
-            </body>
+                <NextIntlClientProvider locale={locale} messages={messages}>
+                    <body className={inter.className+" App"}>
+                        <Header />
+                        <div className="min-h-screen">{children}</div>
+                        <Footer />
+                    </body>
+                </NextIntlClientProvider>
         </html>
     );
 }

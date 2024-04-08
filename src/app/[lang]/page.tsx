@@ -1,15 +1,14 @@
-import Newsletter from "../_components/newsletter";
-import Whyworkwithus from "../_components/whyworkwithus";
-import { Industry } from "../_components/industry";
-import { PixStats } from "../_components/pix_stats";
+import Newsletter from "./_components/newsletter";
+import Whyworkwithus from "./_components/whyworkwithus";
+import { Industry } from "./_components/industry";
+import { PixStats } from "./_components/pix_stats";
 
-// import { Trans } from '@lingui/macro'
-import { Trans } from '@lingui/react'
+import { useTranslations } from 'next-intl';
+import LanguageChanger from "./_components/LanguageChanger";
 
-import { getDictionary } from './dictionaries'
-
-export default async function Index({ params: { lang } } : {params:any}) {
-    const dict = await getDictionary(lang) // en
+export default function Index({ params: { lang } } : {params:any}) {
+    // const dict = await getDictionary(lang) // en
+    const t = useTranslations();
 
   return (
       <div> 
@@ -19,15 +18,15 @@ export default async function Index({ params: { lang } } : {params:any}) {
                   <div className="hero-content">
 
                       <h1 className="h1 hero-title">
-                      {dict.page.homeTagline}
+                        {t('tagline')}
+                        {/* {t('header', { name: userName })} */}
+                      {/* {dict.page.homeTagline} */}
                       {/* Shaping your project with <span className="has-before">technology</span> and innovation */}
                             {/* <Trans id="home-tagline" /> */}
                       </h1>
 
                       <p className="hero-text">
-                          Pixium Digital is an agile software development company headquartered in Singapore.
-                          Our dedicated focus lies in meticulously shaping our clients' projects from 
-                          inception to a successful launch, ensuring transformative outcomes.
+                          {t('description')}
                       </p>
 
                       <div className="centered">

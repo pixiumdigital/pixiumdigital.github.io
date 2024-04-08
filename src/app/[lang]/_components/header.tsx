@@ -10,19 +10,20 @@ const Header = () => {
     const [scrollingClass, setScrollingClass] = useState("");
     const [navBarClass, setNavBarClass] = useState("");
 
-    useEffect(() => {
-        const handleScroll = () => {
-          if (window.scrollY > 80) 
-          {
-              if(!scrollingClass){
-                  setScrollingClass("active");
-              }
-          }else{
-              setScrollingClass("");
+    const handleScroll = () => {
+      if (window.scrollY > 80) 
+      {
+          if(!scrollingClass){
+              setScrollingClass("active");
           }
-        }
-        window.addEventListener('scroll', handleScroll);
-          
+      }else{
+          setScrollingClass("");
+      }
+    }
+
+    useEffect(() => {
+        handleScroll();
+        window.addEventListener('scroll', handleScroll);     
     }, []);
 
     function toggleNavbar(event:any){

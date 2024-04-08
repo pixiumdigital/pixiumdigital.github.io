@@ -3,16 +3,16 @@ import { notFound } from "next/navigation";
 import { getUseCaseBySlug, getAllUseCase } from "@/lib/api";
 import { CMS_NAME } from "@/lib/constants";
 import markdownToHtml from "@/lib/markdownToHtml";
-import Alert from "@/app/_components/alert";
-import Container from "@/app/_components/container";
-import Header from "@/app/_components/header";
-import { PostBody } from "@/app/_components/post-body";
-import { PostHeader } from "@/app/_components/post-header";
+import Alert from "@/app/[lang]/_components/alert";
+import Container from "@/app/[lang]/_components/container";
+import Header from "@/app/[lang]/_components/header";
+import { PostBody } from "@/app/[lang]/_components/post-body";
+import { PostHeader } from "@/app/[lang]/_components/post-header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-import Whyworkwithus from "@/app/_components/whyworkwithus";
-import Newsletter from "@/app/_components/newsletter";
+import Whyworkwithus from "@/app/[lang]/_components/whyworkwithus";
+import Newsletter from "@/app/[lang]/_components/newsletter";
 
 export default async function Post({ params }: Params) {
   const post = getUseCaseBySlug(params.slug);

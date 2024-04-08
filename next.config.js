@@ -1,12 +1,12 @@
 /**
  * @type {import('next').NextConfig}
  */
-
-const linguiConfig = require("./lingui.config")
+const withNextIntl = require('next-intl/plugin')();
 
 const isProd = process.env.NODE_ENV != 'development'
 
 if(isProd){
+    
     const nextConfig = {
         output: 'export',
         i18n: {
@@ -19,5 +19,8 @@ if(isProd){
         },
     }
        
-    module.exports = nextConfig
+    module.exports = withNextIntl(nextConfig);
+    // module.exports = nextConfig
+}else{
+    module.exports = withNextIntl({});
 }
