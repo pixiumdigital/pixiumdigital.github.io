@@ -5,10 +5,12 @@ import { getAllServices } from '@/lib/api';
 import { MoreServices } from '../_components/more-stories';
 import Container from '../_components/container';
 import { Metadata } from 'next';
+import { unstable_setRequestLocale } from 'next-intl/server';
 
 // import { SEO } from "../components/seo"
 
-const Index = () => {
+export default function Index( { params: { locale } } : { params:{locale:any } } ) {
+    unstable_setRequestLocale(locale);
 
     const allPosts = getAllServices();
     const morePosts = allPosts;
@@ -32,19 +34,17 @@ const Index = () => {
     </>);
 };
 
-export default Index;
 
-
-export function generateMetadata(): Metadata {
-    const title = `Services | Pixium Digital`;
-    return {
-      title,
-      openGraph: {
-        title,
-        // images: [post.ogImage.url],
-      },
-    };
-}
+// export function generateMetadata(): Metadata {
+//     const title = `Services | Pixium Digital`;
+//     return {
+//       title,
+//       openGraph: {
+//         title,
+//         // images: [post.ogImage.url],
+//       },
+//     };
+// }
 
 // export const Head = () => (
 //     <SEO title="About us" />

@@ -8,7 +8,7 @@ import { Metadata } from 'next';
 
 // import { SEO } from "../components/seo"
 
-const Index = () => {
+export default function Index() {
 
     const allPosts = getAllUseCase();
     const morePosts = allPosts;
@@ -39,16 +39,14 @@ const Index = () => {
         </>;
 };
 
-export default Index;
 
-
-export function generateMetadata(): Metadata {
-    const title = `Use Case | Pixium Digital`;
-    return {
-      title,
-      openGraph: {
-        title,
-        // images: [post.ogImage.url],
-      },
-    };
-}
+// export function generateMetadata(): Metadata {
+//     const title = `Use Case | Pixium Digital`;
+//     return {
+//       title,
+//       openGraph: {
+//         title,
+//         // images: [post.ogImage.url],
+//       },
+//     };
+// }

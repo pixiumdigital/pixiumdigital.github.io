@@ -11,35 +11,42 @@ import '../style.css';
 import Header from "./_components/header";
 import Footer from "./_components/footer";
 
+import {unstable_setRequestLocale} from 'next-intl/server';
+
 const inter = Inter({ subsets: ["latin"] });
 
 import { locales } from '@/navigation';
 
 
-
-export async function generateStaticParams() {
-    return [{ lang: 'en' }, { lang: 'fr' }]
+export function generateStaticParams() {
+  return locales.map((locale) => ({locale}));
 }
 
 
-export const metadata: Metadata = {
-  title: `Pixium Digital Group`,
-  description: `Pixium Digital is an agile software development company located in Singapore and France.
-  Our dedicated focus lies in meticulously shaping our clients' projects from 
-  inception to a successful launch, ensuring transformative outcomes.`,
-  openGraph: {
-    images: [HOME_OG_IMAGE_URL],
-  },
-};
+// export const metadata: Metadata = {
+//   title: `Pixium Digital Group`,
+//   description: `Pixium Digital is an agile software development company located in Singapore and France.
+//   Our dedicated focus lies in meticulously shaping our clients' projects from 
+//   inception to a successful launch, ensuring transformative outcomes.`,
+//   openGraph: {
+//     images: [HOME_OG_IMAGE_URL],
+//   },
+// };
+
+
+
+
+
 // { params: { lang } } : {params:any}
 export default function RootLayout({children, params}: {children: React.ReactNode, params :{locale:string}}) {
     const {locale} = params;
+    unstable_setRequestLocale(locale);
 
-    if (!locales.includes(locale)) {
-      // notFound();
-    }
+    // if (!locales.includes(locale)) {
+    //   // notFound();
+    // }
 
-    const messages = useMessages();
+    // const messages = useMessages();
 
 
     return (
@@ -78,13 +85,13 @@ export default function RootLayout({children, params}: {children: React.ReactNod
                 <meta name="theme-color" content="#000" />
                 <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
             </head>
-                <NextIntlClientProvider locale={locale} messages={messages}>
+                {/* <NextIntlClientProvider locale={locale} messages={messages}> */}
                     <body className={inter.className+" App"}>
                         <Header />
                         <div className="min-h-screen">{children}</div>
                         <Footer />
                     </body>
-                </NextIntlClientProvider>
+                {/* </NextIntlClientProvider> */}
         </html>
     );
 }

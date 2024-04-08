@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl';
 const Footer = () => {
 // export function Footer() {
 
-const t = useTranslations();
+  // const t = useTranslations();
 
   return (<footer className="footer">
   <div className="container">
@@ -18,7 +18,7 @@ const t = useTranslations();
         <p className="footer-list-title">About Pixium Digital</p>
 
         <p className="footer-text text-left">
-        {t('description')}
+        {/* {t('description')} */}
         </p>
 
         <ul className="social-list">

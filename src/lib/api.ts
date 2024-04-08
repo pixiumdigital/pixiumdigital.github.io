@@ -51,3 +51,9 @@ export function getAllServices(): Post[] {
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
 }
+
+
+import { locales } from '@/navigation';
+export function generateStaticParams() {
+    return locales.map((locale) => ({locale}));
+}

@@ -1,9 +1,15 @@
+import { unstable_setRequestLocale } from 'next-intl/server';
 import Whyworkwithus from '../_components/whyworkwithus';
 import { Metadata } from 'next';
 
-// import { SEO } from "../components/seo"
+import { locales } from '@/navigation';
+export function generateStaticParams() {
+    return locales.map((locale) => ({locale}));
+}
 
-const Index = () => {
+const Index = ( { params: { locale } } : { params:{locale:any } } ) => {
+    unstable_setRequestLocale(locale);
+    
     return <section className="section service" id="service" aria-label="service">
         <div className="container">
 
@@ -29,13 +35,13 @@ const Index = () => {
 
 export default Index;
 
-export function generateMetadata(): Metadata {
-    const title = `About us | Pixium Digital`;
-    return {
-      title,
-      openGraph: {
-        title,
-        // images: [post.ogImage.url],
-      },
-    };
-}
+// export function generateMetadata(): Metadata {
+//     const title = `About us | Pixium Digital`;
+//     return {
+//       title,
+//       openGraph: {
+//         title,
+//         // images: [post.ogImage.url],
+//       },
+//     };
+// }

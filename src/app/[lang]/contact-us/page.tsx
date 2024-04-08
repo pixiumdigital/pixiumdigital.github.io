@@ -1,7 +1,15 @@
 import { Metadata } from 'next';
+import { unstable_setRequestLocale } from 'next-intl/server';
 import React, { Component }  from 'react';
 
-const Index = () => {
+import { locales } from '@/navigation';
+export function generateStaticParams() {
+    return locales.map((locale) => ({locale}));
+}
+
+const Index = ( { params: { locale } } : { params:{locale:any } } ) => {
+    unstable_setRequestLocale(locale);
+    
     return <section className="section service" id="service" aria-label="service">
         <div className="container">
 
