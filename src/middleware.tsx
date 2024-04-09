@@ -20,7 +20,19 @@ export default function middleware(req: NextRequest) {
   const publicPathnameRegex = RegExp(excludePattern, "i");
   const isPublicPage = !publicPathnameRegex.test(req.nextUrl.pathname);
 
-  return intlMiddleware(req);
+  const { pathname } = req.nextUrl
+  const pathnameHasLocale = locales.some(
+    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+  )
+
+  if (pathnameHasLocale) return intlMiddleware(req);
+
+  // Redirect if there is no locale
+  const locale = 'en';
+  req.nextUrl.pathname = `/${locale}${pathname}`
+  // e.g. incoming request is /products
+  // The new URL is now /en-US/products
+  return NextResponse.redirect(req.nextUrl);
 }
 
 export const config = {
