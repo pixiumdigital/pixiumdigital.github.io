@@ -9,7 +9,7 @@ import { localePrefix, locales } from './navigation';
 const intlMiddleware = createMiddleware({
   locales: locales,
   defaultLocale: "en",
-  localePrefix: localePrefix,
+  localePrefix: 'always', // This is the default
   localeDetection: true,
 });
 

@@ -1,3 +1,4 @@
+import { locales } from '@/navigation';
 import { Metadata } from 'next';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import React, { Component }  from 'react';
@@ -7,7 +8,7 @@ import React, { Component }  from 'react';
 // }
 
 export async function generateStaticParams() {
-    const pages = ['en', 'fr'];
+    const pages = locales;
     return pages.map((page) => ({ locale: page }));
   }
 
