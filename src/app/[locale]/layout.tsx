@@ -11,6 +11,7 @@ import '../style.css';
 import Header from "./_components/header";
 import Footer from "./_components/footer";
 import { locales } from "@/navigation";
+import { notFound } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,9 +38,9 @@ export function generateStaticParams() {
 export default function RootLayout({children, params}: {children: React.ReactNode, params :{locale:string}}) {
     const {locale} = params;
 
-    // if (!locales.includes(locale)) {
-    //   // notFound();
-    // }
+    if (!locales.includes(locale)) {
+      notFound();
+    }
 
     // const messages = useMessages();
 
@@ -84,7 +85,7 @@ export default function RootLayout({children, params}: {children: React.ReactNod
                     <body className={inter.className+" App"}>
                         <Header />
                         <div className="min-h-screen">{children}</div>
-                        {/* <Footer /> */}
+                        <Footer />
                     </body>
                 {/* </NextIntlClientProvider> */}
         </html>

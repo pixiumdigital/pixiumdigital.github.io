@@ -10,8 +10,8 @@ const intlMiddleware = createMiddleware({
   locales: locales,
   defaultLocale: "en",
   // localePrefix: 'always', // This is the default
-  localePrefix: "always",
-  localeDetection: false,
+  localePrefix: localePrefix,
+  localeDetection: true,
 });
 
 
@@ -35,12 +35,12 @@ export default function middleware(req: NextRequest) {
   // // The new URL is now /en-US/products
   // return NextResponse.redirect(req.nextUrl);
 
-  intlMiddleware(req);
+  return intlMiddleware(req);
 }
 
 export const config = {
-  // matcher: ["/((?!api|_next|.*\\..*).*)"],
-  matcher: ['/', '/(fr|nl|en)/:path*']
+  matcher: ["/((?!api|_next|.*\\..*).*)"],
+  // matcher: ['/', '/(fr|en)/:path*']
 };
 
 

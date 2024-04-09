@@ -8,11 +8,11 @@ export default function LanguageChanger() {
   const router = useRouter();
   const pathname = usePathname();
 
-  // const _cookies = new Cookies();
+  const _cookies = new Cookies();
   const [lang, setLang] = useState("");
 
   useEffect(() => {
-        // setLang(_cookies.get('NEXT_LOCALE'));
+        setLang(_cookies.get('NEXT_LOCALE'));
   }, []);
 
   const handleChange = (e:any) => {
