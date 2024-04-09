@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faLinkedin, faDev } from "@fortawesome/free-brands-svg-icons"
-import LanguageChanger from './LanguageChanger';
+// import LanguageChanger from './LanguageChanger';
 import { useTranslations } from 'next-intl';
 
 const Footer = () => {
@@ -123,7 +123,7 @@ const Footer = () => {
       </p>
 
       <div>
-        <LanguageChanger />
+        {/* <LanguageChanger /> */}
       </div>
       
 

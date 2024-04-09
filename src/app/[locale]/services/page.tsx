@@ -9,8 +9,13 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 
 // import { SEO } from "../components/seo"
 
-export default function Index( { params: { locale } } : { params:{locale:any } } ) {
-    unstable_setRequestLocale(locale);
+export async function generateStaticParams() {
+    const pages = ['en', 'fr'];
+    return pages.map((page) => ({ locale: page }));
+  }
+
+export default function Index( { params } : { params:{locale:string } } ) {
+    // unstable_setRequestLocale(params.locale);
 
     const allPosts = getAllServices();
     const morePosts = allPosts;

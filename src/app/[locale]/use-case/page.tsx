@@ -8,7 +8,12 @@ import { Metadata } from 'next';
 
 // import { SEO } from "../components/seo"
 
-export default function Index() {
+export async function generateStaticParams() {
+    const pages = ['en', 'fr'];
+    return pages.map((page) => ({ locale: page }));
+  }
+
+export default function Index( { params } : { params:{locale:string } } ) {
 
     const allPosts = getAllUseCase();
     const morePosts = allPosts;

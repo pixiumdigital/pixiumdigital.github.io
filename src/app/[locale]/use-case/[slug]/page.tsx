@@ -3,16 +3,18 @@ import { notFound } from "next/navigation";
 import { getUseCaseBySlug, getAllUseCase } from "@/lib/api";
 import { CMS_NAME } from "@/lib/constants";
 import markdownToHtml from "@/lib/markdownToHtml";
-import Alert from "@/app/[lang]/_components/alert";
-import Container from "@/app/[lang]/_components/container";
-import Header from "@/app/[lang]/_components/header";
-import { PostBody } from "@/app/[lang]/_components/post-body";
-import { PostHeader } from "@/app/[lang]/_components/post-header";
+import Alert from "@/app/[locale]/_components/alert";
+import Container from "@/app/[locale]/_components/container";
+import Header from "@/app/[locale]/_components/header";
+import { PostBody } from "@/app/[locale]/_components/post-body";
+import { PostHeader } from "@/app/[locale]/_components/post-header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-import Whyworkwithus from "@/app/[lang]/_components/whyworkwithus";
-import Newsletter from "@/app/[lang]/_components/newsletter";
+import Whyworkwithus from "@/app/[locale]/_components/whyworkwithus";
+import Newsletter from "@/app/[locale]/_components/newsletter";
+
+
 
 export default async function Post({ params }: Params) {
   const post = getUseCaseBySlug(params.slug);
@@ -56,6 +58,7 @@ export default async function Post({ params }: Params) {
 type Params = {
   params: {
     slug: string;
+    locale:string;
   };
 };
 
@@ -80,7 +83,11 @@ export function generateMetadata({ params }: Params): Metadata {
 export async function generateStaticParams() {
   const posts = getAllUseCase();
 
+  // const pages = ['en', 'fr'];
+  // return pages.map((page) => ({ locale: page }));
+
   return posts.map((post) => ({
     slug: post.slug,
+    locale: 'en'
   }));
 }

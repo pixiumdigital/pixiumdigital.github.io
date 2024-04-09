@@ -2,8 +2,17 @@ import { Metadata } from 'next';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import React, { Component }  from 'react';
 
+// export function generateStaticParams() {
+//     return [{ locale: "en" }];
+// }
 
-const Index = ( { params: { locale } } : { params:{locale:any } } ) => {
+export async function generateStaticParams() {
+    const pages = ['en', 'fr'];
+    return pages.map((page) => ({ locale: page }));
+  }
+
+
+const Index = ( { params } : { params:{locale:string } } ) => {
     
     return <section className="section service" id="service" aria-label="service">
         <div className="container">
