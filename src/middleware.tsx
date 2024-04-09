@@ -9,8 +9,9 @@ import { localePrefix, locales } from './navigation';
 const intlMiddleware = createMiddleware({
   locales: locales,
   defaultLocale: "en",
-  localePrefix: 'always', // This is the default
-  localeDetection: true,
+  // localePrefix: 'always', // This is the default
+  localePrefix: "always",
+  localeDetection: false,
 });
 
 
@@ -20,23 +21,26 @@ export default function middleware(req: NextRequest) {
   const publicPathnameRegex = RegExp(excludePattern, "i");
   const isPublicPage = !publicPathnameRegex.test(req.nextUrl.pathname);
 
-  const { pathname } = req.nextUrl
-  const pathnameHasLocale = locales.some(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
-  )
+  // const { pathname } = req.nextUrl
+  // const pathnameHasLocale = locales.some(
+  //   (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+  // )
 
-  if (pathnameHasLocale) return intlMiddleware(req);
+  // if (pathnameHasLocale) return intlMiddleware(req);
 
-  // Redirect if there is no locale
-  const locale = 'en';
-  req.nextUrl.pathname = `/${locale}${pathname}`
-  // e.g. incoming request is /products
-  // The new URL is now /en-US/products
-  return NextResponse.redirect(req.nextUrl);
+  // // Redirect if there is no locale
+  // const locale = 'en';
+  // req.nextUrl.pathname = `/${locale}${pathname}`
+  // // e.g. incoming request is /products
+  // // The new URL is now /en-US/products
+  // return NextResponse.redirect(req.nextUrl);
+
+  intlMiddleware(req);
 }
 
 export const config = {
-  matcher: ["/((?!api|_next|.*\\..*).*)"],
+  // matcher: ["/((?!api|_next|.*\\..*).*)"],
+  matcher: ['/', '/(fr|nl|en)/:path*']
 };
 
 
