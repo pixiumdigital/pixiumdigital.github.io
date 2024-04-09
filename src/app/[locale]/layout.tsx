@@ -10,6 +10,7 @@ import '../style.css';
 
 import Header from "./_components/header";
 import Footer from "./_components/footer";
+import { locales } from "@/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +26,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 
 export function generateStaticParams() {
-  const pages = ['en/about-us', 'en/contact-us'];
+  const pages = locales;
   return pages.map((page) => ({ name: page }));
 }
 
@@ -81,7 +82,7 @@ export default function RootLayout({children, params}: {children: React.ReactNod
             </head>
                 {/* <NextIntlClientProvider locale={locale} messages={messages}> */}
                     <body className={inter.className+" App"}>
-                        {/* <Header /> */}
+                        <Header />
                         <div className="min-h-screen">{children}</div>
                         {/* <Footer /> */}
                     </body>

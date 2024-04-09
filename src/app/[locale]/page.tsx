@@ -3,9 +3,10 @@ import Whyworkwithus from "./_components/whyworkwithus";
 import { Industry } from "./_components/industry";
 import { PixStats } from "./_components/pix_stats";
 import { useTranslations } from "next-intl";
+import { locales } from "@/navigation";
 
 export async function generateStaticParams() {
-    const pages = ['en', 'fr'];
+    const pages = locales;
     return pages.map((page) => ({ locale: page }));
   }
 
