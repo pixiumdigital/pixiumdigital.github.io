@@ -3,11 +3,11 @@ import { notFound } from "next/navigation";
 import { getAllServices, getServiceBySlug } from "@/lib/api";
 import { CMS_NAME } from "@/lib/constants";
 import markdownToHtml from "@/lib/markdownToHtml";
-import Alert from "@/app/[locale]/_components/alert";
-import Container from "@/app/[locale]/_components/container";
-import { PostBody } from "@/app/[locale]/_components/post-body";
-import Newsletter from "@/app/[locale]/_components/newsletter";
-import Whyworkwithus from "@/app/[locale]/_components/whyworkwithus";
+import Alert from "@/app/_components/alert";
+import Container from "@/app/_components/container";
+import { PostBody } from "@/app/_components/post-body";
+import Newsletter from "@/app/_components/newsletter";
+import Whyworkwithus from "@/app/_components/whyworkwithus";
 import Link from "next/link";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

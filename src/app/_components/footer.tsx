@@ -19,6 +19,9 @@ const Footer = () => {
 
         <p className="footer-text text-left">
         {/* {t('description')} */}
+        Pixium Digital is an agile software development company headquartered in Singapore. 
+        Our dedicated focus lies in meticulously shaping our clients' projects 
+        from inception to a successful launch, ensuring transformative outcomes.
         </p>
 
         <ul className="social-list">
