@@ -61,11 +61,11 @@ const Header = () => {
         <ul className="navbar-list">
 
           <li className="navbar-item">
-            <a href={lang+"/services"} className="navbar-link" data-nav-link>Services</a>
+            <a href={"/services"} className="navbar-link" data-nav-link>Services</a>
           </li>
 
           <li className="navbar-item">
-            <a href={lang+"/about-us"} className="navbar-link" data-nav-link>About Us</a>
+            <a href={"/about-us"} className="navbar-link" data-nav-link>About Us</a>
           </li>
 
           <li className="navbar-item">

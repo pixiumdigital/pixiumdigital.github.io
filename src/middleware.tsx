@@ -21,14 +21,14 @@ export default function middleware(req: NextRequest) {
   const publicPathnameRegex = RegExp(excludePattern, "i");
   const isPublicPage = !publicPathnameRegex.test(req.nextUrl.pathname);
 
-  if(process.env.NODE_ENV != 'development'){
-      return;
-      // PROD
-      // const { pathname } = req.nextUrl
-      // const pathnameHasLocale = locales.some(
-      //   (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
-      // )
-  }
+  // if(process.env.NODE_ENV != 'development'){
+  //     return;
+  //     // PROD
+  //     // const { pathname } = req.nextUrl
+  //     // const pathnameHasLocale = locales.some(
+  //     //   (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+  //     // )
+  // }
   // const { pathname } = req.nextUrl
   // const pathnameHasLocale = locales.some(
   //   (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
