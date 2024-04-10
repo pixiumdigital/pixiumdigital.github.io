@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useEffect } from "react";
 import { useState } from "react";
+import Cookies from "universal-cookie";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faClose } from '@fortawesome/free-solid-svg-icons'
@@ -9,6 +10,12 @@ import { faBars, faClose } from '@fortawesome/free-solid-svg-icons'
 const Header = () => {
     const [scrollingClass, setScrollingClass] = useState("");
     const [navBarClass, setNavBarClass] = useState("");
+    const [lang, setLang] = useState("");
+
+    const _cookies = new Cookies();
+    useEffect(() => {
+          setLang(_cookies.get('NEXT_LOCALE'));
+    }, []);
 
     const handleScroll = () => {
       if (window.scrollY > 80) 
@@ -52,19 +59,19 @@ const Header = () => {
         <ul className="navbar-list">
 
           <li className="navbar-item">
-            <a href="/services" className="navbar-link" data-nav-link>Services</a>
+            <a href={lang+"/services"} className="navbar-link" data-nav-link>Services</a>
           </li>
 
           <li className="navbar-item">
-            <a href="/about-us" className="navbar-link" data-nav-link>About Us</a>
+            <a href={lang+"/about-us"} className="navbar-link" data-nav-link>About Us</a>
           </li>
 
           <li className="navbar-item">
-            <a href="/use-case" className="navbar-link" data-nav-link>Use case</a>
+            <a href={lang+"/use-case"} className="navbar-link" data-nav-link>Use case</a>
           </li>
 
           <li className="navbar-item">
-            <a href="/contact-us" className="navbar-link" data-nav-link>Contact Us</a>
+            <a href={lang+"/contact-us"} className="navbar-link" data-nav-link>Contact Us</a>
           </li>
 
           {/* <li className="navbar-item">
