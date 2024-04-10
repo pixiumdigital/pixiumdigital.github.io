@@ -5,15 +5,15 @@ import { getAllServices } from '@/lib/api';
 import { MoreServices } from '../_components/more-stories';
 import Container from '../_components/container';
 import { Metadata } from 'next';
-import { unstable_setRequestLocale } from 'next-intl/server';
-import { locales } from '@/navigation';
+// import { unstable_setRequestLocale } from 'next-intl/server';
+// import { locales } from '@/__navigation';
 
 // import { SEO } from "../components/seo"
 
-export async function generateStaticParams() {
-    const pages = locales;
-    return pages.map((page) => ({ locale: page }));
-  }
+// export async function generateStaticParams() {
+//     const pages = locales;
+//     return pages.map((page) => ({ locale: page }));
+//   }
 
 export default function Index( { params } : { params:{locale:string } } ) {
     // unstable_setRequestLocale(params.locale);

@@ -53,7 +53,7 @@ export function getAllServices(): Post[] {
 }
 
 
-import { locales } from '@/navigation';
-export function generateStaticParams() {
-    return locales.map((locale) => ({locale}));
-}
+// import { locales } from '@/__navigation';
+// export function generateStaticParams() {
+//     return locales.map((locale) => ({locale}));
+// }

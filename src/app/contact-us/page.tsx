@@ -1,4 +1,4 @@
-import { locales } from '@/navigation';
+// import { locales } from '@/__navigation';
 import { Metadata } from 'next';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import React, { Component }  from 'react';
@@ -7,10 +7,10 @@ import React, { Component }  from 'react';
 //     return [{ locale: "en" }];
 // }
 
-export async function generateStaticParams() {
-    const pages = locales;
-    return pages.map((page) => ({ locale: page }));
-  }
+// export async function generateStaticParams() {
+//     const pages = locales;
+//     return pages.map((page) => ({ locale: page }));
+//   }
 
 
 const Index = ( { params } : { params:{locale:string } } ) => {

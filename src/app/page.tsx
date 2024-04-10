@@ -3,12 +3,12 @@ import Whyworkwithus from "./_components/whyworkwithus";
 import { Industry } from "./_components/industry";
 import { PixStats } from "./_components/pix_stats";
 import { useTranslations } from "next-intl";
-import { locales } from "@/navigation";
+// import { locales } from "@/__navigation";
 
-export async function generateStaticParams() {
-    const pages = locales;
-    return pages.map((page) => ({ locale: page }));
-  }
+// export async function generateStaticParams() {
+//     const pages = locales;
+//     return pages.map((page) => ({ locale: page }));
+//   }
 
 export default function Index( { params: { locale } } : { params:{locale:any } } ) {
     

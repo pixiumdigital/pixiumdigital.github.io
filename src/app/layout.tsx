@@ -10,7 +10,7 @@ import '../style.css';
 
 import Header from "./_components/header";
 import Footer from "./_components/footer";
-import { locales } from "@/navigation";
+// import { locales } from "@/__navigation";
 import { notFound } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -35,10 +35,10 @@ async function getMessages(locale: string) {
 // };
 
 
-export function generateStaticParams() {
-  const pages = locales;
-  return pages.map((page) => ({ name: page }));
-}
+// export function generateStaticParams() {
+//   const pages = locales;
+//   return pages.map((page) => ({ name: page }));
+// }
 
 
 
@@ -47,9 +47,9 @@ export function generateStaticParams() {
 export default async function RootLayout({children, params}: {children: React.ReactNode, params :{locale:string}}) {
     const {locale} = params;
 
-    if (!locales.includes(locale)) {
-      notFound();
-    }
+    // if (!locales.includes(locale)) {
+    //   notFound();
+    // }
 
     // const messages = useMessages();
     // const messages = await getMessages(locale)

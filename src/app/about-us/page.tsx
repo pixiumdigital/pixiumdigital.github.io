@@ -1,16 +1,16 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
 import Whyworkwithus from '../_components/whyworkwithus';
 import { Metadata } from 'next';
-import { locales } from '@/navigation';
+// import { locales } from '@/__navigation';
 
 // export function generateStaticParams() {
 //     return [{ locale: "en" }];
 // }
 
-export async function generateStaticParams() {
-    const pages = locales;
-    return pages.map((page) => ({ locale: page }));
-  }
+// export async function generateStaticParams() {
+//     const pages = locales;
+//     return pages.map((page) => ({ locale: page }));
+//   }
 
 const Index = ( { params } : { params:{locale:string } } ) => {
     

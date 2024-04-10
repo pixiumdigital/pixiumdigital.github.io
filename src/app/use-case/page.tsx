@@ -8,10 +8,10 @@ import { Metadata } from 'next';
 
 // import { SEO } from "../components/seo"
 
-export async function generateStaticParams() {
-    const pages = ['en', 'fr'];
-    return pages.map((page) => ({ locale: page }));
-  }
+// export async function generateStaticParams() {
+//     const pages = ['en', 'fr'];
+//     return pages.map((page) => ({ locale: page }));
+//   }
 
 export default function Index( { params } : { params:{locale:string } } ) {
 

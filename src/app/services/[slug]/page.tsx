@@ -54,7 +54,7 @@ export default async function Post({ params }: Params) {
 type Params = {
   params: {
     slug: string;
-    locale:string;
+    // locale:string;
   };
 };
 
@@ -78,6 +78,6 @@ export async function generateStaticParams() {
 
   return posts.map((post) => ({
     slug: post.slug,
-    locale:'en'
+    // locale:'en'
   }));
 }
