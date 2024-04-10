@@ -15,82 +15,29 @@ const intlMiddleware = createMiddleware({
 });
 
 
-const PUBLIC_FILE = /\.(.*)$/ // anything having a file extension.
-const getIsInternalRoute = (url: string) => {
-    if (url.startsWith('/_next')) return true // next internal routes
-    if (url.includes('/api/')) return true // nextjs api routes
-    return PUBLIC_FILE.test(url) // static files
-}
-
-const handleLocaleRedirects = (req: NextRequest) => {
-    const { pathname } = req.nextUrl
-    const isPreloadRequest = req.method === 'HEAD'
-    /*
-    Due to several bugs with prefetching/middleware/i18n combination
-    https://github.com/vercel/next.js/issues/35648
-    https://github.com/vercel/next.js/issues/36100
-    https://github.com/vercel/next.js/issues/40678
-
-    we cannot redirect any prefetch requests. They get cached with the current locale which then causes
-    infinite loop redirect when we click a link to change the locale.
-    Possibly might be fixed in later NextJs versions (>=13), but I'd be really careful & skeptical here.
-    */
-    if (isPreloadRequest || getIsInternalRoute(pathname)) return
-
-    const _cookies = new Cookies();
-    // _cookies.get('NEXT_LOCALE')
-    const locale = _cookies.get('NEXT_LOCALE') || req.nextUrl.defaultLocale // locale you're supposed to have
-    if (locale && req.nextUrl.locale !== locale) {
-        req.nextUrl.locale = locale
-        return NextResponse.redirect(req.nextUrl)
-    }
-}
-
 
 export default function middleware(req: NextRequest) {
 
-  const maybeRedirectResponse = handleLocaleRedirects(req)
-  if (maybeRedirectResponse) return maybeRedirectResponse
+  // const maybeRedirectResponse = handleLocaleRedirects(req)
+  // if (maybeRedirectResponse) return maybeRedirectResponse
 
-  const response = NextResponse.next()
+  // const response = NextResponse.next()
 
-  // perhaps other middleware logic here...
+  // // perhaps other middleware logic here...
 
-  return response
+  // return response
 
 
   const excludePattern = "^(/(" + locales.join("|") + "))?/admin/?.*?$";
   const publicPathnameRegex = RegExp(excludePattern, "i");
   const isPublicPage = !publicPathnameRegex.test(req.nextUrl.pathname);
 
-  // if(process.env.NODE_ENV != 'development'){
-  //     return;
-  //     // PROD
-  //     // const { pathname } = req.nextUrl
-  //     // const pathnameHasLocale = locales.some(
-  //     //   (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
-  //     // )
-  // }
-  // const { pathname } = req.nextUrl
-  // const pathnameHasLocale = locales.some(
-  //   (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
-  // )
-
-  // if (pathnameHasLocale) return intlMiddleware(req);
-
-  // // Redirect if there is no locale
-  // const locale = 'en';
-  // req.nextUrl.pathname = `/${locale}${pathname}`
-  // // e.g. incoming request is /products
-  // // The new URL is now /en-US/products
-  // return NextResponse.redirect(req.nextUrl);
-
   return intlMiddleware(req);
 }
 
 export const config = {
-  // matcher: ["/((?!api|_next|.*\\..*).*)"],
-  matcher: ['/', '/(fr|en)/:path*']
+  matcher: ["/((?!api|_next|.*\\..*).*)"],
+  // matcher: ['/', '/(fr|en)/:path*']
 };
 
 

@@ -15,6 +15,15 @@ import { notFound } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
+
+async function getMessages(locale: string) {
+    try {
+        return (await import(`../../../locales/${locale}/default.json`)).default
+    } catch (error) {
+        notFound()
+    }
+}
+
 // export const metadata: Metadata = {
 //   title: `Pixium Digital Group`,
 //   description: `Pixium Digital is an agile software development company located in Singapore and France.
@@ -35,7 +44,7 @@ export function generateStaticParams() {
 
 
 // { params: { lang } } : {params:any}
-export default function RootLayout({children, params}: {children: React.ReactNode, params :{locale:string}}) {
+export default async function RootLayout({children, params}: {children: React.ReactNode, params :{locale:string}}) {
     const {locale} = params;
 
     if (!locales.includes(locale)) {
@@ -43,6 +52,7 @@ export default function RootLayout({children, params}: {children: React.ReactNod
     }
 
     // const messages = useMessages();
+    // const messages = await getMessages(locale)
 
 
     return (
