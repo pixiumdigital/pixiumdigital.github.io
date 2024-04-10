@@ -16,7 +16,7 @@ const Header = () => {
     useEffect(() => {
           const isProd = process.env.NODE_ENV != 'development'
           if(isProd)
-              setLang('./'+_cookies.get('NEXT_LOCALE'));
+              setLang('//'+_cookies.get('NEXT_LOCALE'));
     }, []);
 
     const handleScroll = () => {
