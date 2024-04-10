@@ -48,18 +48,18 @@ const Footer = () => {
 
       </div>
 
-      <ul className="footer-list">
+      <ul className="footer-list  text-left">
         <li>
           <p className="footer-list-title">Quick Links</p>
         </li>
         <li>
-          <a href="services" className="footer-link">Services</a>
+          <a href="/services" className="footer-link">Services</a>
         </li>
         <li>
           <a href="/about-us" className="footer-link">About us</a>
         </li>
         <li>
-          <a href="use-case" className="footer-link">Use case</a>
+          <a href="/use-case" className="footer-link">Use case</a>
         </li>
         <li>
           <a href="/contact-us" className="footer-link">Contact us</a>
@@ -87,11 +87,11 @@ const Footer = () => {
         </li>
       </ul> */}
 
-      <ul className="footer-list">
+      <ul className="footer-list  text-left">
 
         <li>
           <p className="footer-list-title">Find Us</p>
-          <div className="text-right">
+          <div className="">
 
             <p className="footer-text">
               Singapore
