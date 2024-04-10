@@ -8,6 +8,7 @@ const isProd = process.env.NODE_ENV != 'development'
 if(isProd){
     
     const nextConfig = {
+        basePath: '/en',
         output: 'export',
         distDir: 'dist',
         images:{
