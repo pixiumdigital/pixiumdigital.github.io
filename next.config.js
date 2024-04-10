@@ -8,6 +8,11 @@ const isProd = process.env.NODE_ENV != 'development'
 if(isProd){
     
     const nextConfig = {
+        // i18n: {
+        //     locales: ['en', 'fr'],
+        //     defaultLocale: 'en',
+        // },
+
         basePath: '/en',
         async redirects() {
             return [
@@ -16,6 +21,16 @@ if(isProd){
                     destination: "/en",
                     permanent: true,
                 },
+                // {
+                //     source: "/",
+                //     destination: "/en",
+                // },
+                {
+                    source: '/:path*',
+                    destination: '/en/:path*',
+                    permanent: true,
+                },
+                ///:locale/page
             ];
         },
         output: 'export',
