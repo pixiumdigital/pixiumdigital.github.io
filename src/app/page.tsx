@@ -25,7 +25,7 @@ export default function Index( { params: { locale } } : { params:{locale:any } }
                             {/* {t('tagline')} */}
                             {/* {t('header', { name: userName })} */}
                             {/* {dict.page.homeTagline} */}
-                            {/* Shaping your project with <span className="has-before">technology</span> and innovation */}
+                            Shaping your project with <span className="has-before">technology</span> and innovation
                                     {/* <Trans id="home-tagline" /> */}
                             </h1>
 
