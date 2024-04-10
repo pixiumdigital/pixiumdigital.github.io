@@ -11,14 +11,14 @@ import { faBars, faClose } from '@fortawesome/free-solid-svg-icons'
 const Header = () => {
     const [scrollingClass, setScrollingClass] = useState("");
     const [navBarClass, setNavBarClass] = useState("");
-    const [lang, setLang] = useState("");
+    // const [lang, setLang] = useState("");
 
-    const _cookies = new Cookies();
-    useEffect(() => {
-          const isProd = process.env.NODE_ENV != 'development'
-          if(isProd)
-              setLang('/'+_cookies.get('NEXT_LOCALE'));
-    }, []);
+    // const _cookies = new Cookies();
+    // useEffect(() => {
+    //       const isProd = process.env.NODE_ENV != 'development'
+    //       if(isProd)
+    //           setLang('/'+_cookies.get('NEXT_LOCALE'));
+    // }, []);
 
     const handleScroll = () => {
       if (window.scrollY > 80) 
@@ -71,11 +71,11 @@ const Header = () => {
           </li>
 
           <li className="navbar-item">
-            <a href={lang+"/use-case"} className="navbar-link" data-nav-link>Use case</a>
+            <a href={"/use-case"} className="navbar-link" data-nav-link>Use case</a>
           </li>
 
           <li className="navbar-item">
-            <a href={lang+"/contact-us"} className="navbar-link" data-nav-link>Contact Us</a>
+            <a href={"/contact-us"} className="navbar-link" data-nav-link>Contact Us</a>
           </li>
 
           {/* <li className="navbar-item">

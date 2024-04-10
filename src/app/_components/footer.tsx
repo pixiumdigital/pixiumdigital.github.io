@@ -95,9 +95,9 @@ const Footer = () => {
 
             <p className="footer-text">
               Singapore
-              #15-02 Peninsula Plaza,
-              111 North Bridge Road,<br></br>
-              179098 Singapore<br></br>
+              Blk 584, #08-3087,
+              Ang Mo Kio Ave 3,<br></br>
+              560584 Singapore<br></br>
               Email: contactus@pixiumdigital.com
             </p>
 
