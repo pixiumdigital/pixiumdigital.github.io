@@ -36,3 +36,10 @@ Multi 3rd party integration
 Online Payment
 
 Live Chat
+
+## Output
+
+![output_image_mobile](/assets/blog/artaf/img1.png)
+![output_image_mobile](/assets/blog/artaf/img2.png) 
+![output_image_mobile](/assets/blog/artaf/img3.png) 
+![output_image_mobile](/assets/blog/artaf/img4.png)
