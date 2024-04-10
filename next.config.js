@@ -9,6 +9,15 @@ if(isProd){
     
     const nextConfig = {
         basePath: '/en',
+        async redirects() {
+            return [
+                {
+                    source: "/",
+                    destination: "/en",
+                    permanent: true,
+                },
+            ];
+        },
         output: 'export',
         distDir: 'dist',
         images:{
