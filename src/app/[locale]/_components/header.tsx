@@ -14,7 +14,9 @@ const Header = () => {
 
     const _cookies = new Cookies();
     useEffect(() => {
-          setLang(_cookies.get('NEXT_LOCALE'));
+          const isProd = process.env.NODE_ENV != 'development'
+          if(isProd)
+              setLang('./'+_cookies.get('NEXT_LOCALE'));
     }, []);
 
     const handleScroll = () => {
