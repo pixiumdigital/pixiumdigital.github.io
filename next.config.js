@@ -40,8 +40,8 @@ if(isProd){
         },
     }
        
-    module.exports = withNextIntl(nextConfig);
-    // module.exports = nextConfig
+    // module.exports = withNextIntl(nextConfig);
+     module.exports = nextConfig
 }else{
-    module.exports = withNextIntl({});
+    // module.exports = withNextIntl({});
 }

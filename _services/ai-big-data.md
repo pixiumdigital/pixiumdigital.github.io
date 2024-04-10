@@ -1,6 +1,6 @@
 ---
 title: "AI & Big Data"
-excerpt: "We transform raw data into actionable insights, enabling companies to make informed decisions, optimize operations, and drive growth."
+excerpt: "In today's data-driven world, our organisation specialises in using the potential of AI, Big Data, and Machine Learning to advance enterprises"
 coverImage: "/assets/blog/aeqlia/preview.png"
 date: "2023-03-16T05:35:07.322Z"
 author:
@@ -9,4 +9,12 @@ ogImage:
   url: "/assets/blog/aeqlia/preview.png"
 ---
 
-Where innovation meets intelligence. Our company specializes in harnessing the power of AI, Big Data, and Machine Learning to propel businesses forward in today's data-driven world. We transform raw data into actionable insights, enabling companies to make informed decisions, optimize operations, and drive growth. Whether it's predictive analytics, natural language processing, or advanced recommendation systems, our team of experts is dedicated to delivering tailored solutions that cater to the unique needs of each client. Partner with us to unlock the full potential of your data and stay ahead of the competition in this rapidly evolving digital landscape.
+Where intelligence and innovation collide. In today's data-driven world, our organisation specialises in using the potential of AI, Big Data, and Machine Learning to advance enterprises. We convert unprocessed data into useful insights that help businesses develop, improve operations, and make wise decisions. Whether it's advanced recommendation systems, natural language processing, or predictive analytics, our team of professionals is committed to providing specialised solutions that address the particular requirements of each customer. Collaborate with us to fully utilise your data and maintain an advantage over your rivals in this quickly changing digital environment.
+
+- ChatBots
+- Natural Language processing
+- Classifiers
+- Text to speech / speech to text
+- Big data
+- Data analytics 
+- Behavioral pattern detections.
