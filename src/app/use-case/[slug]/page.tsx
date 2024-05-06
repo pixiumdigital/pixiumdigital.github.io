@@ -69,7 +69,7 @@ export function generateMetadata({ params }: Params): Metadata {
     return notFound();
   }
 
-  const title = `${post.title} | Pixium Digital`;
+  const title = `${post.title} | Pixium Digital use case`;
 
   return {
     title,

@@ -43,13 +43,20 @@ const Index = ( { params } : { params:{locale:string } } ) => {
 
 export default Index;
 
+
 export function generateMetadata(): Metadata {
     const title = `About us | Pixium Digital`;
+    const description = `Pixium Digital is a creative digital firm powered by a gregarious group 
+    of engineers with a broad range of IT solutions expertise`;
+    // const previousImages = (await parent).openGraph?.images || []
+
     return {
       title,
+      description: description,
       openGraph: {
-        title,
-        // images: [post.ogImage.url],
+        title: title,
+        description: description,
+        images: ['/assets/images/pixium-logo.png'],
       },
     };
 }

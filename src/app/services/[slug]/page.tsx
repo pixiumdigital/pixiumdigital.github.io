@@ -64,7 +64,7 @@ export function generateMetadata({ params }: Params): Metadata {
   if (!post) {
     return notFound();
   }
-  const title = `${post.title} | Pixium Digital`;
+  const title = `${post.title} | Pixium Digital service`;
   return {
     title,
     openGraph: {
@@ -73,6 +73,8 @@ export function generateMetadata({ params }: Params): Metadata {
     },
   };
 }
+
+
 export async function generateStaticParams() {
   const posts = getAllServices();
 

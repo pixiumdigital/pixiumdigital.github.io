@@ -3,6 +3,7 @@ import Whyworkwithus from "./_components/whyworkwithus";
 import { Industry } from "./_components/industry";
 import { PixStats } from "./_components/pix_stats";
 import { useTranslations } from "next-intl";
+import { Metadata } from "next";
 // import { locales } from "@/__navigation";
 
 // export async function generateStaticParams() {
@@ -31,7 +32,7 @@ export default function Index( { params: { locale } } : { params:{locale:any } }
 
                             <p className="hero-text">
                                     {/* {t('description')} */}
-                                    Pixium Digital is an agile software development company headquartered in Singapore. 
+                                    Pixium Digital is a digital company located in Singapore and France. 
                                     Our dedicated focus lies in meticulously shaping our clients' projects 
                                     from inception to a successful launch, ensuring transformative outcomes.
                             </p>
@@ -82,4 +83,23 @@ export default function Index( { params: { locale } } : { params:{locale:any } }
     //     </Container>
     //   </main>
     // );
+}
+
+
+export function generateMetadata(): Metadata {
+    const title = `Pixium Digital`;
+    const description = `Pixium Digital is a digital and software development 
+                    and digital company located in Singapore and France. We design, 
+                    create and maintain your web, mobile, IOT or servless application.`;
+    // const previousImages = (await parent).openGraph?.images || []
+
+    return {
+      title,
+      description: description,
+      openGraph: {
+        title: title,
+        description: description,
+        images: ['/assets/images/pixium-logo.png'],
+      },
+    };
 }

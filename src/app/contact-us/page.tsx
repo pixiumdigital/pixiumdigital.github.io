@@ -87,13 +87,19 @@ const Index = ( { params } : { params:{locale:string } } ) => {
 
 export default Index;
 
+
 export function generateMetadata(): Metadata {
     const title = `Contact us | Pixium Digital`;
+    const description = `Contact us and our team will gather your specification, goals and expectations about the project.`;
+    // const previousImages = (await parent).openGraph?.images || []
+
     return {
       title,
+      description: description,
       openGraph: {
-        title,
-        // images: [post.ogImage.url],
+        title: title,
+        description: description,
+        images: ['/assets/images/pixium-logo.png'],
       },
     };
 }

@@ -45,13 +45,18 @@ export default function Index( { params } : { params:{locale:string } } ) {
 };
 
 
-// export function generateMetadata(): Metadata {
-//     const title = `Use Case | Pixium Digital`;
-//     return {
-//       title,
-//       openGraph: {
-//         title,
-//         // images: [post.ogImage.url],
-//       },
-//     };
-// }
+export function generateMetadata(): Metadata {
+    const title = `Use Case | Pixium Digital`;
+    const description = `We design, create and maintain your web, mobile, IOT or servless application.`;
+    // const previousImages = (await parent).openGraph?.images || []
+
+    return {
+      title,
+      description: description,
+      openGraph: {
+        title: title,
+        description: description,
+        images: ['/assets/images/pixium-logo.png'],
+      },
+    };
+}

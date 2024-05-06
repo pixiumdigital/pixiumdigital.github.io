@@ -41,6 +41,24 @@ export default function Index( { params } : { params:{locale:string } } ) {
 };
 
 
+export function generateMetadata(): Metadata {
+    const title = `Services | Pixium Digital`;
+    const description = `We design, create and maintain your web, mobile, IOT or servless application.`;
+    // const previousImages = (await parent).openGraph?.images || []
+
+    return {
+      title,
+      description: description,
+      openGraph: {
+        title: title,
+        description: description,
+        images: ['/assets/images/pixium-logo.png'],
+      },
+    };
+}
+
+
+
 // export function generateMetadata(): Metadata {
 //     const title = `Services | Pixium Digital`;
 //     return {
