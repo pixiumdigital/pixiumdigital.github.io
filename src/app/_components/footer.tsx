@@ -15,7 +15,7 @@ const Footer = () => {
 
       <div className="footer-brand">
 
-        <p className="footer-list-title">About Pixium Digital</p>
+        <p className="footer-list-title text-left">About Pixium Digital</p>
 
         <p className="footer-text text-left">
         {/* {t('description')} */}
