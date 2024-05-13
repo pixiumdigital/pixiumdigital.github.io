@@ -10,18 +10,16 @@ export function Industry() {
                     <span className="has-before">Industry agnostic</span>
                 </h1>
                 <p>
-                With a long experience of working with clients in a variety of sectors, 
-                such as fintech, healthtech, agritech, entertainment, and more, 
-                we take great satisfaction in providing specialised solutions 
-                that cut across boundaries. Beyond just coding, we are experts in comprehending the particular requirements of any industry we work in and utilising technology to produce significant outcomes.
+                Every industry is different. Knowing the unique challenges 
+                that each industry faces is critical to business success.
                 </p>
             </div>
             <main>
                 <Container>
-                    <div className="grid gap-y-16 grid-cols-1 lg:grid-cols-2">
+                    <div className="grid gap-y-16 grid-cols-1 lg:grid-cols-4">
                         <div className="service-card columns-1 gap-x-8" style={{margin:"20px", padding:"40px"}}>
                             <div className="gap-x-8">
-                                <h3 className="text-3xl mb-3 leading-snug">FINTECH
+                                <h3 className="text-3xl mb-3 leading-snug">Fintech
                                     {/* <Link
                                     as={`/use-case/${slug}`}
                                     href="/use-case/[slug]"
@@ -38,7 +36,7 @@ export function Industry() {
 
                         <div className="service-card columns-1 gap-x-8" style={{margin:"20px", padding:"40px"}}>
                             <div className="gap-x-8">
-                                <h3 className="text-3xl mb-3 leading-snug">INTERNET OF THINGS (IOT)</h3>
+                                <h3 className="text-3xl mb-3 leading-snug">Internet of things (IOT)</h3>
                                 {/* <p className="text-2xl leading-relaxed mb-4">We’re experts in comprehensive IoT technology ecosystems 
                                 and companion apps. Clients around the world have put their trust in our engineering to 
                                 supercharge their vitamin trackers, diabetes monitors, smart lighting and more.</p> */}
@@ -47,7 +45,7 @@ export function Industry() {
 
                         <div className="service-card columns-1 gap-x-8" style={{margin:"20px", padding:"40px"}}>
                             <div className="gap-x-8">
-                                <h3 className="text-3xl mb-3 leading-snug">HEALTHTECH</h3>
+                                <h3 className="text-3xl mb-3 leading-snug">Health tech</h3>
                                 {/* <p className="text-2xl leading-relaxed mb-4">We’re helping reinvent healthcare, 
                                 creating scalable, production-ready software for 
                                 high-flying companies. 
@@ -57,10 +55,22 @@ export function Industry() {
 
                         <div className="service-card columns-1 gap-x-8" style={{margin:"20px", padding:"40px"}}>
                             <div className="gap-x-8">
-                                <h3 className="text-3xl mb-3 leading-snug">COMMUNICATION</h3>
-                                {/* <p className="text-2xl leading-relaxed mb-4">Whether you’re a leading telecom software vendor or an 
-                                ambitious startup, you can take advantage of our deep knowledge of the sector to 
-                                get powerful real-time communication, social and instant messaging apps.</p> */}
+                                <h3 className="text-3xl mb-3 leading-snug">Agri Tech</h3>
+                            </div>                          
+                        </div>
+                        <div className="service-card columns-1 gap-x-8" style={{margin:"20px", padding:"40px"}}>
+                            <div className="gap-x-8">
+                                <h3 className="text-3xl mb-3 leading-snug">Energy and utilities</h3>
+                            </div>                          
+                        </div>
+                        <div className="service-card columns-1 gap-x-8" style={{margin:"20px", padding:"40px"}}>
+                            <div className="gap-x-8">
+                                <h3 className="text-3xl mb-3 leading-snug">Consumer products</h3>
+                            </div>                          
+                        </div>
+                        <div className="service-card columns-1 gap-x-8" style={{margin:"20px", padding:"40px"}}>
+                            <div className="gap-x-8">
+                                <h3 className="text-3xl mb-3 leading-snug">Media and entertainment</h3>
                             </div>                          
                         </div>
                     </div>

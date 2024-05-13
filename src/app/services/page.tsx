@@ -28,7 +28,12 @@ export default function Index( { params } : { params:{locale:string } } ) {
                 <h2 className="h2 section-title text-center">
                     <span className="has-before">Services</span>
                 </h2>
+
+                <p className='mb-5'>We are dedicated to driving your digital transformation journey forward.
+                    As a leading digital consulting and development firm, we offer tailored solutions 
+                    to help businesses like yours thrive in the rapidly evolving digital landscape.</p>
             </div>
+            
             <main>
                 <Container>
                     {morePosts.length > 0 && <MoreServices posts={morePosts} />}

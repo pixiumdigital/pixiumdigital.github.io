@@ -21,8 +21,13 @@ const Index = ( { params } : { params:{locale:string } } ) => {
             <h2 className="h2 section-title text-center">
                 <span className="has-before">Contact us</span> for your next project
             </h2>
+
+            <p className='mb-5'>Ready to embark on your digital transformation journey? 
+                Contact us today to learn more about how Pixium Digital can help you achieve your goals 
+                and unlock the full potential of your business in the digital age.
+                Let's innovate, collaborate, and transform together.</p>
         
-            <div>
+            <div className='mt-4'>
                 <h2>What is next ?</h2>
                 <ul>
                     <li>We answer you within 24 hours.</li>
