@@ -22,7 +22,7 @@ const Index = ( { params } : { params:{locale:string } } ) => {
                 </h2>
             
                 <div>
-                    <p>
+                    <p className='text-justify'>
                     With its headquarters located in Singapore, 
                     Pixium Digital is a creative digital firm powered by a gregarious group 
                     of engineers with a broad range of IT solutions expertise. 

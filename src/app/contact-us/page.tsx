@@ -22,17 +22,17 @@ const Index = ( { params } : { params:{locale:string } } ) => {
                 <span className="has-before">Contact us</span> for your next project
             </h2>
 
-            <p className='mb-5'>Ready to embark on your digital transformation journey? 
+            <p className='mb-5 text-justify'>Ready to embark on your digital transformation journey? 
                 Contact us today to learn more about how Pixium Digital can help you achieve your goals 
                 and unlock the full potential of your business in the digital age.
                 Let's innovate, collaborate, and transform together.</p>
         
-            <div className='mt-4'>
+            <div className='mt-4 text-justify'>
                 <h2>What is next ?</h2>
                 <ul>
-                    <li>We answer you within 24 hours.</li>
-                    <li>Our team will gather your specification, goals and expectations about the project.</li>
-                    <li>Then we will revert back to you with a proposal.</li>
+                    <li>1.  We answer you within 24 hours.</li>
+                    <li>2.  Our team will gather your specification, goals and expectations about the project.</li>
+                    <li>3.  Then we will revert back to you with a proposal.</li>
                 </ul>
             </div>
 
@@ -52,6 +52,9 @@ const Index = ( { params } : { params:{locale:string } } ) => {
                             Ang Mo Kio Ave 3,<br></br>
                             560584 Singapore<br></br>
                         </p>
+                        <p>
+                            <i>contactus@pixiumdigital.com</i>
+                        </p>
                     </div>
                 </li>
                 <li>
@@ -68,6 +71,9 @@ const Index = ( { params } : { params:{locale:string } } ) => {
                         33 boulevard du Général Leclerc,
                         06240 Beausoleil
                         </p>
+                        <p>
+                            <i>contactus@pixiumdigital.com</i>
+                        </p>
                     </div>
                 </li>
                 <li>
@@ -81,7 +87,10 @@ const Index = ( { params } : { params:{locale:string } } ) => {
                             Spain
                         </h3>
                         <p>
-                        Málaga
+                            Málaga
+                        </p>
+                        <p>
+                            <i>contactus@pixiumdigital.com</i>
                         </p>
                     </div>
                 </li>

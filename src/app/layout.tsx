@@ -12,6 +12,7 @@ import Header from "./_components/header";
 import Footer from "./_components/footer";
 // import { locales } from "@/__navigation";
 import { notFound } from "next/navigation";
+import { getAllServices } from "@/lib/api";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -93,7 +94,7 @@ export default async function RootLayout({children, params}: {children: React.Re
             </head>
                 {/* <NextIntlClientProvider locale={locale} messages={messages}> */}
                     <body className={inter.className+" App"}>
-                        <Header />
+                        <Header services={getAllServices()} />
                         <div className="min-h-screen">{children}</div>
                         <Footer />
                     </body>

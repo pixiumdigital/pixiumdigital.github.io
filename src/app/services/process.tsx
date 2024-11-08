@@ -4,11 +4,11 @@ export function Process() {
   return (
     <div className="section mt-16 mb-16 md:mb-12 text-justify">
         <div>
-            <h1 className="text-5xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8">
-                Our Process
-            </h1>
+            <h2 className="h2 section-title text-center">
+                Our Digital Transformation <span className="has-before">Process</span>
+            </h2>
         </div>
-        <div className="grid grid-cols-3 gap-4 mt-4 process-elem">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-4 mt-4 process-elem">
             <div className="p-4">
                 <h3>1. Understand</h3>
                 <p>Considering your website as your most valuable asset, the initial step to developing it is to deep dive into your brand, business goals, and pain points. Following this, we will create a timeline and project plan to successfully launch your website.</p>

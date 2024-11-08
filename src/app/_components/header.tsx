@@ -6,16 +6,40 @@ import { useState } from "react";
 import Cookies from "universal-cookie";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faClose } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faChevronDown, faClose } from '@fortawesome/free-solid-svg-icons'
 
 import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarContent, NavbarItem, Button, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, NavbarMenu, NavbarMenuItem} from "@nextui-org/react";
 
-const Header = () => {
+import { Post } from "@/interfaces/post";
+
+type Props = {
+  services: Post[];
+};
+
+export default function  Header({ services }: Props) {
     const [scrollingClass, setScrollingClass] = useState("");
-    const [navBarClass, setNavBarClass] = useState("");
     // const [lang, setLang] = useState("");
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const menuItems = [
+      {
+        "url": "/services",
+        "text": "Services",
+      },
+      {
+        "url": "/about-us",
+        "text": "About Us",
+      },
+      {
+        "url": "/use-case",
+        "text": "Use Case",
+      },
+      {
+        "url": "/contact-us",
+        "text": "Contact Us",
+      },
+    ];
 
     // const _cookies = new Cookies();
     // useEffect(() => {
@@ -39,32 +63,6 @@ const Header = () => {
         handleScroll();
         window.addEventListener('scroll', handleScroll);     
     }, []);
-
-    function toggleNavbar(event:any){
-        setNavBarClass("active");
-    };
-    function closeNavbar(event:any){
-        setNavBarClass("");
-    };
-
-    const menuItems = [
-      {
-        "url": "/services",
-        "text": "Services",
-      },
-      {
-        "url": "/about-us",
-        "text": "About Us",
-      },
-      {
-        "url": "/use-case",
-        "text": "Use Case",
-      },
-      {
-        "url": "/contact-us",
-        "text": "Contact Us",
-      },
-    ];
     
     
   return (
@@ -80,39 +78,72 @@ const Header = () => {
             <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
           </NavbarContent>
 
-          <NavbarContent className="sm:hidden pr-3" justify="center">
+          {/* <NavbarContent className="sm:hidden pr-3" justify="center">
               <NavbarBrand>
                   <a href="/" className="logo">
                     <img src="/assets/images/pixium-logo.png" style={{height:"60px"}} />
                   </a>
               </NavbarBrand>
-          </NavbarContent>
+          </NavbarContent> */}
 
           {/* ORIGINAL MENU DESKTOP */}
-          <NavbarContent className="hidden sm:flex gap-6 mr-3" justify="center">
-            <NavbarBrand>
+          <NavbarBrand>
               <a href="/" className="logo">
                 <img src="/assets/images/pixium-logo.png" style={{height:"60px"}} />
               </a>
             </NavbarBrand>
-            
+          <NavbarContent className="hidden sm:flex gap-4 mr-3" justify="center">
             <NavbarItem>
-              <Link href={"/services"} className="navbar-link" aria-current="page" data-nav-link>
+              <Link href={"/services"} className="navbar-link px-4" aria-current="page" data-nav-link>
               Services
               </Link>
             </NavbarItem>
+
+            {/* <Dropdown>
+              <NavbarItem>
+                <DropdownTrigger>
+                  <Button
+                    disableRipple
+                    className="p-0 bg-transparent data-[hover=true]:bg-transparent"
+                    // endContent={icons.chevron}
+                    radius="sm"
+                    variant="light"
+                  >
+                    Services 2 <FontAwesomeIcon icon={faChevronDown}/>
+                  </Button>
+                </DropdownTrigger>
+              </NavbarItem>
+
+              { services.map( (service) => (
+                  <DropdownMenu key={service.title} aria-label={service.title} className="w-[340px]" itemClasses={{base: "gap-4"}}>
+                    <DropdownItem
+                      key={service.title}
+                      // description={service.slug}
+                      // startContent={icons.scale}
+                    >
+                      <Link href={"/services/"+service.slug} className="navbar-link px-4" aria-current="page" data-nav-link>
+                        {service.title}
+                      </Link>
+                    </DropdownItem>
+                </DropdownMenu>
+                )
+                )
+              }
+            </Dropdown> */}
+
+
             <NavbarItem>
-              <Link href={"/about-us"} className="navbar-link" aria-current="page" data-nav-link>
+              <Link href={"/about-us"} className="navbar-link px-4" aria-current="page" data-nav-link>
               About Us
               </Link>
             </NavbarItem>
             <NavbarItem>
-              <Link href={"/use-case"} className="navbar-link" aria-current="page" data-nav-link>
+              <Link href={"/use-case"} className="navbar-link px-4" aria-current="page" data-nav-link>
               Use Case
               </Link>
             </NavbarItem>
             <NavbarItem>
-              <Link href={"/contact-us"} className="navbar-link" aria-current="page" data-nav-link>
+              <Link href={"/contact-us"} className="navbar-link px-4" aria-current="page" data-nav-link>
               Contact Us
               </Link>
             </NavbarItem>
@@ -147,5 +178,3 @@ const Header = () => {
     </header>
   )
 };
-
-export default Header;

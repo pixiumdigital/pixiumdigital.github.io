@@ -346,6 +346,8 @@
   /*-----------------------------------*\
     #HEADER
   \*-----------------------------------*/
+
+  header{max-width: 100% !important;}
   
   .header .btn { display: none; }
   
@@ -1497,6 +1499,7 @@
   .mobileMenu{
     --navbar-height: 70px !important; 
     height: calc(100vh - var(--navbar-height)) !important;
+    background:white !important;
   }
 
 
