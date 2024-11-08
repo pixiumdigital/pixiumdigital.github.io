@@ -29,7 +29,9 @@ export default async function Post({ params }: Params) {
     <>
       <section className="section service" id="service" aria-label="service">
         <Alert preview={post.preview} />
-        <Link href="/use-case/"><FontAwesomeIcon icon={faArrowLeft}/> Back</Link>
+        <Link href="/use-case/">
+          <FontAwesomeIcon icon={faArrowLeft} height="20" className="inline-flex" /> Back
+        </Link>
         <Container>
           <h2 className="h2 section-title text-center">
                 <span className="has-before">{post.title}</span>
