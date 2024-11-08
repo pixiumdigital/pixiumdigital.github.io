@@ -18,7 +18,7 @@ const Whyworkwithus = () => {
                     </h2>
 
                     <div className="">
-                        <div>
+                        <div className='text-justify'>
                             <p className="card-text">
                               Welcome to Pixium Digital, where innovation meets efficiency in the realm of digital technology. 
                               Leveraging agile methodology, we specialize in crafting cutting-edge solutions across 
@@ -34,11 +34,11 @@ const Whyworkwithus = () => {
             </div>
 
             <div className="container mt-5">
-                <div className="grid grid-cols-4 gap-2">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                     <div>
                       <div className="gap-x-2" style={{margin:"10px", padding:"10px"}}>
                         <div className="mb-5">
-                            <img src="/assets/images/pixium-expertise.jpg" title="pixium expertise" alt="pixium expertise"/>
+                            <img className="circled" src="/assets/images/pixium-expertise.jpg" title="pixium expertise" alt="pixium expertise"/>
                         </div>
                         <div className="gap-x-8">
                             <h2 className="mb-8 text-2xl md:text-4xl font-bold tracking-tighter">Expertise</h2>
@@ -50,7 +50,7 @@ const Whyworkwithus = () => {
                     <div>
                       <div className="gap-x-2" style={{margin:"10px", padding:"10px"}}>
                         <div className="mb-5">
-                            <img src="/assets/images/pixium-innovation.jpg" title="pixium innovation" alt="pixium innovation" />
+                            <img className="circled" src="/assets/images/pixium-innovation.jpg" title="pixium innovation" alt="pixium innovation" />
                         </div>
                         <div className="gap-x-8">
                             <h2 className="mb-8 text-2xl md:text-4xl font-bold tracking-tighter">Innovation</h2>
@@ -62,7 +62,7 @@ const Whyworkwithus = () => {
                     <div>
                       <div className="gap-x-2" style={{margin:"10px", padding:"10px"}}>
                         <div className="mb-5">
-                            <img src="/assets/images/pixium-client-centric.jpg" title="pixium client centric" alt="pixium client centric"/>
+                            <img className="circled" src="/assets/images/pixium-client-centric.jpg" title="pixium client centric" alt="pixium client centric"/>
                         </div>
                         <div className="gap-x-8">
                             <h2 className="mb-8 text-2xl md:text-4xl font-bold tracking-tighter">Client-Centric Approach</h2>
@@ -74,7 +74,7 @@ const Whyworkwithus = () => {
                     <div>
                       <div className="gap-x-2" style={{margin:"10px", padding:"10px"}}>
                         <div className="mb-5">
-                            <img src="/assets/images/pixium-result-driven.jpg" title="pixium result driven" alt="pixium result driven"/>
+                            <img className="circled" src="/assets/images/pixium-result-driven.jpg" title="pixium result driven" alt="pixium result driven"/>
                         </div>
                         <div className="gap-x-8">
                             <h2 className="mb-8 text-2xl md:text-4xl font-bold tracking-tighter">Results-Driven</h2>

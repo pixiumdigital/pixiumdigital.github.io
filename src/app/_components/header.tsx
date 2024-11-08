@@ -8,10 +8,14 @@ import Cookies from "universal-cookie";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faClose } from '@fortawesome/free-solid-svg-icons'
 
+import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarContent, NavbarItem, Button, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, NavbarMenu, NavbarMenuItem} from "@nextui-org/react";
+
 const Header = () => {
     const [scrollingClass, setScrollingClass] = useState("");
     const [navBarClass, setNavBarClass] = useState("");
     // const [lang, setLang] = useState("");
+
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     // const _cookies = new Cookies();
     // useEffect(() => {
@@ -42,63 +46,103 @@ const Header = () => {
     function closeNavbar(event:any){
         setNavBarClass("");
     };
+
+    const menuItems = [
+      {
+        "url": "/services",
+        "text": "Services",
+      },
+      {
+        "url": "/about-us",
+        "text": "About Us",
+      },
+      {
+        "url": "/use-case",
+        "text": "Use Case",
+      },
+      {
+        "url": "/contact-us",
+        "text": "Contact Us",
+      },
+    ];
     
-  return (<header className={"header "+scrollingClass} data-header>
-    <div className="container">
+    
+  return (
 
-      <a href="/" className="logo">
-        <img src="/assets/images/pixium-logo.png" style={{height:"60px"}} />
-      </a>
+    <header className={"header "+scrollingClass} data-header>
+      <Navbar 
+        isMenuOpen={isMenuOpen}
+        onMenuOpenChange={setIsMenuOpen}>
 
-      <nav className={"navbar "+navBarClass} data-navbar>
+        <NavbarContent className="sm:hidden" justify="start">
+          <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
+        </NavbarContent>
 
-        <div className="wrapper">
-          <a className="nav-close-btn" aria-label="close menu" data-nav-toggler onClick={closeNavbar} style={{width:"80px"}}>
-             {/* <ion-icon name="close-outline" aria-hidden="true"></ion-icon> */}
-             <FontAwesomeIcon icon={faClose} />
-          </a>
-        </div>
+        <NavbarContent className="sm:hidden pr-3" justify="center">
+            <NavbarBrand>
+                <a href="/" className="logo">
+                  <img src="/assets/images/pixium-logo.png" style={{height:"60px"}} />
+                </a>
+            </NavbarBrand>
+        </NavbarContent>
 
-        <ul className="navbar-list">
+        {/* ORIGINAL MENU DESKTOP */}
+        <NavbarContent className="hidden sm:flex gap-6 mr-3" justify="center">
+          <NavbarBrand>
+            <a href="/" className="logo">
+              <img src="/assets/images/pixium-logo.png" style={{height:"60px"}} />
+            </a>
+          </NavbarBrand>
+          
+          <NavbarItem>
+            <Link href={"/services"} className="navbar-link" aria-current="page" data-nav-link>
+            Services
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link href={"/about-us"} className="navbar-link" aria-current="page" data-nav-link>
+            About Us
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link href={"/use-case"} className="navbar-link" aria-current="page" data-nav-link>
+            Use Case
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link href={"/contact-us"} className="navbar-link" aria-current="page" data-nav-link>
+            Contact Us
+            </Link>
+          </NavbarItem>
+        </NavbarContent>
 
-          <li className="navbar-item">
-            <a href={"/services"} className="navbar-link" data-nav-link>Services</a>
-            
-          </li>
+        <NavbarContent justify="end">
+          <NavbarItem className="lg:flex">
+            <a href="mailto:contactus@pixiumdigital.com" className="btn btn-primary has-before has-after">Let’s Talk 👋</a>
+          </NavbarItem>
+        </NavbarContent>
 
-          <li className="navbar-item">
-            <a href={"/about-us"} className="navbar-link" data-nav-link>About Us</a>
-          </li>
 
-          <li className="navbar-item">
-            <a href={"/use-case"} className="navbar-link" data-nav-link>Use case</a>
-          </li>
-
-          <li className="navbar-item">
-            <a href={"/contact-us"} className="navbar-link" data-nav-link>Contact Us</a>
-          </li>
-
-          {/* <li className="navbar-item">
-            <a href="#blog" className="navbar-link" data-nav-link>Blog</a>
-          </li> */}
-
-        </ul>
-
-      </nav>
-
-      <button className="nav-open-btn" aria-label="open menu" data-nav-toggler onClick={toggleNavbar}>
-        <FontAwesomeIcon icon={faBars} />
-        {/* <ion-icon name="menu-outline" aria-hidden="true"></ion-icon> */}
-        {/* <MenuOutline /> */}
-      </button>
-
-      <a href="mailto:contactus@pixiumdigital.com" className="btn btn-primary has-before has-after">Let’s Talk 👋</a>
-
-      <div className={"overlay "+navBarClass} data-nav-toggler data-overlay></div>
-
-    </div>
-  </header>
-  );
+        <NavbarMenu className="mobileMenu" >
+          {menuItems.map((item, index) => (
+            <NavbarMenuItem key={`${item}-${index}`}>
+              <Link
+                onClick={()=>{setIsMenuOpen(false)}}
+                className="w-full p-2 m-4 text-2=4xl"
+                color={
+                  index === 2 ? "warning" : index === menuItems.length - 1 ? "danger" : "foreground"
+                }
+                href={item.url}
+                // size="lg"
+              >
+                {item.text}
+              </Link>
+            </NavbarMenuItem>
+          ))}
+        </NavbarMenu>
+      </Navbar>
+      </header>
+  )
 };
 
 export default Header;

@@ -48,9 +48,9 @@ const Index = ( { params } : { params:{locale:string } } ) => {
                             Singapore
                         </h3>
                         <p>
-                            #15-02 Peninsula Plaza,
-                            111 North Bridge Road,
-                            179098 Singapore
+                            Blk 584, #08-3087,<br></br>
+                            Ang Mo Kio Ave 3,<br></br>
+                            560584 Singapore<br></br>
                         </p>
                     </div>
                 </li>

@@ -1193,7 +1193,7 @@
   
     .container { max-width: 960px; }
   
-    .btn { height: 70px; }
+    /* .btn { height: 70px; } */
   
     .grid-list { grid-template-columns: repeat(3, 1fr); }
   
@@ -1407,7 +1407,7 @@
     .container { max-width: 1140px; }
   
     .section-title.text-center {
-      max-width: 20ch;
+      max-width: 35ch;
       margin-inline: auto;
     }
   
@@ -1487,4 +1487,14 @@
 
   .centered{
     text-align: -webkit-center;
+  }
+
+  img.circled{
+      border-top-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+  }
+
+  .mobileMenu{
+    --navbar-height: 70px !important; 
+    height: calc(100vh - var(--navbar-height)) !important;
   }
