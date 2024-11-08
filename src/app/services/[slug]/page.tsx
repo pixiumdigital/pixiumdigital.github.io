@@ -12,6 +12,7 @@ import Link from "next/link";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { Process } from "../process";
 
 export default async function Post({ params }: Params) {
   const post = getServiceBySlug(params.slug);
@@ -43,6 +44,9 @@ export default async function Post({ params }: Params) {
           </div> */}
           <div>
             <PostBody content={content} />
+          </div>
+          <div>
+            <Process />
           </div>
         </article>
       </Container>
