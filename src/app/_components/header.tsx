@@ -131,6 +131,11 @@ export default function  Header({ services }: Props) {
               </Link>
             </NavbarItem>
             <NavbarItem>
+              <Link href={"/blog"} className="navbar-link px-4" aria-current="page" data-nav-link>
+              Blog
+              </Link>
+            </NavbarItem>
+            <NavbarItem>
               <Link href={"/contact-us"} className="navbar-link px-4" aria-current="page" data-nav-link>
               Contact Us
               </Link>
