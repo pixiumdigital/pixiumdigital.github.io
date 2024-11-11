@@ -36,7 +36,7 @@ export function PostPreview({
             {/* <Avatar name={author.name} picture={author.picture} /> */}
         </div>
         <div className="">
-            <CoverImage slug={slug} title={title} src={coverImage} />
+            <CoverImage slug={slug} title={title} src={coverImage} baseUrl="use-case" />
         </div>
         
       </div>

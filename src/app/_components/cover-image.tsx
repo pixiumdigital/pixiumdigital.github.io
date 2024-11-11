@@ -5,10 +5,11 @@ import Image from "next/image";
 type Props = {
   title: string;
   src: string;
+  baseUrl: string;
   slug?: string;
 };
 
-const CoverImage = ({ title, src, slug }: Props) => {
+const CoverImage = ({ title, src, baseUrl, slug }: Props) => {
   const image = (
     // <img src={src} alt={`Cover Image for ${title}`} style={{width:"70%"}} />
     <Image
@@ -22,7 +23,7 @@ const CoverImage = ({ title, src, slug }: Props) => {
   );
   
   return (
-    <Link as={`/use-case/${slug}`} href="/use-case/[slug]" aria-label={title}>
+    <Link as={`/${baseUrl}/${slug}`} href="/[baseUrl]/[slug]" aria-label={title}>
         {image}
     </Link>
     // <div className="sm:mx-0">

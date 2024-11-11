@@ -13,6 +13,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { Process } from "../../_components/process";
+import { PostHeader } from "@/app/_components/post-header";
 
 export default async function Post({ params }: Params) {
   const post = getBlogBySlug(params.slug);
@@ -34,14 +35,14 @@ export default async function Post({ params }: Params) {
               <span className="has-before">{post.title}</span>
           </h2>
         <article className="mb-32">
-          {/* <div>
+          <div>
             <PostHeader
               title={post.title}
               coverImage={post.coverImage}
               date={post.date}
               author={post.author}
             />
-          </div> */}
+          </div>
           <div>
             <PostBody content={content} />
           </div>

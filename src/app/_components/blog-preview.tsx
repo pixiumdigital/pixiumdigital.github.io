@@ -24,7 +24,7 @@ export function BlogPreview({
   return (
     <div className="service-card columns-1gap-x-8" style={{margin:"20px", padding:"40px"}}>
         <div className="mb-4">
-            <CoverImage slug={slug} title={title} src={coverImage} />
+            <CoverImage slug={slug} title={title} src={coverImage} baseUrl="blog" />
         </div>
         <div className="gap-x-8">
             <h3 className="text-3xl mb-3 leading-snug">

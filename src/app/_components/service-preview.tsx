@@ -35,9 +35,6 @@ export function ServicePreview({
             <p className="text-2xl leading-relaxed mb-4">{excerpt}</p>
             {/* <Avatar name={author.name} picture={author.picture} /> */}
         </div>
-        {/* <div className="">
-            <CoverImage slug={slug} title={title} src={coverImage} />
-        </div> */}
         
       </div>
   );
