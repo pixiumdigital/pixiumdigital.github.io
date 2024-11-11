@@ -45,12 +45,11 @@ export default async function Post({ params }: Params) {
           <div>
             <PostBody content={content} />
           </div>
-          <div>
-            <Process />
-          </div>
+          
         </article>
       </Container>
     </section>
+    <Process />
     <Whyworkwithus />
     <Newsletter />
     </>

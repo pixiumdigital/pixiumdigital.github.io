@@ -13,7 +13,7 @@ const Newsletter = () => {
 
             <div className="newsletter-content">
 
-                <p className="section-subtitle has-before">You have an idea?</p>
+                <p className="section-subtitle has-before">Reinvent Your Business!</p>
 
                 <h2 className="h2 section-title">
                     Let’s have a chat!

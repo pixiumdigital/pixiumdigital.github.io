@@ -61,6 +61,9 @@ const Footer = () => {
                   <a href="/use-case" className="footer-link">Use case</a>
               </li>
               <li>
+                  <a href="/blog" className="footer-link">Blog</a>
+              </li>
+              <li>
                   <a href="/contact-us" className="footer-link">Contact us</a>
               </li>
           </ul>

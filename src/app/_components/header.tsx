@@ -11,7 +11,10 @@ import { faBars, faChevronDown, faClose } from '@fortawesome/free-solid-svg-icon
 import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarContent, NavbarItem, Button, DropdownItem, DropdownTrigger, 
   Dropdown, DropdownMenu, NavbarMenu, NavbarMenuItem} from "@nextui-org/react";
 
+import Image from 'next/image'
+
 import { Post } from "@/interfaces/post";
+import CoverImage from "./cover-image";
 
 type Props = {
   services: Post[];
@@ -35,6 +38,10 @@ export default function  Header({ services }: Props) {
       {
         "url": "/use-case",
         "text": "Use Case",
+      },
+      {
+        "url": "/blog",
+        "text": "Blog",
       },
       {
         "url": "/contact-us",
@@ -103,14 +110,15 @@ export default function  Header({ services }: Props) {
                 </DropdownTrigger>
               </NavbarItem>
 
-              <DropdownMenu aria-label="service-menu" className="w-[340px] submenu" itemClasses={{base: "gap-2"}}>
+              <DropdownMenu aria-label="service-menu" className="submenu" itemClasses={{base: "gap-3"}}>
                 { services.map( (service) => (
                     <DropdownItem
                       key={service.title}
                       // description={service.slug}
-                      // startContent={icons.scale}
+                      // startContent={<Image src={service.coverImage} alt="" width={30} height={30} />}
+                      // classNames={{base:"bbb", wrapper:"my_wrap"}}
                     >
-                      <Link href={"/services/"+service.slug} className="navbar-link px-4 py-0" aria-current="page" data-nav-link>
+                      <Link href={"/services/"+service.slug} className="navbar-link px-4 py-2" aria-current="page" data-nav-link>
                         {service.title}
                       </Link>
                     </DropdownItem>)

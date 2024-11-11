@@ -560,7 +560,9 @@
     display:inline-block;
   }
   
-  .service-card:is(:hover, :focus-within) .card-icon { transform: rotateY(0.5turn); }
+  .service-card:is(:hover, :focus-within) .card-icon { 
+    /* // transform: rotateY(0.5turn); */
+   }
   
   .service-card .card-title { transition: var(--transition-1); }
   
@@ -1518,5 +1520,7 @@
     border-bottom:1px solid #ddd;
   }
   .submenu a{
-    padding-block: 4px;
+    padding-block: 8px;
   }
+
+  .submenu span{flex: none !important;}

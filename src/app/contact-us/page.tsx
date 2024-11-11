@@ -103,7 +103,7 @@ export default Index;
 
 
 export function generateMetadata(): Metadata {
-    const title = `Contact us | Pixium Digital`;
+    const title = `Contact | Pixium Digital`;
     const description = `Contact us and our team will gather your specification, goals and expectations about the project.`;
     // const previousImages = (await parent).openGraph?.images || []
 
