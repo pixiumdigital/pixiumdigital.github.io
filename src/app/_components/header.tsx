@@ -8,7 +8,8 @@ import Cookies from "universal-cookie";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faChevronDown, faClose } from '@fortawesome/free-solid-svg-icons'
 
-import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarContent, NavbarItem, Button, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, NavbarMenu, NavbarMenuItem} from "@nextui-org/react";
+import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarContent, NavbarItem, Button, DropdownItem, DropdownTrigger, 
+  Dropdown, DropdownMenu, NavbarMenu, NavbarMenuItem} from "@nextui-org/react";
 
 import { Post } from "@/interfaces/post";
 
@@ -40,13 +41,7 @@ export default function  Header({ services }: Props) {
         "text": "Contact Us",
       },
     ];
-
-    // const _cookies = new Cookies();
-    // useEffect(() => {
-    //       const isProd = process.env.NODE_ENV != 'development'
-    //       if(isProd)
-    //           setLang('/'+_cookies.get('NEXT_LOCALE'));
-    // }, []);
+    
 
     const handleScroll = () => {
       if (window.scrollY > 80) 
@@ -93,13 +88,7 @@ export default function  Header({ services }: Props) {
               </a>
             </NavbarBrand>
           <NavbarContent className="hidden sm:flex gap-4 mr-3" justify="center">
-            <NavbarItem>
-              <Link href={"/services"} className="navbar-link px-4" aria-current="page" data-nav-link>
-              Services
-              </Link>
-            </NavbarItem>
-
-            {/* <Dropdown>
+            <Dropdown>
               <NavbarItem>
                 <DropdownTrigger>
                   <Button
@@ -109,27 +98,26 @@ export default function  Header({ services }: Props) {
                     radius="sm"
                     variant="light"
                   >
-                    Services 2 <FontAwesomeIcon icon={faChevronDown}/>
+                    Services <FontAwesomeIcon icon={faChevronDown}/>
                   </Button>
                 </DropdownTrigger>
               </NavbarItem>
 
-              { services.map( (service) => (
-                  <DropdownMenu key={service.title} aria-label={service.title} className="w-[340px]" itemClasses={{base: "gap-4"}}>
+              <DropdownMenu aria-label="service-menu" className="w-[340px] submenu" itemClasses={{base: "gap-2"}}>
+                { services.map( (service) => (
                     <DropdownItem
                       key={service.title}
                       // description={service.slug}
                       // startContent={icons.scale}
                     >
-                      <Link href={"/services/"+service.slug} className="navbar-link px-4" aria-current="page" data-nav-link>
+                      <Link href={"/services/"+service.slug} className="navbar-link px-4 py-0" aria-current="page" data-nav-link>
                         {service.title}
                       </Link>
-                    </DropdownItem>
-                </DropdownMenu>
-                )
-                )
-              }
-            </Dropdown> */}
+                    </DropdownItem>)
+                  )
+                }
+              </DropdownMenu>
+            </Dropdown>
 
 
             <NavbarItem>

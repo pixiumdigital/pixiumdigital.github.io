@@ -2,7 +2,7 @@
 title: "Web Design & Development"
 excerpt: "Use our creative, future-proof, and human-centered approach to web design and development to build your online presence."
 coverImage: "/assets/blog/aeqlia/preview.png"
-date: "2023-03-16T05:35:07.322Z"
+date: "2024-05-16T05:35:07.322Z"
 author:
   name: Remi Tache
 ogImage:
