@@ -4,6 +4,9 @@ import { Inter } from "next/font/google";
 
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 
+import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
+
+
 import "../globals.css";
 import '../App.css';
 import '../style.css';
@@ -99,6 +102,7 @@ export default async function RootLayout({children, params}: {children: React.Re
                         <Footer />
                     </body>
                 {/* </NextIntlClientProvider> */}
+                <GoogleAnalytics gaId="G-2H458FMSSG" />
         </html>
     );
 }
