@@ -4,6 +4,7 @@ import { Industry } from "./_components/industry";
 import { PixStats } from "./_components/pix_stats";
 import { useTranslations } from "next-intl";
 import { Metadata } from "next";
+import { Clients } from "./_components/clients";
 // import { locales } from "@/__navigation";
 
 // export async function generateStaticParams() {
@@ -45,7 +46,7 @@ export default function Index( { params: { locale } } : { params:{locale:any } }
 
                     <figure className="hero-banner">
                         {/* hero-banner.png */}
-                        <img src="/assets/images/dotmap.png" style={{width:"100%"}} alt="pixium digital location map" />
+                        <img src="/assets/images/dotmap.png" style={{width:"100%"}} width="200" height="200" alt="pixium digital location map" />
                     </figure>
 
                 </div>
@@ -56,6 +57,8 @@ export default function Index( { params: { locale } } : { params:{locale:any } }
             <Industry />
 
             <Whyworkwithus />
+
+            <Clients />
 
             <Newsletter />
         </div>

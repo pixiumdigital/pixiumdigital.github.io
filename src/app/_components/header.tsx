@@ -20,7 +20,7 @@ type Props = {
   services: Post[];
 };
 
-export default function  Header({ services }: Props) {
+export default function Header({ services }: Props) {
     const [scrollingClass, setScrollingClass] = useState("");
     // const [lang, setLang] = useState("");
 
