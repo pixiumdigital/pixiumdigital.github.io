@@ -78,7 +78,7 @@ export function Clients() {
         <section className="" id="pix-clients" aria-label="statistics">
             <main className="pb-4 mb-4">
                 <Container>
-                    <h1 className="h2 section-title text-center">We <span className="has-before">work with</span></h1>
+                    <h1 className="h2 section-title text-center">Some of <span className="has-before">our clients</span></h1>
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                         {
                             clients.map( (client, index) => (

@@ -36,8 +36,8 @@ export default async function Post({ params }: Params) {
           <h2 className="h2 section-title text-center">
                 <span className="has-before">{post.title}</span>
             </h2>
-          <article className="mb-32 grid grid-cols-1 md:grid-cols-2">
-            <div>
+          <article className="mb-32 grid grid-cols-1 md:grid-cols-1">
+            <div style={{width:"60%"}} className="m-auto">
               <PostHeader
                 title={post.title}
                 coverImage={post.coverImage}

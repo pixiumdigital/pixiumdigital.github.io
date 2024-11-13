@@ -1,6 +1,6 @@
 ---
 title: "Aeqlia"
-excerpt: "Digital and collaborative experiential learning"
+excerpt: "Accelerate performance with immersive learning"
 coverImage: "/assets/blog/aeqlia/preview.png"
 date: "2023-03-16T05:35:07.322Z"
 author:
@@ -17,7 +17,7 @@ Combined a multiplayer gaming experience with learning activities post games for
 
 ### Background
 
-Early 2020 Oussama approached us with a brilliant and innovative way to collaborate, evaluate and learn for virtual and remote teams. 2020 has been very challenging for people and businesses and we foresaw a bright future for companies which something is missing here the new world we are living in. Pixium accompanied Oussama from project ideation to functional specifications and finally delivered the finished project in December 2020.
+Early 2020 Oussama approached us with a brilliant and innovative way to collaborate, evaluate and learn for virtual and remote teams. 2020 has been very challenging for people and businesses and we foresaw a bright future for companies which something is missing here the new world we are living in. Pixium accompanied him from project ideation to functional specifications and finally delivered the finished project in December 2020.
 
 ### Mission
 
@@ -27,16 +27,18 @@ Additionally, the data compilation can be done by individual, by team or by grou
 
 ## Solution
 
-Multiplayers 2D games
+Multiple interactive experience development
 
-Responsive Web Application
+Responsive Web Application for learning and session management
 
 Highly customisable learning activities
 
-Secured system architecture
+Secured and scalable system architecture
 
 ## Output
 
-![output_image](/assets/blog/aeqlia/img1.jpg)
-![output_image](/assets/blog/aeqlia/img2.png) 
-![output_image](/assets/blog/aeqlia/img3.png)
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+<img src="/assets/blog/aeqlia/img1.png" alt="Amplify Game">
+<img src="/assets/blog/aeqlia/img2.png" alt="GinkGo Game">
+<img src="/assets/blog/aeqlia/img3.png" alt="Pulse Game">
+</div>
