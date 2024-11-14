@@ -38,7 +38,7 @@ Secured and scalable system architecture
 ## Output
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-<img src="/assets/blog/aeqlia/img1.png" alt="Amplify Game">
-<img src="/assets/blog/aeqlia/img2.png" alt="GinkGo Game">
-<img src="/assets/blog/aeqlia/img3.png" alt="Pulse Game">
+  <img src="/assets/blog/aeqlia/img1.png" alt="Amplify Game">
+  <img src="/assets/blog/aeqlia/img2.png" alt="GinkGo Game">
+  <img src="/assets/blog/aeqlia/img3.png" alt="Pulse Game">
 </div>
