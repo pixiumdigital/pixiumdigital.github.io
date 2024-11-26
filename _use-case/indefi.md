@@ -3,6 +3,10 @@ title: "INDEFI"
 excerpt: "The right tool for Benchmarking and Performance Evaluations"
 coverImage: "/assets/blog/indefi/preview.png"
 date: "2023-03-16T05:35:07.322Z"
+industry: ESG, Sustainability
+platform: Mobile, Web
+timeline: 2022 - Present
+location: France
 author:
   name: Remi Tache
 ogImage:

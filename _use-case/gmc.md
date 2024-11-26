@@ -3,6 +3,10 @@ title: "Go Master Coach"
 excerpt: "Develop Your Coaching Career"
 coverImage: "/assets/blog/gmc/preview.png"
 date: "2023-03-16T05:35:07.322Z"
+industry: EdTech, ELearning, Life Coaching
+platform: Mobile, Web
+timeline: 2019 - Present
+location: Singapore / France
 author:
   name: Remi Tache
 ogImage:

@@ -14,6 +14,7 @@ import Link from "next/link";
 import Whyworkwithus from "@/app/_components/whyworkwithus";
 import Newsletter from "@/app/_components/newsletter";
 
+import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/card";
 
 
 export default async function Post({ params }: Params) {
@@ -45,9 +46,37 @@ export default async function Post({ params }: Params) {
                 author={post.author}
               />
             </div>
-            <div>
-              <PostBody content={content} />
-            </div>
+
+            <Card className="p-6 border-2 rounded-2xl">
+                <CardHeader className="w-100">
+                    <h1 className="w-100 text-4xl text-center">Project Details</h1>
+                </CardHeader>
+                <CardBody>
+                  <hr></hr>
+                  <div className="grid grid-cols-4 gap-4 mt-4 text-center">
+                    <div>
+                      <dt className="text-md text-muted-foreground text-gray-400">Client</dt>
+                      <dd className="font-medium">{post.title}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-md text-muted-foreground text-gray-400">Industry</dt>
+                      <dd className="font-medium">{post.industry}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-md text-muted-foreground text-gray-400">Location</dt>
+                      <dd className="font-medium">{post.location}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-md text-muted-foreground text-gray-400">Platform</dt>
+                      <dd className="font-medium">{post.platform}</dd>
+                    </div>
+                  </div>
+                </CardBody>
+              </Card>
+
+              <div>
+                <PostBody content={content} />
+              </div>
           </article>
         </Container>
       </section>

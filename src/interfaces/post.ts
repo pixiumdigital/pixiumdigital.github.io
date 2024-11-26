@@ -5,6 +5,10 @@ export type Post = {
   title: string;
   date: string;
   coverImage: string;
+  platform: string;
+  industry: string;
+  timeline: string;
+  location: string;
   author: Author;
   excerpt: string;
   ogImage: {

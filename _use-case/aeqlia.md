@@ -3,6 +3,10 @@ title: "Aeqlia"
 excerpt: "Accelerate performance with immersive learning"
 coverImage: "/assets/blog/aeqlia/preview.png"
 date: "2023-03-16T05:35:07.322Z"
+industry: EdTech / Gaming
+platform: Web, Mobile
+timeline: 2020 - Present
+location: Asia - Middles East
 author:
   name: Remi Tache
 ogImage:

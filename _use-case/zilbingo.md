@@ -3,6 +3,10 @@ title: "Zil Bingo"
 excerpt: "Blockchain & NFT game based Bingo"
 coverImage: "/assets/blog/zilbingo/preview.png"
 date: "2023-03-16T05:35:07.322Z"
+industry: Gaming, NFT
+platform: Mobile, Web
+timeline: 2020 - 2022
+location: Singapore
 author:
   name: Remi Tache
 ogImage:

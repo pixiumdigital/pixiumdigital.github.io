@@ -3,6 +3,10 @@ title: "Last Man Out"
 excerpt: "The new fantasy sport game"
 coverImage: "/assets/blog/lmo/preview.png"
 date: "2023-03-16T05:35:07.322Z"
+industry: Mobile Gaming
+platform: Mobile, Web
+timeline: 2018 - Present
+location: Asia, Europe
 author:
   name: Remi Tache
 ogImage:

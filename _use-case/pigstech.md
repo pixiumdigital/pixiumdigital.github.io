@@ -3,6 +3,10 @@ title: "Pigstech"
 excerpt: "We use an end to end technology solution to better animals and farmers lives"
 coverImage: "/assets/blog/pigstech/preview.png"
 date: "2023-03-16T05:35:07.322Z"
+industry: AgriTech, IoT
+platform: Mobile, Web
+timeline: 2020 - 2022
+location: Europe, Asia
 author:
   name: Remi Tache
 ogImage:
