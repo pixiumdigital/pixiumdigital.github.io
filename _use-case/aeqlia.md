@@ -1,6 +1,6 @@
 ---
 title: "Aeqlia"
-excerpt: "Accelerate performance with immersive learning"
+excerpt: "Revolutionizing team building and learning with a unique blend of multiplayer gaming and post-game activities."
 coverImage: "/assets/blog/aeqlia/preview.png"
 date: "2023-03-16T05:35:07.322Z"
 industry: EdTech / Gaming
