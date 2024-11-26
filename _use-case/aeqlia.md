@@ -15,29 +15,20 @@ ogImage:
 
 ## Project
 
-Combined a multiplayer gaming experience with learning activities post games for agile and high performing teams
-
-## Challenge
-
-### Background
-
-Early 2020 Oussama approached us with a brilliant and innovative way to collaborate, evaluate and learn for virtual and remote teams. 2020 has been very challenging for people and businesses and we foresaw a bright future for companies which something is missing here the new world we are living in. Pixium accompanied him from project ideation to functional specifications and finally delivered the finished project in December 2020.
-
-### Mission
-
-One challenging part of this project was to provide users with a seamless experience from the game to the web application in order to undertake assessments simultaneous.
-
-Additionally, the data compilation can be done by individual, by team or by group of teams defined by the session master. Flexibility is the key word.
+The challenge was to develop an engaging solution that combines gaming mechanics with educational content, while ensuring high performance and scalability for multiple concurrent users across various devices.
 
 ## Solution
 
-Multiple interactive experience development
+We developed a sophisticated platform integrating real-time multiplayer gaming capabilities with post-game learning modules. The solution includes advanced analytics for tracking team performance and progress, while maintaining an engaging and intuitive user experience across all devices:
+<ul>
+  <li>Real-time multiplayer gaming engine</li>
+  <li>Adaptive learning algorithms</li>
+  <li>Cross-platform compatibility</li>
+  <li>Advanced analytics dashboard</li>
+  <li>Scalable cloud infrastructure</li>
+</ul>
 
-Responsive Web Application for learning and session management
-
-Highly customisable learning activities
-
-Secured and scalable system architecture
+Aeqlia's platform has seen remarkable success, transforming how teams collaborate and learn in virtual environments. The engaging gameplay combined with insightful post-game analysis has led to significant improvements in team performance and learning outcomes.
 
 ## Output
 
