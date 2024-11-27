@@ -6,7 +6,7 @@ date: "2023-03-16T05:35:07.322Z"
 industry: Art / Augmented reality
 platform: Mobile
 timeline: 2020
-location: Singapour
+location: Singapore
 author:
   name: Remi Tache
 ogImage:

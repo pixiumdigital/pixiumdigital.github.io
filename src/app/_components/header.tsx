@@ -91,7 +91,7 @@ export default function Header({ services }: Props) {
           {/* ORIGINAL MENU DESKTOP */}
           <NavbarBrand>
               <a href="/" className="logo">
-                <img src="/assets/images/pixium-logo.png" style={{height:"60px"}} />
+                <img src="/assets/images/pixium-logo.png" />
               </a>
             </NavbarBrand>
           <NavbarContent className="hidden sm:flex gap-4 mr-3" justify="center">

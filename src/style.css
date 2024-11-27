@@ -379,6 +379,11 @@
     font-weight: var(--fw-700);
   }
   
+  .logo img{
+    height:auto;
+    width:92%;
+  }
+
   .nav-open-btn {
     background-color: var(--white);
     color: var(--eerie-black);
@@ -1201,6 +1206,11 @@
   
     .grid-list { grid-template-columns: repeat(3, 1fr); }
   
+
+    .logo img{
+      height: 60px;
+      width: auto;
+    }
   
   
     /**

@@ -26,3 +26,15 @@
   @apply text-3xl mt-8 mb-4 leading-snug;
   font-weight: bold;
 }
+
+.markdown li{
+  list-style: square;
+  margin-left:30px;
+}
+
+
+.markdown a {
+  color:#000;
+  text-decoration-line: underline;
+  text-decoration-color: hsl(47, 100%, 69%);
+}
