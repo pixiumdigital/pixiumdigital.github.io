@@ -31,27 +31,16 @@ export default async function Index( { params: { locale } } : { params:{locale:a
 
                     <div className="hero-content">
 
-                        <h1 className="h1 hero-title">
-                            {/* {t('tagline')} */}
-                            {/* {t('header', { name: userName })} */}
-                            {/* {dict.page.homeTagline} */}
-                            {/* <p>{messages['common']['greeting']}XX</p> */}
-                            -{JSON.stringify(messages.common)}-
-                            -{locale}-
-                            Shaping your project with <span className="has-before">technology</span> and innovation
-                                    {/* <Trans id="home-tagline" /> */}
-                            </h1>
+                        <h1 className="h1 hero-title" dangerouslySetInnerHTML={{ __html: messages.home.intro }}>
+                        </h1>
 
-                            <p className="hero-text">
-                                    {/* {t('description')} */}
-                                    Pixium Digital is a digital company located in Singapore and France. 
-                                    Our dedicated focus lies in meticulously shaping our clients' projects 
-                                    from inception to a successful launch, ensuring transformative outcomes.
-                            </p>
+                        <p className="hero-text">
+                          {messages.home.description}
+                        </p>
 
-                            <div className="centered">
-                                <a href="/contact-us" className="btn btn-primary has-before has-after">Contact Us</a>
-                            </div>
+                        <div className="centered">
+                            <a href="/contact-us" className="btn btn-primary has-before has-after">{messages.button.contactus}</a>
+                        </div>
 
                     </div>
 

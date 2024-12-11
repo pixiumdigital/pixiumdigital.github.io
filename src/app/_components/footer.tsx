@@ -9,10 +9,12 @@ type Props = {
   locale: string;
 }
 
-const Footer = ({locale} : Props) => {
+export default async function Footer({locale} : Props) {
 // export function Footer() {
 
   // const t = useTranslations();
+
+  const messages = await import(`@/messages/${locale}.json`); 
 
   return (<footer className="footer">
   <div className="container">
@@ -24,10 +26,7 @@ const Footer = ({locale} : Props) => {
               <p className="footer-list-title text-left">About Pixium Digital</p>
 
               <p className="footer-text text-left">
-              {/* {t('description')} */}
-              Pixium Digital is an agile software development company headquartered in Singapore. 
-              Our dedicated focus lies in meticulously shaping our clients' projects 
-              from inception to a successful launch, ensuring transformative outcomes.
+                {messages.home.description}
               </p>
 
               <ul className="social-list">
@@ -167,5 +166,3 @@ const Footer = ({locale} : Props) => {
 </footer>
   );
 }
-
-export default Footer;

@@ -29,7 +29,7 @@ export default async function Index ( { params } : { params:{locale:string } } )
             <div className="container">
 
                 <h2 className="h2 section-title text-center">
-                    <span className="has-before">About us</span>
+                    <span className="has-before">{messages.about.title}</span>
                 </h2>
             
                 <div>

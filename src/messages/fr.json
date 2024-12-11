@@ -2,13 +2,25 @@
     "navigation": {
       "home": "Accueil",
       "services": "Services",
-      "about": "A propos"
+      "about": "A propos",
+      "usecase": "Projects",
+      "blog": "Blog",
+      "contact": "Nous Contacter"
+    },
+    "button":{
+      "contactus":"Nous Contacter",
+      "letstalk":"Contactez nous 👋"
     },
     "common": {
       "greeting": "Bonjour",
       "content": "Ceci est une page de contenu simple."
     },
+    "home": {
+      "intro": "Façonner vos projets avec <span class='has-before'>la technologie</span> et l'innovation",
+      "description": "Pixium Digital est une entreprise numérique basée à Singapour et en France. Notre objectif principal est de façonner méticuleusement les projets de nos clients, de leur conception jusqu'à leur lancement réussi, en garantissant des résultats transformateurs."
+    },
     "about":{
+      "title":"A Propos",
       "intro": "Avec son siège social situé à Singapour, Pixium Digital est une entreprise numérique créative animée par une équipe conviviale d’ingénieurs dotés d’une vaste expertise dans les solutions informatiques. Forts de décennies d’expérience combinée en apprentissage automatique, réalité augmentée, Internet des objets, ainsi qu’en développement d’applications mobiles et web, nous apportons des connaissances approfondies pour transformer vos idées en réalité. Grâce à une solide expertise en développement commercial et à des solutions d’ingénierie de pointe, nous nous engageons à transformer vos besoins en produits exceptionnels. Vous pouvez compter sur nous comme votre partenaire inébranlable et fiable en solutions informatiques, dédié à votre succès."
     }
   }

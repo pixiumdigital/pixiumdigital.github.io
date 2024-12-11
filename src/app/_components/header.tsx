@@ -40,22 +40,27 @@ export default function Header({ services, locale, messages }: Props) {
       {
         "url": `/${locale}/services`,
         "text": messages.navigation.services,
+        "desktop": false,
       },
       {
         "url": `/${locale}/about-us`,
         "text": messages.navigation.about,
+        "desktop": true,
       },
       {
         "url": `/${locale}/use-case`,
-        "text": "Use Case",
+        "text": messages.navigation.usecase,
+        "desktop": true,
       },
       {
         "url": `/${locale}/blog`,
-        "text": "Blog",
+        "text": messages.navigation.blog,
+        "desktop": true,
       },
       {
         "url": `/${locale}/contact-us`,
-        "text": "Contact Us",
+        "text": messages.navigation.contact,
+        "desktop": true,
       },
     ];
     
@@ -138,31 +143,20 @@ export default function Header({ services, locale, messages }: Props) {
             </Dropdown>
 
 
-            <NavbarItem>
-              <Link href={`/${locale}/about-us`} className="navbar-link px-4" aria-current="page" data-nav-link>
-                {messages.navigation.about}
-              </Link>
-            </NavbarItem>
-            <NavbarItem>
-              <Link href={`/${locale}/use-case`} className="navbar-link px-4" aria-current="page" data-nav-link>
-              Use Case
-              </Link>
-            </NavbarItem>
-            <NavbarItem>
-              <Link href={`/${locale}/blog`} className="navbar-link px-4" aria-current="page" data-nav-link>
-              Blog
-              </Link>
-            </NavbarItem>
-            <NavbarItem>
-              <Link href={`/${locale}/contact-us`} className="navbar-link px-4" aria-current="page" data-nav-link>
-              Contact Us
-              </Link>
-            </NavbarItem>
+            {menuItems.map((item, index) => (
+              (item.desktop ?
+              <NavbarItem>
+                <Link href={item.url} className="navbar-link px-4" aria-current="page" data-nav-link>
+                  {item.text}
+                </Link>
+              </NavbarItem>  : "" )
+            ))}
+
           </NavbarContent>
 
           <NavbarContent justify="end">
             <NavbarItem className="lg:flex">
-              <a href="mailto:contactus@pixiumdigital.com" className="btn btn-primary has-before has-after">Let’s Talk 👋</a>
+              <a href="mailto:contactus@pixiumdigital.com" className="btn btn-primary has-before has-after">{messages.button.letstalk}</a>
             </NavbarItem>
           </NavbarContent>
 
