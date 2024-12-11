@@ -1,9 +1,9 @@
 import React, { Component }  from 'react';
-import Whyworkwithus from '../_components/whyworkwithus';
-import Newsletter from '../_components/newsletter';
+import Whyworkwithus from '../../_components/whyworkwithus';
+import Newsletter from '../../_components/newsletter';
 import { getAllServices } from '@/lib/api';
-import { MoreServices } from '../_components/more-stories';
-import Container from '../_components/container';
+import { MoreServices } from '../../_components/more-stories';
+import Container from '../../_components/container';
 import { Metadata } from 'next';
 // import { unstable_setRequestLocale } from 'next-intl/server';
 // import { locales } from '@/__navigation';

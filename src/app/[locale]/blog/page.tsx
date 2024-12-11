@@ -1,9 +1,9 @@
 import React, { Component }  from 'react';
-import Whyworkwithus from '../_components/whyworkwithus';
-import Newsletter from '../_components/newsletter';
+import Whyworkwithus from '../../_components/whyworkwithus';
+import Newsletter from '../../_components/newsletter';
 import { getAllBlog } from '@/lib/api';
-import { MoreBlog } from '../_components/more-stories';
-import Container from '../_components/container';
+import { MoreBlog } from '../../_components/more-stories';
+import Container from '../../_components/container';
 import { Metadata } from 'next';
 
 //   }

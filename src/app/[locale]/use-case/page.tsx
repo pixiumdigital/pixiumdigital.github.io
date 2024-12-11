@@ -1,9 +1,9 @@
 import React, { Component }  from 'react';
-import Whyworkwithus from '../_components/whyworkwithus';
-import Container from '../_components/container';
+import Whyworkwithus from '../../_components/whyworkwithus';
+import Container from '../../_components/container';
 import { getAllUseCase } from '@/lib/api';
-import { MoreStories } from '../_components/more-stories';
-import Newsletter from '../_components/newsletter';
+import { MoreStories } from '../../_components/more-stories';
+import Newsletter from '../../_components/newsletter';
 import { Metadata } from 'next';
 
 // import { SEO } from "../components/seo"

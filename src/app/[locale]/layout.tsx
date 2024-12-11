@@ -16,7 +16,7 @@ import Footer from "../_components/footer";
 // import { locales } from "@/__navigation"
 import { getAllServices } from "@/lib/api";
 import { useState } from "react";
-import LanguageSwitcher from "../languageSwithcer";
+import LanguageSwitcher from "./_components/languageSwithcer";
 
 import { useTranslations } from 'next-intl';
 import { notFound } from "next/navigation";

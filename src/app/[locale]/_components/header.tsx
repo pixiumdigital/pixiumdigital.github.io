@@ -14,7 +14,7 @@ import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarContent, NavbarItem, Button
 import Image from 'next/image'
 
 import { Post } from "@/interfaces/post";
-import LanguageSwitcher from "@/app/languageSwithcer";
+import LanguageSwitcher from "@/app/[locale]/_components/languageSwithcer";
 
 // import { useTranslations } from 'next-intl';
 
