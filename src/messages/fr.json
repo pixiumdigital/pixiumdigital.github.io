@@ -1,0 +1,10 @@
+{
+    "navigation": {
+      "home": "Accueil",
+      "services": "Services"
+    },
+    "common": {
+      "greeting": "Bonjour",
+      "content": "Ceci est une page de contenu simple."
+    }
+  }

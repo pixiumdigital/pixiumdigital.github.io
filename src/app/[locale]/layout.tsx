@@ -7,26 +7,41 @@ import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
 
 
-import "../globals.css";
-import '../App.css';
-import '../style.css';
+import "../../globals.css";
+import '../../App.css';
+import '../../style.css';
 
 import Header from "./_components/header";
-import Footer from "./_components/footer";
-// import { locales } from "@/__navigation";
-import { notFound } from "next/navigation";
+import Footer from "../_components/footer";
+// import { locales } from "@/__navigation"
 import { getAllServices } from "@/lib/api";
+import { useState } from "react";
+import LanguageSwitcher from "../languageSwithcer";
+
+import { useTranslations } from 'next-intl';
+import { notFound } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
 
-async function getMessages(locale: string) {
-    try {
-        return (await import(`../../../locales/${locale}/default.json`)).default
-    } catch (error) {
-        notFound()
-    }
+export function generateStaticParams() {
+  return [
+    { locale: 'en' },
+    { locale: 'fr' }
+  ];
 }
+
+
+// locale comes from Next.js in receiving props
+// const [language, setLanguage] = useState<string>(locale); 
+
+// async function getMessages(locale: string) {
+//     try {
+//         return (await import(`../../../locales/${locale}/default.json`)).default
+//     } catch (error) {
+//         notFound()
+//     }
+// }
 
 // export const metadata: Metadata = {
 //   title: `Pixium Digital Group`,
@@ -50,14 +65,22 @@ async function getMessages(locale: string) {
 // { params: { lang } } : {params:any}
 export default async function RootLayout({children, params}: {children: React.ReactNode, params :{locale:string}}) {
     const {locale} = params;
+    // const [language, setLanguage] = useState<string>(locale); // Initialize with the current locale
 
-    // if (!locales.includes(locale)) {
-    //   notFound();
-    // }
+    if (!['en', 'fr'].includes(locale)) {
+      notFound();
+    }
+    
+    // const messages = useMessages();
+    let messages;
+    try {
+      messages = (await import(`../../messages/${locale}.json`)).default;
+    } catch (error) {
+      // Handle error loading messages
+    }
 
     // const messages = useMessages();
-    // const messages = await getMessages(locale)
-
+    // const t = useTranslations('common');
 
     return (
       //  lang="en"
@@ -95,13 +118,15 @@ export default async function RootLayout({children, params}: {children: React.Re
                 <meta name="theme-color" content="#000" />
                 <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
             </head>
-                {/* <NextIntlClientProvider locale={locale} messages={messages}> */}
+                
                     <body className={inter.className+" App"}>
-                        <Header services={getAllServices()} />
-                        <div className="min-h-screen">{children}</div>
-                        <Footer />
+                      {/* <NextIntlClientProvider locale={locale} messages={messages}> */}
+                          <Header services={getAllServices()} locale={locale} />
+                          <div className="min-h-screen">{children}</div>
+                          <Footer locale={locale}/>
+                        {/* </NextIntlClientProvider> */}
                     </body>
-                {/* </NextIntlClientProvider> */}
+                
                 <GoogleAnalytics gaId="G-2H458FMSSG" />
         </html>
     );

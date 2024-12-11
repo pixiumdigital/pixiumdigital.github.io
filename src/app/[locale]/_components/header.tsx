@@ -14,25 +14,30 @@ import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarContent, NavbarItem, Button
 import Image from 'next/image'
 
 import { Post } from "@/interfaces/post";
-import CoverImage from "./cover-image";
+import LanguageSwitcher from "@/app/languageSwithcer";
+
+// import { useTranslations } from 'next-intl';
 
 type Props = {
   services: Post[];
+  locale: string;
 };
 
-export default function Header({ services }: Props) {
+export default function Header({ services, locale }: Props) {
     const [scrollingClass, setScrollingClass] = useState("");
     // const [lang, setLang] = useState("");
+
+    // const t = useTranslations('common');
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const menuItems = [
       {
-        "url": "/services",
+        "url": "/"+{locale}+"/services",
         "text": "Services",
       },
       {
-        "url": "/about-us",
+        "url": "/"+{locale}+"/about-us",
         "text": "About Us",
       },
       {
@@ -90,7 +95,7 @@ export default function Header({ services }: Props) {
 
           {/* ORIGINAL MENU DESKTOP */}
           <NavbarBrand>
-              <a href="/" className="logo">
+              <a href={"/"+locale} className="logo">
                 <img src="/assets/images/pixium-logo.png" />
               </a>
             </NavbarBrand>
@@ -129,8 +134,8 @@ export default function Header({ services }: Props) {
 
 
             <NavbarItem>
-              <Link href={"/about-us"} className="navbar-link px-4" aria-current="page" data-nav-link>
-              About Us
+              <Link href={"/"+locale+"/about-us"} className="navbar-link px-4" aria-current="page" data-nav-link>
+              About Us 
               </Link>
             </NavbarItem>
             <NavbarItem>

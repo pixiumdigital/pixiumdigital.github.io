@@ -1,12 +1,20 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
-import Whyworkwithus from '../_components/whyworkwithus';
+import Whyworkwithus from '../../_components/whyworkwithus';
 import { Metadata } from 'next';
-import { Process } from '../_components/process';
+import { Process } from '../../_components/process';
 // import { locales } from '@/__navigation';
 
 // export function generateStaticParams() {
 //     return [{ locale: "en" }];
 // }
+
+export function generateStaticParams() {
+    return [
+      { locale: 'en' },
+      { locale: 'fr' }
+    ];
+  }
+  
 
 // export async function generateStaticParams() {
 //     const pages = locales;
