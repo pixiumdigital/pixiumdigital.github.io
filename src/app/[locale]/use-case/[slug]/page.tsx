@@ -30,7 +30,7 @@ export default async function Post({ params }: Params) {
     <>
       <section className="section service" id="service" aria-label="service">
         <Alert preview={post.preview} />
-        <Link href="/use-case/">
+        <Link href={"/"+params.locale+"/use-case/"}>
           <FontAwesomeIcon icon={faArrowLeft} height="20" className="inline-flex" /> Back
         </Link>
         <Container>
@@ -89,7 +89,7 @@ export default async function Post({ params }: Params) {
 type Params = {
   params: {
     slug: string;
-    // locale:string;
+    locale:string;
   };
 };
 
@@ -117,8 +117,12 @@ export async function generateStaticParams() {
   // const pages = ['en', 'fr'];
   // return pages.map((page) => ({ locale: page }));
 
-  return posts.map((post) => ({
-    slug: post.slug,
-    // locale: 'en'
-  }));
+  const locales = ['en', 'fr'];
+
+  return posts.flatMap((post) => 
+    locales.map((locale) => ({
+      slug: post.slug,
+      locale: locale,
+    }))
+  );
 }

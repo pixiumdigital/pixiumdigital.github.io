@@ -10,10 +10,12 @@ import { Metadata } from 'next';
 
 // import { SEO } from "../components/seo"
 
-// export async function generateStaticParams() {
-//     const pages = locales;
-//     return pages.map((page) => ({ locale: page }));
-//   }
+export function generateStaticParams() {
+    return [
+      { locale: 'en' },
+      { locale: 'fr' }
+    ];
+  }
 
 export default function Index( { params } : { params:{locale:string } } ) {
     // unstable_setRequestLocale(params.locale);
@@ -36,7 +38,7 @@ export default function Index( { params } : { params:{locale:string } } ) {
             
             <main>
                 <Container>
-                    {morePosts.length > 0 && <MoreServices posts={morePosts} />}
+                    {morePosts.length > 0 && <MoreServices posts={morePosts} locale={params.locale} />}
                 </Container>
             </main>
             <Whyworkwithus />

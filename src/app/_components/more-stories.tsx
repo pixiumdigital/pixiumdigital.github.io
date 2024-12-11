@@ -3,11 +3,20 @@ import { PostPreview } from "./post-preview";
 import { ServicePreview } from "./service-preview";
 import { BlogPreview } from "./blog-preview";
 
+export function generateStaticParams() {
+  return [
+      { locale: 'en' },
+      { locale: 'fr' }
+  ];
+}
+
+
 type Props = {
   posts: Post[];
+  locale:string;
 };
 
-export function MoreStories({ posts }: Props) {
+export function MoreStories({ posts, locale }: Props) {
   return (
     <section>
       <div className="grid gap-y-16 grid-cols-1 lg:grid-cols-2">
@@ -20,6 +29,7 @@ export function MoreStories({ posts }: Props) {
             author={post.author}
             slug={post.slug}
             excerpt={post.excerpt}
+            locale={locale}
           />
         ))}
       </div>
@@ -27,7 +37,7 @@ export function MoreStories({ posts }: Props) {
   );
 }
 
-export function MoreServices({ posts }: Props) {
+export function MoreServices({ posts, locale }: Props) {
   return (
     <section>
       <div className="grid gap-y-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -40,6 +50,7 @@ export function MoreServices({ posts }: Props) {
             author={post.author}
             slug={post.slug}
             excerpt={post.excerpt}
+            locale={locale}
           />
         ))}
       </div>
@@ -49,7 +60,7 @@ export function MoreServices({ posts }: Props) {
 
 
 
-export function MoreBlog({ posts }: Props) {
+export function MoreBlog({ posts, locale }: Props) {
   return (
     <section>
       <div className="grid gap-y-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -62,6 +73,7 @@ export function MoreBlog({ posts }: Props) {
             author={post.author}
             slug={post.slug}
             excerpt={post.excerpt}
+            locale={locale}
           />
         ))}
       </div>

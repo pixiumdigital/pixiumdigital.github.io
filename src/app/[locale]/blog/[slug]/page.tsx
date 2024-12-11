@@ -14,6 +14,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { PostHeader } from "@/app/_components/post-header";
 
+
+
 export default async function Post({ params }: Params) {
   const post = getBlogBySlug(params.slug);
 
@@ -26,7 +28,7 @@ export default async function Post({ params }: Params) {
   return (<>
     <section className="section service" id="blog" aria-label="blog">
       <Alert preview={post.preview} />
-      <Link href="/blog/">
+      <Link href={"/"+params.locale+"/blog/"}>
         <FontAwesomeIcon icon={faArrowLeft} height="20" className="inline-flex" /> Back
       </Link>
       <Container>
@@ -57,7 +59,7 @@ export default async function Post({ params }: Params) {
 type Params = {
   params: {
     slug: string;
-    // locale:string;
+    locale:string;
   };
 };
 
@@ -80,9 +82,13 @@ export function generateMetadata({ params }: Params): Metadata {
 
 export async function generateStaticParams() {
   const posts = getAllBlog();
+  const locales = ['en', 'fr'];
 
-  return posts.map((post) => ({
-    slug: post.slug,
-    // locale:'en'
-  }));
+  // This will create combinations of each post with each locale
+  return posts.flatMap((post) => 
+    locales.map((locale) => ({
+      slug: post.slug,
+      locale: locale,
+    }))
+  );
 }

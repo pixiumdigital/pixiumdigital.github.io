@@ -40,7 +40,7 @@ export default function Index( { params } : { params:{locale:string } } ) {
             
             <main>
                 <Container>
-                    {morePosts.length > 0 && <MoreBlog posts={morePosts} />}
+                    {morePosts.length > 0 && <MoreBlog posts={morePosts} locale={params.locale} />}
                 </Container>
             </main>
         </section>

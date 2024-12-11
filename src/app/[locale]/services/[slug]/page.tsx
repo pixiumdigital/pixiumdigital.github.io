@@ -26,7 +26,7 @@ export default async function Post({ params }: Params) {
   return (<>
     <section className="section service" id="service" aria-label="service">
       <Alert preview={post.preview} />
-      <Link href="/services/">
+      <Link href={"/"+params.locale+"/services/"}>
         <FontAwesomeIcon icon={faArrowLeft} height="20" className="inline-flex" /> Back
       </Link>
       <Container>
@@ -34,14 +34,6 @@ export default async function Post({ params }: Params) {
               <span className="has-before">{post.title}</span>
           </h2>
         <article className="mb-32">
-          {/* <div>
-            <PostHeader
-              title={post.title}
-              coverImage={post.coverImage}
-              date={post.date}
-              author={post.author}
-            />
-          </div> */}
           <div>
             <PostBody content={content} />
           </div>
@@ -59,7 +51,7 @@ export default async function Post({ params }: Params) {
 type Params = {
   params: {
     slug: string;
-    // locale:string;
+    locale:string;
   };
 };
 
@@ -83,8 +75,12 @@ export function generateMetadata({ params }: Params): Metadata {
 export async function generateStaticParams() {
   const posts = getAllServices();
 
-  return posts.map((post) => ({
-    slug: post.slug,
-    // locale:'en'
-  }));
+  const locales = ['en', 'fr'];
+
+  return posts.flatMap((post) => 
+    locales.map((locale) => ({
+      slug: post.slug,
+      locale: locale,
+    }))
+  );
 }

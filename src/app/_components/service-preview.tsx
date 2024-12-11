@@ -11,6 +11,7 @@ type Props = {
   excerpt: string;
   author: Author;
   slug: string;
+  locale: string;
 };
 
 export function ServicePreview({
@@ -20,14 +21,15 @@ export function ServicePreview({
   excerpt,
   author,
   slug,
+  locale
 }: Props) {
   return (
       <div className="service-card gap-x-8" style={{margin:"20px", padding:"40px"}}>
         <div className="gap-x-8">
             <h3 className="text-lg mb-3 leading-snug">
               <Link
-                as={`/services/${slug}`}
-                href="/services/[slug]"
+                as={`/`+locale+`/services/${slug}`}
+                href={"/"+locale+"/services/[slug]"}
               >
                   <h2 className="mb-8 text-2xl md:text-4xl font-bold tracking-tighter">{title}</h2>
               </Link>

@@ -6,12 +6,13 @@ import { MoreStories } from '../../_components/more-stories';
 import Newsletter from '../../_components/newsletter';
 import { Metadata } from 'next';
 
-// import { SEO } from "../components/seo"
+export function generateStaticParams() {
+    return [
+        { locale: 'en' },
+        { locale: 'fr' }
+    ];
+}
 
-// export async function generateStaticParams() {
-//     const pages = ['en', 'fr'];
-//     return pages.map((page) => ({ locale: page }));
-//   }
 
 export default function Index( { params } : { params:{locale:string } } ) {
 
@@ -53,7 +54,7 @@ export default function Index( { params } : { params:{locale:string } } ) {
                     slug={heroPost.slug}
                     excerpt={heroPost.excerpt}
                     /> */}
-                    {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+                    {morePosts.length > 0 && <MoreStories posts={morePosts} locale={params.locale} />}
                 </Container>
             </main>
         </section>

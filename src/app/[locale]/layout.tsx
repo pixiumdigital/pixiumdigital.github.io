@@ -54,13 +54,6 @@ export function generateStaticParams() {
 // };
 
 
-// export function generateStaticParams() {
-//   const pages = locales;
-//   return pages.map((page) => ({ name: page }));
-// }
-
-
-
 
 // { params: { lang } } : {params:any}
 export default async function RootLayout({children, params}: {children: React.ReactNode, params :{locale:string}}) {
