@@ -14,42 +14,47 @@ import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarContent, NavbarItem, Button
 import Image from 'next/image'
 
 import { Post } from "@/interfaces/post";
-import LanguageSwitcher from "@/app/[locale]/_components/languageSwithcer";
 
-// import { useTranslations } from 'next-intl';
+
+export function generateStaticParams() {
+  return [
+      { locale: 'en' },
+      { locale: 'fr' }
+  ];
+}
+
+
 
 type Props = {
   services: Post[];
   locale: string;
+  messages: any;
 };
 
-export default function Header({ services, locale }: Props) {
+export default function Header({ services, locale, messages }: Props) {
     const [scrollingClass, setScrollingClass] = useState("");
-    // const [lang, setLang] = useState("");
-
-    // const t = useTranslations('common');
-
+    
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const menuItems = [
       {
-        "url": "/"+{locale}+"/services",
-        "text": "Services",
+        "url": `/${locale}/services`,
+        "text": messages.navigation.services,
       },
       {
-        "url": "/"+{locale}+"/about-us",
-        "text": "About Us",
+        "url": `/${locale}/about-us`,
+        "text": messages.navigation.about,
       },
       {
-        "url": "/use-case",
+        "url": `/${locale}/use-case`,
         "text": "Use Case",
       },
       {
-        "url": "/blog",
+        "url": `/${locale}/blog`,
         "text": "Blog",
       },
       {
-        "url": "/contact-us",
+        "url": `/${locale}/contact-us`,
         "text": "Contact Us",
       },
     ];
@@ -123,7 +128,7 @@ export default function Header({ services, locale }: Props) {
                       // startContent={<Image src={service.coverImage} alt="" width={30} height={30} />}
                       // classNames={{base:"bbb", wrapper:"my_wrap"}}
                     >
-                      <Link href={"/services/"+service.slug} className="navbar-link px-4 py-2" aria-current="page" data-nav-link>
+                      <Link href={`/${locale}/services/`+service.slug} className="navbar-link px-4 py-2" aria-current="page" data-nav-link>
                         {service.title}
                       </Link>
                     </DropdownItem>)
@@ -134,22 +139,22 @@ export default function Header({ services, locale }: Props) {
 
 
             <NavbarItem>
-              <Link href={"/"+locale+"/about-us"} className="navbar-link px-4" aria-current="page" data-nav-link>
-              About Us 
+              <Link href={`/${locale}/about-us`} className="navbar-link px-4" aria-current="page" data-nav-link>
+                {messages.navigation.about}
               </Link>
             </NavbarItem>
             <NavbarItem>
-              <Link href={"/use-case"} className="navbar-link px-4" aria-current="page" data-nav-link>
+              <Link href={`/${locale}/use-case`} className="navbar-link px-4" aria-current="page" data-nav-link>
               Use Case
               </Link>
             </NavbarItem>
             <NavbarItem>
-              <Link href={"/blog"} className="navbar-link px-4" aria-current="page" data-nav-link>
+              <Link href={`/${locale}/blog`} className="navbar-link px-4" aria-current="page" data-nav-link>
               Blog
               </Link>
             </NavbarItem>
             <NavbarItem>
-              <Link href={"/contact-us"} className="navbar-link px-4" aria-current="page" data-nav-link>
+              <Link href={`/${locale}/contact-us`} className="navbar-link px-4" aria-current="page" data-nav-link>
               Contact Us
               </Link>
             </NavbarItem>

@@ -1,7 +1,8 @@
 {
     "navigation": {
       "home": "Accueil",
-      "services": "Services"
+      "services": "Services",
+      "about": "A propos"
     },
     "common": {
       "greeting": "Bonjour",

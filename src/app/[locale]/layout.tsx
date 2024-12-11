@@ -11,15 +11,15 @@ import "../../globals.css";
 import '../../App.css';
 import '../../style.css';
 
-import Header from "./_components/header";
+import Header from "../_components/header";
 import Footer from "../_components/footer";
 // import { locales } from "@/__navigation"
 import { getAllServices } from "@/lib/api";
 import { useState } from "react";
-import LanguageSwitcher from "./_components/languageSwithcer";
 
 import { useTranslations } from 'next-intl';
 import { notFound } from "next/navigation";
+import { GlobalProvider } from "../provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -121,8 +121,14 @@ export default async function RootLayout({children, params}: {children: React.Re
                 
                     <body className={inter.className+" App"}>
                       {/* <NextIntlClientProvider locale={locale} messages={messages}> */}
-                          <Header services={getAllServices()} locale={locale} />
-                          <div className="min-h-screen">{children}</div>
+                          <Header services={getAllServices()} locale={locale} messages={messages} />
+                          <div className="min-h-screen">
+                            {/* <NextIntlClientProvider locale={locale} messages={messages}> */}
+                            <GlobalProvider initialMessages={messages}>
+                              {children}
+                              </GlobalProvider>
+                            {/* </NextIntlClientProvider> */}
+                          </div>
                           <Footer locale={locale}/>
                         {/* </NextIntlClientProvider> */}
                     </body>

@@ -2,9 +2,9 @@ import Newsletter from "../_components/newsletter";
 import Whyworkwithus from "../_components/whyworkwithus";
 import { Industry } from "../_components/industry";
 import { PixStats } from "../_components/pix_stats";
-import { useMessages, useTranslations } from "next-intl";
 import { Metadata } from "next";
 import { Clients } from "../_components/clients";
+// import { useGlobal } from "../provider";
 // import { locales } from "@/__navigation";
 
 // export async function generateStaticParams() {
@@ -14,26 +14,27 @@ import { Clients } from "../_components/clients";
 
 export function generateStaticParams() {
     return [
-      { locale: 'en' },
-      { locale: 'fr' }
+        { locale: 'en' },
+        { locale: 'fr' }
     ];
-  }
-
-async function getMessages(locale: string) {
-    try {
-      const messages = await import(`../../messages/${locale}.json`);
-      return messages.default;
-    } catch (error) {
-      console.error('Error loading messages:', error);
-      return null;
-    }
 }
 
+// async function getMessages(locale: string) {
+//     try {
+//         const messages = await import(`../../messages/${locale}.json`);
+//         return messages.default;
+//     } catch (error) {
+//         console.error('Error loading messages:', error);
+//         return null;
+//     }
+// }
+
 export default async function Index( { params: { locale } } : { params:{locale:any } } ) {
-    
-    // const messages = useMessages();
-    // const t = useTranslations('common');
-    const messages = await getMessages(locale);
+  
+    // const messages = await getMessages(locale);
+
+    // const { messages } = useGlobal();
+    // const { messages } = useGlobal();
 
     return (
         <div> 
@@ -46,7 +47,8 @@ export default async function Index( { params: { locale } } : { params:{locale:a
                             {/* {t('tagline')} */}
                             {/* {t('header', { name: userName })} */}
                             {/* {dict.page.homeTagline} */}
-                            <p>{messages['common']['greeting']}XX</p>
+                            {/* <p>{messages['common']['greeting']}XX</p> */}
+                            {/* X{messages}X */}
                             Shaping your project with <span className="has-before">technology</span> and innovation
                                     {/* <Trans id="home-tagline" /> */}
                             </h1>

@@ -12,7 +12,6 @@ import Link from "next/link";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import { Process } from "../../_components/process";
 import { PostHeader } from "@/app/_components/post-header";
 
 export default async function Post({ params }: Params) {

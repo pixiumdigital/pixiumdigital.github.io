@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faLinkedin, faDev } from "@fortawesome/free-brands-svg-icons"
 // import LanguageChanger from './LanguageChanger';
 import { useTranslations } from 'next-intl';
+import LanguageSwitcher from './languageSwithcer';
 // import LanguageSwitcher from './';
 
 type Props = {
@@ -50,7 +51,8 @@ const Footer = ({locale} : Props) => {
 
               </ul>
 
-              {/* <LanguageSwitcher locale={locale} /> */}
+              <p className="footer-list-title text-left mt-4">Language</p>
+              <LanguageSwitcher locale={locale} />
 
           </div>
 
