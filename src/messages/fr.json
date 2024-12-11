@@ -7,5 +7,8 @@
     "common": {
       "greeting": "Bonjour",
       "content": "Ceci est une page de contenu simple."
+    },
+    "about":{
+      "intro": "Avec son siège social situé à Singapour, Pixium Digital est une entreprise numérique créative animée par une équipe conviviale d’ingénieurs dotés d’une vaste expertise dans les solutions informatiques. Forts de décennies d’expérience combinée en apprentissage automatique, réalité augmentée, Internet des objets, ainsi qu’en développement d’applications mobiles et web, nous apportons des connaissances approfondies pour transformer vos idées en réalité. Grâce à une solide expertise en développement commercial et à des solutions d’ingénierie de pointe, nous nous engageons à transformer vos besoins en produits exceptionnels. Vous pouvez compter sur nous comme votre partenaire inébranlable et fiable en solutions informatiques, dédié à votre succès."
     }
   }

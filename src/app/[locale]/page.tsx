@@ -4,7 +4,9 @@ import { Industry } from "../_components/industry";
 import { PixStats } from "../_components/pix_stats";
 import { Metadata } from "next";
 import { Clients } from "../_components/clients";
-// import { useGlobal } from "../provider";
+import useGlobal from "../provider";
+import { useTransition } from "react";
+import { useTranslations } from "next-intl";
 // import { locales } from "@/__navigation";
 
 // export async function generateStaticParams() {
@@ -19,22 +21,8 @@ export function generateStaticParams() {
     ];
 }
 
-// async function getMessages(locale: string) {
-//     try {
-//         const messages = await import(`../../messages/${locale}.json`);
-//         return messages.default;
-//     } catch (error) {
-//         console.error('Error loading messages:', error);
-//         return null;
-//     }
-// }
-
 export default async function Index( { params: { locale } } : { params:{locale:any } } ) {
-  
-    // const messages = await getMessages(locale);
-
-    // const { messages } = useGlobal();
-    // const { messages } = useGlobal();
+    const messages = await import(`@/messages/${locale}.json`);
 
     return (
         <div> 
@@ -48,7 +36,8 @@ export default async function Index( { params: { locale } } : { params:{locale:a
                             {/* {t('header', { name: userName })} */}
                             {/* {dict.page.homeTagline} */}
                             {/* <p>{messages['common']['greeting']}XX</p> */}
-                            {/* X{messages}X */}
+                            -{JSON.stringify(messages.common)}-
+                            -{locale}-
                             Shaping your project with <span className="has-before">technology</span> and innovation
                                     {/* <Trans id="home-tagline" /> */}
                             </h1>

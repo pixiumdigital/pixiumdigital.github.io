@@ -21,7 +21,9 @@ export function generateStaticParams() {
 //     return pages.map((page) => ({ locale: page }));
 //   }
 
-const Index = ( { params } : { params:{locale:string } } ) => {
+export default async function Index ( { params } : { params:{locale:string } } ) {
+
+    const messages = await import(`@/messages/${params.locale}.json`);
     
     return <><section className="section service" id="service" aria-label="service">
             <div className="container">
@@ -32,16 +34,7 @@ const Index = ( { params } : { params:{locale:string } } ) => {
             
                 <div>
                     <p className='text-justify'>
-                    With its headquarters located in Singapore, 
-                    Pixium Digital is a creative digital firm powered by a gregarious group 
-                    of engineers with a broad range of IT solutions expertise. 
-                    With decades of combined experience in machine learning, augmented reality, 
-                    the Internet of Things, and mobile and online application development, 
-                    we provide extensive knowledge to make your ideas a reality. 
-                    With a strong background in business development and state-of-the-art 
-                    engineering solutions, we are committed to turning your 
-                    requirements into outstanding goods. You may rely on us as your unwavering,
-                    trustworthy partner for IT solutions, dedicated to your success.
+                        {messages.about.intro}
                     </p>
                 </div>
             </div>
@@ -50,8 +43,6 @@ const Index = ( { params } : { params:{locale:string } } ) => {
         <Whyworkwithus />
     </>;
 };
-
-export default Index;
 
 
 export function generateMetadata(): Metadata {

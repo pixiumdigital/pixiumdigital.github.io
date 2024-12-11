@@ -19,7 +19,7 @@ import { useState } from "react";
 
 import { useTranslations } from 'next-intl';
 import { notFound } from "next/navigation";
-import { GlobalProvider } from "../provider";
+import ProviderClient, { GlobalProvider } from "../provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
