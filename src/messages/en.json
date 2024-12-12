@@ -5,7 +5,8 @@
       "about": "About",
       "usecase": "Use Case",
       "blog": "Blog",
-      "contact": "Contact Us"
+      "contact": "Contact Us",
+      "review": "Reviews"
     },
     "button":{
       "contactus":"Contact Us",
@@ -22,5 +23,9 @@
     "about":{
       "title":"About Us",
       "intro": "With its headquarters located in Singapore, Pixium Digital is a creative digital firm powered by a gregarious group of engineers with a broad range of IT solutions expertise. With decades of combined experience in machine learning, augmented reality, the Internet of Things, and mobile and online application development, we provide extensive knowledge to make your ideas a reality. With a strong background in business development and state-of-the-art engineering solutions, we are committed to turning your requirements into outstanding goods. You may rely on us as your unwavering, trustworthy partner for IT solutions, dedicated to your success."
+    },
+    "reviews":{
+      "title": "Reviews",
+      "intro": "Welcome to our dedicated customer reviews section! At Pixium Digital, customer satisfaction is at the heart of our commitment. Discover authentic testimonials from our partners and clients, sharing their experiences with our innovative digital solutions. Explore their feedback to understand how we have helped transform their ideas into success. Your trust is our greatest achievement!"
     }
 }

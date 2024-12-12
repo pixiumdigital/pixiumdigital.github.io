@@ -60,19 +60,22 @@ export default async function Footer({locale} : Props) {
                 <p className="footer-list-title">Quick Links</p>
               </li>
               <li>
-                  <a href={"/"+locale+"/services"} className="footer-link">Services</a>
+                  <a href={"/"+locale+"/services"} className="footer-link">{messages.navigation.services}</a>
               </li>
               <li>
-                <a href={"/"+locale+"/about-us"} className="footer-link">About us</a>
+                <a href={"/"+locale+"/about-us"} className="footer-link">{messages.navigation.about}</a>
               </li>
               <li>
-                  <a href={"/"+locale+"/use-case"} className="footer-link">Use case</a>
+                  <a href={"/"+locale+"/use-case"} className="footer-link">{messages.navigation.usecase}</a>
               </li>
               <li>
-                  <a href={"/"+locale+"/blog"} className="footer-link">Blog</a>
+                  <a href={"/"+locale+"/blog"} className="footer-link">{messages.navigation.blog}</a>
               </li>
               <li>
-                  <a href={"/"+locale+"/contact-us"} className="footer-link">Contact us</a>
+                  <a href={"/"+locale+"/contact-us"} className="footer-link">{messages.navigation.contact}</a>
+              </li>
+              <li>
+                  <a href={"/"+locale+"/reviews"} className="footer-link">{messages.navigation.review}</a>
               </li>
           </ul>
 
