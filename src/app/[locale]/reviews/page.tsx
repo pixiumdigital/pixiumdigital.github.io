@@ -78,7 +78,14 @@ export default async function Index ( { params } : { params:{locale:string } } )
                                     </div>
                                     <div className="gap-x-8">
                                         <img src="/assets/images/reviews-star.svg" className={"text-center object-center m-auto mb-4"} width="100" loading="lazy" alt="reviews icon" />
-                                        <p className="text-3xl text-black leading-relaxed mb-4">{review.comment}</p>
+                                        <Link
+                                            target='_blank'
+                                            className="text-3xl text-black leading-relaxed mb-4"
+                                            href={review.link}
+                                        >
+                                            {review.comment}
+                                        </Link>
+                                        
                                         <div className="text-2xl mb-3 leading-snug">
                                         <Link
                                             target='_blank'
@@ -87,7 +94,14 @@ export default async function Index ( { params } : { params:{locale:string } } )
                                         >
                                             {review.title}
                                         </Link>
-                                        <h2 className="mb-8 text-xl md:text-xl tracking-tighter">{review.postion}, {review.company}</h2>
+                                        <Link
+                                            target='_blank'
+                                            className="mb-8 text-xl md:text-xl tracking-tighter"
+                                            href={review.link}
+                                        >
+                                            {review.postion}, {review.company}
+                                        </Link>
+                                        {/* <h2 className="mb-8 text-xl md:text-xl tracking-tighter">{review.postion}, {review.company}</h2> */}
                                         </div>
                                         {/* <Avatar name={author.name} picture={author.picture} /> */}
                                     </div>

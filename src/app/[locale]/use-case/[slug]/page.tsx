@@ -53,7 +53,7 @@ export default async function Post({ params }: Params) {
                 </CardHeader>
                 <CardBody>
                   <hr></hr>
-                  <div className="grid grid-cols-4 gap-4 mt-4 text-center">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4 text-center">
                     <div>
                       <dt className="text-md text-muted-foreground text-gray-400">Client</dt>
                       <dd className="font-medium">{post.title}</dd>
