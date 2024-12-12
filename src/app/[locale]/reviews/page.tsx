@@ -33,6 +33,22 @@ const reviewsContent = [
         "comment": "Pixium Digital impressed us with their expertise, flexibility, and commitment to ongoing support, making them the perfect partner for our transition from a web-based service to an app-based platform.",
         "link": "https://clutch.co/profile/pixium-digital-pte#reviews",
         "projectLink": ""
+    },
+    {
+        "title": "Antoine Maureau",
+        "postion": "Division Advisor",
+        "company": "Optimo International Group Inc.",
+        "comment": "Amazing services! I had the opportunity to work with Pixium Digital on several IT projects and their expertise and flexibility were much appreciated!",
+        "link": "https://clutch.co/profile/pixium-digital-pte#reviews",
+        "projectLink": ""
+    },
+    {
+        "title": "Julien Lamy",
+        "postion": "Founder & Director",
+        "company": "RocketLab, Australia",
+        "comment": "Very co-operative and patient to our very specific requests. A pleasant experience working with the team on our web app project. Remi and his team always deliver!",
+        "link": "https://clutch.co/profile/pixium-digital-pte#reviews",
+        "projectLink": ""
     }
 ]
 
