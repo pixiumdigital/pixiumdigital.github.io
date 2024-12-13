@@ -18,11 +18,13 @@ import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/card";
 
 
 export default async function Post({ params }: Params) {
-  const post = getUseCaseBySlug(params.slug);
+  const post = getUseCaseBySlug(params.slug, params.locale);
 
   if (!post) {
     return notFound();
   }
+
+  const messages = await import(`@/messages/${params.locale}.json`);
 
   const content = await markdownToHtml(post.content || "");
 
@@ -31,7 +33,7 @@ export default async function Post({ params }: Params) {
       <section className="section service" id="service" aria-label="service">
         <Alert preview={post.preview} />
         <Link href={"/"+params.locale+"/use-case/"}>
-          <FontAwesomeIcon icon={faArrowLeft} height="20" className="inline-flex" /> Back
+          <FontAwesomeIcon icon={faArrowLeft} height="20" className="inline-flex" /> {messages.button.back}
         </Link>
         <Container>
           <h2 className="h2 section-title text-center">
@@ -49,25 +51,25 @@ export default async function Post({ params }: Params) {
 
             <Card className="p-6 border-2 rounded-2xl">
                 <CardHeader className="w-100">
-                    <h1 className="w-100 text-4xl text-center">Project Details</h1>
+                    <h1 className="w-100 text-4xl text-center">{messages.usecase.details}</h1>
                 </CardHeader>
                 <CardBody>
                   <hr></hr>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4 text-center">
                     <div>
-                      <dt className="text-md text-muted-foreground text-gray-400">Client</dt>
+                      <dt className="text-md text-muted-foreground text-gray-400">{messages.usecase.client}</dt>
                       <dd className="font-medium">{post.title}</dd>
                     </div>
                     <div>
-                      <dt className="text-md text-muted-foreground text-gray-400">Industry</dt>
+                      <dt className="text-md text-muted-foreground text-gray-400">{messages.usecase.industry}</dt>
                       <dd className="font-medium">{post.industry}</dd>
                     </div>
                     <div>
-                      <dt className="text-md text-muted-foreground text-gray-400">Location</dt>
+                      <dt className="text-md text-muted-foreground text-gray-400">{messages.usecase.location}</dt>
                       <dd className="font-medium">{post.location}</dd>
                     </div>
                     <div>
-                      <dt className="text-md text-muted-foreground text-gray-400">Platform</dt>
+                      <dt className="text-md text-muted-foreground text-gray-400">{messages.usecase.platform}</dt>
                       <dd className="font-medium">{post.platform}</dd>
                     </div>
                   </div>
@@ -94,7 +96,7 @@ type Params = {
 };
 
 export function generateMetadata({ params }: Params): Metadata {
-  const post = getUseCaseBySlug(params.slug);
+  const post = getUseCaseBySlug(params.slug, params.locale);
 
   if (!post) {
     return notFound();
@@ -112,17 +114,18 @@ export function generateMetadata({ params }: Params): Metadata {
 }
 
 export async function generateStaticParams() {
-  const posts = getAllUseCase();
-
-  // const pages = ['en', 'fr'];
-  // return pages.map((page) => ({ locale: page }));
+  // const posts = getAllUseCase();
 
   const locales = ['en', 'fr'];
 
-  return posts.flatMap((post) => 
-    locales.map((locale) => ({
-      slug: post.slug,
+  // First loop through locales, then get posts for each locale
+  return locales.flatMap((locale) => {
+    // Reload posts for each locale
+    const posts = getAllUseCase(locale);
+    
+    return posts.map((post) => ({
       locale: locale,
-    }))
-  );
+      slug: post.slug,
+    }));
+  });
 }

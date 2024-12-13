@@ -17,6 +17,8 @@ import { Process } from "@/app/_components/process";
 export default async function Post({ params }: Params) {
   const post = getServiceBySlug(params.slug);
 
+  const messages = await import(`@/messages/${params.locale}.json`);
+
   if (!post) {
     return notFound();
   }
@@ -27,7 +29,7 @@ export default async function Post({ params }: Params) {
     <section className="section service" id="service" aria-label="service">
       <Alert preview={post.preview} />
       <Link href={"/"+params.locale+"/services/"}>
-        <FontAwesomeIcon icon={faArrowLeft} height="20" className="inline-flex" /> Back
+        <FontAwesomeIcon icon={faArrowLeft} height="20" className="inline-flex" /> {messages.button.back}
       </Link>
       <Container>
         <h2 className="h2 section-title text-center">

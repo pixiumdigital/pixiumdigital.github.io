@@ -10,22 +10,22 @@ const blogDirectory = join(process.cwd(), "_blog");
 
 
 // USE CASE  ------------------------------------------------
-export function getUseCaseSlugs() {
-  return fs.readdirSync(usecaseDirectory);
+export function getUseCaseSlugs(locale:string) {
+  return fs.readdirSync(usecaseDirectory+"/"+locale);
 }
-export function getUseCaseBySlug(slug: string) {
+export function getUseCaseBySlug(slug: string, locale: string) {
   const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(usecaseDirectory, `${realSlug}.md`);
+  const fullPath = join(usecaseDirectory, `${locale}/${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
   return { ...data, slug: realSlug, content } as Post;
 }
 
-export function getAllUseCase(): Post[] {
-  const slugs = getUseCaseSlugs();
+export function getAllUseCase(locale:string): Post[] {
+  const slugs = getUseCaseSlugs(locale);
   const posts = slugs
-    .map((slug) => getUseCaseBySlug(slug))
+    .map((slug) => getUseCaseBySlug(slug, locale))
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;

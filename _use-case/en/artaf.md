@@ -1,6 +1,6 @@
 ---
 title: "Art AF"
-excerpt: "Blockchain & NFT game based Bingo"
+excerpt: "La réalité augmentée au service de l'art."
 coverImage: "/assets/blog/artaf/preview.png"
 date: "2023-03-16T05:35:07.322Z"
 industry: Art / Augmented reality

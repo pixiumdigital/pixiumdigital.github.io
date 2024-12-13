@@ -41,7 +41,7 @@ export function PostPreview({
                   <h2 className="mb-8 text-3xl md:text-3xl font-bold tracking-tighter">{title}</h2>
               </Link>
             </h3>
-            <p className="text-2xl leading-relaxed mb-4">{excerpt}</p>
+            <p className="text-2xl leading-relaxed mb-4 d-flex" style={{display:"flex", textAlign:"left"}}>{excerpt}</p>
             {/* <Avatar name={author.name} picture={author.picture} /> */}
         </div>
         <div className="">

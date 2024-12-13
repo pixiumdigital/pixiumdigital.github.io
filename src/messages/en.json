@@ -10,7 +10,8 @@
     },
     "button":{
       "contactus":"Contact Us",
-      "letstalk":"Let’s Talk 👋"
+      "letstalk":"Let’s Talk 👋",
+      "back": "Back"
     },
     "common": {
       "greeting": "Hello",
@@ -27,5 +28,15 @@
     "reviews":{
       "title": "Reviews",
       "intro": "Welcome to our dedicated customer reviews section! At Pixium Digital, customer satisfaction is at the heart of our commitment. Discover authentic testimonials from our partners and clients, sharing their experiences with our innovative digital solutions. Explore their feedback to understand how we have helped transform their ideas into success. Your trust is our greatest achievement!"
+    },
+    "usecase":{
+      "title":"<span class='has-before'>Use case:</span> Transforming Vision into Digital Success",
+      "intro_1":"At Pixium Digital, we empower businesses through digital transformation that drives measurable results. Our Use Cases showcase how our tailored strategies and cutting-edge technology solutions help companies across various industries overcome complex challenges, streamline operations, and achieve their goals. From cloud migration and data analytics to process automation and customer experience optimization, explore our proven methods for success.",
+      "intro_2":"Discover how we’ve partnered with clients to deliver innovative, scalable solutions that enhance efficiency, increase profitability, and future-proof their operations in an ever-evolving digital landscape. Dive into our real-world applications and see how we can transform your business vision into reality.",
+      "details": "Project Details",
+      "client": "Client",
+      "industry": "Industry",
+      "location": "Location",
+      "platform": "Platform"
     }
 }

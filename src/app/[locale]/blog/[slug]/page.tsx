@@ -19,6 +19,8 @@ import { PostHeader } from "@/app/_components/post-header";
 export default async function Post({ params }: Params) {
   const post = getBlogBySlug(params.slug);
 
+  const messages = await import(`@/messages/${params.locale}.json`);
+
   if (!post) {
     return notFound();
   }
@@ -29,7 +31,7 @@ export default async function Post({ params }: Params) {
     <section className="section service" id="blog" aria-label="blog">
       <Alert preview={post.preview} />
       <Link href={"/"+params.locale+"/blog/"}>
-        <FontAwesomeIcon icon={faArrowLeft} height="20" className="inline-flex" /> Back
+        <FontAwesomeIcon icon={faArrowLeft} height="20" className="inline-flex" /> {messages.button.back}
       </Link>
       <Container>
         <h2 className="h2 section-title text-center">

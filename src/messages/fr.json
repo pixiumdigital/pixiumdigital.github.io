@@ -10,7 +10,8 @@
     },
     "button":{
       "contactus":"Nous Contacter",
-      "letstalk":"Contactez nous 👋"
+      "letstalk":"Contactez nous 👋",
+      "back": "Retour"
     },
     "common": {
       "greeting": "Bonjour",
@@ -27,5 +28,15 @@
     "reviews":{
       "title": "Avis",
       "intro": "Bienvenue sur notre section dédiée aux avis clients ! Chez Pixium Digital, la satisfaction de nos clients est au cœur de notre engagement. Découvrez les témoignages authentiques de nos partenaires et clients, qui partagent leurs expériences avec nos solutions numériques innovantes. Explorez leurs retours pour comprendre comment nous avons aidé à transformer leurs idées en succès. Votre confiance est notre plus grande réussite !"
+    },
+    "usecase":{
+      "title":"<span class='has-before'>Etude de cas:</span> Transformer votre vision en succès",
+      "intro_1":"Chez Pixium Digital, nous accompagnons les entreprises dans leur transformation numérique pour obtenir des résultats mesurables. Nos cas d’utilisation mettent en lumière comment nos stratégies sur mesure et nos solutions technologiques de pointe aident des entreprises de divers secteurs à relever des défis complexes, à optimiser leurs opérations et à atteindre leurs objectifs. Qu’il s’agisse de migration vers le cloud, d’analyse des données, d’automatisation des processus ou d’optimisation de l’expérience client, découvrez nos méthodes éprouvées pour réussir.",
+      "intro_2":"Apprenez comment nous avons collaboré avec nos clients pour proposer des solutions innovantes et évolutives qui améliorent l’efficacité, augmentent la rentabilité et préparent leurs activités à l’avenir dans un paysage numérique en constante évolution. Plongez dans nos applications concrètes et voyez comment nous pouvons transformer votre vision d’entreprise en réalité.",
+      "details": "Detail",
+      "client": "Client",
+      "industry": "Industrie",
+      "location": "Pays",
+      "platform": "Platforme"
     }
   }

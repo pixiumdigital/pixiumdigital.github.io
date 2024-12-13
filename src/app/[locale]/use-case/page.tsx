@@ -14,35 +14,28 @@ export function generateStaticParams() {
 }
 
 
-export default function Index( { params } : { params:{locale:string } } ) {
+export default async function Index( { params } : { params:{locale:string } } ) {
 
-    const allPosts = getAllUseCase();
+    const allPosts = getAllUseCase(params.locale);
     const morePosts = allPosts;
+
+    const messages = await import(`@/messages/${params.locale}.json`);
 
     return <>
         <section className="section service" id="service" aria-label="service">
             <div className="container">
 
-                <h2 className="h2 section-title text-center">
-                    <span className="has-before">Use case:</span> Transforming Vision into Digital Success
+                <h2 className="h2 section-title text-center" dangerouslySetInnerHTML={{__html: messages.usecase.title}}>
                 </h2>
             </div>
             <main>
                 <Container>
                     <p className='text-justify mb-4'>
-                        At Pixium Digital, we empower businesses through digital transformation that drives measurable results. 
-                        Our Use Cases showcase how our tailored strategies and cutting-edge technology solutions help companies across 
-                        various industries overcome complex challenges, streamline operations, and achieve their goals. 
-                        
-                        From cloud migration and data analytics to process automation and customer experience optimization, 
-                        explore our proven methods for success.
+                        {messages.usecase.intro_1}
                     </p>
 
                     <p className='text-justify mb-4'>
-                        Discover how we’ve partnered with clients to deliver innovative, 
-                        scalable solutions that enhance efficiency, increase profitability, 
-                        and future-proof their operations in an ever-evolving digital landscape. 
-                        Dive into our real-world applications and see how we can transform your business vision into reality.
+                        {messages.usecase.intro_2}
                     </p>
                 </Container>
                 <Container>
