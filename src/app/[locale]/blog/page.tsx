@@ -44,7 +44,7 @@ export default function Index( { params } : { params:{locale:string } } ) {
                 </Container>
             </main>
         </section>
-        <Newsletter />
+        <Newsletter params={params}/>
     </>);
 };
 

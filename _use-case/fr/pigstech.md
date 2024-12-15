@@ -2,37 +2,35 @@
 title: "Pigstech"
 excerpt: "We use an end to end technology solution to better animals and farmers lives"
 coverImage: "/assets/blog/pigstech/preview.png"
-date: "2023-03-16T05:35:07.322Z"
+date: "2022-03-16T05:35:07.322Z"
 industry: AgriTech, IoT
 platform: Mobile, Web
 timeline: 2020 - 2022
-location: Europe, Asia
+location: Europe, Asie
 author:
   name: Remi Tache
 ogImage:
   url: "/assets/blog/pigstech/preview.png"
 ---
 
-## Project
+## Projet
 
-Improve the Pig-farming industry’s productivity as well as animal health and living conditions by implementing a full-stack solution from IoT-sensors infrastructure, to Edge Gateway, finally to Cloud implementing Machine Learning solutions.
+Améliorer la productivité de l'industrie porcine ainsi que la santé et les conditions de vie des animaux en mettant en œuvre une solution complète, allant de l'infrastructure des capteurs IoT à la passerelle Edge, jusqu'au Cloud, intégrant des solutions d'apprentissage automatique.
 
-## Challenge
+## Défi
 
-### Background
+### Contexte
 
-PigsTech founders have identified a real issue in the pigs farming industry that a combinaison of IoT and software coupled with artificial intelligence can tackle. 
+Les fondateurs de PigsTech ont identifié un véritable problème dans l'industrie porcine que la combinaison d'IoT, de logiciels et d'intelligence artificielle peut résoudre.  
 
-Indeed, every year, pigs and piglets become ill, sometimes worst due to a lack of  monitoring. The solution proposed will enable farm managers and employees to track in real time the health of their animals.
+En effet, chaque année, des porcs et des porcelets tombent malades, parfois gravement, en raison d'un manque de suivi. La solution proposée permettra aux gestionnaires et employés des fermes de suivre en temps réel la santé de leurs animaux.
 
 ### Mission
 
-Pixium is responsible to process a live stream data feed from the animals using a combination of edge and cloud computing and deliver (through a mobile application) some insights based on a repository of scientific articles.
+Pixium est chargé de traiter un flux de données en temps réel provenant des animaux, en utilisant une combinaison de calcul à la périphérie (*edge computing*) et dans le cloud, et de fournir (via une application mobile) des analyses basées sur un référentiel d'articles scientifiques.
 
 ## Solution
 
-IoT System security & IT infrastructure deployment (AWS serverless)
-
-Scraper and associated repository of scientific articles on Pig Health and farms KPI
-
-Edge computing for web and mobile application and machine learning algorithms dev on IOT data benchmarked to Scientific Repository
+- Sécurité du système IoT et déploiement de l'infrastructure IT (AWS sans serveur)  
+- Scraper et référentiel associé d'articles scientifiques sur la santé porcine et les indicateurs clés de performance des fermes  
+- Calcul à la périphérie pour l'application web et mobile ainsi que le développement d'algorithmes d'apprentissage automatique basés sur les données IoT et comparés au référentiel scientifique  

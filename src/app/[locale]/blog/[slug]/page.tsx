@@ -53,7 +53,7 @@ export default async function Post({ params }: Params) {
       </Container>
     </section>
     <Whyworkwithus />
-    <Newsletter />
+    <Newsletter params={ params }/>
     </>
   );
 }

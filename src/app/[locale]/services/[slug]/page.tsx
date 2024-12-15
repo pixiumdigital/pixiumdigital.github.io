@@ -45,7 +45,7 @@ export default async function Post({ params }: Params) {
     </section>
     <Process />
     <Whyworkwithus />
-    <Newsletter />
+    <Newsletter params={params} />
     </>
   );
 }

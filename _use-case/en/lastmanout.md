@@ -21,7 +21,7 @@ Last Man Out Mobile Application has been built to ensure scalability. Player hav
 
 ### Background
 
-Justin is a successful expatriate living in Singapore for 20 years, moreover he has a strong passion for anything related to Football, he created a football club in Singapore and he is also running a simple and free prediction game. The prediction game started with few friends few years ago in Singapore and now became global with communities playing Europe and Asia. Running it through excel sheet very manually, Justin was looking for a innovative solution to scale this business and Pixium Digital partner with Justin to make this dream a reality.
+The prediction game started between friends few years ago in Singapore and now became global with communities playing Europe and Asia. Running it through excel sheet very manually, the client was looking for a innovative solution to scale this business. Pixium Digital partner with them to make this idea come true.
 
 ### Mission
 

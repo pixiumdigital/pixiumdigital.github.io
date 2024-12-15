@@ -21,8 +21,15 @@ export function generateStaticParams() {
     ];
 }
 
-export default async function Index( { params: { locale } } : { params:{locale:any } } ) {
-    const messages = await import(`@/messages/${locale}.json`);
+type Params = {
+    params: {
+      slug: string;
+      locale:string;
+    };
+  };
+
+export default async function Index( { params }: Params ) {
+    const messages = await import(`@/messages/${params.locale}.json`);
 
     return (
         <div> 
@@ -60,7 +67,7 @@ export default async function Index( { params: { locale } } : { params:{locale:a
 
             <Clients />
 
-            <Newsletter />
+            <Newsletter params={params}/>
         </div>
     );
 

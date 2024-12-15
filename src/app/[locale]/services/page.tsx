@@ -43,7 +43,7 @@ export default function Index( { params } : { params:{locale:string } } ) {
             </main>
             <Whyworkwithus />
         </section>
-        <Newsletter />
+        <Newsletter params={params}/>
     </>);
 };
 

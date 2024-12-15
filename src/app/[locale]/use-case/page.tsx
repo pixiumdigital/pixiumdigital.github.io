@@ -13,8 +13,14 @@ export function generateStaticParams() {
     ];
 }
 
+type Params = {
+    params: {
+      locale:string;
+    };
+  };
 
-export default async function Index( { params } : { params:{locale:string } } ) {
+
+export default async function Index( { params }: Params ) {
 
     const allPosts = getAllUseCase(params.locale);
     const morePosts = allPosts;
@@ -51,7 +57,7 @@ export default async function Index( { params } : { params:{locale:string } } ) 
                 </Container>
             </main>
         </section>
-        <Newsletter />
+        <Newsletter params={params} />
         </>;
 };
 

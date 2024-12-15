@@ -1,11 +1,11 @@
 ---
 title: "INDEFI"
-excerpt: "The right tool for Benchmarking and Performance Evaluations"
+excerpt: "L'outil idéal pour le benchmarking et les évaluations de performance"
 coverImage: "/assets/blog/indefi/preview.png"
 date: "2023-03-16T05:35:07.322Z"
-industry: ESG, Sustainability
+industry: ESG, Durabilité
 platform: Mobile, Web
-timeline: 2022 - Present
+timeline: 2022 - Présent
 location: France
 author:
   name: Remi Tache
@@ -13,31 +13,31 @@ ogImage:
   url: "/assets/blog/indefi/preview.png"
 ---
 
-## Project
+## Projet
 
-INDEFI – Sofia Web Application facilitates the whole evaluation, benchmarking and performance rating of funds and/or companies via a Sustainable stand points.
+INDEFI – L'application web Sofia facilite l'évaluation, le benchmarking et la notation des performances des fonds et/ou des entreprises à partir d'un point de vue durable.
 
-## Challenge
+## Défi
 
-### Background
+### Contexte
 
-The team behind the INDEFI - Sofia project reached out to Pixium in October 2021 in order to develop a complete solution allowing their consultant to optimise their portfolio evaluation process. 
+L'équipe derrière le projet INDEFI - Sofia a contacté Pixium en octobre 2021 pour développer une solution complète permettant à leurs consultants d'optimiser leur processus d'évaluation de portefeuille.
 
 ### Mission
 
-The team worked with INDEFI to investigate and finalize the scope of work. The platform was developed over 7 months. It has now been used across multiple fund evaluation to established ESG strategies across all asset classes, in both public and private markets.
+L'équipe a collaboré avec INDEFI pour enquêter et finaliser le périmètre du projet. La plateforme a été développée en 7 mois. Elle est désormais utilisée dans de nombreuses évaluations de fonds pour établir des stratégies ESG dans toutes les classes d'actifs, sur les marchés publics comme privés.
 
 ## Solution
 
-Functional specification document
+Document de spécifications fonctionnelles  
 
-Design and User experience
+Design et expérience utilisateur  
 
-Implement and deployment
+Implémentation et déploiement  
 
-Maintenance
+Maintenance  
 
-## Output
+## Resultats
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
   <img src="/assets/blog/indefi/img1.jpg" alt="Indefi 1">

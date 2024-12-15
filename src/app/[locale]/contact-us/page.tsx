@@ -13,27 +13,21 @@ import React, { Component }  from 'react';
 //   }
 
 
-const Index = ( { params } : { params:{locale:string } } ) => {
+// const Index = ( { params } : { params:{locale:string } } ) => {
+
+export default async function Index ( { params } : { params:{locale:string } } ) {
+
+    const messages = await import(`@/messages/${params.locale}.json`);
     
     return <section className="section service" id="service" aria-label="service">
         <div className="container">
 
-            <h2 className="h2 section-title text-center">
-                <span className="has-before">Contact us</span> for your next project
+            <h2 className="h2 section-title text-center" dangerouslySetInnerHTML={{__html:messages.contact.title}}>
             </h2>
 
-            <p className='mb-5 text-justify'>Ready to embark on your digital transformation journey? 
-                Contact us today to learn more about how Pixium Digital can help you achieve your goals 
-                and unlock the full potential of your business in the digital age.
-                Let's innovate, collaborate, and transform together.</p>
+            <p className='mb-5 text-justify'>{messages.contact.intro}</p>
         
-            <div className='mt-4 text-justify'>
-                <h2>What is next ?</h2>
-                <ul>
-                    <li>1.  We answer you within 24 hours.</li>
-                    <li>2.  Our team will gather your specification, goals and expectations about the project.</li>
-                    <li>3.  Then we will revert back to you with a proposal.</li>
-                </ul>
+            <div className='mt-4 text-justify' dangerouslySetInnerHTML={{__html:messages.contact.description}}>
             </div>
 
             <ul className="grid-list">
@@ -98,8 +92,6 @@ const Index = ( { params } : { params:{locale:string } } ) => {
         </div>
     </section>;
 };
-
-export default Index;
 
 
 export function generateMetadata(): Metadata {

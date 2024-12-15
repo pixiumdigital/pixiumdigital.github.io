@@ -1,6 +1,18 @@
 import React, { Component }  from 'react';
 
-const Newsletter = () => {
+
+type Params = {
+    params: {
+      locale:string;
+    };
+  };
+
+
+export default async function Newsletter({ params }: Params) {
+
+    const messages = await import(`@/messages/${params.locale}.json`);
+
+
     return <div>
          <section className="section newsletter has-bg-image" aria-label="newsletter"
             style={{backgroundImage: `url('/assets/images/newsletter-bg.jpg')`}}>
@@ -13,15 +25,15 @@ const Newsletter = () => {
 
             <div className="newsletter-content">
 
-                <p className="section-subtitle has-before">Reinvent Your Business!</p>
+                <p className="section-subtitle has-before">{messages.newsletter.title}</p>
 
                 <h2 className="h2 section-title">
-                    Let’s have a chat!
+                    {messages.newsletter.intro}
                 </h2>
 
                 <p className="has-before centered">
                     <a href="mailto:contactus@pixiumdigital.com" className="btn btn-secondary has-before has-after">
-                        <span className="span">Contact Us</span>
+                        <span className="span">{messages.newsletter.button}</span>
                     </a>
                 </p>
                 
@@ -31,5 +43,3 @@ const Newsletter = () => {
         </section>
     </div>;
 };
-
-export default Newsletter;

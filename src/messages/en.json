@@ -29,6 +29,16 @@
       "title": "Reviews",
       "intro": "Welcome to our dedicated customer reviews section! At Pixium Digital, customer satisfaction is at the heart of our commitment. Discover authentic testimonials from our partners and clients, sharing their experiences with our innovative digital solutions. Explore their feedback to understand how we have helped transform their ideas into success. Your trust is our greatest achievement!"
     },
+    "newsletter":{
+      "title": "Reinvent Your Business!",
+      "intro": "Let’s have a chat!",
+      "button": "Contact Us"
+    },
+    "contact":{
+      "title":"<span class='has-before'>Contact us</span> for your next project",
+      "intro": "Ready to embark on your digital transformation journey? Contact us today to learn more about how Pixium Digital can help you achieve your goals and unlock the full potential of your business in the digital age. Let's innovate, collaborate, and transform together.",
+      "description:":"<h2>What is next ?</h2><ul><li>1.  We answer you within 24 hours.</li><li>2.  Our team will gather your specification, goals and expectations about the project.</li><li>3.  Then we will revert back to you with a proposal.</li></ul>"
+    },
     "usecase":{
       "title":"<span class='has-before'>Use case:</span> Transforming Vision into Digital Success",
       "intro_1":"At Pixium Digital, we empower businesses through digital transformation that drives measurable results. Our Use Cases showcase how our tailored strategies and cutting-edge technology solutions help companies across various industries overcome complex challenges, streamline operations, and achieve their goals. From cloud migration and data analytics to process automation and customer experience optimization, explore our proven methods for success.",

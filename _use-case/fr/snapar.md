@@ -1,27 +1,27 @@
 ---
 title: "SnapScene AR"
-excerpt: "Augmented reality for home furnitures and design"
+excerpt: "Réalité augmentée pour les meubles et la décoration intérieure"
 coverImage: "/assets/blog/snapscene/preview.png"
-date: "2022-03-16T05:35:07.322Z"
-industry: Augmented reality / Home furnitures
+date: "2019-03-16T05:35:07.322Z"
+industry: Réalité augmentée / Meubles pour la maison
 platform: Mobile
 timeline: 2019
-location: Singapore
+location: Singapour
 author:
   name: Remi Tache
 ogImage:
   url: "/assets/blog/snapscene/preview.png"
 ---
 
-## Project
+## Projet
 
-We developed an innovative augmented reality (AR) mobile application for both iOS and Android platforms, revolutionizing the way users envision furniture in their spaces. This application empowers users to seamlessly add virtual furniture to real-world environments using advanced AR technology.
+Nous avons développé une application mobile innovante de réalité augmentée (AR) pour les plateformes iOS et Android, révolutionnant la manière dont les utilisateurs imaginent leurs meubles dans leur espace. Cette application permet aux utilisateurs d'intégrer facilement des meubles virtuels dans des environnements réels grâce à une technologie AR avancée.
 
-Key features include:
+Les fonctionnalités clés incluent :
 <ul>
-    <li>Precise Object Placement: Users can accurately position, resize, and rotate virtual furniture within their physical spaces.</li>
-    <li>Immersive Realism: High-quality 3D models and textures ensure a lifelike representation of furniture items, enhancing the visualization experience.</li>
-    <li>Intuitive User Experience: A user-friendly interface designed to cater to all skill levels, making AR accessible and enjoyable.</li>
+    <li>**Placement précis des objets** : Les utilisateurs peuvent positionner, redimensionner et faire pivoter les meubles virtuels avec précision dans leurs espaces physiques.</li>
+    <li>**Réalité immersive** : Des modèles 3D de haute qualité et des textures réalistes garantissent une représentation fidèle des meubles, améliorant l'expérience de visualisation.</li>
+    <li>**Expérience utilisateur intuitive** : Une interface conviviale conçue pour tous les niveaux de compétence, rendant la réalité augmentée accessible et agréable.</li>
 </ul>
 
-The application combines cutting-edge AR frameworks with robust mobile development practices, offering a dynamic tool for interior design, furniture shopping, and spatial planning. It is a testament to our expertise in blending creativity with technology to deliver solutions that enhance everyday experiences.
+L'application combine des frameworks AR de pointe avec des pratiques de développement mobile robustes, offrant un outil dynamique pour la conception d'intérieur, l'achat de meubles et la planification spatiale. Elle témoigne de notre expertise dans l'association de la créativité et de la technologie pour fournir des solutions qui enrichissent le quotidien.

@@ -29,6 +29,16 @@
       "title": "Avis",
       "intro": "Bienvenue sur notre section dédiée aux avis clients ! Chez Pixium Digital, la satisfaction de nos clients est au cœur de notre engagement. Découvrez les témoignages authentiques de nos partenaires et clients, qui partagent leurs expériences avec nos solutions numériques innovantes. Explorez leurs retours pour comprendre comment nous avons aidé à transformer leurs idées en succès. Votre confiance est notre plus grande réussite !"
     },
+    "newsletter":{
+      "title": "Réinventez Votre Entreprise !",
+      "intro": "Discutons ensemble !",
+      "button": "Contactez-nous"
+    },
+    "contact": {
+      "title": "<span class='has-before'>Contactez-nous</span> pour votre prochain projet",
+      "intro": "Prêt à vous lancer dans votre parcours de transformation numérique ? Contactez-nous dès aujourd'hui pour découvrir comment Pixium Digital peut vous aider à atteindre vos objectifs et débloquer le plein potentiel de votre entreprise à l'ère numérique. Innovons, collaborons et transformons ensemble.",
+      "description": "<h2>Quelle est la prochaine étape ?</h2><ul><li>1. Nous vous répondons dans les 24 heures.</li><li>2. Notre équipe recueillera vos spécifications, objectifs et attentes concernant le projet.</li><li>3. Nous reviendrons vers vous avec une proposition.</li></ul>"
+    },
     "usecase":{
       "title":"<span class='has-before'>Etude de cas:</span> Transformer votre vision en succès",
       "intro_1":"Chez Pixium Digital, nous accompagnons les entreprises dans leur transformation numérique pour obtenir des résultats mesurables. Nos cas d’utilisation mettent en lumière comment nos stratégies sur mesure et nos solutions technologiques de pointe aident des entreprises de divers secteurs à relever des défis complexes, à optimiser leurs opérations et à atteindre leurs objectifs. Qu’il s’agisse de migration vers le cloud, d’analyse des données, d’automatisation des processus ou d’optimisation de l’expérience client, découvrez nos méthodes éprouvées pour réussir.",

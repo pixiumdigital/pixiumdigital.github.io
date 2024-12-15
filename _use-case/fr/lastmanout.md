@@ -1,47 +1,44 @@
 ---
 title: "Last Man Out"
-excerpt: "The new fantasy sport game"
+excerpt: "Le nouveau jeu de sport fantasy"
 coverImage: "/assets/blog/lmo/preview.png"
 date: "2023-03-16T05:35:07.322Z"
-industry: Mobile Gaming
+industry: Jeu Mobile
 platform: Mobile, Web
-timeline: 2018 - Present
-location: Asia, Europe
+timeline: 2018 - Présent
+location: Asie, Europe
 author:
   name: Remi Tache
 ogImage:
   url: "/assets/blog/lmo/preview.png"
 ---
 
-## Project
+## Projet
 
-Last Man Out Mobile Application has been built to ensure scalability. Player have an easy and fun way to register and participate. Meanwhile, the administrator can scale the number of leagues, sports and participants with a click of a finger.
+L'application mobile Last Man Out a été conçue pour garantir sa scalabilité. Les joueurs disposent d'un moyen simple et amusant pour s'inscrire et participer. Par ailleurs, l'administrateur peut augmenter le nombre de ligues, de sports et de participants d'un simple clic.
 
-## Challenge
+## Défi
 
-### Background
+### Contexte
 
-Justin is a successful expatriate living in Singapore for 20 years, moreover he has a strong passion for anything related to Football, he created a football club in Singapore and he is also running a simple and free prediction game. The prediction game started with few friends few years ago in Singapore and now became global with communities playing Europe and Asia. Running it through excel sheet very manually, Justin was looking for a innovative solution to scale this business and Pixium Digital partner with Justin to make this dream a reality.
+Ce jeu de pronostics a commencé il y a quelques années entre quelques amis à Singapour et est devenu aujourd'hui un phénomène mondial, rassemblant des communautés en Europe et en Asie. Gérant tout manuellement via des feuilles Excel, le client cherchait une solution innovante pour faire évoluer son activité. Pixium Digital s'est associé à eux pour transformer ce projet en réalité.
 
 ### Mission
 
-Pixium Digital took the challenge and started with a design thinking phase to adapt the flows into a very sleek and intuitive way for the players. The first phase completed, Pixium started to work on the back end, API connections and the Mobile Application using Flutter framework.
+Pixium Digital a relevé le défi en commençant par une phase de *design thinking* pour adapter les flux à une interface très élégante et intuitive pour les joueurs. Une fois cette première phase achevée, Pixium a commencé à travailler sur le back-end, les connexions API et l'application mobile en utilisant le framework Flutter.
 
 ## Solution
 
-Functional and non-functional requirements writing
+- Rédaction des exigences fonctionnelles et non fonctionnelles  
+- Infrastructure système sécurisée  
+- Application web responsive  
+- Application mobile rapide (iOS & Android)  
+- Intégration multi-tiers (3rd party)  
+- Paiement en ligne  
+- Chat en direct  
 
-Secured system infrastructure
+## Résultat
 
-Responsive web application Fast Mobile Application (ios & android)
-
-Multi 3rd party integration
-
-Online Payment
-
-Live Chat
-
-## Output
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
   <img src="/assets/blog/lmo/img1.png" alt="LastManOut 1">
