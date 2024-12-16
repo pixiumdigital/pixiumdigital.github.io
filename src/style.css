@@ -469,7 +469,7 @@
   
   .hero { 
     /* padding-block-start: calc(var(--section-padding) + 60px);  */
-    margin-block-start:120px;
+    margin-block-start:130px;
   }
   
   .hero .container {
