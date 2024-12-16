@@ -27,8 +27,16 @@ export default async function Index( { params }: Params ) {
 
     const messages = await import(`@/messages/${params.locale}.json`);
 
+    const jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': "Use Case Page",
+        'description': messages.usecase.seo_description,
+        'name': messages.usecase.seo_title,
+    }
+
     return <>
         <section className="section service" id="service" aria-label="service">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd)}}></script>
             <div className="container">
 
                 <h2 className="h2 section-title text-center" dangerouslySetInnerHTML={{__html: messages.usecase.title}}>

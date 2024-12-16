@@ -23,6 +23,13 @@ type Params = {
 export default async function Index( { params }: Params ) {
     const messages = await import(`@/messages/${params.locale}.json`);
 
+    const jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': "Home Page",
+        'description': messages.home.seo_description,
+        'name': messages.home.seo_title,
+    }
+
     return (
         <div> 
             <section className="section hero" id="home" aria-label="hero">
@@ -89,7 +96,7 @@ export default async function Index( { params }: Params ) {
 
 
 export function generateMetadata(): Metadata {
-    const title = `Pixium Digital`;
+    const title = `Pixium Digital | Top Digital Development Company in Singapore and France`;
     const description = `Pixium Digital is a digital consulting and software development 
                     company located in Singapore and France. 
                     Enhance operations, productivity, and profitability through scalable software, 

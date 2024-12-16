@@ -22,7 +22,7 @@ export default async function Index ( { params } : { params:{locale:string } } )
 
     const jsonLd = {
         '@context': 'https://schema.org',
-        '@type': messages.contact.seo_title,
+        '@type': "Contact Us Page",
         'description': messages.contact.seo_description,
         'name': messages.contact.seo_title,
     }
@@ -104,7 +104,7 @@ export default async function Index ( { params } : { params:{locale:string } } )
 };
 
 
-export function generateMetadata(): Metadata {
+export function generateMetadata({ params }: { params:{locale:string } }): Metadata {
     const title = `Contact | Pixium Digital`;
     const description = `Contact us and our team will gather your specification, 
     goals and expectations about the project.`;
