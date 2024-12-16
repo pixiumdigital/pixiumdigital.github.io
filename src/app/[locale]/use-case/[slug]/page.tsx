@@ -101,13 +101,15 @@ export function generateMetadata({ params }: Params): Metadata {
   if (!post) {
     return notFound();
   }
-
-  const title = `${post.title} | Pixium Digital use case`;
+  
+  const title = `${post.title} | Pixium Digital: Use cases for web, mobile and software`;
+  const description = `Pixium Digital: ${post.excerpt}`;
 
   const ogImageUrl = `${process.env.NODE_ENV === 'production' ? 'https://pixiumdigital.com' : ''}`;
 
   return {
     title,
+    description: description,
     openGraph: {
       title,
       images: [ogImageUrl+'/'+post.ogImage.url],

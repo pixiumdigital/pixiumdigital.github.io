@@ -63,8 +63,8 @@ export default async function Index( { params }: Params ) {
 
 
 export function generateMetadata(): Metadata {
-    const title = `Use Case | Pixium Digital`;
-    const description = `We design, create and maintain your web, mobile, IOT or servless application.`;
+    const title = `Pixium Digital | Digital Development Solutions: Use cases for web, mobile and software`;
+    const description = `Explore how Pixium Digital helps businesses in Singapore, Nice and Monaco develop custom web, mobile and software solutions.`;
     // const previousImages = (await parent).openGraph?.images || []
 
     return {
