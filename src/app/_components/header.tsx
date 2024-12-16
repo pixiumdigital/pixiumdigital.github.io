@@ -95,14 +95,6 @@ export default function Header({ services, locale, messages }: Props) {
             <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
           </NavbarContent>
 
-          {/* <NavbarContent className="sm:hidden pr-3" justify="center">
-              <NavbarBrand>
-                  <a href="/" className="logo">
-                    <img src="/assets/images/pixium-logo.png" style={{height:"60px"}} />
-                  </a>
-              </NavbarBrand>
-          </NavbarContent> */}
-
           {/* ORIGINAL MENU DESKTOP */}
           <NavbarBrand>
               <a href={"/"+locale} className="logo">
