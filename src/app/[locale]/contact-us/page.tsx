@@ -105,7 +105,7 @@ export default async function Index ( { params } : { params:{locale:string } } )
 
 
 export function generateMetadata({ params }: { params:{locale:string } }): Metadata {
-    const title = `Contact | Pixium Digital`;
+    const title = `Contact Pixium Digital | Top web, software & mobile development comapny in Singapore and France`;
     const description = `Contact us and our team will gather your specification, 
     goals and expectations about the project.`;
     // const previousImages = (await parent).openGraph?.images || []
