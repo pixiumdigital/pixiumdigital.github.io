@@ -17,3 +17,4 @@ Cross platform development is done with focus on provide native experience and l
 
 High Community
 Flutter is Google’s UI toolkit for building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase, accelerating the go-to-market speed and reducing the cost of development
+
