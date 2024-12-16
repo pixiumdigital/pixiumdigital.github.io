@@ -22,6 +22,8 @@
       "description": "Pixium Digital est une entreprise numérique basée à Singapour et en France. Notre objectif principal est de façonner méticuleusement les projets de nos clients, de leur conception jusqu'à leur lancement réussi, en garantissant des résultats transformateurs."
     },
     "about":{
+      "seo_title":"À propos de nous | Leader en développement digital à Singapour et en France",
+      "seo_description":"Basée à Singapour, Pixium Digital est une entreprise digitale créative animée par un groupe d'ingénieurs passionés et experts en developement de solutions IT. Avec des décennies d'expérience combinée en apprentissage automatique, réalité augmentée, Internet des objets, et développement d'applications mobiles et web, nous offrons des connaissances approfondies pour transformer vos idées en réalité.",
       "title":"A Propos",
       "intro": "Avec son siège social situé à Singapour, Pixium Digital est une entreprise numérique créative animée par une équipe conviviale d’ingénieurs dotés d’une vaste expertise dans les solutions informatiques. Forts de décennies d’expérience combinée en apprentissage automatique, réalité augmentée, Internet des objets, ainsi qu’en développement d’applications mobiles et web, nous apportons des connaissances approfondies pour transformer vos idées en réalité. Grâce à une solide expertise en développement commercial et à des solutions d’ingénierie de pointe, nous nous engageons à transformer vos besoins en produits exceptionnels. Vous pouvez compter sur nous comme votre partenaire inébranlable et fiable en solutions informatiques, dédié à votre succès."
     },
@@ -35,6 +37,8 @@
       "button": "Contactez-nous"
     },
     "contact": {
+      "seo_title":"Contactez-nous pour votre prochain projet digital.",
+      "seo_description":"Prêt à entreprendre votre voyage de transformation numérique ? Contactez-nous dès aujourd'hui pour en savoir plus sur la façon dont Pixium Digital peut vous aider à atteindre vos objectifs et à libérer tout le potentiel de votre entreprise à l'ère numérique. Innovons, collaborons et transformons ensemble.",
       "title": "<span class='has-before'>Contactez-nous</span> pour votre prochain projet",
       "intro": "Prêt à vous lancer dans votre parcours de transformation numérique ? Contactez-nous dès aujourd'hui pour découvrir comment Pixium Digital peut vous aider à atteindre vos objectifs et débloquer le plein potentiel de votre entreprise à l'ère numérique. Innovons, collaborons et transformons ensemble.",
       "description": "<h2>Quelle est la prochaine étape ?</h2><ul><li>1. Nous vous répondons dans les 24 heures.</li><li>2. Notre équipe recueillera vos spécifications, objectifs et attentes concernant le projet.</li><li>3. Nous reviendrons vers vous avec une proposition.</li></ul>"

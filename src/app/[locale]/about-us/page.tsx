@@ -27,9 +27,9 @@ export default async function Index ( { params } : { params:{locale:string } } )
 
     const jsonLd = {
       '@context': 'https://schema.org',
-      '@type': 'Contact Page',
-      'description': messages.about.intro,
-      'name': 'Contact Us'
+      '@type': messages.about.seo_title,
+      'description': messages.about.seo_description,
+      'name': messages.about.seo_title,
   }
     
     return <><section className="section service" id="service" aria-label="service">

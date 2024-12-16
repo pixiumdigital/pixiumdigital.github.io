@@ -22,6 +22,8 @@
       "description": "Pixium Digital is a digital company located in Singapore and France. Our dedicated focus lies in meticulously shaping our clients' projects from inception to a successful launch, ensuring transformative outcomes."
     },
     "about":{
+      "seo_title":"About Us | Top digital development company in Singapore and France",
+      "seo_description":"With its headquarters located in Singapore, Pixium Digital is a creative digital firm powered by a gregarious group of engineers with a broad range of IT solutions expertise. With decades of combined experience in machine learning, augmented reality, the Internet of Things, and mobile and online application development, we provide extensive knowledge to make your ideas a reality. With a strong background in business development and state-of-the-art engineering solutions, we are committed to turning your requirements into outstanding goods. You may rely on us as your unwavering, trustworthy partner for IT solutions, dedicated to your success.",
       "title":"About Us",
       "intro": "With its headquarters located in Singapore, Pixium Digital is a creative digital firm powered by a gregarious group of engineers with a broad range of IT solutions expertise. With decades of combined experience in machine learning, augmented reality, the Internet of Things, and mobile and online application development, we provide extensive knowledge to make your ideas a reality. With a strong background in business development and state-of-the-art engineering solutions, we are committed to turning your requirements into outstanding goods. You may rely on us as your unwavering, trustworthy partner for IT solutions, dedicated to your success."
     },
@@ -35,6 +37,8 @@
       "button": "Contact Us"
     },
     "contact":{
+      "seo_title":"Contact Us for your next digital project.",
+      "seo_description":"Ready to embark on your digital transformation journey? Contact us today to learn more about how Pixium Digital can help you achieve your goals and unlock the full potential of your business in the digital age. Let's innovate, collaborate, and transform together.",
       "title":"<span class='has-before'>Contact us</span> for your next project",
       "intro": "Ready to embark on your digital transformation journey? Contact us today to learn more about how Pixium Digital can help you achieve your goals and unlock the full potential of your business in the digital age. Let's innovate, collaborate, and transform together.",
       "description": "<h2>What is next ?</h2><ul><li>1. We answer you within 24 hours.</li><li>2. Our team will gather your specification, goals and expectations about the project.</li><li>3. Then we will revert back to you with a proposal.</li></ul>"

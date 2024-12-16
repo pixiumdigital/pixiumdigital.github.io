@@ -22,14 +22,14 @@ export default async function Index ( { params } : { params:{locale:string } } )
 
     const jsonLd = {
         '@context': 'https://schema.org',
-        '@type': 'Contact Page',
-        'description': messages.contact.description,
-        'name': 'Contact Us'
+        '@type': messages.contact.seo_title,
+        'description': messages.contact.seo_description,
+        'name': messages.contact.seo_title,
     }
     
     return <section className="section service" id="service" aria-label="service">
         <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd)}}></script>
-        
+
         <div className="container">
 
             <h2 className="h2 section-title text-center" dangerouslySetInnerHTML={{__html:messages.contact.title}}>
