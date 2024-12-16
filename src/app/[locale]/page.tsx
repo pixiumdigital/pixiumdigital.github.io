@@ -90,9 +90,10 @@ export default async function Index( { params }: Params ) {
 
 export function generateMetadata(): Metadata {
     const title = `Pixium Digital`;
-    const description = `Pixium Digital is a digital and software development 
-                    and digital company located in Singapore and France. We design, 
-                    create and maintain your web, mobile, IOT or servless application.`;
+    const description = `Pixium Digital is a digital consulting and software development 
+                    company located in Singapore and France. 
+                    Enhance operations, productivity, and profitability through scalable software, 
+                    IT, and staffing solution.`;
     // const previousImages = (await parent).openGraph?.images || []
 
     return {

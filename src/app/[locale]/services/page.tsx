@@ -50,12 +50,13 @@ export default function Index( { params } : { params:{locale:string } } ) {
 
 export function generateMetadata(): Metadata {
     const title = `Services | Pixium Digital`;
-    const description = `We design, create and maintain your web, mobile, IOT or servless application.`;
+    const description = `Enhance your business operations with pixium digital. Expoert software solutions, IT consulting, and advanced infrstraucture for digital transformation.`;
     // const previousImages = (await parent).openGraph?.images || []
 
     return {
       title,
       description: description,
+      keywords: ["services", "digital solution", "development", "digital consulting", "AI", "chatbot", "ChatGPT"],
       openGraph: {
         title: title,
         description: description,
