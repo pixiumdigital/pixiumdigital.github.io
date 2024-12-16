@@ -24,8 +24,16 @@ export function generateStaticParams() {
 export default async function Index ( { params } : { params:{locale:string } } ) {
 
     const messages = await import(`@/messages/${params.locale}.json`);
+
+    const jsonLd = {
+      '@context': 'https://schema.org',
+      '@type': 'Contact Page',
+      'description': messages.about.intro,
+      'name': 'Contact Us'
+  }
     
     return <><section className="section service" id="service" aria-label="service">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd)}}></script>
             <div className="container">
 
                 <h2 className="h2 section-title text-center">
@@ -46,9 +54,8 @@ export default async function Index ( { params } : { params:{locale:string } } )
 
 
 export function generateMetadata(): Metadata {
-    const title = `About us | Pixium Digital`;
-    const description = `Pixium Digital is a creative digital firm powered by a gregarious group 
-    of engineers with a broad range of IT solutions expertise`;
+    const title = `Top Digital Development Company in Singapore and France | Pixium Digital`;
+    const description = `Pixium Digital: A leading digital development company in Singapore and France. Specialized in custom web, software and mobile development.`;
     // const previousImages = (await parent).openGraph?.images || []
 
     return {

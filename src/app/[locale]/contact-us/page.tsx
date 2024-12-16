@@ -2,6 +2,7 @@
 import { Metadata } from 'next';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import React, { Component }  from 'react';
+import { json } from 'stream/consumers';
 
 // export function generateStaticParams() {
 //     return [{ locale: "en" }];
@@ -18,8 +19,17 @@ import React, { Component }  from 'react';
 export default async function Index ( { params } : { params:{locale:string } } ) {
 
     const messages = await import(`@/messages/${params.locale}.json`);
+
+    const jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'Contact Page',
+        'description': messages.contact.description,
+        'name': 'Contact Us'
+    }
     
     return <section className="section service" id="service" aria-label="service">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd)}}></script>
+        
         <div className="container">
 
             <h2 className="h2 section-title text-center" dangerouslySetInnerHTML={{__html:messages.contact.title}}>
@@ -96,7 +106,8 @@ export default async function Index ( { params } : { params:{locale:string } } )
 
 export function generateMetadata(): Metadata {
     const title = `Contact | Pixium Digital`;
-    const description = `Contact us and our team will gather your specification, goals and expectations about the project.`;
+    const description = `Contact us and our team will gather your specification, 
+    goals and expectations about the project.`;
     // const previousImages = (await parent).openGraph?.images || []
 
     return {
