@@ -48,5 +48,38 @@
       "industry": "Industrie",
       "location": "Pays",
       "platform": "Platforme"
+    },
+    "industry": {
+      "title": "La Transformation Numérique <span class='has-before'>Dans Tous Les Secteurs</span>",
+      "intro": "Nous sommes spécialisés dans la fourniture de solutions numériques transformatrices pour divers secteurs, en adaptant notre approche aux besoins et défis uniques de chaque industrie. Avec une compréhension approfondie des secteurs tels que la Fintech, la HR Tech, l'Agri-Tech, la Health Tech, l'Énergie et les Services Publics, les Médias et Divertissements, et bien plus encore, nous apportons des perspectives stratégiques et une expertise technique à chaque projet. L'expérience étendue de notre équipe à travers différents secteurs nous permet de concevoir des solutions qui respectent non seulement les normes spécifiques à chaque industrie, mais qui favorisent également une croissance, une efficacité et une innovation mesurables."
+    },
+    "client":{
+      "title":"Ils nous font <span class='has-before'>confiance</span>",
+      "intro":""
+    },
+    "footer":{
+      "title_about":"Pixium Digital",
+      "title_links":"Liens rapide",
+      "title_contact":"Nous contacter",
+      "title_language":"Langue"
+    },
+    "workwithus": {
+      "title": "Pourquoi <span class='has-before'>nous choisir</span> ?",
+      "intro": "Bienvenue chez Pixium Digital, où l'innovation rencontre l'efficacité dans le domaine des technologies numériques. En utilisant une méthodologie agile, nous nous spécialisons dans la création de solutions de pointe pour divers secteurs. Notre expertise s'étend à l'exploitation de la puissance des *big data* et de l'intelligence artificielle (IA) pour générer des résultats percutants pour nos clients. Avec un engagement à rester à la pointe des avancées technologiques, nous fournissons des solutions sur mesure qui permettent aux entreprises de prospérer dans le paysage numérique dynamique d'aujourd'hui. Collaborez avec nous pour libérer tout le potentiel de votre parcours numérique."
+    },
+    "process": {
+      "title": "Notre <span class='has-before'>Processus</span> de Transformation Numérique",
+      "title1": "1. Comprendre",
+      "description1": "En considérant votre site web comme votre actif le plus précieux, la première étape de son développement consiste à plonger profondément dans votre marque, vos objectifs commerciaux et vos points de friction. Ensuite, nous établirons un calendrier et un plan de projet pour lancer votre site web avec succès.",
+      "title2": "2. Prototyper",
+      "description2": "Après avoir compris les objectifs de votre marque et de votre entreprise, nous créons des wireframes à mi-fidélité pour cartographier visuellement les flux utilisateurs. Cette étape cruciale garantit une expérience utilisateur optimale avant de commencer la conception de votre site web ou application web.",
+      "title3": "3. Concevoir",
+      "description3": "Une expérience utilisateur exceptionnelle et un design soigné sont les fondations de tout excellent site web ou application web. Pour que votre site ou application soit à la fois esthétiquement plaisant et facile à utiliser, notre équipe de conception applique des principes modernes de design centré sur l'humain.",
+      "title4": "4. Développer",
+      "description4": "Une fois le design finalisé, nous organisons une réunion de lancement avec l'équipe de développement pour concrétiser votre application. Nos premiers sprints commencent toutes les deux semaines. Pour vous tenir informé de l'avancement, notre équipe organise une cérémonie de 'show & tell' à la fin de chaque sprint.",
+      "title5": "5. Lancer",
+      "description5": "Après une phase rigoureuse de tests d'acceptation utilisateur (UAT), nous préparons votre application web pour un lancement fluide. Notre équipe vous accompagne à chaque étape pour garantir un fonctionnement sans accroc.",
+      "title6": "6. Maintenir",
+      "description6": "Maintenant que votre site web ou application web est opérationnel, notre équipe reste disponible pour fournir un support continu, ajouter de nouvelles fonctionnalités et corriger d'éventuels bugs. Nous resterons à vos côtés tout au long du processus."
     }
-  }
+}

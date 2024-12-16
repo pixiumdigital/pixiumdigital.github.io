@@ -41,7 +41,7 @@ export default function Index( { params } : { params:{locale:string } } ) {
                     {morePosts.length > 0 && <MoreServices posts={morePosts} locale={params.locale} />}
                 </Container>
             </main>
-            <Whyworkwithus />
+            <Whyworkwithus params={params} />
         </section>
         <Newsletter params={params}/>
     </>);

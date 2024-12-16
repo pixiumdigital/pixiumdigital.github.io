@@ -1,13 +1,21 @@
 import Container from "./container";
 
+type Params = {
+    params: {
+      locale:string;
+    };
+  };
 
-export function Industry() {
+
+export default async function Industry({ params }: Params) {
+
+    const messages = await import(`@/messages/${params.locale}.json`);
+
     return (
         <section className="section service" id="industries" aria-label="industry" style={{paddingTop:"40px"}}>
             <div className="container">
 
-                <h1 className="h2 section-title text-center">
-                Driving Digital Transformation <span className="has-before">Across Industries</span>
+                <h1 className="h2 section-title text-center" dangerouslySetInnerHTML={{__html:messages.industry.title}}>
                 </h1>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -16,12 +24,7 @@ export function Industry() {
                     </div>
                     <div className="col-span-2">
                         <p className="text-justify mb-4 p-4">
-                            We specialize in delivering transformative digital solutions across diverse industries, tailoring our approach to meet 
-                            the unique needs and challenges of each sector. With a deep understanding of
-                            Fintech, HR Tech, Agri-Tech, Health Tech, Energy and Utilities, Media and Entertainment,
-                            and more, we bring strategic insights and technical expertise to every project. Our team’s extensive 
-                            cross-industry experience allows us to craft solutions that not only meet industry-specific standards
-                            but also drive measurable growth, efficiency, and innovation.
+                            {messages.industry.intro}
                         </p>
                     </div>
                 

@@ -1,18 +1,10 @@
 import Newsletter from "../_components/newsletter";
 import Whyworkwithus from "../_components/whyworkwithus";
-import { Industry } from "../_components/industry";
+import Industry from "../_components/industry";
 import { PixStats } from "../_components/pix_stats";
 import { Metadata } from "next";
-import { Clients } from "../_components/clients";
-import useGlobal from "../provider";
-import { useTransition } from "react";
-import { useTranslations } from "next-intl";
-// import { locales } from "@/__navigation";
+import Clients from "../_components/clients";
 
-// export async function generateStaticParams() {
-//     const pages = locales;
-//     return pages.map((page) => ({ locale: page }));
-//   }
 
 export function generateStaticParams() {
     return [
@@ -61,11 +53,11 @@ export default async function Index( { params }: Params ) {
 
             <PixStats />
 
-            <Industry />
+            <Industry params={params}/>
 
-            <Whyworkwithus />
+            <Whyworkwithus params={params} />
 
-            <Clients />
+            <Clients params={params}/>
 
             <Newsletter params={params}/>
         </div>

@@ -1,7 +1,7 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
 import Whyworkwithus from '../../_components/whyworkwithus';
 import { Metadata } from 'next';
-import { Process } from '../../_components/process';
+import Process from '../../_components/process';
 // import { locales } from '@/__navigation';
 
 // export function generateStaticParams() {
@@ -39,8 +39,8 @@ export default async function Index ( { params } : { params:{locale:string } } )
                 </div>
             </div>
         </section>
-        <Process />
-        <Whyworkwithus />
+        <Process params={params} />
+        <Whyworkwithus params={params} />
     </>;
 };
 

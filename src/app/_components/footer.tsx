@@ -23,7 +23,7 @@ export default async function Footer({locale} : Props) {
 
           <div className="footer-brand">
 
-              <p className="footer-list-title text-left">About Pixium Digital</p>
+              <p className="footer-list-title text-left">{messages.footer.title_about}</p>
 
               <p className="footer-text text-left">
                 {messages.home.description}
@@ -50,14 +50,14 @@ export default async function Footer({locale} : Props) {
 
               </ul>
 
-              <p className="footer-list-title text-left mt-4">Language</p>
+              <p className="footer-list-title text-left mt-4">{messages.footer.title_language}</p>
               <LanguageSwitcher locale={locale} />
 
           </div>
 
           <ul className="footer-list  text-left">
               <li>
-                <p className="footer-list-title">Quick Links</p>
+                <p className="footer-list-title">{messages.footer.title_links}</p>
               </li>
               <li>
                   <a href={"/"+locale+"/services"} className="footer-link">{messages.navigation.services}</a>
@@ -83,7 +83,7 @@ export default async function Footer({locale} : Props) {
           <ul className="footer-list  text-left">
 
             <li>
-              <p className="footer-list-title">Find Us</p>
+              <p className="footer-list-title">{messages.footer.title_contact}</p>
               <div className="">
 
                 <p className="footer-text">

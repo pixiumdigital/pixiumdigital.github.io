@@ -3,7 +3,17 @@ import Container from './container';
 import CoverImage from './cover-image';
 import Avatar from './avatar';
 
-const Whyworkwithus = () => {
+
+type Params = {
+  params: {
+    locale:string;
+  };
+};
+
+export default async function Whyworkwithus({ params }: Params) {
+
+    const messages = await import(`@/messages/${params.locale}.json`); 
+
     return (
         <div className="section" id="feature" aria-label="feature">
             <div className="container mb-5">
@@ -13,20 +23,13 @@ const Whyworkwithus = () => {
                 </figure> */}
 
                 <div className="w-100">
-                    <h2 className="h2 section-title">
-                        Why <span className="has-before">choose</span> us?
+                    <h2 className="h2 section-title" dangerouslySetInnerHTML={{__html:messages.workwithus.title}}>
                     </h2>
 
                     <div className="">
                         <div className='text-justify'>
                             <p className="card-text">
-                              Welcome to Pixium Digital, where innovation meets efficiency in the realm of digital technology. 
-                              Leveraging agile methodology, we specialize in crafting cutting-edge solutions across 
-                              diverse industries. Our expertise extends to harnessing the power of big data and artificial 
-                              intelligence (AI) to drive impactful results for our clients. With a commitment to staying
-                              at the forefront of technological advancements, we deliver tailored solutions that empower 
-                              businesses to thrive in today's dynamic digital landscape. Partner with us to unlock the full 
-                              potential of your digital journey.
+                              {messages.workwithus.intro}
                             </p>
                         </div>
                     </div>
@@ -89,5 +92,3 @@ const Whyworkwithus = () => {
         </div>
     );
 }
-
-export default Whyworkwithus;
