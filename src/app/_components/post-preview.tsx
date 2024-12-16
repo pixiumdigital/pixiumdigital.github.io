@@ -36,7 +36,7 @@ export function PostPreview({
             <h3 className="text-3xl mb-3 leading-snug">
               <Link
                 as={`/`+locale+`/use-case/${slug}`}
-                href={"/"+locale+"use-case/[slug]"}
+                href={"/"+locale+"/use-case/[slug]"}
               >
                   <h2 className="mb-8 text-3xl md:text-3xl font-bold tracking-tighter">{title}</h2>
               </Link>
