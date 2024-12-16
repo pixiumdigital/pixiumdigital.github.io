@@ -467,7 +467,10 @@
     #HERO
   \*-----------------------------------*/
   
-  .hero { padding-block-start: calc(var(--section-padding) + 60px); }
+  .hero { 
+    /* padding-block-start: calc(var(--section-padding) + 60px);  */
+    margin-block-start:120px;
+  }
   
   .hero .container {
     display: grid;
@@ -1274,8 +1277,11 @@
      */
   
     .hero {
-      background-image: linear-gradient(to right, var(--white) 79%, var(--mustard) 79%);
+      /* background-image: linear-gradient(to right, var(--white) 79%, var(--mustard) 79%); */
       overflow: hidden;
+      /* margin-top:120px; */
+      background: url('/assets/images/people.png');
+      background-size: cover;
     }
   
     .hero .container {

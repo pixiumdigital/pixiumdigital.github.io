@@ -50,10 +50,9 @@ export default async function Index( { params }: Params ) {
 
                     </div>
 
-                    <figure className="hero-banner">
-                        {/* hero-banner.png */}
-                        <img src="/assets/images/dotmap.png" style={{width:"100%"}} width="200" height="200" alt="pixium digital location map" />
-                    </figure>
+                    {/* <figure className="hero-banner">
+                        <img src="/assets/images/people.png" style={{width:"100%"}} width="200" height="200" alt="pixium digital location map" />
+                    </figure> */}
 
                 </div>
             </section>
