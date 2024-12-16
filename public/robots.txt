@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://pixiumdigital.fr
+Host: https://pixiumdigital.com
 
 # Sitemaps
-Sitemap: https://pixiumdigital.fr/sitemap.xml
+Sitemap: https://pixiumdigital.com/sitemap.xml

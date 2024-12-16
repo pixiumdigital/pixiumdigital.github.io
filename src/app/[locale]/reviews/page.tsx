@@ -39,7 +39,15 @@ const reviewsContent = [
         "postion": "Division Advisor",
         "company": "Optimo International Group Inc.",
         "comment": "Amazing services! I had the opportunity to work with Pixium Digital on several IT projects and their expertise and flexibility were much appreciated!",
-        "link": "https://clutch.co/profile/pixium-digital-pte#reviews",
+        "link": "",
+        "projectLink": ""
+    },
+    {
+        "title": "Geraldine Gauthier",
+        "postion": "Co-founder & Director",
+        "company": "GoMasterCoach",
+        "comment": "We are extremely grateful to Pixium for developing our Web-App. Pixium has guided us from the start of the project giving guidance on conception to the development of the app, through outstanding customer support. We have been so satisfied with Pixium that we have decided to develop a second Web-App with Pixium. Thank you again for all your hard work and valuable insights!",
+        "link": "",
         "projectLink": ""
     },
     {
@@ -47,7 +55,31 @@ const reviewsContent = [
         "postion": "Founder & Director",
         "company": "RocketLab, Australia",
         "comment": "Very co-operative and patient to our very specific requests. A pleasant experience working with the team on our web app project. Remi and his team always deliver!",
-        "link": "https://clutch.co/profile/pixium-digital-pte#reviews",
+        "link": "",
+        "projectLink": ""
+    },
+    {
+        "title": "Rebecca Grover",
+        "postion": "Managing Director",
+        "company": "Boldly",
+        "comment": "Pixium were fantastic to work with! We’ve worked with other IT services providers in the past and were blown away with the attention to detail, communication, vision and expertise of the team. Without question, we will continue to refer others to Pixium Digital because we are confident they will provide the same experience for others. Thank you!!",
+        "link": "",
+        "projectLink": ""
+    },
+    {
+        "title": "Arnaud Amy",
+        "postion": "Co-founder",
+        "company": "Dumpya",
+        "comment": "You guys at Pixium Digital did an incredible job building our App. After struggling few years with companies who talk a good game and can’t deliver a quality product, Remi and his team made it happen. We finally have a great App. Thank you so much for the amazing work.",
+        "link": "",
+        "projectLink": ""
+    },
+    {
+        "title": "Etienne Guerou",
+        "postion": "Co-founder & CEO",
+        "company": "PigsTech",
+        "comment": "Pixium's team is simply delivering to expectations! They understand the requirements, bring solutions, and try and respond to the most demanding requests we give them. The way they are handling our projects truly brings added-value. Define your requirements and give them to put it into form, they will show exactly what I mentioned above “Deliver expectations” !",
+        "link": "",
         "projectLink": ""
     }
 ]
