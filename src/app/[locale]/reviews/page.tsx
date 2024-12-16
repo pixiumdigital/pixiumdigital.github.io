@@ -165,7 +165,7 @@ export function generateMetadata(): Metadata {
       openGraph: {
         title: title,
         description: description,
-        images: ['//assets/images/pixium-logo.png'],
+        images: ['https://pixiumdigital.com/assets/images/pixium-logo.png'],
       },
     };
 }

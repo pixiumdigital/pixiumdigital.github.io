@@ -104,11 +104,13 @@ export function generateMetadata({ params }: Params): Metadata {
 
   const title = `${post.title} | Pixium Digital use case`;
 
+  const ogImageUrl = `${process.env.NODE_ENV === 'production' ? 'https://pixiumdigital.com' : ''}`;
+
   return {
     title,
     openGraph: {
       title,
-      images: [post.ogImage.url],
+      images: [ogImageUrl+'/'+post.ogImage.url],
     },
   };
 }
