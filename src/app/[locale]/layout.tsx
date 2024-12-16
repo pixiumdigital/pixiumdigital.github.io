@@ -111,7 +111,8 @@ export default async function RootLayout({children, params}: {children: React.Re
                 <meta name="theme-color" content="#000" />
                 <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
 
-                <script src="https://analytics.ahrefs.com/analytics.js" data-key="CNbgYh3+Qs02clppYfOtjg" defer={true}></script>
+                {/* <script src="https://analytics.ahrefs.com/analytics.js" data-key={"CNbgYh3+Qs02clppYfOtjg"} defer={true}></script> */}
+                <script src="https://analytics.ahrefs.com/analytics.js" data-key={"0tKKqwH0s7T1zb8gcoyk3w"} defer={true}></script>
             </head>
                 
                     <body className={inter.className+" App"}>
