@@ -10,6 +10,7 @@ if(isProd){
     const nextConfig = {
         output: 'export',
         distDir: 'dist',
+        basePath: 'pixiumdigital.com',
         images:{
             unoptimized:true
         },
