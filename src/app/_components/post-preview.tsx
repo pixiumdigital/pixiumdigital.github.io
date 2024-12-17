@@ -35,6 +35,7 @@ export function PostPreview({
         <div className="gap-x-8">
             <h3 className="text-3xl mb-3 leading-snug">
               <Link
+                rel="canonical"
                 as={`/`+locale+`/use-case/${slug}`}
                 href={"/"+locale+"/use-case/[slug]"}
               >

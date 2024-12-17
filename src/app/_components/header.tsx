@@ -157,6 +157,7 @@ export default function Header({ services, locale, messages }: Props) {
             {menuItems.map((item, index) => (
               <NavbarMenuItem key={`${item}-${index}`}>
                 <Link
+                  rel="canonical"
                   onClick={()=>{setIsMenuOpen(false)}}
                   className="w-full p-2 m-4 text-2=4xl"
                   color={

@@ -28,6 +28,7 @@ export function ServicePreview({
         <div className="gap-x-8">
             <h3 className="text-lg mb-3 leading-snug">
               <Link
+                rel="canonical"
                 as={`/`+locale+`/services/${slug}`}
                 href={"/"+locale+"/services/[slug]"}
               >
