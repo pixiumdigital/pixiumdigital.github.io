@@ -1540,3 +1540,20 @@
   }
 
   .submenu span{flex: none !important;}
+
+
+.about-keypoints{
+  margin-top:60px;
+}
+.about-keypoints > div > div{
+  padding:20px 0px;
+}
+.about-keypoints h2{
+  margin-bottom:20px;
+  text-align:left;
+}
+
+.about-keypoints ul,
+.about-keypoints p{
+  text-align: justify;
+}

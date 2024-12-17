@@ -34,17 +34,40 @@ export default async function Index ( { params } : { params:{locale:string } } )
     
     return <><section className="section service" id="service" aria-label="service">
             <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd)}}></script>
+
+
             <div className="container">
 
-                <h2 className="h2 section-title text-center">
-                    <span className="has-before">{messages.about.title}</span>
-                </h2>
+                <h1 className="h1 section-title text-center" dangerouslySetInnerHTML={{__html:messages.about.title}}>
+                </h1>
             
                 <div>
-                    <p className='text-justify'>
-                        {messages.about.intro}
+                    <p className='text-justify' dangerouslySetInnerHTML={{__html:messages.about.intro}}>
                     </p>
                 </div>
+            </div>
+
+            <div className="container about-keypoints">
+              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 mt-4">
+                {/* <div> */}
+                  <div>
+                      <h2 className='h3'>{messages.about.block1_title}</h2>
+                      <p dangerouslySetInnerHTML={{__html:messages.about.block1_description}}></p>
+                  </div>    
+                  <div>
+                      <h2 className='h3'>{messages.about.block2_title}</h2>
+                      <p dangerouslySetInnerHTML={{__html:messages.about.block2_description}}></p>
+                  </div> 
+                  <div>
+                      <h2 className='h3'>{messages.about.block3_title}</h2>
+                      <div dangerouslySetInnerHTML={{__html:messages.about.block3_description}}></div>  
+                  </div>    
+                {/* </div> */}
+                {/* <div>
+                  <img src="/assets/images/aboutus.png"></img>
+                </div> */}
+                           
+              </div>
             </div>
         </section>
         <Process params={params} />
