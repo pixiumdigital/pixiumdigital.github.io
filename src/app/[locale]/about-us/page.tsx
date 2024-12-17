@@ -55,7 +55,7 @@ export default async function Index ( { params } : { params:{locale:string } } )
 
 export function generateMetadata(): Metadata {
     const title = `About | Top Digital Development Company - Singapore`;
-    const description = `Pixium Digital: A leading digital development company in Singapore and south of France (Nice & Monaco). Specialized in custom web, software and mobile development.`;
+    const description = `Pixium Digital: A leading digital development company in Singapore & France (Nice & Monaco). Specialized in custom web, software and mobile development.`;
     // const previousImages = (await parent).openGraph?.images || []
 
     return {
