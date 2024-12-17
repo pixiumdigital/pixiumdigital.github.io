@@ -108,6 +108,7 @@ export default async function RootLayout({children, params}: {children: React.Re
                   name="msapplication-config"
                   content="/favicon/browserconfig.xml"
                 />
+                <meta name="robots" content="all" />
                 <meta name="theme-color" content="#000" />
                 <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
 
