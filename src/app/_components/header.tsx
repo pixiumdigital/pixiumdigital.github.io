@@ -97,7 +97,7 @@ export default function Header({ services, locale, messages }: Props) {
 
           {/* ORIGINAL MENU DESKTOP */}
           <NavbarBrand>
-              <a href={"/"+locale} className="logo">
+              <a rel="canonical" href={"/"+locale} className="logo">
                 <img src="/assets/images/pixium-logo.png" />
               </a>
             </NavbarBrand>
@@ -125,7 +125,7 @@ export default function Header({ services, locale, messages }: Props) {
                       // startContent={<Image src={service.coverImage} alt="" width={30} height={30} />}
                       // classNames={{base:"bbb", wrapper:"my_wrap"}}
                     >
-                      <Link href={`/${locale}/services/`+service.slug} className="navbar-link px-4 py-2" aria-current="page" data-nav-link>
+                      <Link rel="canonical" href={`/${locale}/services/`+service.slug} className="navbar-link px-4 py-2" aria-current="page" data-nav-link>
                         {service.title}
                       </Link>
                     </DropdownItem>)
@@ -138,7 +138,7 @@ export default function Header({ services, locale, messages }: Props) {
             {menuItems.map((item, index) => (
               (item.desktop ?
               <NavbarItem>
-                <Link href={item.url} className="navbar-link px-4" aria-current="page" data-nav-link>
+                <Link rel="canonical" href={item.url} className="navbar-link px-4" aria-current="page" data-nav-link>
                   {item.text}
                 </Link>
               </NavbarItem>  : "" )
@@ -148,7 +148,7 @@ export default function Header({ services, locale, messages }: Props) {
 
           <NavbarContent justify="end">
             <NavbarItem className="lg:flex">
-              <a href="mailto:contactus@pixiumdigital.com" className="btn btn-primary has-before has-after">{messages.button.letstalk}</a>
+              <a rel="canonical" href="mailto:contactus@pixiumdigital.com" className="btn btn-primary has-before has-after">{messages.button.letstalk}</a>
             </NavbarItem>
           </NavbarContent>
 

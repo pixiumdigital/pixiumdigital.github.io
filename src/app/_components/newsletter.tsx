@@ -32,7 +32,7 @@ export default async function Newsletter({ params }: Params) {
                 </h2>
 
                 <p className="has-before centered">
-                    <a href="mailto:contactus@pixiumdigital.com" className="btn btn-secondary has-before has-after">
+                    <a rel="canonical" href="mailto:contactus@pixiumdigital.com" className="btn btn-secondary has-before has-after">
                         <span className="span">{messages.newsletter.button}</span>
                     </a>
                 </p>

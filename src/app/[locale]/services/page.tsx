@@ -56,9 +56,10 @@ export function generateMetadata(): Metadata {
     return {
       title,
       description: description,
-      keywords: ["services", "digital solution", "development", "digital consulting", "AI", "chatbot", "ChatGPT"],
+      keywords: ["services for web development in Singapore","best custom software developers in Singapore", "digital development singapore", "top web development singapore", "digital consulting in Singapore", "ChatGPT integration"],
       openGraph: {
         title: title,
+        type:"website",
         description: description,
         images: ['https://pixiumdigital.com/assets/images/pixium-logo.png'],
       },

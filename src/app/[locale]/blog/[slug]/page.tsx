@@ -30,7 +30,7 @@ export default async function Post({ params }: Params) {
   return (<>
     <section className="section service" id="blog" aria-label="blog">
       <Alert preview={post.preview} />
-      <Link href={"/"+params.locale+"/blog/"}>
+      <Link rel="canonical" href={"/"+params.locale+"/blog/"}>
         <FontAwesomeIcon icon={faArrowLeft} height="20" className="inline-flex" /> {messages.button.back}
       </Link>
       <Container>

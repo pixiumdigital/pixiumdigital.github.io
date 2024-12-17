@@ -45,7 +45,7 @@ export default async function Index( { params }: Params ) {
                         </p>
 
                         <div className="centered">
-                            <a href="/contact-us" className="btn btn-primary has-before has-after">{messages.button.contactus}</a>
+                            <a rel="canonical" href="/contact-us" className="btn btn-primary has-before has-after">{messages.button.contactus}</a>
                         </div>
 
                     </div>
@@ -95,7 +95,7 @@ export default async function Index( { params }: Params ) {
 
 
 export function generateMetadata(): Metadata {
-    const title = `Pixium Digital | Top Digital Development Company in Singapore`;
+    const title = `Pixium Digital | Top Digital Development Company - Singapore`;
     const description = `Digital consulting and software development. Enhance operations, productivity, and profitability through scalable software, IT, and staffing solution.`;
     // const previousImages = (await parent).openGraph?.images || []
 
@@ -104,6 +104,7 @@ export function generateMetadata(): Metadata {
       description: description,
       openGraph: {
         title: title,
+        type:"website",
         description: description,
         images: ['https://pixiumdigital.com/assets/images/pixium-logo.png'],
       },

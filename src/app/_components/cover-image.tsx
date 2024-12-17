@@ -23,7 +23,7 @@ const CoverImage = ({ title, src, baseUrl, slug }: Props) => {
   );
   
   return (
-    <Link as={`/${baseUrl}/${slug}`} href="/[baseUrl]/[slug]" aria-label={title}>
+    <Link rel="canonical" as={`/${baseUrl}/${slug}`} href="/[baseUrl]/[slug]" aria-label={title}>
         {image}
     </Link>
     // <div className="sm:mx-0">

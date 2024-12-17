@@ -115,6 +115,7 @@ export function generateMetadata({ params }: { params:{locale:string } }): Metad
       description: description,
       openGraph: {
         title: title,
+        type:"website",
         description: description,
         images: ['https://pixiumdigital.com/assets/images/pixium-logo.png'],
       },

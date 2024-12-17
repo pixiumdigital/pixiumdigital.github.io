@@ -31,19 +31,19 @@ export default async function Footer({locale} : Props) {
 
               <ul className="social-list">
                   <li>
-                      <a target="_blank" href="https://www.linkedin.com/company/pixium-digital-pte-ltd" className="social-link">
+                      <a rel="canonical" target="_blank" href="https://www.linkedin.com/company/pixium-digital-pte-ltd" className="social-link">
                           <FontAwesomeIcon icon={faLinkedin}/>
                       </a>
                   </li>
 
                   <li>
-                      <a target="_blank" href="http://facebook.com/pixiumdigital" className="social-link">
+                      <a rel="canonical" target="_blank" href="http://facebook.com/pixiumdigital" className="social-link">
                           <FontAwesomeIcon icon={faFacebook}/>
                       </a>
                   </li>
 
                   <li>
-                      <a target="_blank" href="https://dev.to/pixiumdigital" className="social-link">
+                      <a rel="canonical" target="_blank" href="https://dev.to/pixiumdigital" className="social-link">
                           <FontAwesomeIcon icon={faDev}/>
                       </a>
                   </li>
@@ -60,22 +60,22 @@ export default async function Footer({locale} : Props) {
                 <p className="footer-list-title">{messages.footer.title_links}</p>
               </li>
               <li>
-                  <a href={"/"+locale+"/services"} className="footer-link">{messages.navigation.services}</a>
+                  <a rel="canonical" href={"/"+locale+"/services"} className="footer-link">{messages.navigation.services}</a>
               </li>
               <li>
-                <a href={"/"+locale+"/about-us"} className="footer-link">{messages.navigation.about}</a>
+                <a rel="canonical" href={"/"+locale+"/about-us"} className="footer-link">{messages.navigation.about}</a>
               </li>
               <li>
-                  <a href={"/"+locale+"/use-case"} className="footer-link">{messages.navigation.usecase}</a>
+                  <a rel="canonical" href={"/"+locale+"/use-case"} className="footer-link">{messages.navigation.usecase}</a>
               </li>
               <li>
-                  <a href={"/"+locale+"/blog"} className="footer-link">{messages.navigation.blog}</a>
+                  <a rel="canonical" href={"/"+locale+"/blog"} className="footer-link">{messages.navigation.blog}</a>
               </li>
               <li>
-                  <a href={"/"+locale+"/contact-us"} className="footer-link">{messages.navigation.contact}</a>
+                  <a rel="canonical" href={"/"+locale+"/contact-us"} className="footer-link">{messages.navigation.contact}</a>
               </li>
               <li>
-                  <a href={"/"+locale+"/reviews"} className="footer-link">{messages.navigation.review}</a>
+                  <a rel="canonical" href={"/"+locale+"/reviews"} className="footer-link">{messages.navigation.review}</a>
               </li>
           </ul>
 
@@ -117,7 +117,7 @@ export default async function Footer({locale} : Props) {
           <p className="copyright">
               &copy; {new Date().getFullYear()} Pixium Digital. All Rights Reserved
           </p>
-          <a href="/sitemap.xml" target="_blank" style={{ color:"#777", display:"flex", right:"0px"}}>
+          <a rel="canonical" href="/sitemap.xml" target="_blank" style={{ color:"#777", display:"flex", right:"0px"}}>
               Sitemap
           </a>
           

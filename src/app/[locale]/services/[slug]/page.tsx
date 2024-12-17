@@ -28,7 +28,7 @@ export default async function Post({ params }: Params) {
   return (<>
     <section className="section service" id="service" aria-label="service">
       <Alert preview={post.preview} />
-      <Link href={"/"+params.locale+"/services/"}>
+      <Link rel="canonical" href={"/"+params.locale+"/services/"}>
         <FontAwesomeIcon icon={faArrowLeft} height="20" className="inline-flex" /> {messages.button.back}
       </Link>
       <Container>
@@ -68,6 +68,7 @@ export function generateMetadata({ params }: Params): Metadata {
     title,
     openGraph: {
       title,
+      type:"website",
       images: [post.ogImage.url],
     },
   };
