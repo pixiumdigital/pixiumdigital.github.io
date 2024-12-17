@@ -45,7 +45,7 @@ export default async function Index( { params }: Params ) {
                         </p>
 
                         <div className="centered">
-                            <a rel="canonical" href="/contact-us" className="btn btn-primary has-before has-after">{messages.button.contactus}</a>
+                            <a rel="canonical" href={"/"+params.locale+"/contact-us"} className="btn btn-primary has-before has-after">{messages.button.contactus}</a>
                         </div>
 
                     </div>

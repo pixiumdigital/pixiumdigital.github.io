@@ -16,11 +16,11 @@ export default function LanguageSwitcher({ locale }: { locale: string }) {
       { locale === 'en' ? 
         (<Link rel="canonical" href={switchLocale('fr')}>
           <img src="/assets/images/flag-fr.png" width="30" height="30" loading="lazy" style={{display:"inline"}}
-                            alt="service icon" />
+                            alt="language icon" />
         </Link>) :
         (<Link rel="canonical" href={switchLocale('en')} className={locale === 'en' ? 'active' : ''}>
           <img src="/assets/images/flag-en.png" width="30" height="30" loading="lazy" style={{display:"inline"}}
-                            alt="service icon" />
+                            alt="language icon" />
         </Link>)
       }
       
