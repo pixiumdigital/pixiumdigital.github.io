@@ -10,6 +10,7 @@ if(isProd){
     const nextConfig = {
         output: 'export',
         distDir: 'dist',
+        trailingSlash: true,
         // basePath: '/pixiumdigital.com',
         images:{
             unoptimized:true
@@ -20,6 +21,7 @@ if(isProd){
 }else{
     const nextConfig = {
         output: 'export',
+        trailingSlash: true,
         images: {
           unoptimized: true,
         },
