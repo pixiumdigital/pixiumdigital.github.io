@@ -14,13 +14,11 @@ import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarContent, NavbarItem, Button
 import Image from 'next/image'
 
 import { Post } from "@/interfaces/post";
+import { SUPPORTED_LOCALES } from "@/config/config";
 
 
 export function generateStaticParams() {
-  return [
-      { locale: 'en' },
-      { locale: 'fr' }
-  ];
+    return SUPPORTED_LOCALES.map((locale: any) => ({ locale }));
 }
 
 
@@ -39,27 +37,27 @@ export default function Header({ services, locale, messages }: Props) {
     const menuItems = [
       {
         "url": `/${locale}/services`,
-        "text": messages.navigation.services,
+        "text": messages.navigation ? messages.navigation.services : '',
         "desktop": false,
       },
       {
         "url": `/${locale}/about-us`,
-        "text": messages.navigation.about,
+        "text": messages.navigation ? messages.navigation.about : '',
         "desktop": true,
       },
       {
         "url": `/${locale}/use-case`,
-        "text": messages.navigation.usecase,
+        "text": messages.navigation ? messages.navigation.usecase : '',
         "desktop": true,
       },
       {
         "url": `/${locale}/blog`,
-        "text": messages.navigation.blog,
+        "text": messages.navigation ? messages.navigation.blog : '',
         "desktop": true,
       },
       {
         "url": `/${locale}/contact-us`,
-        "text": messages.navigation.contact,
+        "text": messages.navigation ? messages.navigation.contact : '',
         "desktop": true,
       },
     ];
@@ -148,7 +146,7 @@ export default function Header({ services, locale, messages }: Props) {
 
           <NavbarContent justify="end">
             <NavbarItem className="lg:flex">
-              <a rel="canonical" href="mailto:contactus@pixiumdigital.com" className="btn btn-primary has-before has-after">{messages.button.letstalk}</a>
+              <a rel="canonical" href="mailto:contactus@pixiumdigital.com" className="btn btn-primary has-before has-after">{messages.button ? messages.button.letstalk : ''}</a>
             </NavbarItem>
           </NavbarContent>
 

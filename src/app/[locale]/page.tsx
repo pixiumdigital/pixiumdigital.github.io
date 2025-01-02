@@ -4,24 +4,28 @@ import Industry from "../_components/industry";
 import { PixStats } from "../_components/pix_stats";
 import { Metadata } from "next";
 import Clients from "../_components/clients";
+import { notFound } from "next/navigation";
+
+import { SUPPORTED_LOCALES, SITE_CONFIG } from '@/config/config';
 
 
 export function generateStaticParams() {
-    return [
-        { locale: 'en' },
-        { locale: 'fr' }
-    ];
+    return SUPPORTED_LOCALES.map((locale: any) => ({ locale }));
 }
 
 type Params = {
     params: {
       slug: string;
-      locale:string;
+      locale:any;
     };
   };
 
 export default async function Index( { params }: Params ) {
     const messages = await import(`@/messages/${params.locale}.json`);
+
+    // if (!SUPPORTED_LOCALES.includes(params.locale)) {
+    //     notFound(); // This will render the 404 page
+    // }
 
     const jsonLd = {
         '@context': 'https://schema.org',
@@ -32,6 +36,7 @@ export default async function Index( { params }: Params ) {
 
     return (
         <div> 
+            <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd)}}></script>
             <section className="section hero" id="home" aria-label="hero">
                 <div className="container">
 
@@ -106,7 +111,8 @@ export function generateMetadata(): Metadata {
         title: title,
         type:"website",
         description: description,
-        images: ['https://pixiumdigital.com/assets/images/pixium-logo.png'],
+        // images: ['https://pixiumdigital.com/assets/images/pixium-logo.png'],
+        images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.png`]
       },
     };
 }

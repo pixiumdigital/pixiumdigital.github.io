@@ -7,9 +7,9 @@ import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
 
 
-import "../../globals.css";
-import '../../App.css';
-import '../../style.css';
+import "@/globals.css";
+import '@/App.css';
+import '@/style.css';
 
 import Header from "../_components/header";
 import Footer from "../_components/footer";
@@ -20,15 +20,12 @@ import { useState } from "react";
 import { useTranslations } from 'next-intl';
 import { notFound } from "next/navigation";
 import ProviderClient, { GlobalProvider } from "../provider";
+import { SUPPORTED_LOCALES } from "@/config/config";
 
 const inter = Inter({ subsets: ["latin"] });
 
-
 export function generateStaticParams() {
-  return [
-    { locale: 'en' },
-    { locale: 'fr' }
-  ];
+  return SUPPORTED_LOCALES.map((locale: any) => ({ locale }));
 }
 
 
@@ -56,11 +53,11 @@ export function generateStaticParams() {
 
 
 // { params: { lang } } : {params:any}
-export default async function RootLayout({children, params}: {children: React.ReactNode, params :{locale:string}}) {
+export default async function RootLayout({children, params}: {children: React.ReactNode, params :{locale:any}}) {
     const {locale} = params;
     // const [language, setLanguage] = useState<string>(locale); // Initialize with the current locale
 
-    if (!['en', 'fr'].includes(locale)) {
+    if (!SUPPORTED_LOCALES.includes(locale)) {
       notFound();
     }
     
