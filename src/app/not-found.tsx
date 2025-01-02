@@ -17,7 +17,7 @@ type Params = {
 // app/[locale]/not-found.tsx
 export default function NotFound( {params} : Params) {
 
-  let locale = params.locale && params.locale!=="" ? params.locale : 'en';
+  let locale = 'en';
 
   redirect( '/' + locale + '/not-found' );
 }
