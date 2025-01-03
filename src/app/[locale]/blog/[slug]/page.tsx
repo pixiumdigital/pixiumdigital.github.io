@@ -76,6 +76,7 @@ export function generateMetadata({ params }: Params): Metadata {
     title,
     openGraph: {
       title,
+      description: post.excerpt,
       type:"website",
       images: [post.ogImage.url],
     },
