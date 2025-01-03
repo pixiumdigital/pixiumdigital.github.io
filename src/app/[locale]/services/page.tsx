@@ -21,7 +21,7 @@ export default async function Index( { params } : { params:{locale:string } } ) 
 
     const messages = await import(`@/messages/${params.locale}.json`);
 
-    const allPosts = getAllServices();
+    const allPosts = getAllServices(params.locale);
     const morePosts = allPosts;
 
     const jsonLd = {
@@ -38,13 +38,13 @@ export default async function Index( { params } : { params:{locale:string } } ) 
                 <h2 className="h2 section-title text-center" dangerouslySetInnerHTML={{__html:messages.services.title}}>
                 </h2>
 
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-4 p-4'>
                     <div className='p-4 mb-5'>
                         <img className="circled w-50" src="/assets/images/working-people.webp" />
                     </div>
 
-                    <div className='mt-5 mb-5 p-4 text-justify'>
-                        <h2 className='text-6xl mb-4'>{messages.services.intro}</h2>
+                    <div className='mt-5 mb-5 p-4 text-justify col-span-2'>
+                        <h2 className='text-4xl mb-4'>{messages.services.intro}</h2>
                         <p>
                             {messages.services.description}
                         </p>

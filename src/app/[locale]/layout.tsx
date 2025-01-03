@@ -114,7 +114,7 @@ export default async function RootLayout({children, params}: {children: React.Re
                 
                     <body className={inter.className+" App"}>
                       {/* <NextIntlClientProvider locale={locale} messages={messages}> */}
-                          <Header services={getAllServices()} locale={locale} messages={messages} />
+                          <Header services={getAllServices(locale)} locale={locale} messages={messages} />
                           <div className="min-h-screen">
                             {/* <NextIntlClientProvider locale={locale} messages={messages}> */}
                             <GlobalProvider initialMessages={messages}>

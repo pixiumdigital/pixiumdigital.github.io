@@ -34,21 +34,21 @@ export function getAllUseCase(locale:string): Post[] {
 
 
 // SERVICES  ------------------------------------------------
-export function getServiceSlugs() {
-  return fs.readdirSync(servicesDirectory);
+export function getServiceSlugs(locale:string) {
+  return fs.readdirSync(servicesDirectory+"/"+locale);
 }
-export function getServiceBySlug(slug: string) {
+export function getServiceBySlug(slug: string, locale: string) {
   const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(servicesDirectory, `${realSlug}.md`);
+  const fullPath = join(servicesDirectory, `${locale}/${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
   return { ...data, slug: realSlug, content } as Post;
 }
-export function getAllServices(): Post[] {
-  const slugs = getServiceSlugs();
+export function getAllServices(locale: string): Post[] {
+  const slugs = getServiceSlugs(locale);
   const posts = slugs
-    .map((slug) => getServiceBySlug(slug))
+    .map((slug) => getServiceBySlug(slug, locale))
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;

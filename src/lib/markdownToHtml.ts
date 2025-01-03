@@ -9,7 +9,7 @@ export default async function markdownToHtml(markdown: string) {
   // Customize the sanitize schema to allow the "style" attribute
   const customSchema = {
     ...defaultSchema,
-    tagNames: [...(defaultSchema.tagNames || []), "img", "div", "ul", "li", "a"], // Allow img and div tags and more
+    tagNames: [...(defaultSchema.tagNames || []), "img", "div", "ul", "li", "a", "h1", "h2", "h3", "h4"], // Allow img and div tags and more
     attributes: {
       ...defaultSchema.attributes,
       img: ["src", "alt", "width", "height", "style", "class", "className"], // Allow img attributes

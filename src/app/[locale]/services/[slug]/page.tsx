@@ -15,7 +15,7 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Process from "@/app/_components/process";
 
 export default async function Post({ params }: Params) {
-  const post = getServiceBySlug(params.slug);
+  const post = getServiceBySlug(params.slug, params.locale);
 
   const messages = await import(`@/messages/${params.locale}.json`);
 
@@ -58,7 +58,7 @@ type Params = {
 };
 
 export function generateMetadata({ params }: Params): Metadata {
-  const post = getServiceBySlug(params.slug);
+  const post = getServiceBySlug(params.slug, params.locale);
 
   if (!post) {
     return notFound();
@@ -76,14 +76,18 @@ export function generateMetadata({ params }: Params): Metadata {
 
 
 export async function generateStaticParams() {
-  const posts = getAllServices();
+  // const posts = getAllUseCase();
 
   const locales = ['en', 'fr'];
 
-  return posts.flatMap((post) => 
-    locales.map((locale) => ({
-      slug: post.slug,
+  // First loop through locales, then get posts for each locale
+  return locales.flatMap((locale) => {
+    // Reload posts for each locale
+    const posts = getAllServices(locale);
+    
+    return posts.map((post) => ({
       locale: locale,
-    }))
-  );
+      slug: post.slug,
+    }));
+  });
 }
