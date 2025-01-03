@@ -2,6 +2,7 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 import Whyworkwithus from '../../_components/whyworkwithus';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_CONFIG } from '@/config/config';
 // import { locales } from '@/__navigation';
 
 // export function generateStaticParams() {
@@ -169,7 +170,7 @@ export function generateMetadata(): Metadata {
         title: title,
         type:"website",
         description: description,
-        images: ['https://pixiumdigital.com/assets/images/pixium-logo.png'],
+        images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`]
       },
     };
 }

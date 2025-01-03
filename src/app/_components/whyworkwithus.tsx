@@ -18,7 +18,7 @@ export default async function Whyworkwithus({ params }: Params) {
         <div className="section" id="feature" aria-label="feature">
             <div className="container mb-5">
                 {/* <figure className="feature-banner">
-                    <img src="/assets/images/feature-banner.png" width="382" height="385" loading="lazy" alt="feature banner"
+                    <img src="/assets/images/feature-banner.webp" width="382" height="385" loading="lazy" alt="feature banner"
                       className="w-80" />
                 </figure> */}
 
@@ -41,7 +41,7 @@ export default async function Whyworkwithus({ params }: Params) {
                     <div>
                       <div className="gap-x-2" style={{margin:"10px", padding:"10px"}}>
                         <div className="mb-5">
-                            <img className="circled" src="/assets/images/pixium-expertise.jpg" title="pixium expertise" alt="pixium expertise"/>
+                            <img className="circled" src="/assets/images/pixium-expertise.webp" title="pixium expertise" alt="pixium expertise"/>
                         </div>
                         <div className="gap-x-8">
                             <h2 className="mb-8 text-2xl md:text-4xl font-bold tracking-tighter">Expertise</h2>
@@ -53,7 +53,7 @@ export default async function Whyworkwithus({ params }: Params) {
                     <div>
                       <div className="gap-x-2" style={{margin:"10px", padding:"10px"}}>
                         <div className="mb-5">
-                            <img className="circled" src="/assets/images/pixium-innovation.jpg" title="pixium innovation" alt="pixium innovation" />
+                            <img className="circled" src="/assets/images/pixium-innovation.webp" title="pixium innovation" alt="pixium innovation" />
                         </div>
                         <div className="gap-x-8">
                             <h2 className="mb-8 text-2xl md:text-4xl font-bold tracking-tighter">Innovation</h2>
@@ -65,7 +65,7 @@ export default async function Whyworkwithus({ params }: Params) {
                     <div>
                       <div className="gap-x-2" style={{margin:"10px", padding:"10px"}}>
                         <div className="mb-5">
-                            <img className="circled" src="/assets/images/pixium-client-centric.jpg" title="pixium client centric" alt="pixium client centric"/>
+                            <img className="circled" src="/assets/images/pixium-client-centric.webp" title="pixium client centric" alt="pixium client centric"/>
                         </div>
                         <div className="gap-x-8">
                             <h2 className="mb-8 text-2xl md:text-4xl font-bold tracking-tighter">Client-Centric Approach</h2>

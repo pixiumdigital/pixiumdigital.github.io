@@ -1,7 +1,7 @@
 ---
 title: "Aeqlia"
 excerpt: "Custom web app development in Singapore for team building and learning, with a unique blend of multiplayer gaming and post-game activities."
-coverImage: "/assets/blog/aeqlia/preview.png"
+coverImage: "/assets/blog/aeqlia/preview.webp"
 date: "2023-03-16T05:35:07.322Z"
 industry: EdTech / Gaming
 platform: Web, Mobile
@@ -10,7 +10,7 @@ location: Asia - Middles East
 author:
   name: Remi Tache
 ogImage:
-  url: "/assets/blog/aeqlia/preview.png"
+  url: "/assets/blog/aeqlia/preview.webp"
 ---
 
 ## Project
@@ -33,7 +33,7 @@ Aeqlia's platform has seen remarkable success, transforming how teams collaborat
 ## Output
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-  <img src="/assets/blog/aeqlia/img1.png" alt="Amplify Game">
-  <img src="/assets/blog/aeqlia/img2.png" alt="GinkGo Game">
-  <img src="/assets/blog/aeqlia/img3.png" alt="Pulse Game">
+  <img src="/assets/blog/aeqlia/img1.webp" alt="Amplify Game">
+  <img src="/assets/blog/aeqlia/img2.webp" alt="GinkGo Game">
+  <img src="/assets/blog/aeqlia/img3.webp" alt="Pulse Game">
 </div>

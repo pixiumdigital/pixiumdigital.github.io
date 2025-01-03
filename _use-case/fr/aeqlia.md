@@ -1,7 +1,7 @@
 ---
 title: "Aeqlia"
 excerpt: "Révolutionner le team building et l'apprentissage grâce à un mélange unique de jeux multijoueurs et d'activités post-jeu."
-coverImage: "/assets/blog/aeqlia/preview.png"
+coverImage: "/assets/blog/aeqlia/preview.webp"
 date: "2023-03-16T05:35:07.322Z"
 industry: EdTech / Gaming
 platform: Web, Mobile
@@ -10,7 +10,7 @@ location: Asie - Moyen-Orient
 author:
   name: Remi Tache
 ogImage:
-  url: "/assets/blog/aeqlia/preview.png"
+  url: "/assets/blog/aeqlia/preview.webp"
 ---
 
 ## Projet
@@ -33,7 +33,7 @@ La plateforme d'Aeqlia a connu un succès remarquable, transformant la manière 
 ## Résultat
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-  <img src="/assets/blog/aeqlia/img1.png" alt="Amplify Game">
-  <img src="/assets/blog/aeqlia/img2.png" alt="GinkGo Game">
-  <img src="/assets/blog/aeqlia/img3.png" alt="Pulse Game">
+  <img src="/assets/blog/aeqlia/img1.webp" alt="Amplify Game">
+  <img src="/assets/blog/aeqlia/img2.webp" alt="GinkGo Game">
+  <img src="/assets/blog/aeqlia/img3.webp" alt="Pulse Game">
 </div>

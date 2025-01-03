@@ -56,7 +56,7 @@ export default async function Index( { params }: Params ) {
                     </div>
 
                     {/* <figure className="hero-banner">
-                        <img src="/assets/images/people.png" style={{width:"100%"}} width="200" height="200" alt="pixium digital location map" />
+                        <img src="/assets/images/people.webp" style={{width:"100%"}} width="200" height="200" alt="pixium digital location map" />
                     </figure> */}
 
                 </div>
@@ -111,8 +111,8 @@ export function generateMetadata(): Metadata {
         title: title,
         type:"website",
         description: description,
-        // images: ['https://pixiumdigital.com/assets/images/pixium-logo.png'],
-        images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.png`]
+        // images: ['https://pixiumdigital.com/assets/images/pixium-logo.webp'],
+        images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`]
       },
     };
 }

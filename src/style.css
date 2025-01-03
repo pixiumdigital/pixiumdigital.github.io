@@ -1280,7 +1280,7 @@
       /* background-image: linear-gradient(to right, var(--white) 79%, var(--mustard) 79%); */
       overflow: hidden;
       /* margin-top:120px; */
-      background: url('/assets/images/people.png');
+      background: url('/assets/images/people.webp');
       background-size: cover;
     }
   
@@ -1546,7 +1546,7 @@
   margin-top:60px;
 }
 .about-keypoints > div > div{
-  padding:20px 0px;
+  /* padding:20px 0px; */
 }
 .about-keypoints h2{
   margin-bottom:20px;

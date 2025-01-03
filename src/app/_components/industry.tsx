@@ -20,7 +20,7 @@ export default async function Industry({ params }: Params) {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
-                        <img className="circled" src="/assets/images/pixium-industries.png" title="pixium client centric" alt="pixium client centric"/>
+                        <img className="circled" src="/assets/images/pixium-industries.webp" title="pixium client centric" alt="pixium client centric"/>
                     </div>
                     <div className="col-span-2">
                         <p className="text-justify mb-4 p-4">

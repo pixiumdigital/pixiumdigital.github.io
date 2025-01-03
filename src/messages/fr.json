@@ -28,12 +28,19 @@
       "seo_description": "Basée à Singapour et en France, Pixium Digital est une entreprise de développement numérique de premier plan, dédiée à accompagner les entreprises.",
       "title": "Accompagner les entreprises avec des <span class='has-before'>solutions numériques innovantes</span>",
       "intro": "Basée à Singapour, Pixium Digital est une entreprise de développement numérique de premier plan, dédiée à accompagner les entreprises à Singapour, en France et au-delà. Notre équipe dynamique d'ingénieurs expérimentés se spécialise dans la création de solutions IT innovantes adaptées à vos besoins spécifiques. Avec des décennies d'expertise combinée en apprentissage automatique, réalité augmentée, Internet des objets (IoT) et développement d'applications mobiles et web, nous transformons vos idées en produits numériques performants et impactants.<br><br>Nos services complets incluent l'audit, le développement, la personnalisation et l'intégration de solutions numériques qui favorisent la croissance et l'efficacité des entreprises. En tant que meilleure société de développement numérique à Singapour et en France, nous excellons dans la création de logiciels sur mesure, le développement des meilleurs sites web et la fourniture de solutions innovantes alignées sur votre vision.<br><br>Forte d'une solide expertise en stratégie d'entreprise et d'une ingénierie de pointe, Pixium Digital transforme vos besoins en résultats exceptionnels. Choisissez Pixium Digital comme partenaire de confiance pour le développement informatique et logiciel, et découvrez un soutien sans faille, une fiabilité et un engagement envers votre réussite.",
-      "block1_title": "🎯 Notre Mission : Innover pour un avenir numérique",
+      "block1_title": "Notre Mission : Innover pour un avenir numérique",
       "block1_description": "Notre mission est de fournir des solutions numériques exceptionnelles qui stimulent le succès des entreprises. En combinant technologies de pointe et stratégies personnalisées, nous aidons nos clients à exploiter leur plein potentiel dans un monde de plus en plus connecté.",
-      "block2_title": "💡 Notre Vision : Façonner l'avenir de votre paysage numérique",
+      "block2_title": "Notre Vision : Façonner l'avenir de votre paysage numérique",
       "block2_description": "Nous aspirons à devenir un partenaire mondial de confiance pour les entreprises recherchant des solutions numériques innovantes et évolutives, garantissant une croissance durable et un avantage concurrentiel.",
-      "block3_title": "🌟 Nos Valeurs",
+      "block3_title": "Nos Valeurs",
       "block3_description": "<ul><li>- Innovation : Toujours adopter les meilleures technologies pour fournir nos solutions.</li><li>- Collaboration : Construire des partenariats solides avec nos clients pour assurer leur succès.</li><li>- Qualité : Viser l'excellence dans chaque projet, grand ou petit.</li><li>- Intégrité : Respecter nos engagements avec honnêteté et transparence.</li></ul>"
+    },
+    "services": {
+      "seo_title": "Services | Développement digital en France Singapour",
+      "seo_description": "Pixium Digital est une entreprise de développement numérique basée à Singapour et en France. Nous proposons une large gamme de services, notamment le conseil en informatique, le développement logiciel et la transformation numérique. Nos services sont conçus pour aider les entreprises à atteindre leurs objectifs et à rester compétitives.",
+      "title": "<span class='has-before'>Services</span> que nous offrons",
+      "intro": "Passionnés par les défis technologiques",
+      "description": "Nous sommes dédiés à faire avancer votre parcours de transformation numérique. En tant que cabinet de conseil et de développement numérique de premier plan, nous proposons des solutions sur mesure pour aider des entreprises comme la vôtre à prospérer dans un paysage numérique en constante évolution."
     },
     "reviews":{
       "title": "Avis",

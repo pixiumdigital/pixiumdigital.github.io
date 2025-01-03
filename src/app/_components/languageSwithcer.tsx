@@ -15,11 +15,11 @@ export default function LanguageSwitcher({ locale }: { locale: string }) {
     <div style={{textAlign:"left"}}>
       { locale === 'en' ? 
         (<Link rel="canonical" href={switchLocale('fr')}>
-          <img src="/assets/images/flag-fr.png" title="french" width="30" height="30" loading="lazy" style={{display:"inline"}}
+          <img src="/assets/images/flag-fr.webp" title="french" width="30" height="30" loading="lazy" style={{display:"inline"}}
                             alt="language icon" />
         </Link>) :
         (<Link rel="canonical" href={switchLocale('en')} className={locale === 'en' ? 'active' : ''}>
-          <img src="/assets/images/flag-en.png" title="english" width="30" height="30" loading="lazy" style={{display:"inline"}}
+          <img src="/assets/images/flag-en.webp" title="english" width="30" height="30" loading="lazy" style={{display:"inline"}}
                             alt="language icon" />
         </Link>)
       }

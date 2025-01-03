@@ -1,4 +1,5 @@
 // import { locales } from '@/__navigation';
+import { SITE_CONFIG } from '@/config/config';
 import { Metadata } from 'next';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import React, { Component }  from 'react';
@@ -45,7 +46,7 @@ export default async function Index ( { params } : { params:{locale:string } } )
                     {/* style="--color: 174, 77%, 50%" */}
                     <div className="service-card" >
                         <div className="card-icon text-center">
-                        <img src="/assets/images/flag-sg.png" width="30" height="30" loading="lazy"
+                        <img src="/assets/images/flag-sg.webp" width="30" height="30" loading="lazy"
                             alt="service icon" />
                         </div>
                         <h3 className="h3">
@@ -65,7 +66,7 @@ export default async function Index ( { params } : { params:{locale:string } } )
                     {/* style="--color: 174, 77%, 50%" */}
                     <div className="service-card" >
                         <div className="card-icon">
-                        <img src="/assets/images/flag-fr.png" width="30" height="30" loading="lazy"
+                        <img src="/assets/images/flag-fr.webp" width="30" height="30" loading="lazy"
                             alt="service icon" />
                         </div>
                         <h3 className="h3">
@@ -84,7 +85,7 @@ export default async function Index ( { params } : { params:{locale:string } } )
                     {/* style="--color: 174, 77%, 50%" */}
                     <div className="service-card" >
                         <div className="card-icon">
-                        <img src="/assets/images/flag-sp.png" width="30" height="30" loading="lazy"
+                        <img src="/assets/images/flag-sp.webp" width="30" height="30" loading="lazy"
                             alt="service icon" />
                         </div>
                         <h3 className="h3">
@@ -117,7 +118,7 @@ export function generateMetadata({ params }: { params:{locale:string } }): Metad
         title: title,
         type:"website",
         description: description,
-        images: ['https://pixiumdigital.com/assets/images/pixium-logo.png'],
+        images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`]
       },
     };
 }

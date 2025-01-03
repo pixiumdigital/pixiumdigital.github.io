@@ -1,4 +1,5 @@
 // app/page.tsx
+import { SITE_CONFIG } from '@/config/config';
 import { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 
@@ -20,7 +21,7 @@ export function generateMetadata(): Metadata {
       title: title,
       type:"website",
       description: description,
-      images: ['https://pixiumdigital.com/assets/images/pixium-logo.png'],
+      images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`]
     },
   };
 }

@@ -5,6 +5,7 @@ import { getAllUseCase } from '@/lib/api';
 import { MoreStories } from '../../_components/more-stories';
 import Newsletter from '../../_components/newsletter';
 import { Metadata } from 'next';
+import { SITE_CONFIG } from '@/config/config';
 
 export function generateStaticParams() {
     return [
@@ -82,7 +83,7 @@ export function generateMetadata(): Metadata {
         title: title,
         type:"website",
         description: description,
-        images: ['https://pixiumdigital.com/assets/images/pixium-logo.png'],
+        images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`]
       },
     };
 }

@@ -15,11 +15,11 @@ export default async function Newsletter({ params }: Params) {
 
     return <div>
          <section className="section newsletter has-bg-image" aria-label="newsletter"
-            style={{backgroundImage: `url('/assets/images/newsletter-bg.jpg')`}}>
+            style={{backgroundImage: `url('/assets/images/newsletter-bg.webp')`}}>
             <div className="container">
 
             <figure className="newsletter-banner">
-                <img src="/assets/images/newsletter-banner.png" width="355" height="356" loading="lazy"
+                <img src="/assets/images/newsletter-banner.webp" width="355" height="356" loading="lazy"
                 alt="newsletter banner" className="w-100" />
             </figure>
 

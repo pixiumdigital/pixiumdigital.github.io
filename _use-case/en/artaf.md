@@ -1,7 +1,7 @@
 ---
 title: "Art AF"
 excerpt: "La réalité augmentée au service de l'art."
-coverImage: "/assets/blog/artaf/preview.png"
+coverImage: "/assets/blog/artaf/preview.webp"
 date: "2023-03-16T05:35:07.322Z"
 industry: Art / Augmented reality
 platform: Mobile
@@ -10,7 +10,7 @@ location: Singapore
 author:
   name: Remi Tache
 ogImage:
-  url: "/assets/blog/artaf/preview.png"
+  url: "/assets/blog/artaf/preview.webp"
 ---
 
 ## Project
@@ -33,7 +33,7 @@ The app provides a heightened experience of the ArtAF Art Exhibition at Conrad C
 
 ## Output
 
-![output_image_mobile](/assets/blog/artaf/img1.jpg)
-![output_image_mobile](/assets/blog/artaf/img2.jpg) 
-![output_image_mobile](/assets/blog/artaf/img3.jpg) 
-![output_image_mobile](/assets/blog/artaf/img4.jpg)
+![output_image_mobile](/assets/blog/artaf/img1.webp)
+![output_image_mobile](/assets/blog/artaf/img2.webp) 
+![output_image_mobile](/assets/blog/artaf/img3.webp) 
+![output_image_mobile](/assets/blog/artaf/img4.webp)

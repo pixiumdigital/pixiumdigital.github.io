@@ -5,35 +5,53 @@ import { getAllServices } from '@/lib/api';
 import { MoreServices } from '../../_components/more-stories';
 import Container from '../../_components/container';
 import { Metadata } from 'next';
+import { SITE_CONFIG, SUPPORTED_LOCALES } from '@/config/config';
 // import { unstable_setRequestLocale } from 'next-intl/server';
 // import { locales } from '@/__navigation';
 
 // import { SEO } from "../components/seo"
 
 export function generateStaticParams() {
-    return [
-      { locale: 'en' },
-      { locale: 'fr' }
-    ];
-  }
+    return SUPPORTED_LOCALES.map((locale: any) => ({ locale }));
+}
 
-export default function Index( { params } : { params:{locale:string } } ) {
+
+export default async function Index( { params } : { params:{locale:string } } ) {
     // unstable_setRequestLocale(params.locale);
+
+    const messages = await import(`@/messages/${params.locale}.json`);
 
     const allPosts = getAllServices();
     const morePosts = allPosts;
+
+    const jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': "Services Page",
+        'description': messages.services.seo_description,
+        'name': messages.services.seo_title,
+      }
 
     return (<>
         <section className="section service" id="service" aria-label="service">
             <div className="container">
 
-                <h2 className="h2 section-title text-center">
-                    <span className="has-before">Services</span>
+                <h2 className="h2 section-title text-center" dangerouslySetInnerHTML={{__html:messages.services.title}}>
                 </h2>
 
-                <p className='mb-5'>We are dedicated to driving your digital transformation journey forward.
-                    As a leading digital consulting and development firm, we offer tailored solutions 
-                    to help businesses like yours thrive in the rapidly evolving digital landscape.</p>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+                    <div className='p-4 mb-5'>
+                        <img className="circled w-50" src="/assets/images/working-people.webp" />
+                    </div>
+
+                    <div className='mt-5 mb-5 p-4 text-justify'>
+                        <h2 className='text-6xl mb-4'>{messages.services.intro}</h2>
+                        <p>
+                            {messages.services.description}
+                        </p>
+                    </div>
+                </div>
+
+                
             </div>
             
             <main>
@@ -61,7 +79,7 @@ export function generateMetadata(): Metadata {
         title: title,
         type:"website",
         description: description,
-        images: ['https://pixiumdigital.com/assets/images/pixium-logo.png'],
+        images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`]
       },
     };
 }

@@ -5,6 +5,7 @@ import { getAllBlog } from '@/lib/api';
 import { MoreBlog } from '../../_components/more-stories';
 import Container from '../../_components/container';
 import { Metadata } from 'next';
+import { SITE_CONFIG } from '@/config/config';
 
 //   }
 
@@ -61,7 +62,7 @@ export function generateMetadata(): Metadata {
         title: title,
         type:"website",
         description: description,
-        images: ['https://pixiumdigital.com/assets/images/pixium-logo.png'],
+        images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`]
       },
     };
 }

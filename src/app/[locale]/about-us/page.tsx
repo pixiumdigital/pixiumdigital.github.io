@@ -2,6 +2,7 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 import Whyworkwithus from '../../_components/whyworkwithus';
 import { Metadata } from 'next';
 import Process from '../../_components/process';
+import { SITE_CONFIG } from '@/config/config';
 // import { locales } from '@/__navigation';
 
 // export function generateStaticParams() {
@@ -48,17 +49,20 @@ export default async function Index ( { params } : { params:{locale:string } } )
             </div>
 
             <div className="container about-keypoints">
-              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 mt-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 mt-4">
                 {/* <div> */}
-                  <div>
+                  <div className="p-4">
+                      <p className='text-8xl mb-4'>🎯</p>
                       <h2 className='h3'>{messages.about.block1_title}</h2>
                       <p dangerouslySetInnerHTML={{__html:messages.about.block1_description}}></p>
                   </div>    
-                  <div>
+                  <div className="p-4">
+                      <p className='text-8xl mb-4'>💡</p>
                       <h2 className='h3'>{messages.about.block2_title}</h2>
                       <p dangerouslySetInnerHTML={{__html:messages.about.block2_description}}></p>
                   </div> 
-                  <div>
+                  <div className="p-4">
+                      <p className='text-8xl mb-4'>🌟</p>
                       <h2 className='h3'>{messages.about.block3_title}</h2>
                       <div dangerouslySetInnerHTML={{__html:messages.about.block3_description}}></div>  
                   </div>    
@@ -88,7 +92,7 @@ export function generateMetadata(): Metadata {
         title: title,
         type:"website",
         description: description,
-        images: ['https://pixiumdigital.com/assets/images/pixium-logo.png'],
+        images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`]
       },
     };
 }
