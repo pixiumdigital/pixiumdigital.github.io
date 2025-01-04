@@ -1,7 +1,7 @@
 ---
 title: "Art AF"
 excerpt: "Augmented Reality to bring artwork to a new level"
-coverImage: "/assets/blog/artaf/preview.png"
+coverImage: "/assets/blog/artaf/preview.webp"
 date: "2023-03-16T05:35:07.322Z"
 industry: Art / Réalité Augmentée
 platform: Mobile
@@ -10,7 +10,7 @@ location: Singapour
 author:
   name: Remi Tache
 ogImage:
-  url: "/assets/blog/artaf/preview.png"
+  url: "/assets/blog/artaf/preview.webp"
 ---
 ## Projet
 
@@ -33,7 +33,7 @@ L'application offre une expérience enrichie de l'exposition ArtAF au Conrad Cen
 ## Résultat
 
 
-![output_image_mobile](/assets/blog/artaf/img1.jpg)
-![output_image_mobile](/assets/blog/artaf/img2.jpg) 
-![output_image_mobile](/assets/blog/artaf/img3.jpg) 
-![output_image_mobile](/assets/blog/artaf/img4.jpg)
+![output_image_mobile](/assets/blog/artaf/img1.webp)
+![output_image_mobile](/assets/blog/artaf/img2.webp) 
+![output_image_mobile](/assets/blog/artaf/img3.webp) 
+![output_image_mobile](/assets/blog/artaf/img4.webp)

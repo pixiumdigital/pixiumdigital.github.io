@@ -77,7 +77,7 @@ export default async function Whyworkwithus({ params }: Params) {
                     <div>
                       <div className="gap-x-2" style={{margin:"10px", padding:"10px"}}>
                         <div className="mb-5">
-                            <img className="circled" src="/assets/images/pixium-result-driven.jpg" title="pixium result driven" alt="pixium result driven"/>
+                            <img className="circled" src="/assets/images/pixium-result-driven.webp" title="pixium result driven" alt="pixium result driven"/>
                         </div>
                         <div className="gap-x-8">
                             <h2 className="mb-8 text-2xl md:text-4xl font-bold tracking-tighter">Results-Driven</h2>

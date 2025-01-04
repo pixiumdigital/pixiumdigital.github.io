@@ -1,6 +1,6 @@
 // import { locales } from '@/__navigation';
-import { SITE_CONFIG } from '@/config/config';
-import { Metadata } from 'next';
+import { SITE_CONFIG, SUPPORTED_LOCALES } from '@/config/config';
+import { Metadata, MetadataRoute } from 'next';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import React, { Component }  from 'react';
 import { json } from 'stream/consumers';
@@ -13,6 +13,10 @@ import { json } from 'stream/consumers';
 //     const pages = locales;
 //     return pages.map((page) => ({ locale: page }));
 //   }
+
+export function generateStaticParams() {
+    return SUPPORTED_LOCALES.map((locale: any) => ({ locale }));
+}
 
 
 // const Index = ( { params } : { params:{locale:string } } ) => {
@@ -103,7 +107,6 @@ export default async function Index ( { params } : { params:{locale:string } } )
         </div>
     </section>;
 };
-
 
 export function generateMetadata({ params }: { params:{locale:string } }): Metadata {
     const title = `Contact Pixium Digital | Top web, software & mobile development comapny in Singapore and France`;
