@@ -117,7 +117,7 @@ export default async function Footer({locale} : Props) {
           <p className="copyright">
               &copy; {new Date().getFullYear()} Pixium Digital. All Rights Reserved
           </p>
-          <a rel="canonical" href="/sitemap.xml" target="_blank" style={{ color:"#777", display:"flex", right:"0px"}}>
+          <a rel="canonical" href="/sitemap-0.xml" target="_blank" style={{ color:"#777", display:"flex", right:"0px"}}>
               Sitemap
           </a>
           
