@@ -35,8 +35,8 @@ export default async function Index( { params } : { params:{locale:string } } ) 
         <section className="section service" id="service" aria-label="service">
             <div className="container">
 
-                <h2 className="h2 section-title text-center" dangerouslySetInnerHTML={{__html:messages.services.title}}>
-                </h2>
+                <h1 className="h2 section-title text-center" dangerouslySetInnerHTML={{__html:messages.services.title}}>
+                </h1>
 
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-4 p-4'>
                     <div className='p-4 mb-5'>

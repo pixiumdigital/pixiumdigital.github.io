@@ -19,9 +19,9 @@ export default function Index( { params } : { params:{locale:string } } ) {
         <section className="section service" id="service" aria-label="service">
             <div className="container">
 
-                <h2 className="h2 section-title text-center">
+                <h1 className="h2 section-title text-center">
                     <span className="has-before">Blog</span>
-                </h2>
+                </h1>
 
 
                 <p className='mb-5 text-justify'>
