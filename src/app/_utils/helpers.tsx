@@ -14,3 +14,59 @@ export function generateSitemapEntry(path: string, priority: number, changeFreq:
         priority: priority
     }
 }
+
+
+// src/utils/sitemap.ts
+export const languages = ['en', 'fr'] // Add your supported languages
+export const baseUrl = process.env.SITE_URL || 'https://pixiumdigital.com'
+
+export function createMultiLangSitemapEntries(
+    path: string,
+    options: {
+        priority?: number;
+        changeFreq?: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
+        lastMod?: Date;
+    } = {}
+) {
+    const {
+        priority = 0.5,
+        changeFreq = 'monthly',
+        lastMod = new Date()
+    } = options
+
+    return languages.map(locale => ({
+        url: `${baseUrl}/${locale}${path}`,
+        lastModified: lastMod,
+        changeFrequency: changeFreq,
+        priority: priority,
+        alternateRefs: languages.map(altLang => ({
+            href: `${baseUrl}/${altLang}${path}`,
+            hreflang: altLang
+        }))
+    }))
+}
+
+
+
+
+// interface PageConfig {
+//     paths: {
+//         [key in SUPPORTED]: string;
+//     };
+//     priority: number;
+//     changeFreq?: MetadataRoute.Sitemap[0]['changeFrequency'];
+// }
+
+// export function generateSitemapForLanguage(locale: Language, pages: PageConfig[]) {
+//     return pages.map(page => 
+//         createSitemapEntry(
+//             page.paths[locale],
+//             locale,
+//             {
+//                 priority: page.priority,
+//                 changeFreq: page.changeFreq,
+//                 lastMod: new Date()
+//             }
+//         )
+//     )
+// }
