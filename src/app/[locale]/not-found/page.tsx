@@ -1,5 +1,6 @@
 // import RootLayout from './[locale]/layout';
 
+import { SITE_CONFIG } from "@/config/config";
 import { Metadata } from "next";
 
 
