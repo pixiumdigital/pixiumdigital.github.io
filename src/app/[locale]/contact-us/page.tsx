@@ -120,7 +120,7 @@ export function generateMetadata({ params }: { params:{locale:string } }): Metad
       openGraph: {
         title: title,
         type:"website",
-        url: `https://${SITE_CONFIG.domain}/${params.locale}/contact-us`,
+        // url: `https://${SITE_CONFIG.domain}/${params.locale}/contact-us`,
         description: description,
         images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`],
       },

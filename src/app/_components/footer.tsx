@@ -125,23 +125,7 @@ export default async function Footer({locale} : Props) {
           {/* <div>
             <LanguageChanger />
           </div> */}
-          
-
-          {/* <ul className="footer-bottom-list">
-
-            <li>
-              <a href="#" className="footer-bottom-link">Terms and conditions</a>
-            </li>
-
-            <li>
-              <a href="#" className="footer-bottom-link">Privacy policy</a>
-            </li>
-
-            <li>
-              <a href="#" className="footer-bottom-link">Login / Signup</a>
-            </li>
-
-          </ul> */}
+         
 
         </div>
 

@@ -40,8 +40,8 @@ export default async function Index( { params }: Params ) {
             <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd)}}></script>
             <div className="container">
 
-                <h2 className="h2 section-title text-center" dangerouslySetInnerHTML={{__html: messages.usecase.title}}>
-                </h2>
+                <h1 className="h2 section-title text-center" dangerouslySetInnerHTML={{__html: messages.usecase.title}}>
+                </h1>
             </div>
             <main>
                 <Container>
@@ -72,7 +72,7 @@ export default async function Index( { params }: Params ) {
 
 
 export function generateMetadata(): Metadata {
-    const title = `Pixium Digital | Digital Development: Use cases for web, mobile and software`;
+    const title = `Pixium Digital | Use cases for web, mobile and software`;
     const description = `Explore how Pixium Digital helps businesses in Singapore, Nice and Monaco develop custom web, mobile and software solutions.`;
     // const previousImages = (await parent).openGraph?.images || []
 
