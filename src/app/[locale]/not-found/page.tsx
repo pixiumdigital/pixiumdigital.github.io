@@ -1,5 +1,7 @@
 // import RootLayout from './[locale]/layout';
 
+import { Metadata } from "next";
+
 
 export function generateStaticParams() {
     return [
@@ -38,5 +40,22 @@ export function generateStaticParams() {
               </section>
           </div>
         // </RootLayout>
-      );
-    }
+    );
+}
+
+
+export function generateMetadata(): Metadata {
+  const title = `Pixium Digital Singapore & France | Page Not found`;
+  const description = `Digital consulting and software development. Enhance operations, productivity, and profitability through scalable software, IT, and staffing solution.`;
+  
+  return {
+    title,
+    description: description,
+    openGraph: {
+      title: title,
+      type:"website",
+      description: description,
+      images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`]
+    },
+  };
+}
