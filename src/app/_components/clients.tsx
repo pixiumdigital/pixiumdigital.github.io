@@ -88,8 +88,8 @@ export default async function Clients({ params }: Params) {
         <section className="" id="pix-clients" aria-label="statistics">
             <main className="pb-4 mb-4">
                 <Container>
-                    <h1 className="h2 section-title text-center" dangerouslySetInnerHTML={{__html:messages.client.title}}>
-                    </h1>
+                    <h2 className="h2 section-title text-center" dangerouslySetInnerHTML={{__html:messages.client.title}}>
+                    </h2>
 
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                         {

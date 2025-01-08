@@ -16,3 +16,12 @@ Traditionally, web development involved manual coding and extensive testing. How
 AI's evolution marks a major shift in web development, affecting everything from design and user experience to accessibility and search engine optimization (SEO). This shift unlocks new possibilities, enabling developers to build more engaging, interactive, and personalized digital experiences.
 
 [Read the full article...](https://dev.to/pixiumdigital/web-development-with-ai-dismantling-the-future-36ec) 
+
+
+----------------
+----------------
+----------------
+----------------
+
+Not a developer expert but still need to build a website or platform? Have a look at this article.
+<a href="https://www.designrush.com/agency/website-design-development/wix/trends/wix-vs-wordpress">Wix vs Wordpress websites</a>

@@ -15,8 +15,8 @@ export default async function Industry({ params }: Params) {
         <section className="section service" id="industries" aria-label="industry" style={{paddingTop:"40px"}}>
             <div className="container">
 
-                <h1 className="h2 section-title text-center" dangerouslySetInnerHTML={{__html:messages.industry.title}}>
-                </h1>
+                <h2 className="h2 section-title text-center" dangerouslySetInnerHTML={{__html:messages.industry.title}}>
+                </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
