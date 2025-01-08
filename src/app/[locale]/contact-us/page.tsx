@@ -37,8 +37,8 @@ export default async function Index ( { params } : { params:{locale:string } } )
 
         <div className="container">
 
-            <h2 className="h2 section-title text-center" dangerouslySetInnerHTML={{__html:messages.contact.title}}>
-            </h2>
+            <h1 className="h2 section-title text-center" dangerouslySetInnerHTML={{__html:messages.contact.title}}>
+            </h1>
 
             <p className='mb-5 text-justify'>{messages.contact.intro}</p>
         
@@ -109,7 +109,7 @@ export default async function Index ( { params } : { params:{locale:string } } )
 };
 
 export function generateMetadata({ params }: { params:{locale:string } }): Metadata {
-    const title = `Contact Pixium Digital | Top web, software & mobile development comapny in Singapore and France`;
+    const title = `Contact | Web & software & mobile development in Singapore`;
     const description = `Contact us and our team will gather your specification, 
     goals and expectations about the project.`;
     // const previousImages = (await parent).openGraph?.images || []
@@ -120,8 +120,15 @@ export function generateMetadata({ params }: { params:{locale:string } }): Metad
       openGraph: {
         title: title,
         type:"website",
+        url: `https://${SITE_CONFIG.domain}/${params.locale}/contact-us`,
         description: description,
-        images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`]
+        images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: title,
+        description: description,
+        images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`],
       },
     };
 }
