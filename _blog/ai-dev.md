@@ -24,4 +24,4 @@ AI's evolution marks a major shift in web development, affecting everything from
 ----------------
 
 Not a developer expert but still need to build a website or platform? Have a look at this article.
-<a href="https://www.designrush.com/agency/website-design-development/wix/trends/wix-vs-wordpress">Wix vs Wordpress websites</a>
+<a href="https://www.designrush.com/agency/website-design-development/wix/trends/wix-vs-wordpress" target="_blank">Wix vs Wordpress websites</a>

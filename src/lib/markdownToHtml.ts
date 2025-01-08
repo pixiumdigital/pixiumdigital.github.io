@@ -14,6 +14,7 @@ export default async function markdownToHtml(markdown: string) {
       ...defaultSchema.attributes,
       img: ["src", "alt", "width", "height", "style", "class", "className"], // Allow img attributes
       div: ["style", "class", "className"], // Allow div attributes
+      a: ["target", "class", "className", "href", "title"], // Allow div attributes
       ul: [],
       li: []
     },
