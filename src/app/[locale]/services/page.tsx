@@ -65,21 +65,41 @@ export default async function Index( { params } : { params:{locale:string } } ) 
     </>);
 };
 
+type Params = {
+    params: {
+      slug: string;
+      locale:string;
+    };
+  };
 
-export function generateMetadata(): Metadata {
+export function generateMetadata({ params }: Params): Metadata {
     const title = `Services | Pixium Digital`;
     const description = `Enhance your business operations with pixium digital. Expoert software solutions, IT consulting, and advanced infrstraucture for digital transformation.`;
     // const previousImages = (await parent).openGraph?.images || []
 
+    const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/services`;
+
     return {
       title,
+      alternates: {
+        canonical: canonicalUrl,
+      },
       description: description,
       keywords: ["services for web development in Singapore","best custom software developers in Singapore", "digital development singapore", "top web development singapore", "digital consulting in Singapore", "ChatGPT integration"],
       openGraph: {
         title: title,
+        siteName: "Pixium Digital",
+        url: canonicalUrl,
         type:"website",
         description: description,
         images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`]
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: title,
+        site: canonicalUrl,
+        description: description,
+        images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`],
       },
     };
 }

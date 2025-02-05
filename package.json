@@ -7,7 +7,9 @@
     "add-locale": "lingui add-locale",
     "extract": "lingui extract --clean",
     "compile": "lingui compile",
-    "postbuild": "next-sitemap"
+    "sitemap:en": "npx next-sitemap --config next-sitemap.config.js",
+    "sitemap:fr": "npx next-sitemap --config next-sitemap.fr.config.js",
+    "postbuild": "npm run sitemap:en && npm run sitemap:fr && node scripts/merge-sitemap-index.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",

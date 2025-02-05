@@ -13,7 +13,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Process from "@/app/_components/process";
-import { SUPPORTED_LOCALES } from "@/config/config";
+import { SITE_CONFIG, SUPPORTED_LOCALES } from "@/config/config";
 
 export default async function Post({ params }: Params) {
   const post = getServiceBySlug(params.slug, params.locale);
@@ -33,9 +33,9 @@ export default async function Post({ params }: Params) {
         <FontAwesomeIcon icon={faArrowLeft} height="20" className="inline-flex" /> {messages.button.back}
       </Link>
       <Container>
-        <h2 className="h2 section-title text-center">
+          <h1 className="h2 section-title text-center">
               <span className="has-before">{post.title}</span>
-          </h2>
+          </h1>
         <article className="mb-32">
           <div>
             <PostBody content={content} />
@@ -60,17 +60,34 @@ type Params = {
 
 export function generateMetadata({ params }: Params): Metadata {
   const post = getServiceBySlug(params.slug, params.locale);
+  const description = `${post.excerpt}`;
+  const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/blog/${post.slug}`
 
   if (!post) {
     return notFound();
   }
   const title = `${post.title} | Pixium Digital service`;
+
   return {
     title,
+    description: description,
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       title,
       type:"website",
+      siteName: "Pixium Digital",
+      url: canonicalUrl,
+      description: description,
       images: [post.ogImage.url],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: title,
+      site: canonicalUrl,
+      description: post.excerpt,
+      images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`],
     },
   };
 }

@@ -1,6 +1,6 @@
 ---
 title: "Logiciels d'entreprise"
-excerpt: "Accompagner les entreprises avec des solutions logicielles d'entreprise évolutives, sécurisées et innovantes, adaptées pour stimuler la croissance et l'excellence opérationnelle."
+excerpt: "Accompagner les entreprises avec des solutions logicielles d'entreprise évolutives, sécurisées, innovantes et adaptées"
 coverImage: "/assets/services/menu-soft.png"
 date: "2024-03-16T05:35:07.322Z"
 author:

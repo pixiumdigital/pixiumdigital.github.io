@@ -114,12 +114,19 @@ export function generateMetadata({ params }: { params:{locale:string } }): Metad
     goals and expectations about the project.`;
     // const previousImages = (await parent).openGraph?.images || []
 
+    const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/contact-us`;
+
     return {
       title,
       description: description,
+      alternates: {
+        canonical: canonicalUrl,
+      },
       openGraph: {
         title: title,
         type:"website",
+        url: canonicalUrl,
+        siteName: "Pixium Digital",
         // url: `https://${SITE_CONFIG.domain}/${params.locale}/contact-us`,
         description: description,
         images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`],
@@ -127,6 +134,7 @@ export function generateMetadata({ params }: { params:{locale:string } }): Metad
       twitter: {
         card: "summary_large_image",
         title: title,
+        site: canonicalUrl,
         description: description,
         images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`],
       },

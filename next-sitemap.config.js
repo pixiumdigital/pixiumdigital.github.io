@@ -2,11 +2,16 @@
 // Default code you can customize according to your requirements.
 
 module.exports = {
-    siteUrl: process.env.SITE_URL || 'https://pixiumdigital.com',
-    generateRobotsTxt: true, // (optional)
-    sitemapSize: 7000,
+    siteUrl: 'https://pixiumdigital.com',
+    generateRobotsTxt: true,
+    sitemapIndexFileName: 'sitemap.xml', // explicitly name your sitemap index
+    additionalSitemaps: ['https://pixiumdigital.com/sitemap-fr.xml'], // add your French sitemap URL
 
     transform: async (config, path) => {
+        if (!path.startsWith('/en')) {
+            return null;
+        }
+
         // custom function to ignore the path
         // if (customIgnoreFunction(path)) {
         //   return null
@@ -45,16 +50,33 @@ module.exports = {
         //   }
         // }
 
-        
+        return {
+            loc: path, // e.g., "/en/about"
+            changefreq: 'weekly', // config.changefreq,
+            priority: _priority, //config.priority,
+            lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
+            // Include the French alternate reference (if needed)
+            // alternateRefs: [
+            //     {
+            //         href: path.replace('/en', '/fr'),
+            //         hreflang: 'fr',
+            //     },
+            // ],
+            // loc: path, // => this will be exported as http(s)://<config.siteUrl>/<path>
+            // changefreq: 'weekly', // config.changefreq,
+            // priority: _priority, //config.priority,
+            // lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
+            // alternateRefs: config.alternateRefs, // Adds the alternate language URLs
+          };
     
         // Use default transformation for all other cases
-        return {
-          loc: path, // => this will be exported as http(s)://<config.siteUrl>/<path>
-          changefreq: 'weekly', // config.changefreq,
-          priority: _priority, //config.priority,
-          lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
-          alternateRefs: config.alternateRefs ?? [],
-        }
+        // return {
+        //   loc: path, // => this will be exported as http(s)://<config.siteUrl>/<path>
+        //   changefreq: 'weekly', // config.changefreq,
+        //   priority: _priority, //config.priority,
+        //   lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
+        //   alternateRefs: config.alternateRefs ?? [],
+        // }
     },
     // REST CODE READ DOCS  ...
 }

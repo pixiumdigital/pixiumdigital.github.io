@@ -71,19 +71,33 @@ export default async function Index( { params }: Params ) {
 };
 
 
-export function generateMetadata(): Metadata {
+export function generateMetadata({ params }: Params): Metadata {
     const title = `Pixium Digital | Use cases for web, mobile and software`;
     const description = `Explore how Pixium Digital helps businesses in Singapore, Nice and Monaco develop custom web, mobile and software solutions.`;
     // const previousImages = (await parent).openGraph?.images || []
 
+    const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/use-case`;
+    
     return {
       title,
+      alternates: {
+        canonical: canonicalUrl,
+      },
       description: description,
       openGraph: {
         title: title,
+        siteName: "Pixium Digital",
+        url: canonicalUrl,
         type:"website",
         description: description,
         images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`]
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: title,
+        site: canonicalUrl,
+        description: description,
+        images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`],
       },
     };
 }

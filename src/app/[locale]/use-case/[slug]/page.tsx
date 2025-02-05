@@ -15,6 +15,7 @@ import Whyworkwithus from "@/app/_components/whyworkwithus";
 import Newsletter from "@/app/_components/newsletter";
 
 import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/card";
+import { SITE_CONFIG } from "@/config/config";
 
 
 export default async function Post({ params }: Params) {
@@ -51,7 +52,7 @@ export default async function Post({ params }: Params) {
 
             <Card className="p-6 border-2 rounded-2xl">
                 <CardHeader className="w-100">
-                    <h1 className="w-100 text-4xl text-center">{messages.usecase.details}</h1>
+                    <h2 className="w-100 text-4xl text-center">{messages.usecase.details}</h2>
                 </CardHeader>
                 <CardBody>
                   <hr></hr>
@@ -98,22 +99,37 @@ type Params = {
 export function generateMetadata({ params }: Params): Metadata {
   const post = getUseCaseBySlug(params.slug, params.locale);
 
+  const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/blog/${post.slug}`
+
   if (!post) {
     return notFound();
   }
   
-  const title = `${post.title} | Pixium Digital: Use cases for web, mobile and software`;
+  const title = `${post.title} | Pixium Digital: Use cases`;
   const description = `Pixium Digital: ${post.excerpt}`;
 
   const ogImageUrl = `${process.env.NODE_ENV === 'production' ? 'https://pixiumdigital.com' : ''}`;
 
   return {
     title,
+    alternates: {
+      canonical: canonicalUrl,
+    },
     description: description,
     openGraph: {
       title,
+      description: post.excerpt,
+      siteName: "Pixium Digital",
+      url: canonicalUrl,
       type:"website",
       images: [ogImageUrl+'/'+post.ogImage.url],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: title,
+      site: canonicalUrl,
+      description: post.excerpt,
+      images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`],
     },
   };
 }
