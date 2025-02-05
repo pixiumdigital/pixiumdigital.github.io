@@ -50,7 +50,7 @@ export default async function Post({ params }: Params) {
               />
             </div>
 
-            <Card className="p-6 border-2 rounded-2xl">
+            <Card className="p-6 border-2 rounded-2xl bg-white">
                 <CardHeader className="w-100">
                     <h2 className="w-100 text-4xl text-center">{messages.usecase.details}</h2>
                 </CardHeader>
