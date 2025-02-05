@@ -80,19 +80,39 @@ export default async function Index ( { params } : { params:{locale:string } } )
 };
 
 
-export function generateMetadata(): Metadata {
+type Params = {
+  params: {
+    locale:string;
+  };
+};
+
+export function generateMetadata({ params }: Params): Metadata {
     const title = `About | Top Digital Development Company - Singapore`;
     const description = `Pixium Digital: A leading digital development company in Singapore & France (Nice & Monaco). Specialized in custom web, software and mobile development.`;
     // const previousImages = (await parent).openGraph?.images || []
 
+    const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/about-us`;
+
     return {
       title,
+      alternates: {
+        canonical: canonicalUrl,
+      },
       description: description,
       openGraph: {
         title: title,
+        siteName: "Pixium Digital",
+        url: canonicalUrl,
         type:"website",
         description: description,
         images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`]
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: title,
+        site: canonicalUrl,
+        description: description,
+        images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`],
       },
     };
 }

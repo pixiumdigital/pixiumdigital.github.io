@@ -50,19 +50,39 @@ export default function Index( { params } : { params:{locale:string } } ) {
 };
 
 
-export function generateMetadata(): Metadata {
+type Params = {
+    params: {
+      locale:string;
+    };
+  };
+
+export function generateMetadata({ params }: Params): Metadata {
     const title = `Blog | Pixium Digital`;
     const description = `We design, create and maintain your web, mobile, IOT or servless application.`;
     // const previousImages = (await parent).openGraph?.images || []
 
+    const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/blog`;
+
     return {
       title,
+      alternates: {
+        canonical: canonicalUrl,
+      },
       description: description,
       openGraph: {
         title: title,
+        siteName: "Pixium Digital",
+        url: canonicalUrl,
         type:"website",
         description: description,
         images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`]
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: title,
+        site: canonicalUrl,
+        description: description,
+        images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`],
       },
     };
 }
