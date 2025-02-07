@@ -61,7 +61,7 @@ type Params = {
 export function generateMetadata({ params }: Params): Metadata {
   const post = getServiceBySlug(params.slug, params.locale);
   const description = `${post.excerpt}`;
-  const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/blog/${post.slug}`
+  const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/services/${post.slug}`
 
   if (!post) {
     return notFound();

@@ -99,7 +99,7 @@ type Params = {
 export function generateMetadata({ params }: Params): Metadata {
   const post = getUseCaseBySlug(params.slug, params.locale);
 
-  const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/blog/${post.slug}`
+  const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/use-case/${post.slug}`
 
   if (!post) {
     return notFound();
