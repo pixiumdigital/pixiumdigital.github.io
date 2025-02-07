@@ -99,18 +99,26 @@ export default async function Index( { params }: Params ) {
 }
 
 
-export function generateMetadata(): Metadata {
+export function generateMetadata({ params }: Params): Metadata {
     const title = `Pixium Digital | Top Digital Development Company - Singapore`;
     const description = `Digital consulting and software development. Enhance operations, productivity, and profitability through scalable software, IT, and staffing solution.`;
     // const previousImages = (await parent).openGraph?.images || []
-    const canonicalUrl = `https://${SITE_CONFIG.domain}`;
+    const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/`;
+
+    const locales = ['en', 'fr'];
+    // Generate hreflang entries for all supported languages
+    const languages = locales.map(lang => ({
+      [lang === 'en' ? 'x-default' : lang]: `https://${SITE_CONFIG.domain}/${lang}/`,
+    }));
+    const alternates = {
+      canonical: canonicalUrl,
+      languages: Object.assign({}, ...languages),
+    };
 
     return {
       title,
       description: description,
-      alternates: {
-        canonical: canonicalUrl,
-      },
+      alternates: alternates,
       openGraph: {
         title: title,
         type:"website",

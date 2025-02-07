@@ -63,6 +63,17 @@ export function generateMetadata({ params }: Params): Metadata {
   const description = `${post.excerpt}`;
   const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/services/${post.slug}`
 
+
+  const locales = ['en', 'fr'];
+  // Generate hreflang entries for all supported languages
+  const languages = locales.map(lang => ({
+    [lang === 'en' ? 'x-default' : lang]: `https://${SITE_CONFIG.domain}/${lang}/services/${post.slug}`,
+  }));
+  const alternates = {
+    canonical: canonicalUrl,
+    languages: Object.assign({}, ...languages),
+  };
+
   if (!post) {
     return notFound();
   }
@@ -71,9 +82,7 @@ export function generateMetadata({ params }: Params): Metadata {
   return {
     title,
     description: description,
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    alternates: alternates,
     openGraph: {
       title,
       type:"website",

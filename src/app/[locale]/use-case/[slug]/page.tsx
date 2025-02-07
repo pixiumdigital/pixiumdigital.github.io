@@ -110,11 +110,19 @@ export function generateMetadata({ params }: Params): Metadata {
 
   const ogImageUrl = `${process.env.NODE_ENV === 'production' ? 'https://pixiumdigital.com' : ''}`;
 
+  const locales = ['en', 'fr'];
+  // Generate hreflang entries for all supported languages
+  const languages = locales.map(lang => ({
+    [lang === 'en' ? 'x-default' : lang]: `https://${SITE_CONFIG.domain}/${lang}/use-case/${post.slug}`,
+  }));
+  const alternates = {
+    canonical: canonicalUrl,
+    languages: Object.assign({}, ...languages),
+  };
+
   return {
     title,
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    alternates: alternates,
     description: description,
     openGraph: {
       title,

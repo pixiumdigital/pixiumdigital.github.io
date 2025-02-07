@@ -74,12 +74,22 @@ export function generateMetadata({ params }: Params): Metadata {
   if (!post) {
     return notFound();
   }
+
+  const locales = ['en', 'fr'];
+  // Generate hreflang entries for all supported languages
+  const languages = locales.map(lang => ({
+    [lang === 'en' ? 'x-default' : lang]: `https://${SITE_CONFIG.domain}/${lang}/blog/${post.slug}`,
+  }));
+  const alternates = {
+    canonical: canonicalUrl,
+    languages: Object.assign({}, ...languages),
+  };
+
+
   const title = `${post.title} | Pixium Digital service`;
   return {
     title,
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    alternates: alternates,
     openGraph: {
       title,
       description: post.excerpt,
