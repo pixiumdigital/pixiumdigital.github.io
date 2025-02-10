@@ -36,26 +36,31 @@ export default function Header({ services, locale, messages }: Props) {
 
     const menuItems = [
       {
+        "id": 1,
         "url": `/${locale}/services/`,
         "text": messages.navigation ? messages.navigation.services : '',
         "desktop": false,
       },
       {
+        "id": 2,
         "url": `/${locale}/about-us/`,
         "text": messages.navigation ? messages.navigation.about : '',
         "desktop": true,
       },
       {
+        "id": 3,
         "url": `/${locale}/use-case/`,
         "text": messages.navigation ? messages.navigation.usecase : '',
         "desktop": true,
       },
       {
+        "id": 4,
         "url": `/${locale}/blog/`,
         "text": messages.navigation ? messages.navigation.blog : '',
         "desktop": true,
       },
       {
+        "id": 5,
         "url": `/${locale}/contact-us/`,
         "text": messages.navigation ? messages.navigation.contact : '',
         "desktop": true,
@@ -101,7 +106,7 @@ export default function Header({ services, locale, messages }: Props) {
             </NavbarBrand>
           <NavbarContent className="hidden sm:flex gap-4 mr-3" justify="center">
             <Dropdown>
-              <NavbarItem>
+              <NavbarItem key={"navbaritem-button"}>
                 <DropdownTrigger>
                   <Button
                     disableRipple
@@ -135,7 +140,7 @@ export default function Header({ services, locale, messages }: Props) {
 
             {menuItems.map((item, index) => (
               (item.desktop ?
-              <NavbarItem>
+              <NavbarItem key={"navbaritem-"+item.id}>
                 <Link rel="canonical" href={item.url} className="navbar-link px-4" aria-current="page" data-nav-link>
                   {item.text}
                 </Link>
@@ -145,7 +150,7 @@ export default function Header({ services, locale, messages }: Props) {
           </NavbarContent>
 
           <NavbarContent justify="end">
-            <NavbarItem className="lg:flex">
+            <NavbarItem key={"navbaritem-contactus"} className="lg:flex">
               <a rel="canonical" href="mailto:contactus@pixiumdigital.com" className="btn btn-primary has-before has-after">{messages.button ? messages.button.letstalk : ''}</a>
             </NavbarItem>
           </NavbarContent>
