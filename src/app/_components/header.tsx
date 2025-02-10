@@ -36,27 +36,27 @@ export default function Header({ services, locale, messages }: Props) {
 
     const menuItems = [
       {
-        "url": `/${locale}/services`,
+        "url": `/${locale}/services/`,
         "text": messages.navigation ? messages.navigation.services : '',
         "desktop": false,
       },
       {
-        "url": `/${locale}/about-us`,
+        "url": `/${locale}/about-us/`,
         "text": messages.navigation ? messages.navigation.about : '',
         "desktop": true,
       },
       {
-        "url": `/${locale}/use-case`,
+        "url": `/${locale}/use-case/`,
         "text": messages.navigation ? messages.navigation.usecase : '',
         "desktop": true,
       },
       {
-        "url": `/${locale}/blog`,
+        "url": `/${locale}/blog/`,
         "text": messages.navigation ? messages.navigation.blog : '',
         "desktop": true,
       },
       {
-        "url": `/${locale}/contact-us`,
+        "url": `/${locale}/contact-us/`,
         "text": messages.navigation ? messages.navigation.contact : '',
         "desktop": true,
       },
@@ -123,7 +123,7 @@ export default function Header({ services, locale, messages }: Props) {
                       // startContent={<Image src={service.coverImage} alt="" width={30} height={30} />}
                       // classNames={{base:"bbb", wrapper:"my_wrap"}}
                     >
-                      <Link rel="canonical" href={`/${locale}/services/`+service.slug} className="navbar-link px-4 py-2" aria-current="page" data-nav-link>
+                      <Link rel="canonical" href={`/${locale}/services/`+service.slug+`/`} className="navbar-link px-4 py-2" aria-current="page" data-nav-link>
                         {service.title}
                       </Link>
                     </DropdownItem>)

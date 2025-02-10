@@ -1,7 +1,7 @@
 ---
 title: "SnapScene AR"
 excerpt: "Augmented reality for home furnitures and design"
-coverImage: "/assets/blog/snapscene/preview.png"
+coverImage: "/assets/blog/snapscene/preview.webp"
 date: "2022-03-16T05:35:07.322Z"
 industry: Augmented reality / Home furnitures
 platform: Mobile
@@ -10,7 +10,7 @@ location: Singapore
 author:
   name: Remi Tache
 ogImage:
-  url: "/assets/blog/snapscene/preview.png"
+  url: "/assets/blog/snapscene/preview.webp"
 ---
 
 ## Project

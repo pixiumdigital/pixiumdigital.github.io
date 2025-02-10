@@ -62,12 +62,18 @@ export function generateMetadata({ params }: Params): Metadata {
     // const previousImages = (await parent).openGraph?.images || []
 
     const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/blog`;
+    const locales = ['en', 'fr'];
+    const languages = locales.map(lang => ({
+      [lang === 'en' ? 'x-default' : lang]: `https://${SITE_CONFIG.domain}/${lang}/services/`,
+    }));
+    const alternates = {
+      canonical: canonicalUrl,
+      languages: Object.assign({}, ...languages),
+    };
 
     return {
       title,
-      alternates: {
-        canonical: canonicalUrl,
-      },
+      alternates: alternates,
       description: description,
       openGraph: {
         title: title,

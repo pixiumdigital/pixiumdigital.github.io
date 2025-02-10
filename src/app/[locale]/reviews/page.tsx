@@ -157,20 +157,40 @@ export default async function Index ( { params } : { params:{locale:string } } )
 };
 
 
-export function generateMetadata(): Metadata {
+export function generateMetadata({ params }: { params:{locale:string } }): Metadata {
     const title = `Review | Pixium Digital`;
     const description = `Pixium Digital is a creative digital firm powered by a gregarious group 
     of engineers with a broad range of IT solutions expertise`;
     // const previousImages = (await parent).openGraph?.images || []
 
+    const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/reviews/`;
+    const locales = ['en', 'fr'];
+    const languages = locales.map(lang => ({
+      [lang === 'en' ? 'x-default' : lang]: `https://${SITE_CONFIG.domain}/${lang}/reviews/`,
+    }));
+    const alternates = {
+      canonical: canonicalUrl,
+      languages: Object.assign({}, ...languages),
+    };
+
     return {
       title,
       description: description,
+      alternates: alternates,
       openGraph: {
         title: title,
         type:"website",
+        url: canonicalUrl,
+        siteName: "Pixium Digital",
         description: description,
         images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`]
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: title,
+        site: canonicalUrl,
+        description: description,
+        images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`],
       },
     };
 }

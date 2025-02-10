@@ -1,7 +1,7 @@
 ---
 title: "SnapScene AR"
 excerpt: "Réalité augmentée pour les meubles et la décoration intérieure"
-coverImage: "/assets/blog/snapscene/preview.png"
+coverImage: "/assets/blog/snapscene/preview.webp"
 date: "2019-03-16T05:35:07.322Z"
 industry: Réalité augmentée / Meubles pour la maison
 platform: Mobile
@@ -10,7 +10,7 @@ location: Singapour
 author:
   name: Remi Tache
 ogImage:
-  url: "/assets/blog/snapscene/preview.png"
+  url: "/assets/blog/snapscene/preview.webp"
 ---
 
 ## Projet

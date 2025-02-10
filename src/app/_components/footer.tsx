@@ -60,22 +60,22 @@ export default async function Footer({locale} : Props) {
                 <p className="footer-list-title">{messages.footer.title_links}</p>
               </li>
               <li>
-                  <a rel="canonical" href={"/"+locale+"/services"} className="footer-link">{messages ? messages.navigation.services : ""}</a>
+                  <a rel="canonical" href={"/"+locale+"/services/"} className="footer-link">{messages ? messages.navigation.services : ""}</a>
               </li>
               <li>
-                <a rel="canonical" href={"/"+locale+"/about-us"} className="footer-link">{messages.navigation.about}</a>
+                <a rel="canonical" href={"/"+locale+"/about-us/"} className="footer-link">{messages.navigation.about}</a>
               </li>
               <li>
-                  <a rel="canonical" href={"/"+locale+"/use-case"} className="footer-link">{messages.navigation.usecase}</a>
+                  <a rel="canonical" href={"/"+locale+"/use-case/"} className="footer-link">{messages.navigation.usecase}</a>
               </li>
               <li>
-                  <a rel="canonical" href={"/"+locale+"/blog"} className="footer-link">{messages.navigation.blog}</a>
+                  <a rel="canonical" href={"/"+locale+"/blog/"} className="footer-link">{messages.navigation.blog}</a>
               </li>
               <li>
-                  <a rel="canonical" href={"/"+locale+"/contact-us"} className="footer-link">{messages.navigation.contact}</a>
+                  <a rel="canonical" href={"/"+locale+"/contact-us/"} className="footer-link">{messages.navigation.contact}</a>
               </li>
               <li>
-                  <a rel="canonical" href={"/"+locale+"/reviews"} className="footer-link">{messages.navigation.review}</a>
+                  <a rel="canonical" href={"/"+locale+"/reviews/"} className="footer-link">{messages.navigation.review}</a>
               </li>
           </ul>
 

@@ -114,20 +114,26 @@ export function generateMetadata({ params }: { params:{locale:string } }): Metad
     goals and expectations about the project.`;
     // const previousImages = (await parent).openGraph?.images || []
 
-    const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/contact-us`;
+    const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/contact-us/`;
+    const locales = ['en', 'fr'];
+    const languages = locales.map(lang => ({
+      [lang === 'en' ? 'x-default' : lang]: `https://${SITE_CONFIG.domain}/${lang}/contact-us/`,
+    }));
+    const alternates = {
+      canonical: canonicalUrl,
+      languages: Object.assign({}, ...languages),
+    };
 
     return {
       title,
       description: description,
-      alternates: {
-        canonical: canonicalUrl,
-      },
+      alternates: alternates,
       openGraph: {
         title: title,
         type:"website",
         url: canonicalUrl,
         siteName: "Pixium Digital",
-        // url: `https://${SITE_CONFIG.domain}/${params.locale}/contact-us`,
+        // url: `https://${SITE_CONFIG.domain}/${params.locale}/contact-us/`,
         description: description,
         images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`],
       },

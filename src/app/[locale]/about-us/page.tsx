@@ -93,11 +93,18 @@ export function generateMetadata({ params }: Params): Metadata {
 
     const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/about-us`;
 
+    const locales = ['en', 'fr'];
+    const languages = locales.map(lang => ({
+      [lang === 'en' ? 'x-default' : lang]: `https://${SITE_CONFIG.domain}/${lang}/about-us/`,
+    }));
+    const alternates = {
+      canonical: canonicalUrl,
+      languages: Object.assign({}, ...languages),
+    };
+
     return {
       title,
-      alternates: {
-        canonical: canonicalUrl,
-      },
+      alternates: alternates,
       description: description,
       openGraph: {
         title: title,

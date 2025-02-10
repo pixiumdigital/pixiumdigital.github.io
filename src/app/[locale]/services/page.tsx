@@ -77,13 +77,20 @@ export function generateMetadata({ params }: Params): Metadata {
     const description = `Enhance your business operations with pixium digital. Expoert software solutions, IT consulting, and advanced infrstraucture for digital transformation.`;
     // const previousImages = (await parent).openGraph?.images || []
 
-    const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/services`;
+    const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/services/`;
+
+    const locales = ['en', 'fr'];
+    const languages = locales.map(lang => ({
+      [lang === 'en' ? 'x-default' : lang]: `https://${SITE_CONFIG.domain}/${lang}/services/`,
+    }));
+    const alternates = {
+      canonical: canonicalUrl,
+      languages: Object.assign({}, ...languages),
+    };
 
     return {
       title,
-      alternates: {
-        canonical: canonicalUrl,
-      },
+      alternates: alternates,
       description: description,
       keywords: ["services for web development in Singapore","best custom software developers in Singapore", "digital development singapore", "top web development singapore", "digital consulting in Singapore", "ChatGPT integration"],
       openGraph: {
