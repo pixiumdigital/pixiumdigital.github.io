@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 
 
-export default async function RootPage() {
+export default function RootPage() {
   redirect('/en');
 
   return null;
