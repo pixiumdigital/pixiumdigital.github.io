@@ -26,17 +26,7 @@ export default async function Index ( { params } : { params:{locale:string } } )
 
     const messages = await import(`@/messages/${params.locale}.json`);
 
-    const jsonLd = {
-      '@context': 'https://schema.org',
-      '@type': "About Us Page",
-      'description': messages.about.seo_description,
-      'name': messages.about.seo_title,
-    }
-    
     return <><section className="section service" id="service" aria-label="service">
-            <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd)}}></script>
-
-
             <div className="container">
 
                 <h1 className="h1 section-title text-center" dangerouslySetInnerHTML={{__html:messages.about.title}}>
@@ -102,6 +92,14 @@ export function generateMetadata({ params }: Params): Metadata {
       languages: Object.assign({}, ...languages),
     };
 
+    const jsonLd = {
+      '@context': 'https://schema.org',
+      '@type': "WebPage",
+      'description': description,
+      'name': title,
+      'url' : canonicalUrl
+    }
+
     return {
       title,
       alternates: alternates,
@@ -121,5 +119,8 @@ export function generateMetadata({ params }: Params): Metadata {
         description: description,
         images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`],
       },
+      other: {
+        'json-ld': JSON.stringify(jsonLd)
+      }
     };
 }
