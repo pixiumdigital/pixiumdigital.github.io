@@ -3,6 +3,7 @@ import Whyworkwithus from '../../_components/whyworkwithus';
 import { Metadata } from 'next';
 import Process from '../../_components/process';
 import { SITE_CONFIG } from '@/config/config';
+import Script from 'next/script';
 // import { locales } from '@/__navigation';
 
 // export function generateStaticParams() {
@@ -26,7 +27,33 @@ export default async function Index ( { params } : { params:{locale:string } } )
 
     const messages = await import(`@/messages/${params.locale}.json`);
 
+    const title = `About | Top Digital Development Company - Singapore`;
+    const description = `Pixium Digital: A leading digital development company in Singapore & France (Nice & Monaco). Specialized in custom web, software and mobile development.`;
+    const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/about-us`;
+    const jsonLd = {
+      '@context': 'https://schema.org',
+      '@type': "WebPage",
+      'description': description,
+      'name': title,
+      'url' : canonicalUrl,
+      'mainEntity': {
+            '@type': 'Organization',
+            'name': 'Pixium Digital',
+            // 'description': description
+        }
+    }
+
+
     return <><section className="section service" id="service" aria-label="service">
+      
+
+<Script
+    id="about-jsonld"
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    strategy="beforeInteractive" // Can control when the script loads
+/>
+
             <div className="container">
 
                 <h1 className="h1 section-title text-center" dangerouslySetInnerHTML={{__html:messages.about.title}}>
@@ -92,14 +119,6 @@ export function generateMetadata({ params }: Params): Metadata {
       languages: Object.assign({}, ...languages),
     };
 
-    const jsonLd = {
-      '@context': 'https://schema.org',
-      '@type': "WebPage",
-      'description': description,
-      'name': title,
-      'url' : canonicalUrl
-    }
-
     return {
       title,
       alternates: alternates,
@@ -118,9 +137,9 @@ export function generateMetadata({ params }: Params): Metadata {
         site: canonicalUrl,
         description: description,
         images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`],
-      },
-      other: {
-        'json-ld': JSON.stringify(jsonLd)
       }
+      // other: {
+      //   'json-ld': JSON.stringify(jsonLd)
+      // }
     };
 }
