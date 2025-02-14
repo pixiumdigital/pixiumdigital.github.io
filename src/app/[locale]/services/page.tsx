@@ -6,6 +6,7 @@ import { MoreServices } from '../../_components/more-stories';
 import Container from '../../_components/container';
 import { Metadata } from 'next';
 import { SITE_CONFIG, SUPPORTED_LOCALES } from '@/config/config';
+import Script from 'next/script';
 // import { unstable_setRequestLocale } from 'next-intl/server';
 // import { locales } from '@/__navigation';
 
@@ -24,15 +25,29 @@ export default async function Index( { params } : { params:{locale:string } } ) 
     const allPosts = getAllServices(params.locale);
     const morePosts = allPosts;
 
-    const jsonLd = {
-        '@context': 'https://schema.org',
-        '@type': "Services Page",
-        'description': messages.services.seo_description,
-        'name': messages.services.seo_title,
+    const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/services/`;
+        const jsonLd = {
+          '@context': 'https://schema.org',
+          '@type': "WebPage",
+          'description': messages.home.seo_description,
+          'name': messages.home.seo_title,
+          'url' : canonicalUrl,
+          'mainEntity': {
+                '@type': 'Organization',
+                'name': 'Pixium Digital',
+                // 'description': description
+            }
       }
 
     return (<>
         <section className="section service" id="service" aria-label="service">
+        <Script
+                id="about-jsonld"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                strategy="beforeInteractive" // Can control when the script loads
+            />
+            
             <div className="container">
 
                 <h1 className="h2 section-title text-center" dangerouslySetInnerHTML={{__html:messages.services.title}}>

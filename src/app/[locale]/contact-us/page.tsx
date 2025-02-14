@@ -2,6 +2,7 @@
 import { SITE_CONFIG, SUPPORTED_LOCALES } from '@/config/config';
 import { Metadata, MetadataRoute } from 'next';
 import { unstable_setRequestLocale } from 'next-intl/server';
+import Script from 'next/script';
 import React, { Component }  from 'react';
 import { json } from 'stream/consumers';
 
@@ -25,15 +26,29 @@ export default async function Index ( { params } : { params:{locale:string } } )
 
     const messages = await import(`@/messages/${params.locale}.json`);
 
+
+
+    const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/contact-us/`;
     const jsonLd = {
-        '@context': 'https://schema.org',
-        '@type': "Contact Us Page",
-        'description': messages.contact.seo_description,
-        'name': messages.contact.seo_title,
+      '@context': 'https://schema.org',
+      '@type': "WebPage",
+      'description': messages.home.seo_description,
+      'name': messages.home.seo_title,
+      'url' : canonicalUrl,
+      'mainEntity': {
+            '@type': 'Organization',
+            'name': 'Pixium Digital',
+            // 'description': description
+        }
     }
     
     return <section className="section service" id="service" aria-label="service">
-        <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd)}}></script>
+        <Script
+                id="about-jsonld"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                strategy="beforeInteractive" // Can control when the script loads
+            />
 
         <div className="container">
 
