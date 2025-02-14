@@ -7,6 +7,7 @@ import Clients from "../_components/clients";
 import { notFound } from "next/navigation";
 
 import { SUPPORTED_LOCALES, SITE_CONFIG } from '@/config/config';
+import Script from "next/script";
 
 
 export function generateStaticParams() {
@@ -27,16 +28,28 @@ export default async function Index( { params }: Params ) {
     //     notFound(); // This will render the 404 page
     // }
 
+    const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/`;
     const jsonLd = {
-        '@context': 'https://schema.org',
-        '@type': "Home Page",
-        'description': messages.home.seo_description,
-        'name': messages.home.seo_title,
+      '@context': 'https://schema.org',
+      '@type': "WebPage",
+      'description': messages.home.seo_description,
+      'name': messages.home.seo_title,
+      'url' : canonicalUrl,
+      'mainEntity': {
+            '@type': 'Organization',
+            'name': 'Pixium Digital',
+            // 'description': description
+        }
     }
 
     return (
         <div> 
-            <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd)}}></script>
+            <Script
+                id="about-jsonld"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                strategy="beforeInteractive" // Can control when the script loads
+            />
             <section className="section hero" id="home" aria-label="hero">
                 <div className="container">
 

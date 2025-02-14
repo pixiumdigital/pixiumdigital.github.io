@@ -33,8 +33,8 @@ export default async function Index ( { params } : { params:{locale:string } } )
     const jsonLd = {
       '@context': 'https://schema.org',
       '@type': "WebPage",
-      'description': description,
-      'name': title,
+      'description': messages.home.seo_description,
+      'name': messages.home.seo_title,
       'url' : canonicalUrl,
       'mainEntity': {
             '@type': 'Organization',
@@ -47,12 +47,12 @@ export default async function Index ( { params } : { params:{locale:string } } )
     return <><section className="section service" id="service" aria-label="service">
       
 
-<Script
-    id="about-jsonld"
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    strategy="beforeInteractive" // Can control when the script loads
-/>
+            <Script
+                id="about-jsonld"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                strategy="beforeInteractive" // Can control when the script loads
+            />
 
             <div className="container">
 
