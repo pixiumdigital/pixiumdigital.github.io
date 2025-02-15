@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getUseCaseBySlug, getAllUseCase } from "@/lib/api";
+import { getUseCaseBySlug, getAllUseCase, getAdjacentUseCases } from "@/lib/api";
 import { CMS_NAME } from "@/lib/constants";
 import markdownToHtml from "@/lib/markdownToHtml";
 import Alert from "@/app/_components/alert";
@@ -9,7 +9,7 @@ import Header from "@/app/_components/header";
 import { PostBody } from "@/app/_components/post-body";
 import { PostHeader } from "@/app/_components/post-header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import Whyworkwithus from "@/app/_components/whyworkwithus";
 import Newsletter from "@/app/_components/newsletter";
@@ -20,6 +20,8 @@ import { SITE_CONFIG } from "@/config/config";
 
 export default async function Post({ params }: Params) {
   const post = getUseCaseBySlug(params.slug, params.locale);
+
+  const { previous, next } = getAdjacentUseCases(params.slug, params.locale);
 
   if (!post) {
     return notFound();
@@ -33,6 +35,9 @@ export default async function Post({ params }: Params) {
     <>
       <section className="section service" id="service" aria-label="service">
         <Alert preview={post.preview} />
+
+
+
         <Link rel="canonical" href={"/"+params.locale+"/use-case/"}>
           <FontAwesomeIcon icon={faArrowLeft} height="20" className="inline-flex" /> {messages.button.back}
         </Link>
@@ -82,6 +87,48 @@ export default async function Post({ params }: Params) {
               </div>
           </article>
         </Container>
+
+        <div className="container mx-auto px-4 my-8">
+          <div className="flex justify-between items-center">
+            {previous ? (
+              <Link 
+                href={`/${params.locale}/use-case/${previous.slug}`}
+                className="flex items-center gap-2 text-primary hover:text-primary-dark transition-colors"
+              >
+                <FontAwesomeIcon 
+                  icon={faArrowLeft} 
+                  height="20" 
+                  className="inline-flex" 
+                />
+                <div>
+                  <div className="text-sm text-gray-500">{messages.usecase.previous}</div>
+                  <div className="font-medium">{previous.title}</div>
+                </div>
+              </Link>
+            ) : (
+              <div /> 
+            )}
+
+            {next ? (
+              <Link 
+                href={`/${params.locale}/use-case/${next.slug}`}
+                className="flex items-center gap-2 text-primary hover:text-primary-dark transition-colors"
+              >
+                <div className="text-right">
+                  <div className="text-sm text-gray-500">{messages.usecase.next}</div>
+                  <div className="font-medium">{next.title}</div>
+                </div>
+                <FontAwesomeIcon 
+                  icon={faArrowRight} 
+                  height="20" 
+                  className="inline-flex" 
+                />
+              </Link>
+            ) : (
+              <div /> 
+            )}
+          </div>
+        </div>
       </section>
 
       <Newsletter params={params}/>

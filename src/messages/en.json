@@ -68,7 +68,9 @@
       "client": "Client",
       "industry": "Industry",
       "location": "Location",
-      "platform": "Platform"
+      "platform": "Platform",
+      "previous": "Previous Case Study",
+      "next": "Next Case Study"
     },
     "industry":{
       "title":"Driving Digital Transformation <span class='has-before'>Across Industries</span>",

@@ -30,6 +30,19 @@ export function getAllUseCase(locale:string): Post[] {
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
 }
+
+// In @/lib/api.ts or similar
+export function getAdjacentUseCases(currentSlug: string, locale: string) {
+  const useCases = getAllUseCase(locale);
+  const currentIndex = useCases.findIndex((useCase) => useCase.slug === currentSlug);
+
+  return {
+    previous: currentIndex > 0 ? useCases[currentIndex - 1] : null,
+    next: currentIndex < useCases.length - 1 ? useCases[currentIndex + 1] : null,
+  };
+}
+
+
 //----------------------------------------------------------------
 
 

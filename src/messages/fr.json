@@ -68,7 +68,9 @@
       "client": "Client",
       "industry": "Industrie",
       "location": "Pays",
-      "platform": "Platforme"
+      "platform": "Platforme",
+      "previous": "Précédent",
+      "next": "Suivant"
     },
     "industry": {
       "title": "La Transformation Numérique <span class='has-before'>Dans Tous Les Secteurs</span>",
