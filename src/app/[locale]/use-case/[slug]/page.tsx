@@ -120,9 +120,9 @@ export default async function Post({ params }: Params) {
 
       <PrevNext 
                 prevTitle={previous?.title}
-                prevUrl={previous ? `/${params.locale}/use-case/${previous.slug}` : undefined }
+                prevUrl={previous ? `/${params.locale}/use-case/${previous.slug}/` : undefined }
                 nextTitle={next?.title}
-                nextUrl={next ? `/${params.locale}/use-case/${next.slug}` : undefined }
+                nextUrl={next ? `/${params.locale}/use-case/${next.slug}/` : undefined }
             />
         
       </section>

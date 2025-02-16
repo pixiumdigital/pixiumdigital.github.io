@@ -77,9 +77,9 @@ export default async function Post({ params }: Params) {
 
       <PrevNext 
           prevTitle={previous?.title}
-          prevUrl={previous ? `/${params.locale}/services/${previous.slug}` : undefined }
+          prevUrl={previous ? `/${params.locale}/services/${previous.slug}/` : undefined }
           nextTitle={next?.title}
-          nextUrl={next ? `/${params.locale}/services/${next.slug}` : undefined }
+          nextUrl={next ? `/${params.locale}/services/${next.slug}/` : undefined }
       />
 
 
