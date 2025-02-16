@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 import Process from '../../_components/process';
 import { SITE_CONFIG } from '@/config/config';
 import Script from 'next/script';
-import { generateBreadcrumbJSON } from '@/utils/schema';
+import { generateBreadcrumbJSON, generateWebsiteJSON } from '@/utils/schema';
 // import { locales } from '@/__navigation';
 
 // export function generateStaticParams() {
@@ -31,18 +31,8 @@ export default async function Index ( { params } : { params:{locale:string } } )
     const title = `About | Top Digital Development Company - Singapore`;
     const description = `Pixium Digital: A leading digital development company in Singapore & France (Nice & Monaco). Specialized in custom web, software and mobile development.`;
     const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/about-us`;
-    const jsonLd = {
-      '@context': 'https://schema.org',
-      '@type': "WebPage",
-      'description': messages.home.seo_description,
-      'name': messages.home.seo_title,
-      'url' : canonicalUrl,
-      'mainEntity': {
-            '@type': 'Organization',
-            'name': 'Pixium Digital',
-            // 'description': description
-        }
-    }
+  
+    const jsonLd = generateWebsiteJSON(messages.home.seo_description, messages.home.seo_title, canonicalUrl);
 
     // In your page component:
     const breadcrumbItems = [

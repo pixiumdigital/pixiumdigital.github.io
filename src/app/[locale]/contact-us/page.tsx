@@ -1,5 +1,6 @@
 // import { locales } from '@/__navigation';
 import { SITE_CONFIG, SUPPORTED_LOCALES } from '@/config/config';
+import { generateBreadcrumbJSON, generateWebsiteJSON } from '@/utils/schema';
 import { Metadata, MetadataRoute } from 'next';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import Script from 'next/script';
@@ -29,18 +30,15 @@ export default async function Index ( { params } : { params:{locale:string } } )
 
 
     const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/contact-us/`;
-    const jsonLd = {
-      '@context': 'https://schema.org',
-      '@type': "WebPage",
-      'description': messages.home.seo_description,
-      'name': messages.home.seo_title,
-      'url' : canonicalUrl,
-      'mainEntity': {
-            '@type': 'Organization',
-            'name': 'Pixium Digital',
-            // 'description': description
-        }
-    }
+    
+    const jsonLd = generateWebsiteJSON(messages.home.seo_description, messages.home.seo_title, canonicalUrl);
+    
+    // In your page component:
+    const breadcrumbItems = [
+        { name: 'Home', url: `https://${SITE_CONFIG.domain}/${params.locale}` },
+        { name: 'Contact Us', url: canonicalUrl }
+    ];
+    const breadcrumbJsonLd = generateBreadcrumbJSON(breadcrumbItems);
     
     return <section className="section service" id="service" aria-label="service">
         <Script
@@ -48,6 +46,12 @@ export default async function Index ( { params } : { params:{locale:string } } )
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
                 strategy="beforeInteractive" // Can control when the script loads
+            />
+        <Script
+                id="breadcrumb-jsonld"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+                strategy="beforeInteractive"
             />
 
         <div className="container">

@@ -7,7 +7,7 @@ import Container from '../../_components/container';
 import { Metadata } from 'next';
 import { SITE_CONFIG, SUPPORTED_LOCALES } from '@/config/config';
 import Script from 'next/script';
-import { generateBreadcrumbJSON } from '@/utils/schema';
+import { generateBreadcrumbJSON, generateWebsiteJSON } from '@/utils/schema';
 // import { unstable_setRequestLocale } from 'next-intl/server';
 // import { locales } from '@/__navigation';
 
@@ -27,20 +27,7 @@ export default async function Index( { params } : { params:{locale:string } } ) 
     const morePosts = allPosts;
 
     const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/services/`;
-    
-    const jsonLd = {
-      '@context': 'https://schema.org',
-      '@type': "WebPage",
-      'description': messages.home.seo_description,
-      'name': messages.home.seo_title,
-      'url' : canonicalUrl,
-      'mainEntity': {
-          '@type': 'Organization',
-          'name': 'Pixium Digital',
-          // 'description': description
-      }
-    }
-
+    const jsonLd = generateWebsiteJSON(messages.home.seo_description, messages.home.seo_title, canonicalUrl);
     // In your page component:
     const breadcrumbItems = [
       { name: 'Home', url: `https://${SITE_CONFIG.domain}/${params.locale}` },

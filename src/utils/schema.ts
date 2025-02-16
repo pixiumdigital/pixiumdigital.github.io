@@ -13,3 +13,19 @@ export function generateBreadcrumbJSON(items: Array<{name: string, url: string}>
         }))
     };
 }
+
+
+export function generateWebsiteJSON(description:string, name:string, url:string){
+    return {
+        '@context': 'https://schema.org',
+        '@type': "WebPage",
+        'description': description,
+        'name': name,
+        'url' : url,
+        'mainEntity': {
+            '@type': 'Organization',
+            'name': 'Pixium Digital',
+            // 'description': description
+        }
+      }
+}

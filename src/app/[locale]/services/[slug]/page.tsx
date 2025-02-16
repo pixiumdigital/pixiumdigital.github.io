@@ -15,7 +15,7 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Process from "@/app/_components/process";
 import { SITE_CONFIG, SUPPORTED_LOCALES } from "@/config/config";
 import Script from "next/script";
-import { generateBreadcrumbJSON } from "@/utils/schema";
+import { generateBreadcrumbJSON, generateWebsiteJSON } from "@/utils/schema";
 
 export default async function Post({ params }: Params) {
   const post = getServiceBySlug(params.slug, params.locale);
@@ -30,24 +30,12 @@ export default async function Post({ params }: Params) {
 
   const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/services/${post.slug}`
       
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': "WebPage",
-    'description': post.excerpt,
-    'name': post.title,
-    'url' : canonicalUrl,
-    'mainEntity': {
-        '@type': 'Organization',
-        'name': 'Pixium Digital',
-        // 'description': description
-    }
-  }
-
+  const jsonLd = generateWebsiteJSON(post.excerpt, post.title, canonicalUrl);
   // In your page component:
   const breadcrumbItems = [
     { name: 'Home', url: `https://${SITE_CONFIG.domain}/${params.locale}` },
     { name: 'Services', url: `https://${SITE_CONFIG.domain}/${params.locale}/services/` },
-    { name: 'Services', url: canonicalUrl }
+    { name: `Services | ${post.slug}`, url: canonicalUrl }
   ];
   const breadcrumbJsonLd = generateBreadcrumbJSON(breadcrumbItems);
 
