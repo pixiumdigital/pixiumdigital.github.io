@@ -5,7 +5,7 @@ import { getAllBlog } from '@/lib/api';
 import { MoreBlog } from '../../_components/more-stories';
 import Container from '../../_components/container';
 import { Metadata } from 'next';
-import { SITE_CONFIG } from '@/config/config';
+import { SITE_CONFIG, SUPPORTED_LOCALES } from '@/config/config';
 
 //   }
 
@@ -61,9 +61,8 @@ export function generateMetadata({ params }: Params): Metadata {
     const description = `We design, create and maintain your web, mobile, IOT or servless application.`;
     // const previousImages = (await parent).openGraph?.images || []
 
-    const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/blog`;
-    const locales = ['en', 'fr'];
-    const languages = locales.map(lang => ({
+    const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/blog/`;
+    const languages = SUPPORTED_LOCALES.map(lang => ({
       [lang === 'en' ? 'x-default' : lang]: `https://${SITE_CONFIG.domain}/${lang}/services/`,
     }));
     const alternates = {

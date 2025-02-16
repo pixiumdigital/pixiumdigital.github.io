@@ -33,13 +33,13 @@ export function getAllUseCase(locale:string): Post[] {
 
 // In @/lib/api.ts or similar
 export function getAdjacentUseCases(currentSlug: string, locale: string) {
-  const useCases = getAllUseCase(locale);
-  const currentIndex = useCases.findIndex((useCase) => useCase.slug === currentSlug);
+    const useCases = getAllUseCase(locale);
+    const currentIndex = useCases.findIndex((useCase) => useCase.slug === currentSlug);
 
-  return {
-    previous: currentIndex > 0 ? useCases[currentIndex - 1] : null,
-    next: currentIndex < useCases.length - 1 ? useCases[currentIndex + 1] : null,
-  };
+    return {
+        previous: currentIndex > 0 ? useCases[currentIndex - 1] : null,
+        next: currentIndex < useCases.length - 1 ? useCases[currentIndex + 1] : null,
+    };
 }
 
 
@@ -66,6 +66,15 @@ export function getAllServices(locale: string): Post[] {
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
 }
+export function getAdjacentService(currentSlug: string, locale: string) {
+  const services = getAllServices(locale);
+  const currentIndex = services.findIndex((services) => services.slug === currentSlug);
+
+  return {
+      previous: currentIndex > 0 ? services[currentIndex - 1] : null,
+      next: currentIndex < services.length - 1 ? services[currentIndex + 1] : null,
+  };
+}
 //----------------------------------------------------------------
 
 
@@ -90,9 +99,3 @@ export function getAllBlog(): Post[] {
   return posts;
 }
 //----------------------------------------------------------------
-
-
-// import { locales } from '@/__navigation';
-// export function generateStaticParams() {
-//     return locales.map((locale) => ({locale}));
-// }

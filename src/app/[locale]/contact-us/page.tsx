@@ -134,8 +134,7 @@ export function generateMetadata({ params }: { params:{locale:string } }): Metad
     // const previousImages = (await parent).openGraph?.images || []
 
     const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/contact-us/`;
-    const locales = ['en', 'fr'];
-    const languages = locales.map(lang => ({
+    const languages = SUPPORTED_LOCALES.map(lang => ({
       [lang === 'en' ? 'x-default' : lang]: `https://${SITE_CONFIG.domain}/${lang}/contact-us/`,
     }));
     const alternates = {

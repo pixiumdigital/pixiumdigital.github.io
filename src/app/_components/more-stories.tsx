@@ -2,12 +2,10 @@ import { Post } from "@/interfaces/post";
 import { PostPreview } from "./post-preview";
 import { ServicePreview } from "./service-preview";
 import { BlogPreview } from "./blog-preview";
+import { SUPPORTED_LOCALES } from "@/config/config";
 
 export function generateStaticParams() {
-  return [
-      { locale: 'en' },
-      { locale: 'fr' }
-  ];
+    return SUPPORTED_LOCALES.map((locale: any) => ({ locale }));
 }
 
 

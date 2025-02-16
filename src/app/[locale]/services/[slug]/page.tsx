@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getAllServices, getServiceBySlug } from "@/lib/api";
+import { getAdjacentService, getAllServices, getServiceBySlug } from "@/lib/api";
 import { CMS_NAME } from "@/lib/constants";
 import markdownToHtml from "@/lib/markdownToHtml";
 import Alert from "@/app/_components/alert";
@@ -11,14 +11,16 @@ import Whyworkwithus from "@/app/_components/whyworkwithus";
 import Link from "next/link";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Process from "@/app/_components/process";
 import { SITE_CONFIG, SUPPORTED_LOCALES } from "@/config/config";
 import Script from "next/script";
 import { generateBreadcrumbJSON, generateWebsiteJSON } from "@/utils/schema";
+import { PrevNext } from "@/app/_components/prev-next";
 
 export default async function Post({ params }: Params) {
   const post = getServiceBySlug(params.slug, params.locale);
+  const { previous, next } = getAdjacentService(params.slug, params.locale);
 
   const messages = await import(`@/messages/${params.locale}.json`);
 
@@ -28,16 +30,16 @@ export default async function Post({ params }: Params) {
 
   const content = await markdownToHtml(post.content || "");
 
-  const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/services/${post.slug}`
-      
+  // --------- JSON LD ----------------
+  const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/services/${post.slug}/`
   const jsonLd = generateWebsiteJSON(post.excerpt, post.title, canonicalUrl);
-  // In your page component:
   const breadcrumbItems = [
-    { name: 'Home', url: `https://${SITE_CONFIG.domain}/${params.locale}` },
+    { name: 'Home', url: `https://${SITE_CONFIG.domain}/${params.locale}/` },
     { name: 'Services', url: `https://${SITE_CONFIG.domain}/${params.locale}/services/` },
     { name: `Services | ${post.slug}`, url: canonicalUrl }
   ];
   const breadcrumbJsonLd = generateBreadcrumbJSON(breadcrumbItems);
+  // ----------------------------------
 
   return (<>
     <section className="section service" id="service" aria-label="service">
@@ -72,6 +74,15 @@ export default async function Post({ params }: Params) {
           
         </article>
       </Container>
+
+      <PrevNext 
+          prevTitle={previous?.title}
+          prevUrl={previous ? `/${params.locale}/services/${previous.slug}` : undefined }
+          nextTitle={next?.title}
+          nextUrl={next ? `/${params.locale}/services/${next.slug}` : undefined }
+      />
+
+
     </section>
     <Process params={params} />
     <Whyworkwithus params={params} />
@@ -90,13 +101,11 @@ type Params = {
 export function generateMetadata({ params }: Params): Metadata {
   const post = getServiceBySlug(params.slug, params.locale);
   const description = `${post.excerpt}`;
-  const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/services/${post.slug}`
+  const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/services/${post.slug}/`
 
-
-  const locales = ['en', 'fr'];
   // Generate hreflang entries for all supported languages
-  const languages = locales.map(lang => ({
-    [lang === 'en' ? 'x-default' : lang]: `https://${SITE_CONFIG.domain}/${lang}/services/${post.slug}`,
+  const languages = SUPPORTED_LOCALES.map(lang => ({
+    [lang === 'en' ? 'x-default' : lang]: `https://${SITE_CONFIG.domain}/${lang}/services/${post.slug}/`,
   }));
   const alternates = {
     canonical: canonicalUrl,

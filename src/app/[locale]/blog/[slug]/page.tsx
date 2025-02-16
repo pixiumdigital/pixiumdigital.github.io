@@ -13,7 +13,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { PostHeader } from "@/app/_components/post-header";
-import { SITE_CONFIG } from "@/config/config";
+import { SITE_CONFIG, SUPPORTED_LOCALES } from "@/config/config";
 
 
 
@@ -75,9 +75,8 @@ export function generateMetadata({ params }: Params): Metadata {
     return notFound();
   }
 
-  const locales = ['en', 'fr'];
   // Generate hreflang entries for all supported languages
-  const languages = locales.map(lang => ({
+  const languages = SUPPORTED_LOCALES.map(lang => ({
     [lang === 'en' ? 'x-default' : lang]: `https://${SITE_CONFIG.domain}/${lang}/blog/${post.slug}`,
   }));
   const alternates = {
@@ -111,11 +110,10 @@ export function generateMetadata({ params }: Params): Metadata {
 
 export async function generateStaticParams() {
   const posts = getAllBlog();
-  const locales = ['en', 'fr'];
 
   // This will create combinations of each post with each locale
   return posts.flatMap((post) => 
-    locales.map((locale) => ({
+    SUPPORTED_LOCALES.map((locale) => ({
       slug: post.slug,
       locale: locale,
     }))

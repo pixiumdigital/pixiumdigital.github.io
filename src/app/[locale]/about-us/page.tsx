@@ -2,7 +2,7 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 import Whyworkwithus from '../../_components/whyworkwithus';
 import { Metadata } from 'next';
 import Process from '../../_components/process';
-import { SITE_CONFIG } from '@/config/config';
+import { SITE_CONFIG, SUPPORTED_LOCALES } from '@/config/config';
 import Script from 'next/script';
 import { generateBreadcrumbJSON, generateWebsiteJSON } from '@/utils/schema';
 // import { locales } from '@/__navigation';
@@ -12,11 +12,8 @@ import { generateBreadcrumbJSON, generateWebsiteJSON } from '@/utils/schema';
 // }
 
 export function generateStaticParams() {
-    return [
-      { locale: 'en' },
-      { locale: 'fr' }
-    ];
-  }
+    return SUPPORTED_LOCALES.map((locale: any) => ({ locale }));
+}
   
 
 // export async function generateStaticParams() {
@@ -28,16 +25,13 @@ export default async function Index ( { params } : { params:{locale:string } } )
 
     const messages = await import(`@/messages/${params.locale}.json`);
 
-    const title = `About | Top Digital Development Company - Singapore`;
-    const description = `Pixium Digital: A leading digital development company in Singapore & France (Nice & Monaco). Specialized in custom web, software and mobile development.`;
-    const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/about-us`;
-  
+    const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/about-us/`;
     const jsonLd = generateWebsiteJSON(messages.home.seo_description, messages.home.seo_title, canonicalUrl);
 
     // In your page component:
     const breadcrumbItems = [
-      { name: 'Home', url: `https://${SITE_CONFIG.domain}/${params.locale}` },
-      { name: 'Abouts Us', url: canonicalUrl }
+        { name: 'Home', url: `https://${SITE_CONFIG.domain}/${params.locale}/` },
+        { name: 'Abouts Us', url: canonicalUrl }
     ];
     const breadcrumbJsonLd = generateBreadcrumbJSON(breadcrumbItems);
 
@@ -102,9 +96,9 @@ export default async function Index ( { params } : { params:{locale:string } } )
 
 
 type Params = {
-  params: {
-    locale:string;
-  };
+    params: {
+      locale:string;
+    };
 };
 
 export function generateMetadata({ params }: Params): Metadata {
@@ -112,11 +106,10 @@ export function generateMetadata({ params }: Params): Metadata {
     const description = `Pixium Digital: A leading digital development company in Singapore & France (Nice & Monaco). Specialized in custom web, software and mobile development.`;
     // const previousImages = (await parent).openGraph?.images || []
 
-    const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/about-us`;
+    const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/about-us/`;
 
-    const locales = ['en', 'fr'];
-    const languages = locales.map(lang => ({
-      [lang === 'en' ? 'x-default' : lang]: `https://${SITE_CONFIG.domain}/${lang}/about-us/`,
+    const languages = SUPPORTED_LOCALES.map(lang => ({
+        [lang === 'en' ? 'x-default' : lang]: `https://${SITE_CONFIG.domain}/${lang}/about-us/`,
     }));
     const alternates = {
       canonical: canonicalUrl,

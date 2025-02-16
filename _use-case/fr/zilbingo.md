@@ -43,8 +43,8 @@ Le développement a officiellement démarré en avril 2021, marquant le début d
 
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-  <img src="/assets/blog/zilbingo/img1.png" alt="ZilBingo 1">
-  <img src="/assets/blog/zilbingo/img2.png" alt="ZilBingo 2">
-  <img src="/assets/blog/zilbingo/img3.png" alt="ZilBingo 3">
-  <img src="/assets/blog/zilbingo/img4.png" alt="ZilBingo 4">
+  <img src="/assets/blog/zilbingo/img1.png" alt="ZilBingo 1" title="Jeu Zil bingo">
+  <img src="/assets/blog/zilbingo/img2.png" alt="ZilBingo 2" title="Jeu Zil bingo">
+  <img src="/assets/blog/zilbingo/img3.png" alt="ZilBingo 3" title="Jeu Zil bingo">
+  <img src="/assets/blog/zilbingo/img4.png" alt="ZilBingo 4" title="Jeu Zil bingo">
 </div>

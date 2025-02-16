@@ -101,7 +101,7 @@ export default function Header({ services, locale, messages }: Props) {
           {/* ORIGINAL MENU DESKTOP */}
           <NavbarBrand>
               <a rel="canonical" href={"/"+locale} className="logo">
-                <img src="/assets/images/pixium-logo.webp" alt="Pixium Digital | top web development" />
+                <img src="/assets/images/pixium-logo.webp" title="Pixium Logo" alt="Pixium Digital | top web development" />
               </a>
             </NavbarBrand>
           <NavbarContent className="hidden sm:flex gap-4 mr-3" justify="center">

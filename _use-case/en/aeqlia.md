@@ -33,7 +33,7 @@ Aeqlia's platform has seen remarkable success, transforming how teams collaborat
 ## Output
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-  <img src="/assets/blog/aeqlia/img1.webp" alt="Amplify Game">
-  <img src="/assets/blog/aeqlia/img2.webp" alt="GinkGo Game">
-  <img src="/assets/blog/aeqlia/img3.webp" alt="Pulse Game">
+  <img src="/assets/blog/aeqlia/img1.webp" alt="Amplify Game" title="Aeqlia Amplify Game">
+  <img src="/assets/blog/aeqlia/img2.webp" alt="GinkGo Game" title="Aeqlia GinkGo Game">
+  <img src="/assets/blog/aeqlia/img3.webp" alt="Pulse Game" title="Aeqlia Pulse Game">
 </div>

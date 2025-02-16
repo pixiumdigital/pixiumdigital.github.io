@@ -1,7 +1,4 @@
 import React, { Component }  from 'react';
-import Container from './container';
-import CoverImage from './cover-image';
-import Avatar from './avatar';
 
 
 type Params = {
@@ -17,11 +14,6 @@ export default async function Whyworkwithus({ params }: Params) {
     return (
         <div className="section" id="feature" aria-label="feature">
             <div className="container mb-5">
-                {/* <figure className="feature-banner">
-                    <img src="/assets/images/feature-banner.webp" width="382" height="385" loading="lazy" alt="feature banner"
-                      className="w-80" />
-                </figure> */}
-
                 <div className="w-100">
                     <h2 className="h2 section-title" dangerouslySetInnerHTML={{__html:messages.workwithus.title}}>
                     </h2>

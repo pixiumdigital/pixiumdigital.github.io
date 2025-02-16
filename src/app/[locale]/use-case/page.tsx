@@ -5,13 +5,12 @@ import { getAllUseCase } from '@/lib/api';
 import { MoreStories } from '../../_components/more-stories';
 import Newsletter from '../../_components/newsletter';
 import { Metadata } from 'next';
-import { SITE_CONFIG } from '@/config/config';
+import { SITE_CONFIG, SUPPORTED_LOCALES } from '@/config/config';
+import { generateBreadcrumbJSON, generateWebsiteJSON } from '@/utils/schema';
+import Script from 'next/script';
 
 export function generateStaticParams() {
-    return [
-        { locale: 'en' },
-        { locale: 'fr' }
-    ];
+    return SUPPORTED_LOCALES.map((locale: any) => ({ locale }));
 }
 
 type Params = {
@@ -28,16 +27,32 @@ export default async function Index( { params }: Params ) {
 
     const messages = await import(`@/messages/${params.locale}.json`);
 
-    const jsonLd = {
-        '@context': 'https://schema.org',
-        '@type': "Use Case Page",
-        'description': messages.usecase.seo_description,
-        'name': messages.usecase.seo_title,
-    }
+
+    // --------- JSON LD ----------------
+    const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/use-case/`
+    const jsonLd = generateWebsiteJSON(messages.usecase.seo_description, messages.usecase.seo_title, canonicalUrl);
+    const breadcrumbItems = [
+      { name: 'Home', url: `https://${SITE_CONFIG.domain}/${params.locale}/` },
+      { name: `Use Case`, url: canonicalUrl }
+    ];
+    const breadcrumbJsonLd = generateBreadcrumbJSON(breadcrumbItems);
+    // ----------------------------------
 
     return <>
         <section className="section service" id="service" aria-label="service">
-            <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd)}}></script>
+          <Script
+                  id="usecase-jsonld"
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                  strategy="beforeInteractive" // Can control when the script loads
+              />
+          <Script
+                  id="breadcrumb-jsonld"
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+                  strategy="beforeInteractive"
+              />
+
             <div className="container">
 
                 <h1 className="h2 section-title text-center" dangerouslySetInnerHTML={{__html: messages.usecase.title}}>
@@ -54,14 +69,6 @@ export default async function Index( { params }: Params ) {
                     </p>
                 </Container>
                 <Container>
-                    {/* <HeroPost
-                    title={heroPost.title}
-                    coverImage={heroPost.coverImage}
-                    date={heroPost.date}
-                    author={heroPost.author}
-                    slug={heroPost.slug}
-                    excerpt={heroPost.excerpt}
-                    /> */}
                     {morePosts.length > 0 && <MoreStories posts={morePosts} locale={params.locale} />}
                 </Container>
             </main>
@@ -76,9 +83,8 @@ export function generateMetadata({ params }: Params): Metadata {
     const description = `Explore how Pixium Digital helps businesses in Singapore, Nice and Monaco develop custom web, mobile and software solutions.`;
     // const previousImages = (await parent).openGraph?.images || []
 
-    const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/use-case`;
-    const locales = ['en', 'fr'];
-    const languages = locales.map(lang => ({
+    const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/use-case/`;
+    const languages = SUPPORTED_LOCALES.map(lang => ({
       [lang === 'en' ? 'x-default' : lang]: `https://${SITE_CONFIG.domain}/${lang}/services/`,
     }));
     const alternates = {

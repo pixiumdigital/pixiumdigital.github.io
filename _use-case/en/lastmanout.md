@@ -44,8 +44,8 @@ Live Chat
 ## Output
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-  <img src="/assets/blog/lmo/img1.png" alt="LastManOut 1">
-  <img src="/assets/blog/lmo/img2.png" alt="LastManOut 2">
-  <img src="/assets/blog/lmo/img3.png" alt="LastManOut 3">
-  <img src="/assets/blog/lmo/img4.png" alt="LastManOut 4">
+  <img src="/assets/blog/lmo/img1.png" alt="LastManOut 1" title="Last man out club game">
+  <img src="/assets/blog/lmo/img2.png" alt="LastManOut 2" title="Last man out club game">
+  <img src="/assets/blog/lmo/img3.png" alt="LastManOut 3" title="Last man out club game">
+  <img src="/assets/blog/lmo/img4.png" alt="LastManOut 4" title="Last man out club game">
 </div>

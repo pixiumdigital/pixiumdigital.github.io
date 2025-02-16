@@ -40,8 +40,8 @@ Maintenance
 ## Resultats
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-  <img src="/assets/blog/indefi/img1.jpg" alt="Indefi 1">
-  <img src="/assets/blog/indefi/img2.jpg" alt="Indefi 2">
-  <img src="/assets/blog/indefi/img3.jpg" alt="Indefi 3">
-  <img src="/assets/blog/indefi/img4.jpg" alt="Indefi 4">
+  <img src="/assets/blog/indefi/img1.jpg" alt="Indefi 1" title="Indefi">
+  <img src="/assets/blog/indefi/img2.jpg" alt="Indefi 2" title="Indefi">
+  <img src="/assets/blog/indefi/img3.jpg" alt="Indefi 3" title="Indefi">
+  <img src="/assets/blog/indefi/img4.jpg" alt="Indefi 4" title="Indefi">
 </div>

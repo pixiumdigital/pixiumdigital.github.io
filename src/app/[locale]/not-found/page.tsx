@@ -1,15 +1,12 @@
 // import RootLayout from './[locale]/layout';
 
-import { SITE_CONFIG } from "@/config/config";
+import { SITE_CONFIG, SUPPORTED_LOCALES } from "@/config/config";
 import { Metadata } from "next";
 
 
 export function generateStaticParams() {
-    return [
-        { locale: 'en' },
-        { locale: 'fr' }
-    ];
-  }
+    return SUPPORTED_LOCALES.map((locale: any) => ({ locale }));
+}
   
   
   type Params = {

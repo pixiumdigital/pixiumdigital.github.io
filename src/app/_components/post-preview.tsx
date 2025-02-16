@@ -1,14 +1,10 @@
 import { type Author } from "@/interfaces/author";
 import Link from "next/link";
-import Avatar from "./avatar";
 import CoverImage from "./cover-image";
-import DateFormatter from "./date-formatter";
+import { SUPPORTED_LOCALES } from "@/config/config";
 
 export function generateStaticParams() {
-  return [
-    { locale: 'en' },
-    { locale: 'fr' }
-  ];
+  return SUPPORTED_LOCALES.map((locale: any) => ({ locale }));
 }
 
 type Props = {
@@ -43,7 +39,6 @@ export function PostPreview({
               </Link>
             </h3>
             <p className="text-2xl leading-relaxed mb-4 d-flex" style={{display:"flex", textAlign:"left"}}>{excerpt}</p>
-            {/* <Avatar name={author.name} picture={author.picture} /> */}
         </div>
         <div className="">
             <CoverImage slug={slug} title={title} src={coverImage} baseUrl={locale+"/use-case"} />

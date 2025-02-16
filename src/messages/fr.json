@@ -43,9 +43,11 @@
       "description": "Nous sommes dédiés à faire avancer votre parcours de transformation numérique. En tant que cabinet de conseil et de développement numérique de premier plan, nous proposons des solutions sur mesure pour aider des entreprises comme la vôtre à prospérer dans un paysage numérique en constante évolution."
     },
     "reviews":{
+      "seo_title":"Avis | Développement digital en France et Singapour",
+      "seo_description":"Pixium Digital is a digital development company based in Singapore and France. Découvrez les témoignages authentiques de nos partenaires et clients.",
       "title": "Avis",
       "intro": "Bienvenue sur notre section dédiée aux avis clients ! Chez Pixium Digital, la satisfaction de nos clients est au cœur de notre engagement. Découvrez les témoignages authentiques de nos partenaires et clients, qui partagent leurs expériences avec nos solutions numériques innovantes. Explorez leurs retours pour comprendre comment nous avons aidé à transformer leurs idées en succès. Votre confiance est notre plus grande réussite !"
-    },
+    },   
     "newsletter":{
       "title": "Réinventez Votre Entreprise !",
       "intro": "Discutons ensemble !",

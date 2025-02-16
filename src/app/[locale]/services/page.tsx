@@ -30,7 +30,7 @@ export default async function Index( { params } : { params:{locale:string } } ) 
     const jsonLd = generateWebsiteJSON(messages.home.seo_description, messages.home.seo_title, canonicalUrl);
     // In your page component:
     const breadcrumbItems = [
-      { name: 'Home', url: `https://${SITE_CONFIG.domain}/${params.locale}` },
+      { name: 'Home', url: `https://${SITE_CONFIG.domain}/${params.locale}/` },
       { name: 'Services', url: canonicalUrl }
     ];
     const breadcrumbJsonLd = generateBreadcrumbJSON(breadcrumbItems);
@@ -96,8 +96,7 @@ export function generateMetadata({ params }: Params): Metadata {
 
     const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/services/`;
 
-    const locales = ['en', 'fr'];
-    const languages = locales.map(lang => ({
+    const languages = SUPPORTED_LOCALES.map(lang => ({
       [lang === 'en' ? 'x-default' : lang]: `https://${SITE_CONFIG.domain}/${lang}/services/`,
     }));
     const alternates = {

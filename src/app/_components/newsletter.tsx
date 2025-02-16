@@ -20,7 +20,7 @@ export default async function Newsletter({ params }: Params) {
 
             <figure className="newsletter-banner">
                 <img src="/assets/images/newsletter-banner.webp" width="355" height="356" loading="lazy"
-                alt="newsletter banner" className="w-100" />
+                alt="newsletter banner" title="newsletter" className="w-100" />
             </figure>
 
             <div className="newsletter-content">

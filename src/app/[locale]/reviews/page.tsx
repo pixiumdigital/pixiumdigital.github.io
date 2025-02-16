@@ -2,7 +2,9 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 import Whyworkwithus from '../../_components/whyworkwithus';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { SITE_CONFIG } from '@/config/config';
+import { SITE_CONFIG, SUPPORTED_LOCALES } from '@/config/config';
+import { generateBreadcrumbJSON, generateWebsiteJSON } from '@/utils/schema';
+import Script from 'next/script';
 // import { locales } from '@/__navigation';
 
 // export function generateStaticParams() {
@@ -10,11 +12,8 @@ import { SITE_CONFIG } from '@/config/config';
 // }
 
 export function generateStaticParams() {
-    return [
-      { locale: 'en' },
-      { locale: 'fr' }
-    ];
-  }
+    return SUPPORTED_LOCALES.map((locale: any) => ({ locale }));
+}
   
 
 const reviewsContent = [
@@ -88,8 +87,34 @@ const reviewsContent = [
 export default async function Index ( { params } : { params:{locale:string } } ) {
 
     const messages = await import(`@/messages/${params.locale}.json`);
+
+
+    // --------- JSON LD ----------------
+    const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/reviews/`
+    const jsonLd = generateWebsiteJSON(messages.reviews.seo_description, messages.reviews.seo_title, canonicalUrl);
+    const breadcrumbItems = [
+        { name: 'Home', url: `https://${SITE_CONFIG.domain}/${params.locale}/` },
+        { name: `Reviews`, url: canonicalUrl }
+    ];
+    const breadcrumbJsonLd = generateBreadcrumbJSON(breadcrumbItems);
+    // ----------------------------------
+
+
     
     return <><section className="section service" id="reviews" aria-label="reviews">
+            <Script
+                    id="reviews-jsonld"
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                    strategy="beforeInteractive" // Can control when the script loads
+                />
+            <Script
+                    id="breadcrumb-jsonld"
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+                    strategy="beforeInteractive"
+                />
+
             <div className="container">
 
                 <h2 className="h2 section-title text-center">
@@ -138,7 +163,6 @@ export default async function Index ( { params } : { params:{locale:string } } )
                                         </Link>
                                         {/* <h2 className="mb-8 text-xl md:text-xl tracking-tighter">{review.postion}, {review.company}</h2> */}
                                         </div>
-                                        {/* <Avatar name={author.name} picture={author.picture} /> */}
                                     </div>
                                 </div>
                             )
@@ -164,8 +188,7 @@ export function generateMetadata({ params }: { params:{locale:string } }): Metad
     // const previousImages = (await parent).openGraph?.images || []
 
     const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/reviews/`;
-    const locales = ['en', 'fr'];
-    const languages = locales.map(lang => ({
+    const languages = SUPPORTED_LOCALES.map(lang => ({
       [lang === 'en' ? 'x-default' : lang]: `https://${SITE_CONFIG.domain}/${lang}/reviews/`,
     }));
     const alternates = {

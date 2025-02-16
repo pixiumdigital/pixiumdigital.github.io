@@ -86,29 +86,6 @@ export default async function Index( { params }: Params ) {
             <Newsletter params={params}/>
         </div>
     );
-
-    // const allPosts = getAllPosts();
-
-    // const heroPost = allPosts[0];
-
-    // const morePosts = allPosts.slice(1);
-
-    // return (
-    //   <main>
-    //     <Container>
-    //       <Intro />
-    //       <HeroPost
-    //         title={heroPost.title}
-    //         coverImage={heroPost.coverImage}
-    //         date={heroPost.date}
-    //         author={heroPost.author}
-    //         slug={heroPost.slug}
-    //         excerpt={heroPost.excerpt}
-    //       />
-    //       {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-    //     </Container>
-    //   </main>
-    // );
 }
 
 
@@ -118,9 +95,8 @@ export function generateMetadata({ params }: Params): Metadata {
     // const previousImages = (await parent).openGraph?.images || []
     const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/`;
 
-    const locales = ['en', 'fr'];
     // Generate hreflang entries for all supported languages
-    const languages = locales.map(lang => ({
+    const languages = SUPPORTED_LOCALES.map(lang => ({
       [lang === 'en' ? 'x-default' : lang]: `https://${SITE_CONFIG.domain}/${lang}/`,
     }));
     const alternates = {

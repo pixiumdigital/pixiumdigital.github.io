@@ -29,3 +29,4 @@ export function generateWebsiteJSON(description:string, name:string, url:string)
         }
       }
 }
+

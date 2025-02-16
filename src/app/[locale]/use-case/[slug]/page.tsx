@@ -15,7 +15,10 @@ import Whyworkwithus from "@/app/_components/whyworkwithus";
 import Newsletter from "@/app/_components/newsletter";
 
 import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/card";
-import { SITE_CONFIG } from "@/config/config";
+import { SITE_CONFIG, SUPPORTED_LOCALES } from "@/config/config";
+import { PrevNext } from "@/app/_components/prev-next";
+import { generateBreadcrumbJSON, generateWebsiteJSON } from "@/utils/schema";
+import Script from "next/script";
 
 
 export default async function Post({ params }: Params) {
@@ -31,9 +34,35 @@ export default async function Post({ params }: Params) {
 
   const content = await markdownToHtml(post.content || "");
 
+  // --------- JSON LD ----------------
+    const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/use-case/${post.slug}/`
+    const jsonLd = generateWebsiteJSON(post.excerpt, post.title, canonicalUrl);
+    const breadcrumbItems = [
+      { name: 'Home', url: `https://${SITE_CONFIG.domain}/${params.locale}/` },
+      { name: 'Use Case', url: `https://${SITE_CONFIG.domain}/${params.locale}/use-case/` },
+      { name: `Use Case | ${post.slug}`, url: canonicalUrl }
+    ];
+    const breadcrumbJsonLd = generateBreadcrumbJSON(breadcrumbItems);
+    // ----------------------------------
+
   return (
     <>
       <section className="section service" id="service" aria-label="service">
+
+            <Script
+                id={"services"+post.slug+"-jsonld"}
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                strategy="beforeInteractive" // Can control when the script loads
+            />
+            <Script
+                id="breadcrumb-jsonld"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+                strategy="beforeInteractive"
+            />
+
+
         <Alert preview={post.preview} />
 
 
@@ -88,47 +117,14 @@ export default async function Post({ params }: Params) {
           </article>
         </Container>
 
-        <div className="container mx-auto px-4 my-8">
-          <div className="flex justify-between items-center">
-            {previous ? (
-              <Link 
-                href={`/${params.locale}/use-case/${previous.slug}`}
-                className="flex items-center gap-2 text-primary hover:text-primary-dark transition-colors"
-              >
-                <FontAwesomeIcon 
-                  icon={faArrowLeft} 
-                  height="20" 
-                  className="inline-flex" 
-                />
-                <div>
-                  <div className="text-sm text-gray-500">{messages.usecase.previous}</div>
-                  <div className="font-medium">{previous.title}</div>
-                </div>
-              </Link>
-            ) : (
-              <div /> 
-            )}
 
-            {next ? (
-              <Link 
-                href={`/${params.locale}/use-case/${next.slug}`}
-                className="flex items-center gap-2 text-primary hover:text-primary-dark transition-colors"
-              >
-                <div className="text-right">
-                  <div className="text-sm text-gray-500">{messages.usecase.next}</div>
-                  <div className="font-medium">{next.title}</div>
-                </div>
-                <FontAwesomeIcon 
-                  icon={faArrowRight} 
-                  height="20" 
-                  className="inline-flex" 
-                />
-              </Link>
-            ) : (
-              <div /> 
-            )}
-          </div>
-        </div>
+      <PrevNext 
+                prevTitle={previous?.title}
+                prevUrl={previous ? `/${params.locale}/use-case/${previous.slug}` : undefined }
+                nextTitle={next?.title}
+                nextUrl={next ? `/${params.locale}/use-case/${next.slug}` : undefined }
+            />
+        
       </section>
 
       <Newsletter params={params}/>
@@ -146,7 +142,7 @@ type Params = {
 export function generateMetadata({ params }: Params): Metadata {
   const post = getUseCaseBySlug(params.slug, params.locale);
 
-  const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/use-case/${post.slug}`
+  const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/use-case/${post.slug}/`
 
   if (!post) {
     return notFound();
@@ -157,10 +153,9 @@ export function generateMetadata({ params }: Params): Metadata {
 
   const ogImageUrl = `${process.env.NODE_ENV === 'production' ? 'https://pixiumdigital.com' : ''}`;
 
-  const locales = ['en', 'fr'];
   // Generate hreflang entries for all supported languages
-  const languages = locales.map(lang => ({
-    [lang === 'en' ? 'x-default' : lang]: `https://${SITE_CONFIG.domain}/${lang}/use-case/${post.slug}`,
+  const languages = SUPPORTED_LOCALES.map(lang => ({
+    [lang === 'en' ? 'x-default' : lang]: `https://${SITE_CONFIG.domain}/${lang}/use-case/${post.slug}/`,
   }));
   const alternates = {
     canonical: canonicalUrl,
@@ -190,12 +185,8 @@ export function generateMetadata({ params }: Params): Metadata {
 }
 
 export async function generateStaticParams() {
-  // const posts = getAllUseCase();
-
-  const locales = ['en', 'fr'];
-
   // First loop through locales, then get posts for each locale
-  return locales.flatMap((locale) => {
+  return SUPPORTED_LOCALES.flatMap((locale) => {
     // Reload posts for each locale
     const posts = getAllUseCase(locale);
     
