@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 import Process from '../../_components/process';
 import { SITE_CONFIG } from '@/config/config';
 import Script from 'next/script';
+import { generateBreadcrumbJSON } from '@/utils/schema';
 // import { locales } from '@/__navigation';
 
 // export function generateStaticParams() {
@@ -43,16 +44,29 @@ export default async function Index ( { params } : { params:{locale:string } } )
         }
     }
 
+    // In your page component:
+    const breadcrumbItems = [
+      { name: 'Home', url: `https://${SITE_CONFIG.domain}/${params.locale}` },
+      { name: 'Abouts Us', url: canonicalUrl }
+    ];
+    const breadcrumbJsonLd = generateBreadcrumbJSON(breadcrumbItems);
+
 
     return <><section className="section service" id="service" aria-label="service">
       
-
             <Script
                 id="about-jsonld"
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
                 strategy="beforeInteractive" // Can control when the script loads
             />
+            <Script
+                id="breadcrumb-jsonld"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+                strategy="beforeInteractive"
+            />
+            
 
             <div className="container">
 

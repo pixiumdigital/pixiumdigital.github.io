@@ -14,6 +14,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Process from "@/app/_components/process";
 import { SITE_CONFIG, SUPPORTED_LOCALES } from "@/config/config";
+import Script from "next/script";
+import { generateBreadcrumbJSON } from "@/utils/schema";
 
 export default async function Post({ params }: Params) {
   const post = getServiceBySlug(params.slug, params.locale);
@@ -26,8 +28,47 @@ export default async function Post({ params }: Params) {
 
   const content = await markdownToHtml(post.content || "");
 
+  const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/services/${post.slug}`
+      
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': "WebPage",
+    'description': post.excerpt,
+    'name': post.title,
+    'url' : canonicalUrl,
+    'mainEntity': {
+        '@type': 'Organization',
+        'name': 'Pixium Digital',
+        // 'description': description
+    }
+  }
+
+  // In your page component:
+  const breadcrumbItems = [
+    { name: 'Home', url: `https://${SITE_CONFIG.domain}/${params.locale}` },
+    { name: 'Services', url: `https://${SITE_CONFIG.domain}/${params.locale}/services/` },
+    { name: 'Services', url: canonicalUrl }
+  ];
+  const breadcrumbJsonLd = generateBreadcrumbJSON(breadcrumbItems);
+
   return (<>
     <section className="section service" id="service" aria-label="service">
+
+          <Script
+                id={"services"+post.slug+"-jsonld"}
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                strategy="beforeInteractive" // Can control when the script loads
+            />
+            <Script
+                id="breadcrumb-jsonld"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+                strategy="beforeInteractive"
+            />
+
+
+
       <Alert preview={post.preview} />
       <Link rel="canonical" href={"/"+params.locale+"/services/"}>
         <FontAwesomeIcon icon={faArrowLeft} height="20" className="inline-flex" /> {messages.button.back}
