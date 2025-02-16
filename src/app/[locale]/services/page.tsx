@@ -57,7 +57,7 @@ export default async function Index( { params } : { params:{locale:string } } ) 
 
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-4 p-4'>
                     <div className='p-4 mb-5'>
-                        <img className="circled w-50" src="/assets/images/working-people.webp" />
+                        <img className="w-50" src="/assets/images/working-people.webp" />
                     </div>
 
                     <div className='mt-5 mb-5 p-4 text-justify col-span-2'>
