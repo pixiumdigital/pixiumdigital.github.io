@@ -2,7 +2,7 @@
     "navigation": {
       "home": "Accueil",
       "services": "Services",
-      "about": "A propos",
+      "about": "A Propos",
       "usecase": "Projets",
       "blog": "Blog",
       "contact": "Nous Contacter",
@@ -18,7 +18,7 @@
       "content": "Ceci est une page de contenu simple."
     },
     "home": {
-      "seo_title":"Pixium Digital | Société leader en développement digital à Singapour et en France",
+      "seo_title":"Pixium Digital | Société leader en développement digital en France",
       "seo_description":"Pixium Digital est une société de conseil digital et de développement logiciel basée à Singapour et en France. Améliorez vos opérations, votre productivité et votre rentabilité grâce à des solutions logicielles, informatiques et de staffing évolutives.",
       "intro": "Façonner vos projets avec <span class='has-before'>la technologie</span> et l'innovation",
       "description": "Pixium Digital est une entreprise numérique basée à Singapour et en France. Notre objectif principal est de façonner méticuleusement les projets de nos clients, de leur conception jusqu'à leur lancement réussi, en garantissant des résultats transformateurs."
@@ -54,14 +54,14 @@
       "button": "Contactez-nous"
     },
     "contact": {
-      "seo_title":"Contactez-nous pour votre prochain projet digital.",
-      "seo_description":"Prêt à entreprendre votre voyage de transformation numérique ? Contactez-nous dès aujourd'hui pour en savoir plus sur la façon dont Pixium Digital peut vous aider à atteindre vos objectifs et à libérer tout le potentiel de votre entreprise à l'ère numérique. Innovons, collaborons et transformons ensemble.",
+      "seo_title":"Contact | Contactez-nous pour votre prochain projet digital.",
+      "seo_description":"Contactez-nous pour en savoir plus. Pixium Digital peut vous aider à libérer tout le potentiel de votre entreprise à l'aide du numérique.",
       "title": "<span class='has-before'>Contactez-nous</span> pour votre prochain projet",
       "intro": "Prêt à vous lancer dans votre parcours de transformation numérique ? Contactez-nous dès aujourd'hui pour découvrir comment Pixium Digital peut vous aider à atteindre vos objectifs et débloquer le plein potentiel de votre entreprise à l'ère numérique. Innovons, collaborons et transformons ensemble.",
       "description": "<h2>Quelle est la prochaine étape ?</h2><ul><li>1. Nous vous répondons dans les 24 heures.</li><li>2. Notre équipe recueillera vos spécifications, objectifs et attentes concernant le projet.</li><li>3. Nous reviendrons vers vous avec une proposition.</li></ul>"
     },
     "usecase":{
-      "seo_title":"Cas d'utilisation | Leader du développement digital, Transformez votre vision en succès numérique",
+      "seo_title":"Cas d'utilisation | Leader du développement digital France",
       "seo_description":"Nous accompagnons les entreprises dans leur transformation digitale en obtenant des résultats mesurables. Nos cas d'utilisation démontrent comment nos stratégies sur mesure et nos solutions technologiques de pointe aident des entreprises de divers secteurs à surmonter des défis complexes, optimiser leurs opérations et atteindre leurs objectifs. De la migration vers le cloud et l'analyse de données à l'automatisation des processus et l'optimisation de l'expérience client, découvrez nos méthodes éprouvées pour réussir.",
       "title":"<span class='has-before'>Etude de cas:</span> Transformer votre vision en succès",
       "intro_1":"Chez Pixium Digital, nous accompagnons les entreprises dans leur transformation numérique pour obtenir des résultats mesurables. Nos cas d’utilisation mettent en lumière comment nos stratégies sur mesure et nos solutions technologiques de pointe aident des entreprises de divers secteurs à relever des défis complexes, à optimiser leurs opérations et à atteindre leurs objectifs. Qu’il s’agisse de migration vers le cloud, d’analyse des données, d’automatisation des processus ou d’optimisation de l’expérience client, découvrez nos méthodes éprouvées pour réussir.",
@@ -108,7 +108,7 @@
       "description6": "Maintenant que votre site web ou application web est opérationnel, notre équipe reste disponible pour fournir un support continu, ajouter de nouvelles fonctionnalités et corriger d'éventuels bugs. Nous resterons à vos côtés tout au long du processus."
     },
     "blog": {
-      "seo_title": "Blog | Top entreprise de développement numérique France",
+      "seo_title": "Blog | Entreprise de développement numérique France",
       "seo_description": "Découvrez les dernières tendances, analyses et meilleures pratiques en transformation numérique, développement web et innovation logicielle.",
       "title": "Blog",
       "text_area_1": "Rester en avance signifie évoluer continuellement. Notre blog est conçu pour vous apporter les dernières tendances, analyses et meilleures pratiques en transformation numérique, développement web et innovation logicielle. Que vous soyez un dirigeant cherchant à exploiter de nouvelles technologies, un développeur en quête de conseils et tutoriels, ou simplement curieux de l'évolution du paysage numérique, vous êtes au bon endroit.",
