@@ -100,7 +100,7 @@ export default function Header({ services, locale, messages }: Props) {
 
           {/* ORIGINAL MENU DESKTOP */}
           <NavbarBrand>
-              <a rel="canonical" href={"/"+locale} className="logo">
+              <a rel="canonical" href={"/"+locale+"/"} className="logo">
                 <img src="/assets/images/pixium-logo.webp" title="Pixium Logo" alt="Pixium Digital | top web development" />
               </a>
             </NavbarBrand>

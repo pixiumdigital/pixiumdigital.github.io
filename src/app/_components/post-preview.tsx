@@ -27,9 +27,9 @@ export function PostPreview({
   locale
 }: Props) {
   return (
-      <div className="service-card columns-1 md:columns-2 gap-x-8" style={{margin:"20px", padding:"40px"}}>
+      <div className="service-card columns-1 md:columns-2 gap-x-8 m-5 p-10">
         <div className="gap-x-8">
-            <h3 className="text-3xl mb-3 leading-snug">
+            <div className="text-3xl mb-3 leading-snug">
               <Link
                 rel="canonical"
                 as={`/`+locale+`/use-case/${slug}`}
@@ -37,7 +37,7 @@ export function PostPreview({
               >
                   <h2 className="mb-8 text-3xl md:text-3xl font-bold tracking-tighter">{title}</h2>
               </Link>
-            </h3>
+            </div>
             <p className="text-2xl leading-relaxed mb-4 d-flex" style={{display:"flex", textAlign:"left"}}>{excerpt}</p>
         </div>
         <div className="">

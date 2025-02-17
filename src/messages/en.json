@@ -54,8 +54,8 @@
       "button": "Contact Us"
     },
     "contact":{
-      "seo_title":"Contact Us for your next digital project.",
-      "seo_description":"Ready to embark on your digital transformation journey? Contact us today to learn more about how Pixium Digital can help you achieve your goals and unlock the full potential of your business in the digital age.",
+      "seo_title":"Contact | Web & software & mobile development in Singapore",
+      "seo_description":"Get in touch with our expert software development team to discuss your project goals, requirements, and expectations. Let's build something great!",
       "title":"<span class='has-before'>Contact us</span> for your next project",
       "intro": "Ready to embark on your digital transformation journey? Contact us today to learn more about how Pixium Digital can help you achieve your goals and unlock the full potential of your business in the digital age. Let's innovate, collaborate, and transform together.",
       "description": "<h2>What is next ?</h2><ul><li>1. We answer you within 24 hours.</li><li>2. Our team will gather your specification, goals and expectations about the project.</li><li>3. Then we will revert back to you with a proposal.</li></ul>"
@@ -106,5 +106,12 @@
       "description5":"After a thorough User Acceptance Testing stage, we get your web application ready for a smooth launch. Our staff helps you every step of the way to make sure everything runs without a hitch.",
       "title6":"6. Maintain",
       "description6":"Now that your website or web application is operational, our staff is available to offer continuing assistance, add new functionality, and fix any bugs that may arise. We will remain by your side during the entire process."
+    },
+    "blog":{
+      "seo_title":"Blog | Top digital development company in Singapore",
+      "seo_description":"Discover the latest insights, trends, and best practices in digital transformation, web development, and software innovation.",
+      "title":"Blog",
+      "text_area_1":"Staying ahead means continually evolving. Our blog is designed to bring you the latest insights, trends, and best practices in digital transformation, web development, and software innovation. Whether you're a business leader looking to leverage new technology, a developer seeking tips and tutorials, or simply curious about the evolving digital landscape, you’re in the right place.",
+      "text_area_2":"Here, we share knowledge gained from our hands-on experience in building custom digital solutions and guiding businesses through transformative projects. From industry news and tech updates to in-depth guides and case studies, our goal is to empower you with the information you need to make smart, strategic decisions. Dive in, get inspired, and let’s explore the future of technology together."
     }
 }

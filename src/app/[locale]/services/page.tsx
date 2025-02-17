@@ -30,8 +30,8 @@ export default async function Index( { params } : { params:{locale:string } } ) 
     const jsonLd = generateWebsiteJSON(messages.home.seo_description, messages.home.seo_title, canonicalUrl);
     // In your page component:
     const breadcrumbItems = [
-      { name: 'Home', url: `https://${SITE_CONFIG.domain}/${params.locale}/` },
-      { name: 'Services', url: canonicalUrl }
+      { name: messages.navigation.home, url: `https://${SITE_CONFIG.domain}/${params.locale}/` },
+      { name: messages.navigation.services, url: canonicalUrl }
     ];
     const breadcrumbJsonLd = generateBreadcrumbJSON(breadcrumbItems);
 

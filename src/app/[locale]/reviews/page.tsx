@@ -93,8 +93,8 @@ export default async function Index ( { params } : { params:{locale:string } } )
     const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/reviews/`
     const jsonLd = generateWebsiteJSON(messages.reviews.seo_description, messages.reviews.seo_title, canonicalUrl);
     const breadcrumbItems = [
-        { name: 'Home', url: `https://${SITE_CONFIG.domain}/${params.locale}/` },
-        { name: `Reviews`, url: canonicalUrl }
+        { name: messages.navigation.home, url: `https://${SITE_CONFIG.domain}/${params.locale}/` },
+        { name: messages.navigation.review, url: canonicalUrl }
     ];
     const breadcrumbJsonLd = generateBreadcrumbJSON(breadcrumbItems);
     // ----------------------------------

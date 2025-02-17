@@ -32,8 +32,8 @@ export default async function Index( { params }: Params ) {
     const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/use-case/`
     const jsonLd = generateWebsiteJSON(messages.usecase.seo_description, messages.usecase.seo_title, canonicalUrl);
     const breadcrumbItems = [
-      { name: 'Home', url: `https://${SITE_CONFIG.domain}/${params.locale}/` },
-      { name: `Use Case`, url: canonicalUrl }
+      { name: messages.navigation.home, url: `https://${SITE_CONFIG.domain}/${params.locale}/` },
+      { name: messages.navigation.usecase, url: canonicalUrl }
     ];
     const breadcrumbJsonLd = generateBreadcrumbJSON(breadcrumbItems);
     // ----------------------------------

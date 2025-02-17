@@ -34,9 +34,9 @@ export default async function Post({ params }: Params) {
   const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/services/${post.slug}/`
   const jsonLd = generateWebsiteJSON(post.excerpt, post.title, canonicalUrl);
   const breadcrumbItems = [
-    { name: 'Home', url: `https://${SITE_CONFIG.domain}/${params.locale}/` },
-    { name: 'Services', url: `https://${SITE_CONFIG.domain}/${params.locale}/services/` },
-    { name: `Services | ${post.slug}`, url: canonicalUrl }
+    { name: messages.navigation.home, url: `https://${SITE_CONFIG.domain}/${params.locale}/` },
+    { name: messages.navigation.services, url: `https://${SITE_CONFIG.domain}/${params.locale}/services/` },
+    { name: `${messages.navigation.services} | ${post.slug}`, url: canonicalUrl }
   ];
   const breadcrumbJsonLd = generateBreadcrumbJSON(breadcrumbItems);
   // ----------------------------------

@@ -106,5 +106,13 @@
       "description5": "Après une phase rigoureuse de tests d'acceptation utilisateur (UAT), nous préparons votre application web pour un lancement fluide. Notre équipe vous accompagne à chaque étape pour garantir un fonctionnement sans accroc.",
       "title6": "6. Maintenir",
       "description6": "Maintenant que votre site web ou application web est opérationnel, notre équipe reste disponible pour fournir un support continu, ajouter de nouvelles fonctionnalités et corriger d'éventuels bugs. Nous resterons à vos côtés tout au long du processus."
-    }
+    },
+    "blog": {
+      "seo_title": "Blog | Top entreprise de développement numérique France",
+      "seo_description": "Découvrez les dernières tendances, analyses et meilleures pratiques en transformation numérique, développement web et innovation logicielle.",
+      "title": "Blog",
+      "text_area_1": "Rester en avance signifie évoluer continuellement. Notre blog est conçu pour vous apporter les dernières tendances, analyses et meilleures pratiques en transformation numérique, développement web et innovation logicielle. Que vous soyez un dirigeant cherchant à exploiter de nouvelles technologies, un développeur en quête de conseils et tutoriels, ou simplement curieux de l'évolution du paysage numérique, vous êtes au bon endroit.",
+      "text_area_2": "Ici, nous partageons les connaissances acquises grâce à notre expérience pratique dans la création de solutions numériques sur mesure et l'accompagnement des entreprises dans leurs projets de transformation. Des actualités du secteur aux mises à jour technologiques, en passant par des guides détaillés et des études de cas, notre objectif est de vous fournir les informations nécessaires pour prendre des décisions stratégiques intelligentes. Plongez dedans, inspirez-vous et explorons ensemble l'avenir de la technologie."
+}
+
 }

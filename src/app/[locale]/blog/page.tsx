@@ -6,36 +6,59 @@ import { MoreBlog } from '../../_components/more-stories';
 import Container from '../../_components/container';
 import { Metadata } from 'next';
 import { SITE_CONFIG, SUPPORTED_LOCALES } from '@/config/config';
+import { generateBreadcrumbJSON, generateWebsiteJSON } from '@/utils/schema';
+import Script from 'next/script';
 
 //   }
 
-export default function Index( { params } : { params:{locale:string } } ) {
+export default async function Index( { params } : { params:{locale:string } } ) {
     // unstable_setRequestLocale(params.locale);
+
+    const messages = await import(`@/messages/${params.locale}.json`);
 
     const allPosts = getAllBlog();
     const morePosts = allPosts;
 
+    const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/blog/`;
+    const jsonLd = generateWebsiteJSON(messages.home.seo_description, messages.home.seo_title, canonicalUrl);
+    // In your page component:
+    const breadcrumbItems = [
+      { name: messages.navigation.home, url: `https://${SITE_CONFIG.domain}/${params.locale}/` },
+      { name: messages.navigation.blog, url: canonicalUrl }
+    ];
+    const breadcrumbJsonLd = generateBreadcrumbJSON(breadcrumbItems);
+
     return (<>
-        <section className="section service" id="service" aria-label="service">
+        <section className="section service" id="service" aria-label="blog">
+
+          <Script
+                id="services-jsonld"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                strategy="beforeInteractive" // Can control when the script loads
+            />
+            <Script
+                id="breadcrumb-jsonld"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+                strategy="beforeInteractive"
+            />
+
+
+
             <div className="container">
 
                 <h1 className="h2 section-title text-center">
-                    <span className="has-before">Blog</span>
+                    <span className="has-before">{messages.blog.title}</span>
                 </h1>
 
 
                 <p className='mb-5 text-justify'>
-                    Staying ahead means continually evolving. Our blog is designed to bring you the latest insights, trends, and best practices in digital transformation, web development, a
-                    nd software innovation. Whether you're a business leader
-                     looking to leverage new technology, a developer seeking tips and tutorials, or simply curious 
-                     about the evolving digital landscape, you’re in the right place.
+                    {messages.blog.text_area_1}
                 </p>
 
                 <p className='mb-5 text-justify'>
-                    Here, we share knowledge gained from our hands-on experience in building custom digital solutions and
-                     guiding businesses through transformative projects. From industry news and tech updates to in-depth
-                      guides and case studies, our goal is to empower you with the information you need to make smart, 
-                      strategic decisions. Dive in, get inspired, and let’s explore the future of technology together.
+                    {messages.blog.text_area_2}
                 </p>
             </div>
             
@@ -56,9 +79,12 @@ type Params = {
     };
   };
 
-export function generateMetadata({ params }: Params): Metadata {
-    const title = `Blog | Pixium Digital`;
-    const description = `We design, create and maintain your web, mobile, IOT or servless application.`;
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+
+    const messages = await import(`@/messages/${params.locale}.json`);
+
+    const title = messages.blog.seo_title;
+    const description = messages.blog.seo_description;
     // const previousImages = (await parent).openGraph?.images || []
 
     const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/blog/`;

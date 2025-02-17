@@ -14,6 +14,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { PostHeader } from "@/app/_components/post-header";
 import { SITE_CONFIG, SUPPORTED_LOCALES } from "@/config/config";
+import { generateBreadcrumbJSON, generateWebsiteJSON } from "@/utils/schema";
+import Script from "next/script";
 
 
 
@@ -28,8 +30,34 @@ export default async function Post({ params }: Params) {
 
   const content = await markdownToHtml(post.content || "");
 
+  // --------- JSON LD ----------------
+  const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/blog/${post.slug}/`
+  const jsonLd = generateWebsiteJSON(post.excerpt, post.title, canonicalUrl);
+  const breadcrumbItems = [
+    { name: messages.navigation.home, url: `https://${SITE_CONFIG.domain}/${params.locale}/` },
+    { name: messages.navigation.blog, url: `https://${SITE_CONFIG.domain}/${params.locale}/blog/` },
+    { name: `${messages.navigation.blog} | ${post.slug}`, url: canonicalUrl }
+  ];
+  const breadcrumbJsonLd = generateBreadcrumbJSON(breadcrumbItems);
+  // ----------------------------------
+
   return (<>
     <section className="section service" id="blog" aria-label="blog">
+
+          <Script
+                id={"blog"+post.slug+"-jsonld"}
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                strategy="beforeInteractive" // Can control when the script loads
+            />
+            <Script
+                id="breadcrumb-jsonld"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+                strategy="beforeInteractive"
+            />
+
+
       <Alert preview={post.preview} />
       <Link rel="canonical" href={"/"+params.locale+"/blog/"}>
         <FontAwesomeIcon icon={faArrowLeft} height="20" className="inline-flex" /> {messages.button.back}

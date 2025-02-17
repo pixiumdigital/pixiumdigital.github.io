@@ -23,7 +23,7 @@ export function ServicePreview({
   return (
       <div className="service-card gap-x-8" style={{margin:"20px", padding:"40px"}}>
         <div className="gap-x-8">
-            <h3 className="text-lg mb-3 leading-snug">
+            <div className="text-lg mb-3 leading-snug">
               <Link
                 rel="canonical"
                 as={`/`+locale+`/services/${slug}`}
@@ -31,7 +31,7 @@ export function ServicePreview({
               >
                   <h2 className="mb-8 text-2xl md:text-4xl font-bold tracking-tighter">{title}</h2>
               </Link>
-            </h3>
+            </div>
             <p className="text-2xl leading-relaxed mb-4">{excerpt}</p>
         </div>
         

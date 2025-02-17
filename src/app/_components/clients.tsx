@@ -100,6 +100,7 @@ export default async function Clients({ params }: Params) {
                                     width={0}
                                     height={0}
                                     sizes="100vw"
+                                    title={client.name}
                                     style={{
                                         width: '100%',
                                         height: 'auto',

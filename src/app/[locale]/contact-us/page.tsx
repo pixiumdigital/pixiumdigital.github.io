@@ -35,8 +35,8 @@ export default async function Index ( { params } : { params:{locale:string } } )
     
     // In your page component:
     const breadcrumbItems = [
-        { name: 'Home', url: `https://${SITE_CONFIG.domain}/${params.locale}` },
-        { name: 'Contact Us', url: canonicalUrl }
+        { name: messages.navigation.home, url: `https://${SITE_CONFIG.domain}/${params.locale}` },
+        { name: messages.navigation.contact, url: canonicalUrl }
     ];
     const breadcrumbJsonLd = generateBreadcrumbJSON(breadcrumbItems);
     
@@ -127,11 +127,12 @@ export default async function Index ( { params } : { params:{locale:string } } )
     </section>;
 };
 
-export function generateMetadata({ params }: { params:{locale:string } }): Metadata {
-    const title = `Contact | Web & software & mobile development in Singapore`;
-    const description = `Contact us and our team will gather your specification, 
-    goals and expectations about the project.`;
-    // const previousImages = (await parent).openGraph?.images || []
+export async function generateMetadata({ params }: { params:{locale:string } }): Promise<Metadata> {
+
+    const messages = await import(`@/messages/${params.locale}.json`);
+
+    const title = messages.contact.seo_title;
+    const description = messages.contact.seo_description;
 
     const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/contact-us/`;
     const languages = SUPPORTED_LOCALES.map(lang => ({

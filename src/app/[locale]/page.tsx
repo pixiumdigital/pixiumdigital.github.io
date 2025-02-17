@@ -112,7 +112,7 @@ export function generateMetadata({ params }: Params): Metadata {
         title: title,
         type:"website",
         description: description,
-        url: `https://${SITE_CONFIG.domain}`,
+        url: canonicalUrl,
         siteName: "Pixium Digital",
         images: [`https://${SITE_CONFIG.domain}/assets/images/pixium-logo.webp`]
       },
