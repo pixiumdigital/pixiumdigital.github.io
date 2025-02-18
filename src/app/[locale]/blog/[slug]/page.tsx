@@ -119,6 +119,7 @@ export function generateMetadata({ params }: Params): Metadata {
   return {
     title,
     alternates: alternates,
+    description: description,
     openGraph: {
       title: title,
       description: description,

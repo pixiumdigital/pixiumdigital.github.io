@@ -11,7 +11,11 @@
     "button":{
       "contactus":"Nous Contacter",
       "letstalk":"Contactez nous 👋",
-      "back": "Retour"
+      "back": "Retour",
+      "viewall": "En voir plus"
+    },
+    "slider":{
+      "learnmore": "En savoir plus"
     },
     "common": {
       "greeting": "Bonjour",
@@ -38,7 +42,7 @@
     "services": {
       "seo_title": "Services | Développement digital en France Singapour",
       "seo_description": "Pixium Digital est une entreprise de développement numérique basée à Singapour et en France. Nous proposons une large gamme de services, notamment le conseil en informatique, le développement logiciel et la transformation numérique. Nos services sont conçus pour aider les entreprises à atteindre leurs objectifs et à rester compétitives.",
-      "title": "<span class='has-before'>Services</span> que nous offrons",
+      "title": "Nos <span class='has-before'>Services</span>",
       "intro": "Passionnés par les défis technologiques",
       "description": "Nous sommes dédiés à faire avancer votre parcours de transformation numérique. En tant que cabinet de conseil et de développement numérique de premier plan, nous proposons des solutions sur mesure pour aider des entreprises comme la vôtre à prospérer dans un paysage numérique en constante évolution."
     },

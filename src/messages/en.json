@@ -11,7 +11,11 @@
     "button":{
       "contactus":"Contact Us",
       "letstalk":"Let’s Talk 👋",
-      "back": "Back"
+      "back": "Back",
+      "viewall": "View all"
+    },
+    "slider":{
+      "learnmore": "Learn More"
     },
     "common": {
       "greeting": "Hello",
