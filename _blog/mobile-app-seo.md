@@ -1,5 +1,5 @@
 ---
-title: "Achieving a top position for your mobile application in app stores"
+title: "Achieving top position for mobile application in app stores"
 excerpt: "This process, known as App Store Optimization (ASO), enhances your app's visibility and attractiveness to potential users."
 coverImage: "/assets/blog/post/aso.webp"
 date: "2023-05-16T05:35:07.322Z"

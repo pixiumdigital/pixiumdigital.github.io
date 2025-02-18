@@ -100,7 +100,7 @@ type Params = {
 
 export function generateMetadata({ params }: Params): Metadata {
   const post = getServiceBySlug(params.slug, params.locale);
-  const description = `${post.excerpt} | Pixium Digital service`;
+  const description = `${post.excerpt}`;
   const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/services/${post.slug}/`
 
   // Generate hreflang entries for all supported languages
