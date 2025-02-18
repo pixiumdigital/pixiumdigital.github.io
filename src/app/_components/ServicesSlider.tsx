@@ -25,6 +25,7 @@ type ServiceSliderProps = {
 export default function ServiceSlider( params: ServiceSliderProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
   const sliderRef = useRef<HTMLDivElement>(null);
 
   const nextSlide = () => {
@@ -39,13 +40,21 @@ export default function ServiceSlider( params: ServiceSliderProps) {
     );
   };
 
-  // Auto play functionality
+  // Add useEffect to detect mobile screen size
   useEffect(() => {
-    if (!params.autoPlay) return;
+      const checkMobile = () => {
+        setIsMobile(window.innerWidth <= 768); // You can adjust this breakpoint
+      };
 
-    const interval = setInterval(nextSlide, 3000);
-    return () => clearInterval(interval);
-  }, [params.autoPlay]);
+      // Check initially
+      checkMobile();
+
+      // Add event listener for window resize
+      window.addEventListener('resize', checkMobile);
+
+      // Cleanup
+      return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Touch handlers for mobile
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -79,7 +88,7 @@ export default function ServiceSlider( params: ServiceSliderProps) {
         <div 
           className="slider-track gap-4"
           style={{
-            transform: `translateX(-${currentIndex * (100 / params.cardsPerView)}%)`,
+            transform: `translateX(-${currentIndex * (isMobile ? 98 : (100 / params.cardsPerView))}%)`,
             transition: 'transform 0.5s ease-in-out',
           }}
         >

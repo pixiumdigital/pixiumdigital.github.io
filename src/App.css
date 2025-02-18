@@ -51,8 +51,9 @@ img[alt=output_image_mobile] { height:540px; padding:10px; display:inline-flex; 
 }
 
 .service-slider {
-  position: relative;
   overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 
 .slider-track {
@@ -119,8 +120,14 @@ img[alt=output_image_mobile] { height:540px; padding:10px; display:inline-flex; 
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  /* .slider-track {
+    width: fit-content;
+  } */
+  
   .slider-card {
-    width: calc(100% / 2) !important;
+    flex-shrink: 0;
+    width: 100% !important;
+    padding:20px;
   }
 }
 
