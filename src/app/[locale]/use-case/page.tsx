@@ -1,13 +1,14 @@
 import React, { Component }  from 'react';
 import Whyworkwithus from '../../_components/whyworkwithus';
 import Container from '../../_components/container';
-import { getAllUseCase } from '@/lib/api';
+import { getAllServices, getAllUseCase } from '@/lib/api';
 import { MoreStories } from '../../_components/more-stories';
 import Newsletter from '../../_components/newsletter';
 import { Metadata } from 'next';
 import { SITE_CONFIG, SUPPORTED_LOCALES } from '@/config/config';
 import { generateBreadcrumbJSON, generateWebsiteJSON } from '@/utils/schema';
 import Script from 'next/script';
+import ContentSlider, { ContentCard } from '@/app/_components/content-slider';
 
 export function generateStaticParams() {
     return SUPPORTED_LOCALES.map((locale: any) => ({ locale }));
@@ -26,6 +27,15 @@ export default async function Index( { params }: Params ) {
     const morePosts = allPosts;
 
     const messages = await import(`@/messages/${params.locale}.json`);
+
+    const allServices = getAllServices(params.locale);
+      const services: ContentCard[] = allServices.map((post, index) => ({
+          id: index + 1,
+          title: post.title,
+          description: post.excerpt,
+          // icon: post.icon || "🔧", // Default icon if none provided
+          link: `/${params.locale}/services/${post.slug}/`
+      }));
 
 
     // --------- JSON LD ----------------
@@ -73,6 +83,16 @@ export default async function Index( { params }: Params ) {
                 </Container>
             </main>
         </section>
+
+        <ContentSlider 
+          services={services}
+          slidePerPreview={4}
+          messages={messages.slider}
+          url={`/${params.locale}/services/`}
+          title={messages.services.title}
+        />
+
+
         <Newsletter params={params} />
         </>;
 };

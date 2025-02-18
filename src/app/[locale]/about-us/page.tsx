@@ -5,10 +5,11 @@ import Process from '../../_components/process';
 import { SITE_CONFIG, SUPPORTED_LOCALES } from '@/config/config';
 import Script from 'next/script';
 import { generateBreadcrumbJSON, generateWebsiteJSON } from '@/utils/schema';
-import ServiceSlider, { SliderCard } from '@/app/_components/ServicesSlider';
-import { getAllServices } from '@/lib/api';
+import ContentSlider, { ContentCard } from '@/app/_components/content-slider';
+import { getAllServices, getAllUseCase } from '@/lib/api';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import Newsletter from '@/app/_components/newsletter';
 // import { locales } from '@/__navigation';
 
 // export function generateStaticParams() {
@@ -33,14 +34,21 @@ export default async function Index ( { params } : { params:{locale:string } } )
     const jsonLd = generateWebsiteJSON(messages.home.seo_description, messages.home.seo_title, canonicalUrl);
 
 
-    const allPosts = getAllServices(params.locale);
-
-    const services: SliderCard[] = allPosts.map((post, index) => ({
+    const allServices = getAllServices(params.locale);
+    const services: ContentCard[] = allServices.map((post, index) => ({
         id: index + 1,
         title: post.title,
         description: post.excerpt,
         // icon: post.icon || "🔧", // Default icon if none provided
-        link: `/${params.locale}/services/${post.slug}`
+        link: `/${params.locale}/services/${post.slug}/`
+    }));
+    const allUsecase = getAllUseCase(params.locale);
+    const usecases: ContentCard[] = allUsecase.map((post, index) => ({
+        id: index + 1,
+        title: post.title,
+        description: post.excerpt,
+        // icon: post.icon || "🔧", // Default icon if none provided
+        link: `/${params.locale}/use-case/${post.slug}/`
     }));
 
 
@@ -108,33 +116,27 @@ export default async function Index ( { params } : { params:{locale:string } } )
         </section>
         <Process params={params} />
 
-        <div className="container service-slider bg-white">
-          <div className="section mt-16 mb-16 md:mb-12 text-center">
-              <h2 className="h2 section-title text-center" dangerouslySetInnerHTML={{__html:messages.services.title}}>
-              </h2>
+        
+        <ContentSlider 
+          services={services}
+          slidePerPreview={4}
+          messages={messages.slider}
+          url={`/${params.locale}/services/`}
+          title={messages.services.title}
+        />
 
-              <a href={`/${params.locale}/services/`} title="services">
-                  {messages.button.viewall}
-                  <FontAwesomeIcon 
-                    icon={faArrowRight} 
-                    height="20" 
-                    className="inline-flex ps-2" 
-                  />
-              </a>
-
-              <div className="mt-4">
-                  <ServiceSlider 
-                    services={services}
-                    cardsPerView={4}
-                    autoPlay={false}
-                    interval={5000}
-                    messages={messages.slider}
-                  />
-              </div>
-          </div>
-        </div>
-
+    
         <Whyworkwithus params={params} />
+
+        <ContentSlider 
+          services={usecases}
+          slidePerPreview={4}
+          messages={messages.slider}
+          url={`/${params.locale}/use-case/`}
+          title={messages.usecase.title}
+        /> 
+
+        <Newsletter params={params}/>
     </>;
 };
 

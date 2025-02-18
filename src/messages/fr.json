@@ -15,7 +15,8 @@
       "viewall": "En voir plus"
     },
     "slider":{
-      "learnmore": "En savoir plus"
+      "learnmore": "En savoir plus",
+      "viewall": "En voir plus"
     },
     "common": {
       "greeting": "Bonjour",

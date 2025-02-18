@@ -1,13 +1,14 @@
 import React, { Component }  from 'react';
 import Whyworkwithus from '../../_components/whyworkwithus';
 import Newsletter from '../../_components/newsletter';
-import { getAllServices } from '@/lib/api';
+import { getAllServices, getAllUseCase } from '@/lib/api';
 import { MoreServices } from '../../_components/more-stories';
 import Container from '../../_components/container';
 import { Metadata } from 'next';
 import { SITE_CONFIG, SUPPORTED_LOCALES } from '@/config/config';
 import Script from 'next/script';
 import { generateBreadcrumbJSON, generateWebsiteJSON } from '@/utils/schema';
+import ContentSlider, { ContentCard } from '@/app/_components/content-slider';
 // import { unstable_setRequestLocale } from 'next-intl/server';
 // import { locales } from '@/__navigation';
 
@@ -22,6 +23,16 @@ export default async function Index( { params } : { params:{locale:string } } ) 
     // unstable_setRequestLocale(params.locale);
 
     const messages = await import(`@/messages/${params.locale}.json`);
+
+    const allUsecase = getAllUseCase(params.locale);
+      const usecases: ContentCard[] = allUsecase.map((post, index) => ({
+          id: index + 1,
+          title: post.title,
+          description: post.excerpt,
+          // icon: post.icon || "🔧", // Default icon if none provided
+          link: `/${params.locale}/use-case/${post.slug}/`
+      }));
+      
 
     const allPosts = getAllServices(params.locale);
     const morePosts = allPosts;
@@ -78,6 +89,16 @@ export default async function Index( { params } : { params:{locale:string } } ) 
             </main>
             <Whyworkwithus params={params} />
         </section>
+
+        <ContentSlider 
+            services={usecases}
+            slidePerPreview={4}
+            messages={messages.slider}
+            url={`/${params.locale}/use-case/`}
+            title={messages.usecase.title}
+          /> 
+
+          
         <Newsletter params={params}/>
     </>);
 };

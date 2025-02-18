@@ -42,97 +42,10 @@ img[alt=output_image_mobile] { height:540px; padding:10px; display:inline-flex; 
   
 
 
-
-.service-slider-container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  padding: 20px 0;
+.swiper-slide {
+    height: auto !important;
+    text-align: center;
 }
-
-.service-slider {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-}
-
-.slider-track {
-  display: flex;
-  width: 100%;
-  padding:20px;
-}
-
-.slider-card {
-  flex-shrink: 0;
-  padding: 20px;
-  padding-top:40px;
-  box-sizing: border-box;
-  background:#f2f2f2;
-}
-
-.slider-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.slider-button.prev {
-  left: 10px;
-}
-
-.slider-button.next {
-  right: 10px;
-}
-
-.slider-card {
-  background: #eee;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  margin: 0 10px;
-  transition: transform 0.3s ease;
-}
-
-.slider-card:hover {
-  transform: translateY(-5px);
-}
-
-.service-icon {
-  margin-bottom: 15px;
-}
-
-.service-title {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-
-.service-description {
-  font-size: 0.9rem;
-  color: #666;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  /* .slider-track {
-    width: fit-content;
-  } */
-  
-  .slider-card {
-    flex-shrink: 0;
-    width: 100% !important;
-    padding:20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .slider-card {
-    width: 100% !important;
-  }
+.swiper-content {
+    height: 100% !important
 }
