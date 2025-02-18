@@ -115,14 +115,14 @@ export function generateMetadata({ params }: Params): Metadata {
   if (!post) {
     return notFound();
   }
-  const title = `${post.title} | Pixium Digital service`;
+  const title = post.title;
 
   return {
     title,
     description: description,
     alternates: alternates,
     openGraph: {
-      title,
+      title:title,
       type:"website",
       siteName: "Pixium Digital",
       url: canonicalUrl,

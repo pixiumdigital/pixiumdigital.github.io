@@ -97,7 +97,7 @@ type Params = {
 export function generateMetadata({ params }: Params): Metadata {
   const post = getBlogBySlug(params.slug);
 
-  const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/blog/${post.slug}`
+  const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/blog/${post.slug}/`
 
   if (!post) {
     return notFound();
@@ -105,7 +105,7 @@ export function generateMetadata({ params }: Params): Metadata {
 
   // Generate hreflang entries for all supported languages
   const languages = SUPPORTED_LOCALES.map(lang => ({
-    [lang === 'en' ? 'x-default' : lang]: `https://${SITE_CONFIG.domain}/${lang}/blog/${post.slug}`,
+    [lang === 'en' ? 'x-default' : lang]: `https://${SITE_CONFIG.domain}/${lang}/blog/${post.slug}/`,
   }));
   const alternates = {
     canonical: canonicalUrl,
@@ -113,7 +113,7 @@ export function generateMetadata({ params }: Params): Metadata {
   };
 
 
-  const title = `${post.title} | Pixium Digital service`;
+  const title = post.title;
   return {
     title,
     alternates: alternates,

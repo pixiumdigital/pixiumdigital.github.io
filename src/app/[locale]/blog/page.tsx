@@ -89,7 +89,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 
     const canonicalUrl = `https://${SITE_CONFIG.domain}/${params.locale}/blog/`;
     const languages = SUPPORTED_LOCALES.map(lang => ({
-      [lang === 'en' ? 'x-default' : lang]: `https://${SITE_CONFIG.domain}/${lang}/services/`,
+      [lang === 'en' ? 'x-default' : lang]: `https://${SITE_CONFIG.domain}/${lang}/blog/`,
     }));
     const alternates = {
       canonical: canonicalUrl,
