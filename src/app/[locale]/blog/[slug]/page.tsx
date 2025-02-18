@@ -119,7 +119,7 @@ export function generateMetadata({ params }: Params): Metadata {
     alternates: alternates,
     openGraph: {
       title,
-      description: post.excerpt,
+      description: `${post.excerpt} | Pixium Digital Blog`,
       siteName: "Pixium Digital",
       url: canonicalUrl,
       type:"website",

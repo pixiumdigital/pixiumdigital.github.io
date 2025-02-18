@@ -117,9 +117,9 @@ export default async function Index ( { params } : { params:{locale:string } } )
 
             <div className="container">
 
-                <h2 className="h2 section-title text-center">
+                <h1 className="h2 section-title text-center">
                     <span className="has-before">{messages.reviews.title}</span>
-                </h2>
+                </h1>
 
                 <p className='mb-4 mt-0'>
                     {messages.reviews.intro}
