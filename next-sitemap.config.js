@@ -6,6 +6,7 @@ module.exports = {
     generateRobotsTxt: true,
     sitemapIndexFileName: 'sitemap.xml', // explicitly name your sitemap index
     additionalSitemaps: ['https://pixiumdigital.com/sitemap-fr.xml'], // add your French sitemap URL
+    xslUrl: 'https://pixiumdigital.com/style.xsl',
 
     transform: async (config, path) => {
         if (!path.startsWith('/en')) {
