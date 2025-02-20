@@ -5,6 +5,7 @@ module.exports = {
     siteUrl: process.env.SITE_URL || 'https://pixiumdigital.com',
     sitemapBaseFileName: 'sitemap-fr',
     generateRobotsTxt: false, // No need for a second robots.txt
+    xslUrl: '/sitemap/style.xsl',
     // sitemapSize: 7000,
     // alternateRefs: [
     //     {
