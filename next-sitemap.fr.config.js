@@ -120,13 +120,13 @@ module.exports = {
         }
 
         // Create the image:image tags directly in the format expected by search engines
-        const imageXMLElements = images.map(image => `
-            <image:image>
-                <image:loc>${image.url}</image:loc>
-                ${image.title ? `<image:title>${image.title}</image:title>` : ''}
-                ${image.caption ? `<image:caption>${image.caption}</image:caption>` : ''}
-            </image:image>
-        `).join('')
+        // const imageXMLElements = images.map(image => `
+        //     <image:image>
+        //         <image:loc>${image.url}</image:loc>
+        //         ${image.title ? `<image:title>${image.title}</image:title>` : ''}
+        //         ${image.caption ? `<image:caption>${image.caption}</image:caption>` : ''}
+        //     </image:image>
+        // `).join('')
 
 
         return {
@@ -146,5 +146,5 @@ module.exports = {
           };
     },
     // REST CODE READ DOCS  ...
-    xmlNs: 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"'
+    // xmlNs: 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"'
 }
