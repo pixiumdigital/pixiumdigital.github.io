@@ -84,6 +84,12 @@ module.exports = {
     sitemapBaseFileName: 'sitemap-fr',
     generateRobotsTxt: false, // No need for a second robots.txt
     xslUrl: '/sitemap/style.xsl',
+    sitemapStylesheet: [
+        {
+            type: 'text/xsl',
+            styleFile: '/sitemap/style.xsl'  // Path relative to your site root
+        }
+    ],
     // sitemapSize: 7000,
     // alternateRefs: [
     //     {

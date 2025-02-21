@@ -85,6 +85,12 @@ module.exports = {
     sitemapIndexFileName: 'sitemap.xml', // explicitly name your sitemap index
     additionalSitemaps: ['https://pixiumdigital.com/sitemap-fr.xml'], // add your French sitemap URL
     xslUrl: '/sitemap/style.xsl',
+    sitemapStylesheet: [
+        {
+            type: 'text/xsl',
+            styleFile: '/sitemap/style.xsl'  // Path relative to your site root
+        }
+    ],
 
     transform: async (config, path) => {
         if (!path.startsWith('/en')) {
