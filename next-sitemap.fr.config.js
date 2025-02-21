@@ -135,7 +135,7 @@ module.exports = {
             priority: _priority, //config.priority,
             lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
 
-            custom: imageXMLElements
+            // custom: imageXMLElements
             // Include the French alternate reference (if needed)
             // alternateRefs: [
             //     {
