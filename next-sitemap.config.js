@@ -127,7 +127,7 @@ module.exports = {
                 <image:loc>${image.url}</image:loc>
                 ${image.title ? `<image:title>${image.title}</image:title>` : '<image:title>Pixium</image:title>'}
                 ${image.caption ? `<image:caption>${image.caption}</image:caption>` : '<image:caption>Digital</image:caption>'}
-            </image:image>`);
+            </image:image>`).join('\n');
     
         // only create changefreq along with path
         // returning partial properties will result in generation of XML field with only returned values.
