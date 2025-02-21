@@ -1,5 +1,83 @@
+const fs = require('fs').promises
+const path = require('path')
+const cheerio = require('cheerio')
+
 /** @type {import('next-sitemap').IConfig} */
 // Default code you can customize according to your requirements.
+
+const mySiteUrl = 'https://pixiumdigital.com';
+
+
+async function getPageImages(pagePath) {
+    const images = []
+    try {
+        // Convert URL path to file system path
+        // Remove trailing slash and add .html
+        const htmlPath = path.join(
+            process.cwd(),
+            'dist', // or '.next/server/pages' if using server-side rendering
+            pagePath.replace(/\/$/, '') + '/index.html'
+        )
+
+        // Read the HTML file
+        const html = await fs.readFile(htmlPath, 'utf-8')
+        const $ = cheerio.load(html)
+
+        // Find all img tags
+        $('img').each((_, element) => {
+            const img = $(element)
+            const src = img.attr('src')
+            
+            // Skip data URLs or invalid sources
+            if (!src || src.startsWith('data:')) return
+
+            // Create absolute URL if needed
+            const absoluteUrl = src.startsWith('http') 
+                ? src 
+                : `${mySiteUrl}${src}`
+
+            images.push({
+                url: absoluteUrl,
+                title: img.attr('title') || '',
+                caption: img.attr('alt') || ''
+            })
+        })
+
+        // Also check for background images in style attributes
+        $('[style*="background-image"]').each((_, element) => {
+            const style = $(element).attr('style')
+            const match = style.match(/background-image:\s*url\(['"]?([^'"()]+)['"]?\)/)
+            
+            if (match && match[1]) {
+                const src = match[1]
+                if (!src.startsWith('data:')) {
+                    const absoluteUrl = src.startsWith('http') 
+                        ? src 
+                        : `${mySiteUrl}${src}`
+
+                    images.push({
+                        url: absoluteUrl,
+                        title: '',
+                        caption: ''
+                    })
+                }
+            }
+        })
+
+        // Remove duplicates based on URL
+        const uniqueImages = [...new Map(images.map(img => 
+            [img.url, img]
+        )).values()]
+
+        return uniqueImages
+
+    } catch (error) {
+        console.error(`Error getting images for path ${pagePath}:`, error)
+        return []
+    }
+}
+
+
 
 module.exports = {
     siteUrl: process.env.SITE_URL || 'https://pixiumdigital.com',
@@ -23,6 +101,9 @@ module.exports = {
             return null;
         }
 
+        // Get the images for this page/path
+        const images = await getPageImages(path); // You'll need to implement this function
+
         let _priority = 1.0;
 
         if (path.endsWith('/') || path.endsWith('/en') || path.endsWith('/fr')) {
@@ -33,16 +114,28 @@ module.exports = {
             || path.endsWith('/services') 
             || path.endsWith('/use-case')
             || path.endsWith('/reviews') ) {
-            _priority = 0.8
+            _priority = 0.9
         } else {
-             _priority = 0.6
+             _priority = 0.7
         }
+
+        // Create the image:image tags directly in the format expected by search engines
+        const imageXMLElements = images.map(image => `
+            <image:image>
+                <image:loc>${image.url}</image:loc>
+                ${image.title ? `<image:title>${image.title}</image:title>` : ''}
+                ${image.caption ? `<image:caption>${image.caption}</image:caption>` : ''}
+            </image:image>
+        `).join('')
+
 
         return {
             loc: path, // e.g., "/en/about"
             changefreq: 'weekly', // config.changefreq,
             priority: _priority, //config.priority,
             lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
+
+            custom: imageXMLElements
             // Include the French alternate reference (if needed)
             // alternateRefs: [
             //     {
@@ -53,4 +146,5 @@ module.exports = {
           };
     },
     // REST CODE READ DOCS  ...
+    xmlNs: 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"'
 }
