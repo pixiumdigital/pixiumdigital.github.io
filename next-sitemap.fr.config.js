@@ -1,6 +1,6 @@
-const fs = require('fs').promises
-const path = require('path')
-const cheerio = require('cheerio')
+// const fs = require('fs').promises
+// const path = require('path')
+// const cheerio = require('cheerio')
 
 /** @type {import('next-sitemap').IConfig} */
 // Default code you can customize according to your requirements.
@@ -8,74 +8,74 @@ const cheerio = require('cheerio')
 const mySiteUrl = 'https://pixiumdigital.com';
 
 
-async function getPageImages(pagePath) {
-    const images = []
-    try {
-        // Convert URL path to file system path
-        // Remove trailing slash and add .html
-        const htmlPath = path.join(
-            process.cwd(),
-            'dist', // or '.next/server/pages' if using server-side rendering
-            pagePath.replace(/\/$/, '') + '/index.html'
-        )
+// async function getPageImages(pagePath) {
+//     const images = []
+//     try {
+//         // Convert URL path to file system path
+//         // Remove trailing slash and add .html
+//         const htmlPath = path.join(
+//             process.cwd(),
+//             'dist', // or '.next/server/pages' if using server-side rendering
+//             pagePath.replace(/\/$/, '') + '/index.html'
+//         )
 
-        // Read the HTML file
-        const html = await fs.readFile(htmlPath, 'utf-8')
-        const $ = cheerio.load(html)
+//         // Read the HTML file
+//         const html = await fs.readFile(htmlPath, 'utf-8')
+//         const $ = cheerio.load(html)
 
-        // Find all img tags
-        $('img').each((_, element) => {
-            const img = $(element)
-            const src = img.attr('src')
+//         // Find all img tags
+//         $('img').each((_, element) => {
+//             const img = $(element)
+//             const src = img.attr('src')
             
-            // Skip data URLs or invalid sources
-            if (!src || src.startsWith('data:')) return
+//             // Skip data URLs or invalid sources
+//             if (!src || src.startsWith('data:')) return
 
-            // Create absolute URL if needed
-            const absoluteUrl = src.startsWith('http') 
-                ? src 
-                : `${mySiteUrl}${src}`
+//             // Create absolute URL if needed
+//             const absoluteUrl = src.startsWith('http') 
+//                 ? src 
+//                 : `${mySiteUrl}${src}`
 
-            images.push({
-                url: absoluteUrl,
-                title: img.attr('title') || '',
-                caption: img.attr('alt') || ''
-            })
-        })
+//             images.push({
+//                 url: absoluteUrl,
+//                 title: img.attr('title') || '',
+//                 caption: img.attr('alt') || ''
+//             })
+//         })
 
-        // Also check for background images in style attributes
-        $('[style*="background-image"]').each((_, element) => {
-            const style = $(element).attr('style')
-            const match = style.match(/background-image:\s*url\(['"]?([^'"()]+)['"]?\)/)
+//         // Also check for background images in style attributes
+//         $('[style*="background-image"]').each((_, element) => {
+//             const style = $(element).attr('style')
+//             const match = style.match(/background-image:\s*url\(['"]?([^'"()]+)['"]?\)/)
             
-            if (match && match[1]) {
-                const src = match[1]
-                if (!src.startsWith('data:')) {
-                    const absoluteUrl = src.startsWith('http') 
-                        ? src 
-                        : `${mySiteUrl}${src}`
+//             if (match && match[1]) {
+//                 const src = match[1]
+//                 if (!src.startsWith('data:')) {
+//                     const absoluteUrl = src.startsWith('http') 
+//                         ? src 
+//                         : `${mySiteUrl}${src}`
 
-                    images.push({
-                        url: absoluteUrl,
-                        title: '',
-                        caption: ''
-                    })
-                }
-            }
-        })
+//                     images.push({
+//                         url: absoluteUrl,
+//                         title: '',
+//                         caption: ''
+//                     })
+//                 }
+//             }
+//         })
 
-        // Remove duplicates based on URL
-        const uniqueImages = [...new Map(images.map(img => 
-            [img.url, img]
-        )).values()]
+//         // Remove duplicates based on URL
+//         const uniqueImages = [...new Map(images.map(img => 
+//             [img.url, img]
+//         )).values()]
 
-        return uniqueImages
+//         return uniqueImages
 
-    } catch (error) {
-        console.error(`Error getting images for path ${pagePath}:`, error)
-        return []
-    }
-}
+//     } catch (error) {
+//         console.error(`Error getting images for path ${pagePath}:`, error)
+//         return []
+//     }
+// }
 
 
 
@@ -101,8 +101,8 @@ module.exports = {
             return null;
         }
 
-        // Get the images for this page/path
-        const images = await getPageImages(path); // You'll need to implement this function
+        // // Get the images for this page/path
+        // const images = await getPageImages(path); // You'll need to implement this function
 
         let _priority = 1.0;
 
@@ -126,7 +126,7 @@ module.exports = {
         //         ${image.title ? `<image:title>${image.title}</image:title>` : ''}
         //         ${image.caption ? `<image:caption>${image.caption}</image:caption>` : ''}
         //     </image:image>
-        // `).join('')
+        // `)
 
 
         return {

@@ -123,13 +123,11 @@ module.exports = {
         }
 
         // Create the image:image tags directly in the format expected by search engines
-        // const imageXMLElements = images.map(image => `
-        //     <image:image>
-        //         <image:loc>${image.url}</image:loc>
-        //         ${image.title ? `<image:title>${image.title}</image:title>` : ''}
-        //         ${image.caption ? `<image:caption>${image.caption}</image:caption>` : ''}
-        //     </image:image>
-        // `).join('')
+        const imageXMLElements = images.map(image => `<image:image>
+                <image:loc>${image.url}</image:loc>
+                ${image.title ? `<image:title>${image.title}</image:title>` : '<image:title>Pixium</image:title>'}
+                ${image.caption ? `<image:caption>${image.caption}</image:caption>` : '<image:caption>Digital</image:caption>'}
+            </image:image>`);
     
         // only create changefreq along with path
         // returning partial properties will result in generation of XML field with only returned values.
@@ -148,7 +146,7 @@ module.exports = {
             lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
 
             // Add raw XML string for images
-            // custom: imageXMLElements
+            custom: imageXMLElements
             // Include the French alternate reference (if needed)
             // alternateRefs: [
             //     {
