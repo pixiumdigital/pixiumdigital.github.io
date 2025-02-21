@@ -84,13 +84,13 @@ module.exports = {
     generateRobotsTxt: true,
     sitemapIndexFileName: 'sitemap.xml', // explicitly name your sitemap index
     additionalSitemaps: ['https://pixiumdigital.com/sitemap-fr.xml'], // add your French sitemap URL
-    xslUrl: '/sitemap/style.xsl',
-    sitemapStylesheet: [
-        {
-            type: 'text/xsl',
-            styleFile: '/sitemap/style.xsl'  // Path relative to your site root
-        }
-    ],
+    // xslUrl: '/sitemap/style.xsl',
+    // sitemapStylesheet: [
+    //     {
+    //         type: 'text/xsl',
+    //         styleFile: '/sitemap/style.xsl'  // Path relative to your site root
+    //     }
+    // ],
 
     transform: async (config, path) => {
         if (!path.startsWith('/en')) {
@@ -150,34 +150,22 @@ module.exports = {
             changefreq: 'weekly', // config.changefreq,
             priority: _priority, //config.priority,
             lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
-
-            // Add raw XML string for images
             custom: imageXMLElements
-            // Include the French alternate reference (if needed)
-            // alternateRefs: [
-            //     {
-            //         href: path.replace('/en', '/fr'),
-            //         hreflang: 'fr',
-            //     },
-            // ],
-            // loc: path, // => this will be exported as http(s)://<config.siteUrl>/<path>
-            // changefreq: 'weekly', // config.changefreq,
-            // priority: _priority, //config.priority,
-            // lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
-            // alternateRefs: config.alternateRefs, // Adds the alternate language URLs
           };
-    
-        // Use default transformation for all other cases
-        // return {
-        //   loc: path, // => this will be exported as http(s)://<config.siteUrl>/<path>
-        //   changefreq: 'weekly', // config.changefreq,
-        //   priority: _priority, //config.priority,
-        //   lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
-        //   alternateRefs: config.alternateRefs ?? [],
-        // }
     },
-    // REST CODE READ DOCS  ...
 
-    // Add namespace for images
-    // xmlNs: 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"'
+    // Add the XML processing instruction for the stylesheet
+    additionalPaths: async (config) => {
+        return [{
+            loc: '/',
+            priority: 1.0,
+            changefreq: 'weekly',
+            lastmod: new Date().toISOString(),
+            alternateRefs: [],
+            // Add processing instruction for XSL
+            processedXml: '<?xml-stylesheet type="text/xsl" href="/sitemap/style.xsl"?>'
+        }]
+    },
+
+    xmlNs: 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"'
 }
