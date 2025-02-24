@@ -92,7 +92,7 @@ module.exports = {
         },
     ],
     sitemapBaseFileName: 'sitemap-fr',
-    xslUrl: '/sitemap/style.xsl',
+    xslUrl: 'sitemap.xsl',
     xmlNs: 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"',
     generateRobotsTxt: false, // No need for a second robots.txt
     
@@ -124,7 +124,7 @@ module.exports = {
         const imageXMLElements = images.map(image => `<image:image>
             <image:loc>${image.url}</image:loc>
             ${image.title ? `<image:title>${image.title}</image:title>` : '<image:title>Pixium</image:title>'}
-            ${image.caption ? `<image:caption>${image.caption}</image:caption>` : '<image:caption>Digital</image:caption>'}
+            ${image.caption ? `<image:caption>${image.caption.replace(/[^\w\s-]/g, '')}</image:caption>` : '<image:caption>Digital</image:caption>'}
         </image:image>`).join('\n');
 
         // Create the French alternate path
@@ -145,17 +145,4 @@ module.exports = {
             custom: imageXMLElements
           };
     },
-
-    // // Add the XML processing instruction for the stylesheet
-    // additionalPaths: async (config) => {
-    //     return [{
-    //         loc: '/',
-    //         priority: 1.0,
-    //         changefreq: 'weekly',
-    //         lastmod: new Date().toISOString(),
-    //         alternateRefs: [],
-    //         // Add processing instruction for XSL
-    //         processedXml: '<?xml-stylesheet type="text/xsl" href="/sitemap/style.xsl"?>'
-    //     }]
-    // },
 }

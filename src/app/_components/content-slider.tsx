@@ -89,11 +89,12 @@ export default function ContentSlider( params: ContentSliderProps) {
                       >
                           <div className='bg-gray-100 p-[30px] rounded-2xl h-100'>
                               <a href={service.link} title={service.title}>
-                                  <h3 className="h3 service-title">{service.title}</h3>
+                                  {service.icon && <img src={service.icon} alt={service.title} className="mb-[20px] h-48 w-96 object-cover service-icon"/>}
+                                  <h3 className="h3 service-title mt-4">{service.title}</h3>
                               </a>
 
                               {service.link && (
-                                  <a href={service.link} title={service.title}>
+                                  <a href={service.link} title={service.title} className="mt-[20px]">
                                     {params.messages.learnmore}
                                     <FontAwesomeIcon 
                                         icon={faArrowRight} 

@@ -33,6 +33,7 @@ export default async function Index( { params }: Params ) {
           id: index + 1,
           title: post.title,
           description: post.excerpt,
+          icon: post.coverImage,
           // icon: post.icon || "🔧", // Default icon if none provided
           link: `/${params.locale}/services/${post.slug}/`
       }));

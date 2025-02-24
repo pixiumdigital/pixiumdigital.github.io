@@ -15,6 +15,28 @@ if(isProd){
         images:{
             unoptimized:true
         },
+        async headers() {
+            return [
+                {
+                    source: '/sitemap.xml',
+                    headers: [
+                        {
+                            key: 'Content-Type',
+                            value: 'application/xml',
+                        },
+                    ],
+                },
+                {
+                    source: '/sitemap.xsl',
+                    headers: [
+                        {
+                            key: 'Content-Type',
+                            value: 'text/xsl',
+                        },
+                    ],
+                },
+            ]
+        },
     }
        
     module.exports = nextConfig
@@ -23,7 +45,29 @@ if(isProd){
         output: 'export',
         trailingSlash: true,
         images: {
-          unoptimized: true,
+            unoptimized: true,
+        },
+        async headers() {
+            return [
+                {
+                    source: '/sitemap.xml',
+                    headers: [
+                        {
+                            key: 'Content-Type',
+                            value: 'application/xml',
+                        },
+                    ],
+                },
+                {
+                    source: '/style.xsl',
+                    headers: [
+                        {
+                            key: 'Content-Type',
+                            value: 'text/xsl',
+                        },
+                    ],
+                },
+            ]
         },
       }
       

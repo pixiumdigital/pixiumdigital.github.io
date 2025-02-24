@@ -2,6 +2,8 @@ import { Post } from "@/interfaces/post";
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
+import { load } from 'js-yaml';
+
 
 const usecaseDirectory = join(process.cwd(), "_use-case");
 const servicesDirectory = join(process.cwd(), "_services");
@@ -17,7 +19,14 @@ export function getUseCaseBySlug(slug: string, locale: string) {
   const realSlug = slug.replace(/\.md$/, "");
   const fullPath = join(usecaseDirectory, `${locale}/${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContents);
+  const { data, content } = matter(fileContents, {
+    engines: {
+      yaml: {
+        parse: load
+      }
+    }
+  } as matter.GrayMatterOption<string, any>);
+  //matter(fileContents);
 
   return { ...data, slug: realSlug, content } as Post;
 }
@@ -54,7 +63,13 @@ export function getServiceBySlug(slug: string, locale: string) {
   const realSlug = slug.replace(/\.md$/, "");
   const fullPath = join(servicesDirectory, `${locale}/${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContents);
+  const { data, content } = matter(fileContents, {
+    engines: {
+      yaml: {
+        parse: load
+      }
+    }
+  } as matter.GrayMatterOption<string, any>);
 
   return { ...data, slug: realSlug, content } as Post;
 }
@@ -86,7 +101,13 @@ export function getBlogBySlug(slug: string) {
   const realSlug = slug.replace(/\.md$/, "");
   const fullPath = join(blogDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContents);
+  const { data, content } = matter(fileContents, {
+    engines: {
+      yaml: {
+        parse: load
+      }
+    }
+  } as matter.GrayMatterOption<string, any>);
 
   return { ...data, slug: realSlug, content } as Post;
 }

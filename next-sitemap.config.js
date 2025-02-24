@@ -91,18 +91,11 @@ module.exports = {
           hreflang: 'fr',
         },
     ],
-    xslUrl: '/sitemap/style.xsl',
-    xmlNs: 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"',
+    xslUrl: 'sitemap.xsl',
+    xmlNs: 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"',
     generateRobotsTxt: true,
     sitemapIndexFileName: 'sitemap.xml', // explicitly name your sitemap index
-    additionalSitemaps: ['https://pixiumdigital.com/sitemap-fr.xml'], // add your French sitemap URL
-    // xslUrl: '/sitemap/style.xsl',
-    // sitemapStylesheet: [
-    //     {
-    //         type: 'text/xsl',
-    //         styleFile: '/sitemap/style.xsl'  // Path relative to your site root
-    //     }
-    // ],
+    
 
     transform: async (config, path) => {
         if (!path.startsWith('/en')) {
@@ -144,7 +137,7 @@ module.exports = {
         const imageXMLElements = images.map(image => `<image:image>
                 <image:loc>${image.url}</image:loc>
                 ${image.title ? `<image:title>${image.title}</image:title>` : '<image:title>Pixium</image:title>'}
-                ${image.caption ? `<image:caption>${image.caption}</image:caption>` : '<image:caption>Digital</image:caption>'}
+                ${image.caption ? `<image:caption>${image.caption.replace(/[^\w\s-]/g, '')}</image:caption>` : '<image:caption>Digital</image:caption>'}
             </image:image>`).join('\n');
 
 
@@ -158,6 +151,7 @@ module.exports = {
             lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
             // This is where the alternate urls are fixed
             alternateRefs: config.alternateRefs.map((alternate) => {
+                console.log(path);
                 return {
                     ...alternate,
                     href: alternate.href + '/' + path.substring(4),
@@ -167,17 +161,4 @@ module.exports = {
             custom: imageXMLElements,
         }
     },
-
-    // Add the XML processing instruction for the stylesheet
-    // additionalPaths: async (config) => {
-    //     return [{
-    //         loc: '/',
-    //         priority: 1.0,
-    //         changefreq: 'weekly',
-    //         lastmod: new Date().toISOString(),
-    //         alternateRefs: [],
-    //         // Add processing instruction for XSL
-    //         processedXml: '<?xml-stylesheet type="text/xsl" href="/sitemap/style.xsl"?>'
-    //     }]
-    // },
 }
