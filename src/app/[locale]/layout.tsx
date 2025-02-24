@@ -15,42 +15,18 @@ import Header from "../_components/header";
 import Footer from "../_components/footer";
 // import { locales } from "@/__navigation"
 import { getAllServices } from "@/lib/api";
-import { useState } from "react";
 
-import { useTranslations } from 'next-intl';
 import { notFound } from "next/navigation";
-import ProviderClient, { GlobalProvider } from "../provider";
+import { GlobalProvider } from "../provider";
 import { SUPPORTED_LOCALES } from "@/config/config";
+import CookieConsentBanner from "../_components/cookie-consent-banner";
+import GoogleAnalyticsWrapper from "../_components/google-analytics-wrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export function generateStaticParams() {
   return SUPPORTED_LOCALES.map((locale: any) => ({ locale }));
 }
-
-
-// locale comes from Next.js in receiving props
-// const [language, setLanguage] = useState<string>(locale); 
-
-// async function getMessages(locale: string) {
-//     try {
-//         return (await import(`../../../locales/${locale}/default.json`)).default
-//     } catch (error) {
-//         notFound()
-//     }
-// }
-
-// export const metadata: Metadata = {
-//   title: `Pixium Digital Group`,
-//   description: `Pixium Digital is an agile software development company located in Singapore and France.
-//   Our dedicated focus lies in meticulously shaping our clients' projects from 
-//   inception to a successful launch, ensuring transformative outcomes.`,
-//   openGraph: {
-//     images: [HOME_OG_IMAGE_URL],
-//   },
-// };
-
-
 
 // { params: { lang } } : {params:any}
 export default async function RootLayout({children, params}: {children: React.ReactNode, params :{locale:any}}) {
@@ -122,11 +98,13 @@ export default async function RootLayout({children, params}: {children: React.Re
                               </GlobalProvider>
                             {/* </NextIntlClientProvider> */}
                           </div>
+                          {/* <CookieConsentBanner /> */}
                           <Footer locale={locale}/>
                         {/* </NextIntlClientProvider> */}
                     </body>
                 
-                <GoogleAnalytics gaId="G-2H458FMSSG" />
+                {/* <GoogleAnalytics gaId="G-2H458FMSSG" /> */}
+                <GoogleAnalyticsWrapper />
         </html>
     );
 }
