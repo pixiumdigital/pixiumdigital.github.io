@@ -81,6 +81,18 @@ async function getPageImages(pagePath) {
 
 module.exports = {
     siteUrl: mySiteUrl,
+    alternateRefs: [
+        {
+          href: `${mySiteUrl}/en`,
+          hreflang: 'en',
+        },
+        {
+          href: `${mySiteUrl}/fr`,
+          hreflang: 'fr',
+        },
+    ],
+    xslUrl: '/sitemap/style.xsl',
+    xmlNs: 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"',
     generateRobotsTxt: true,
     sitemapIndexFileName: 'sitemap.xml', // explicitly name your sitemap index
     additionalSitemaps: ['https://pixiumdigital.com/sitemap-fr.xml'], // add your French sitemap URL
@@ -134,38 +146,38 @@ module.exports = {
                 ${image.title ? `<image:title>${image.title}</image:title>` : '<image:title>Pixium</image:title>'}
                 ${image.caption ? `<image:caption>${image.caption}</image:caption>` : '<image:caption>Digital</image:caption>'}
             </image:image>`).join('\n');
-    
-        // only create changefreq along with path
-        // returning partial properties will result in generation of XML field with only returned values.
-        // if (customLimitedField(path)) {
-        //   // This returns `path` & `changefreq`. Hence it will result in the generation of XML field with `path` and  `changefreq` properties only.
-        //   return {
-        //     loc: path, // => this will be exported as http(s)://<config.siteUrl>/<path>
-        //     changefreq: 'weekly',
-        //   }
-        // }
+
+
+        // Create the French alternate path
+        const frPath = path.replace('/en/', '/fr/');
 
         return {
             loc: path, // e.g., "/en/about"
             changefreq: 'weekly', // config.changefreq,
             priority: _priority, //config.priority,
             lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
-            custom: imageXMLElements
-          };
+            // This is where the alternate urls are fixed
+            alternateRefs: config.alternateRefs.map((alternate) => {
+                return {
+                    ...alternate,
+                    href: alternate.href + '/' + path.substring(4),
+                    hrefIsAbsolute: true,
+                }
+            }),
+            custom: imageXMLElements,
+        }
     },
 
     // Add the XML processing instruction for the stylesheet
-    additionalPaths: async (config) => {
-        return [{
-            loc: '/',
-            priority: 1.0,
-            changefreq: 'weekly',
-            lastmod: new Date().toISOString(),
-            alternateRefs: [],
-            // Add processing instruction for XSL
-            processedXml: '<?xml-stylesheet type="text/xsl" href="/sitemap/style.xsl"?>'
-        }]
-    },
-    xslUrl: '/sitemap/style.xsl',
-    xmlNs: 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"'
+    // additionalPaths: async (config) => {
+    //     return [{
+    //         loc: '/',
+    //         priority: 1.0,
+    //         changefreq: 'weekly',
+    //         lastmod: new Date().toISOString(),
+    //         alternateRefs: [],
+    //         // Add processing instruction for XSL
+    //         processedXml: '<?xml-stylesheet type="text/xsl" href="/sitemap/style.xsl"?>'
+    //     }]
+    // },
 }

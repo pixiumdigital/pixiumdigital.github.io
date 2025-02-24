@@ -80,8 +80,20 @@ async function getPageImages(pagePath) {
 
 
 module.exports = {
-    siteUrl: process.env.SITE_URL || 'https://pixiumdigital.com',
+    siteUrl: mySiteUrl,
+    alternateRefs: [
+        {
+          href: `${mySiteUrl}/en`,
+          hreflang: 'en',
+        },
+        {
+          href: `${mySiteUrl}/fr`,
+          hreflang: 'fr',
+        },
+    ],
     sitemapBaseFileName: 'sitemap-fr',
+    xslUrl: '/sitemap/style.xsl',
+    xmlNs: 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"',
     generateRobotsTxt: false, // No need for a second robots.txt
     
 
@@ -95,7 +107,7 @@ module.exports = {
 
         let _priority = 1.0;
 
-        if (path.endsWith('/') || path.endsWith('/en') || path.endsWith('/fr')) {
+        if (path.endsWith('/') || path.endsWith('/en') || path.endsWith('/fr') || path.endsWith('/en/') || path.endsWith('/fr/')) {
             _priority = 1.0
         } else if (path.endsWith('/contact-us') 
             || path.endsWith('/blog') 
@@ -115,28 +127,35 @@ module.exports = {
             ${image.caption ? `<image:caption>${image.caption}</image:caption>` : '<image:caption>Digital</image:caption>'}
         </image:image>`).join('\n');
 
+        // Create the French alternate path
+        const enPath = path.replace('/fr/', '/en/');
 
         return {
             loc: path, // e.g., "/en/about"
             changefreq: 'weekly', // config.changefreq,
             priority: _priority, //config.priority,
             lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
+            alternateRefs: config.alternateRefs.map((alternate) => {
+                return {
+                    ...alternate,
+                    href: alternate.href + '/' + path.substring(4),
+                    hrefIsAbsolute: true,
+                }
+            }),
             custom: imageXMLElements
           };
     },
 
-    // Add the XML processing instruction for the stylesheet
-    additionalPaths: async (config) => {
-        return [{
-            loc: '/',
-            priority: 1.0,
-            changefreq: 'weekly',
-            lastmod: new Date().toISOString(),
-            alternateRefs: [],
-            // Add processing instruction for XSL
-            processedXml: '<?xml-stylesheet type="text/xsl" href="/sitemap/style.xsl"?>'
-        }]
-    },
-    xslUrl: '/sitemap/style.xsl',
-    xmlNs: 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"'
+    // // Add the XML processing instruction for the stylesheet
+    // additionalPaths: async (config) => {
+    //     return [{
+    //         loc: '/',
+    //         priority: 1.0,
+    //         changefreq: 'weekly',
+    //         lastmod: new Date().toISOString(),
+    //         alternateRefs: [],
+    //         // Add processing instruction for XSL
+    //         processedXml: '<?xml-stylesheet type="text/xsl" href="/sitemap/style.xsl"?>'
+    //     }]
+    // },
 }
