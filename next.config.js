@@ -59,7 +59,7 @@ if(isProd){
                     ],
                 },
                 {
-                    source: '/style.xsl',
+                    source: '/sitemap.xsl',
                     headers: [
                         {
                             key: 'Content-Type',

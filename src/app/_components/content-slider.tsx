@@ -87,9 +87,9 @@ export default function ContentSlider( params: ContentSliderProps) {
                         key={service.id}
                         className="p-[20px] h-100"
                       >
-                          <div className='bg-gray-100 p-[30px] rounded-2xl h-100'>
-                              <a href={service.link} title={service.title}>
-                                  {service.icon && <img src={service.icon} alt={service.title} className="mb-[20px] h-48 w-96 object-cover service-icon"/>}
+                          <div className='bg-gray-100 p-[30px] rounded-2xl h-100 text-center'>
+                              <a href={service.link} title={service.title} className='text-center'>
+                                  {service.icon && <img src={service.icon} alt={service.title} className="mb-[20px] h-60 w-99 object-cover service-icon m-auto"/>}
                                   <h3 className="h3 service-title mt-4">{service.title}</h3>
                               </a>
 

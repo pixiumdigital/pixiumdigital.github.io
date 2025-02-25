@@ -1,12 +1,12 @@
 ---
 title: "Solution Cloud"
 excerpt: "Adoptez la puissance du cloud avec nos solutions cloud complètes"
-coverImage: "/assets/blog/aeqlia/preview.png"
+coverImage: "/assets/services/menu-cloud.webp"
 date: "2023-03-16T05:35:07.322Z"
 author:
   name: Remi Tache
 ogImage:
-  url: "/assets/blog/aeqlia/preview.png"
+  url: "/assets/services/menu-cloud.webp"
 ---
 
 <h3>Nos Solutions Cloud Complètes</h3>
