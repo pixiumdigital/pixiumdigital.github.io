@@ -121,10 +121,10 @@ export default async function Index ( { params } : { params:{locale:string } } )
         
         <ContentSlider 
           services={services}
-          slidePerPreview={4}
           messages={messages.slider}
           url={`/${params.locale}/services/`}
           title={messages.services.title}
+          description={messages.services.description}
         />
 
     
@@ -132,10 +132,10 @@ export default async function Index ( { params } : { params:{locale:string } } )
 
         <ContentSlider 
           services={usecases}
-          slidePerPreview={4}
           messages={messages.slider}
           url={`/${params.locale}/use-case/`}
           title={messages.usecase.title}
+          description={messages.usecase.intro_1}
         /> 
 
         <Newsletter params={params}/>

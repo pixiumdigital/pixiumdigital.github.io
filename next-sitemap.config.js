@@ -154,7 +154,7 @@ module.exports = {
                 console.log(path);
                 return {
                     ...alternate,
-                    href: alternate.href + '/' + path.substring(4),
+                    href: alternate.href + '/' + path.substring(4) + '/',
                     hrefIsAbsolute: true,
                 }
             }),

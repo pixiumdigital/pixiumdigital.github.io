@@ -27,10 +27,10 @@ export interface ContentCard {
 
 type ContentSliderProps = {
   services: ContentCard[];
-  slidePerPreview: number,
   messages?: any;
   url: string;
   title: string;
+  description?: string;
 }
 
 export default function ContentSlider( params: ContentSliderProps) {
@@ -42,6 +42,10 @@ export default function ContentSlider( params: ContentSliderProps) {
               <h2 className="h2 section-title text-center" dangerouslySetInnerHTML={{__html:params.title}}>
               </h2>
 
+              {params.description && (
+                  <p className="text-left m-[30px]" dangerouslySetInnerHTML={{__html:params.description}}>
+                  </p>
+              )}
               <a href={params.url} title="services">
                   {params.messages.viewall}
                   <FontAwesomeIcon 

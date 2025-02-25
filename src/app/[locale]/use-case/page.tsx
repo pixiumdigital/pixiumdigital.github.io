@@ -87,10 +87,10 @@ export default async function Index( { params }: Params ) {
 
         <ContentSlider 
           services={services}
-          slidePerPreview={4}
           messages={messages.slider}
           url={`/${params.locale}/services/`}
           title={messages.services.title}
+          description={messages.services.description}
         />
 
 
