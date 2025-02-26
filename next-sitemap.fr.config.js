@@ -5,7 +5,7 @@ const cheerio = require('cheerio')
 /** @type {import('next-sitemap').IConfig} */
 // Default code you can customize according to your requirements.
 
-const mySiteUrl = 'https://pixiumdigital.com';
+const mySiteUrl = 'https://pixiumdigital.com/';
 
 
 async function getPageImages(pagePath) {
@@ -83,11 +83,11 @@ module.exports = {
     siteUrl: mySiteUrl,
     alternateRefs: [
         {
-          href: `${mySiteUrl}/en`,
+          href: `${mySiteUrl}en/`,
           hreflang: 'en',
         },
         {
-          href: `${mySiteUrl}/fr`,
+          href: `${mySiteUrl}fr/`,
           hreflang: 'fr',
         },
     ],
