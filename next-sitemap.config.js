@@ -156,7 +156,7 @@ module.exports = {
                 // console.log(alternate);
                 return {
                     ...alternate,
-                    href: alternate.href + path.substring(4) + '/',
+                    href: alternate.href + (path.substring(4) ? path.substring(4) + '/' : ''),
                     hrefIsAbsolute: true,
                 }
             }),
