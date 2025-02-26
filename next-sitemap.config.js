@@ -142,6 +142,7 @@ module.exports = {
 
 
         // Create the French alternate path
+        path = path + "/"
         const frPath = path.replace('/en/', '/fr/');
 
         return {
@@ -151,7 +152,8 @@ module.exports = {
             lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
             // This is where the alternate urls are fixed
             alternateRefs: config.alternateRefs.map((alternate) => {
-                console.log(path);
+                // console.log(path);
+                // console.log(alternate);
                 return {
                     ...alternate,
                     href: alternate.href + '/' + path.substring(4) + '/',
