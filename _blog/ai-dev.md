@@ -1,6 +1,6 @@
 ---
 title: "Web development with AI: Dismantling the Future"
-excerpt: "Incorporating AI into web development is more than just a trend."
+excerpt: "Web development with AI: Incorporating AI into web development is more than just a trend."
 coverImage: "/assets/blog/post/aiDev.jpg"
 date: "2023-03-16T05:35:07.322Z"
 author:

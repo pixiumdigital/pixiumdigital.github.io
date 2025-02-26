@@ -1,6 +1,6 @@
 ---
 title: "Team augmentation"
-excerpt: "Team augmentation services tailored to meet the dynamic needs of modern businesses."
+excerpt: "Scale your team effortlessly with expert developers, designers & project managers. Accelerate projects & boost productivity with our team augmentation"
 coverImage: "/assets/services/menu-team.webp"
 date: "2023-03-16T05:35:07.322Z"
 author:
