@@ -78,9 +78,22 @@ async function getPageImages(pagePath) {
 }
 
 
+// If you need to add a slash when it's missing
+function ensureSingleTrailingSlash(path) {
+    if (path.endsWith('//')) {
+        return path.slice(0, -1);
+    }
+
+    if (!path.endsWith('/')) {
+      return path + '/';
+    }
+
+    return path;
+}
+
 
 module.exports = {
-    siteUrl: mySiteUrl,
+    siteUrl: ensureSingleTrailingSlash(mySiteUrl),
     alternateRefs: [
         {
           href: `${mySiteUrl}en/`,
@@ -128,6 +141,7 @@ module.exports = {
         </image:image>`).join('\n');
 
         // Create the French alternate path
+        path = path + "/"
         const enPath = path.replace('/fr/', '/en/');
 
         return {
@@ -138,7 +152,7 @@ module.exports = {
             alternateRefs: config.alternateRefs.map((alternate) => {
                 return {
                     ...alternate,
-                    href: alternate.href + (path.substring(4) ? path.substring(4) + '/' : ''),
+                    href: ensureSingleTrailingSlash(alternate.href + (path.substring(4) ? (path.substring(4) + '/') : '')),
                     hrefIsAbsolute: true,
                 }
             }),
